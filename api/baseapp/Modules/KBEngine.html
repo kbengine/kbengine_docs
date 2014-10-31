@@ -91,7 +91,31 @@
 </td></tr>
 
 <tr><td>
+<span class="function_list">def <a href="#getWatcher" class="function_list" >getWatcher</a>( path ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#getWatcherDir" class="function_list" >getWatcherDir</a>( path ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#hasRes" class="function_list" >hasRes</a>( res ):</span>
+</td></tr>
+
+<tr><td>
 <span class="function_list">def <a href="#isShuttingDown" class="function_list" >isShuttingDown</a>(  ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#listPathRes" class="function_list" >listPathRes</a>( path, extension ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#lookUpBaseByDBID" class="function_list" >lookUpBaseByDBID</a>( entityType, dbID, callback ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#matchPath" class="function_list" >matchPath</a>( res ):</span>
 </td></tr>
 
 <tr><td>
@@ -394,8 +418,8 @@ callback是一个可选的回调函数，当实体完成创建时被调用。回调函数带有一个参数，当成
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
 这是一个可选的回调函数，当操作完成的时候它会被调用。这个回调函数带有3个参数：baseRef，databaseID和wasActive。
 如果操作成功，baseRef会是一个mailbox或者是新创建的base实体的直接引用，databaseID会是实体的数据库ID，无论该实体是否已经激活
-wasActive都会有所指示，如果wasActive是true则baseRef是已经存在的实体的引用。如果操作失败，baseRef会是None，databaseID会是0，
-wasActive会是false。失败最常见的原因是实体在数据库里不存在，但偶尔也会出现其它错误比如说超时或者是分配ID失败。
+wasActive都会有所指示，如果wasActive是True则baseRef是已经存在的实体的引用。如果操作失败，baseRef会是None，databaseID会是0，
+wasActive会是False。失败最常见的原因是实体在数据库里不存在，但偶尔也会出现其它错误比如说超时或者是分配ID失败。
 </span></td></tr>
 
 </table>
@@ -529,7 +553,7 @@ callback是一个可选的回调函数，当实体完成创建时被调用。回调函数带有一个参数，当成
 <b>功能说明：</b><br><br>
 这个函数从数据库删除指定的实体（包括属性所产生的子表数据），如果实体没有从数据库检出则删除成功，
 如果实体已经从数据库检出那么<a href="KBEngine.html">KBEngine</a>服务系统将会删除失败，并且从回调中返回
-这个实体的Mailbox。
+<a href="../Classes/Base.html">Base</a>实体的mailbox。
 </div>
 
 <p>
@@ -545,7 +569,7 @@ callback是一个可选的回调函数，当实体完成创建时被调用。回调函数带有一个参数，当成
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
-callback只有一个参数，当实体没有从数据库检出时将会成功删除数据，参数是True。如果实体已经从数据库检出那么参数是Mailbox。
+callback只有一个参数，当实体没有从数据库检出时将会成功删除数据，参数是True。如果实体已经从数据库检出那么参数是<a href="../Classes/Base.html">Base</a>实体的mailbox。
 </span></td></tr>
 
 </table>
@@ -649,6 +673,7 @@ socket描述符/文件描述符。
 </table>
 </p>
 
+
 <a name="getResFullPath"></a><p class="function_definition">
 <span class="function_definition">def getResFullPath( <i>res</i> ):</span>
 </p>
@@ -678,6 +703,126 @@ string，资源的绝对路径。
 </table>
 </p>
 
+
+<a name="getWatcher"></a><p class="function_definition">
+<span class="function_definition">def getWatcher( <i>path</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+从KBEngine调试系统中获取一个监视变量的值。
+<br>
+<br>
+例子：在baseapp1的Python命令行输入:<br>
+>>>KBEngine.getWatcher("/root/stats/runningTime")
+<br>
+12673648533
+<br>
+<br>
+>>>KBEngine.getWatcher("/root/scripts/players")
+<br>
+32133
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>path</i></span></td><td><span class="function_parameter_description">
+string，该变量的绝对路径包括变量名(可以在GUIConsole的watcher页查看)。
+</span></td></tr>
+
+</table>
+</p>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+该变量的值。
+</td></tr>
+</table>
+</p>
+
+
+<a name="getWatcherDir"></a><p class="function_definition">
+<span class="function_definition">def getWatcherDir( <i>path</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+从KBEngine调试系统中获取一个监视目录下的元素列表(目录、变量名)。
+<br>
+<br>
+例子：在baseapp1的Python命令行输入:<br>
+>>>KBEngine.getWatcher("/root")
+<br>
+('stats', 'objectPools', 'network', 'syspaths', 'ThreadPool', 'cprofiles', 'scripts', 'numProxices', 'componentID', 'componentType', 'uid', 'numClients', 'globalOrder', 'username', 'load', 'gametime', 'entitiesSize', 'groupOrder')
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>path</i></span></td><td><span class="function_parameter_description">
+string，该变量的绝对路径(可以在GUIConsole的watcher页查看)。
+</span></td></tr>
+
+</table>
+</p>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+监视目录下的元素列表(目录、变量名)。
+</td></tr>
+</table>
+</p>
+
+
+
+<a name="hasRes"></a><p class="function_definition">
+<span class="function_definition">def hasRes( <i>res</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+使用这个接口可以判断一个相对路径的资源是否存在。<br>
+注意：资源必须在KBE_RES_PATH之下才可以访问到。
+<br>
+<br>
+例子:
+<br>
+<br>
+>>>KBEngine.hasRes("scripts/entities.xml")
+<br>
+True
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>res</i></span></td><td><span class="function_parameter_description">
+string，资源的相对路径。
+</span></td></tr>
+</table>
+</p>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+BOOL, 存在返回True，否则返回False。
+</td></tr>
+</table>
+</p>
+
+
+
+
+
 <a name="isShuttingDown"></a><p class="function_definition">
 <span class="function_definition">def isShuttingDown( <i></i> ):</span>
 </p>
@@ -696,13 +841,139 @@ string，资源的绝对路径。
 </table>
 </p>
 
+
+<a name="listPathRes"></a><p class="function_definition">
+<span class="function_definition">def listPathRes( <i>path, extension</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+获得一个资源目录下的资源列表。<br>
+注意：资源必须在KBE_RES_PATH之下才可以访问到。
+<br>
+<br>
+例子:
+<br>
+<br>
+>>>KBEngine.listPathRes("scripts/cell/interfaces")
+<br>
+('/home/kbe/kbengine/demo/res/scripts/cell/interfaces/AI.py', '/home/kbe/kbengine/demo/res/scripts/cell/interfaces/新建文本文档.txt')
+<br><br>
+>>>KBEngine.listPathRes("scripts/cell/interfaces", "txt")
+<br>
+('/home/kbe/kbengine/demo/res/scripts/cell/interfaces/新建文本文档.txt')
+<br><br>
+>>>KBEngine.listPathRes("scripts/cell/interfaces", "txt|py")
+<br>
+('/home/kbe/kbengine/demo/res/scripts/cell/interfaces/AI.py', '/home/kbe/kbengine/demo/res/scripts/cell/interfaces/新建文本文档.txt')
+<br><br>
+>>>KBEngine.listPathRes("scripts/cell/interfaces", ("txt", "py"))
+<br>
+('/home/kbe/kbengine/demo/res/scripts/cell/interfaces/AI.py', '/home/kbe/kbengine/demo/res/scripts/cell/interfaces/新建文本文档.txt')
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>res</i></span></td><td><span class="function_parameter_description">
+string，资源的相对路径。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>extension</i></span></td><td><span class="function_parameter_description">
+string，可选参数，扩展名。
+</span></td></tr>
+</table>
+</p>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+Tuple, 资源列表。
+</td></tr>
+</table>
+</p>
+
+
+
+<a name="lookUpBaseByDBID"></a><p class="function_definition">
+<span class="function_definition">def lookUpBaseByDBID( <i>entityType, dbID, callback</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+查询一个实体是否从数据库检出，
+如果实体已经从数据库检出那么<a href="KBEngine.html">KBEngine</a>服务系统将从回调中返回<a href="../Classes/Base.html">Base</a>实体的mailbox。
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>entityType</i></span></td><td><span class="function_parameter_description">
+指定要创建的base实体的类型。它必须是一个指定实体类型名字的字符串类型。有效的实体类型在<res>/scripts/entities.xml列出。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>dbID</i></span></td><td><span class="function_parameter_description">
+这是一个指定要创建的实体的数据库ID。这个实体的数据库ID存储在该实体的databaseID属性。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
+callback只有一个参数，当实体没有从数据库检出时将会返回True。如果实体已经从数据库检出那么将返回<a href="../Classes/Base.html">Base</a>实体的mailbox, 其他任何情况返回False。
+</span></td></tr>
+
+</table>
+</p>
+
+
+
+<a name="matchPath"></a><p class="function_definition">
+<span class="function_definition">def matchPath( <i>res</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+使用相对路径的资源获得资源的绝对路径。<br>
+注意：资源必须在KBE_RES_PATH之下才可以访问到。
+<br>
+<br>
+例子:
+<br>
+<br>
+>>>KBEngine.matchPath("scripts/entities.xml")<br>
+'/home/kbe/kbengine/demo/res/scripts/entities.xml'
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>res</i></span></td><td><span class="function_parameter_description">
+string，资源的相对路径(包括资源名称)。
+</span></td></tr>
+</table>
+</p>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+string, 资源的绝对路径。
+</td></tr>
+</table>
+</p>
+
+
+
+
 <a name="open"></a><p class="function_definition">
 <span class="function_definition">def open( <i>res, mode</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-使用这个接口可以使用相对路径来打开相关资源。
+使用这个接口可以使用相对路径来打开相关资源。<br>
 注意：资源必须在KBE_RES_PATH之下才可以访问到。
 </div>
 
