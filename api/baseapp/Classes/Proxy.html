@@ -74,7 +74,9 @@
 <h2><a href="#" onClick="obj=document.getElementById( 'attributes' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">属性</a></h2>
 <table id="attributes" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><a href="#__account_name__" class="attribute_list" >__account_name__</a></td><td>&nbsp; </td></tr>
+<tr valign=top><td><a href="#__ACCOUNT_NAME__" class="attribute_list" >__ACCOUNT_NAME__</a></td><td>&nbsp; </td></tr>
+
+<tr valign=top><td><a href="#__ACCOUNT_PASSWORD__" class="attribute_list" >__ACCOUNT_PASSWORD__</a></td><td>&nbsp; </td></tr>
 
 <tr valign=top><td><a href="#clientAddr" class="attribute_list" >clientAddr</a></td><td>&nbsp; </td></tr>
 
@@ -374,13 +376,22 @@ terminated.
 <hr>
 <h2>属性文档</h2>
 
-<a name="__account_name__"></a><p class="attribute_definition">
-<span class="attribute_definition">__account_name__</span>
+<a name="__ACCOUNT_NAME__"></a><p class="attribute_definition">
+<span class="attribute_definition">__ACCOUNT_NAME__</span>
 </p>
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-如果proxy是账号则可以访问__account_name__得到帐号名。
+如果proxy是帐号则可以访问__ACCOUNT_NAME__得到帐号名。
+</div>
+
+<a name="__ACCOUNT_PASSWORD__"></a><p class="attribute_definition">
+<span class="attribute_definition">__ACCOUNT_PASSWORD__</span>
+</p>
+
+<div class="attribute_description">
+<b>说明：</b><br><br>
+如果proxy是帐号则可以访问__ACCOUNT_PASSWORD__得到帐号MD5密码。
 </div>
 
 <a name="clientAddr"></a><p class="attribute_definition">
