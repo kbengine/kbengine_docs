@@ -51,6 +51,10 @@
 </td></tr>
 
 <tr><td>
+<span class="function_list">def <a href="#createBaseAnywhereFromDBID" class="function_list" >createBaseAnywhereFromDBID</a>( entityType, dbID, callback ):</span>
+</td></tr>
+
+<tr><td>
 <span class="function_list">def <a href="#createBaseLocally" class="function_list" >createBaseLocally</a>( entityType, *params ):</span>
 </td></tr>
 
@@ -60,6 +64,10 @@
 
 <tr><td>
 <span class="function_list">def <a href="#delWatcher" class="function_list" >delWatcher</a>( path ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#deleteBaseByDBID" class="function_list" >deleteBaseByDBID</a>( entityType, dbID, callback ):</span>
 </td></tr>
 
 <tr><td>
@@ -140,11 +148,11 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#onGlobalBases" class="function_list" >onGlobalBases</a>( key, value ):</span>
+<span class="function_list">def <a href="#onBaseAppData" class="function_list" >onBaseAppData</a>( key, value ):</span>
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#onGlobalBasesDel" class="function_list" >onGlobalBasesDel</a>( key ):</span>
+<span class="function_list">def <a href="#onBaseAppDataDel" class="function_list" >onBaseAppDataDel</a>( key ):</span>
 </td></tr>
 
 <tr><td>
@@ -161,6 +169,10 @@
 
 <tr><td>
 <span class="function_list">def <a href="#onLoseChargeCB" class="function_list" >onLoseChargeCB</a>( orderID, dbid, success, datas ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#readyForLogin" class="function_list" >readyForLogin</a>( bootstrapIdx ):</span>
 </td></tr>
 
 </table>
@@ -191,7 +203,7 @@
 <tr valign=top><td><a href="#entities" class="attribute_list" >entities</a></td><td>&nbsp; <a href="Entities.html">Entities</a>
 </td></tr>
 
-<tr valign=top><td><a href="#globalBases" class="attribute_list" >globalBases</a></td><td>&nbsp; <a href="GlobalBases.html">GlobalBases</a>
+<tr valign=top><td><a href="#baseAppData" class="attribute_list" >baseAppData</a></td><td>&nbsp; <a href="baseAppData.html">GlobalDataClient</a>
 </td></tr>
 
 <tr valign=top><td><a href="#globalData" class="attribute_list" >globalData</a></td><td>&nbsp; </td></tr>
@@ -389,6 +401,50 @@ wasActive会是false。失败最常见的原因是实体在数据库里不存在，但偶尔也会出现其它错
 </table>
 </p>
 
+
+<a name="createBaseAnywhereFromDBID"></a><p class="function_definition">
+<span class="function_definition">def createBaseAnywhereFromDBID( <i>entityType, dbID, callback</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+这个函数在<a href="KBEngine.html">KBEngine</a>服务系统创建一个新的Base实体（数据从数据库中加载），
+服务端可能选择任何的BaseApp来创建<a href="../Classes/Base.html">Base</a>实体。
+<br><br>
+使用这个函数将有助于BaseApps负载平衡。
+<br><br>
+如果该实体已经存在，那么将返回这个存在的<a href="../Classes/Base.html">Base</a>实体的引用。
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>entityType</i></span></td><td><span class="function_parameter_description">
+指定要创建的base实体的类型。它必须是一个指定实体类型名字的字符串类型。有效的实体类型在<res>/scripts/entities.xml列出。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>dbID</i></span></td><td><span class="function_parameter_description">
+这是一个指定要创建的实体的数据库ID。这个实体的数据库ID存储在该实体的databaseID属性。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
+callback是一个可选的回调函数，当实体完成创建时被调用。回调函数带有一个参数，当成功的时候是base实体的mailbox，失败时是None。
+</span></td></tr>
+
+</table>
+</p>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+<a href="../Classes/Base.html">Base</a>实体的mailbox。
+</td></tr>
+</table>
+</p>
+
+
 <a name="createBaseLocally"></a><p class="function_definition">
 <span class="function_definition">def createBaseLocally( <i>entityType, *params</i> ):</span>
 </p>
@@ -463,6 +519,39 @@ wasActive会是false。失败最常见的原因是实体在数据库里不存在，但偶尔也会出现其它错
 
 </table>
 </p>
+
+
+<a name="deleteBaseByDBID"></a><p class="function_definition">
+<span class="function_definition">def deleteBaseByDBID( <i>entityType, dbID, callback</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+这个函数从数据库删除指定的实体（包括属性所产生的子表数据），如果实体没有从数据库检出则删除成功，
+如果实体已经从数据库检出那么<a href="KBEngine.html">KBEngine</a>服务系统将会删除失败，并且从回调中返回
+这个实体的Mailbox。
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>entityType</i></span></td><td><span class="function_parameter_description">
+指定要创建的base实体的类型。它必须是一个指定实体类型名字的字符串类型。有效的实体类型在<res>/scripts/entities.xml列出。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>dbID</i></span></td><td><span class="function_parameter_description">
+这是一个指定要创建的实体的数据库ID。这个实体的数据库ID存储在该实体的databaseID属性。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
+callback只有一个参数，当实体没有从数据库检出时将会成功删除数据，参数是True。如果实体已经从数据库检出那么参数是Mailbox。
+</span></td></tr>
+
+</table>
+</p>
+
+
 
 <a name="deregisterFileDescriptor"></a><p class="function_definition">
 <span class="function_definition">def deregisterFileDescriptor( <i>fileDescriptor</i> ):</span>
@@ -868,13 +957,13 @@ tuple:(ip, port) 网络字节序
 引擎正式关闭后回调此函数。
 </div>
 
-<a name="onGlobalBases"></a><p class="function_definition">
-<span class="function_definition">def onGlobalBases( <i>key, value</i> ):</span>
+<a name="onBaseAppData"></a><p class="function_definition">
+<span class="function_definition">def onBaseAppData( <i>key, value</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-KBEngine.globalBases有改变时回调此函数。
+KBEngine.baseAppData有改变时回调此函数。
 </div>
 
 <p>
@@ -892,13 +981,13 @@ KBEngine.globalBases有改变时回调此函数。
 </table>
 </p>
 
-<a name="onGlobalBasesDel"></a><p class="function_definition">
-<span class="function_definition">def onGlobalBasesDel( <i>key</i> ):</span>
+<a name="onBaseAppDataDel"></a><p class="function_definition">
+<span class="function_definition">def onBaseAppDataDel( <i>key</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-KBEngine.globalBases有删除的时候回调此函数。
+KBEngine.baseAppData有删除的时候回调此函数。
 </div>
 
 <p>
@@ -1004,7 +1093,35 @@ bool，是否成功。
 <tr valign=top><td><span class="function_parameter_name"><i>datas</i></span></td><td><span class="function_parameter_description">
 [bytes|BLOB]，附带信息。
 </span></td></tr>
+</table>
+</p>
 
+<a name="readyForLogin"></a><p class="function_definition">
+<span class="function_definition">def readyForLogin( <i>bootstrapIdx</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+当引擎启动并初始化完成后会一直调用此接口询问脚本层是否准备完毕，如果脚本层准备完毕则loginapp允许客户端登录。
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>bootstrapIdx</i></span></td><td><span class="function_parameter_description">
+Int32，当前进程在多个baseapp中的启动顺序（从1开始计数）。
+</span></td></tr>
+
+
+</table>
+</p>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>返回值大于等于1.0则脚本层准备完成，否则返回准备的进度值0.0~1.0。
+</td></tr>
 </table>
 </p>
 
@@ -1121,19 +1238,19 @@ entities包含驻留在该base上所有实体组成的一个列表。
 </table>
 </p>
 
-<a name="globalBases"></a><p class="attribute_definition">
-<span class="attribute_definition">globalBases</span>
+<a name="baseAppData"></a><p class="attribute_definition">
+<span class="attribute_definition">baseAppData</span>
 </p>
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-globalBases是一个字典，这个字典对应base或者base mailbox的字符串。
+baseAppData是一个字典，这个字典对应base或者base mailbox的字符串。
 </div>
 
 <p>
 <span class="attribute_type">类型：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href="GlobalBases.html">GlobalBases</a>
+<tr><td><a href="GlobalDataClient.html">GlobalDataClient</a>
 </td></tr>
 </table>
 </p>
