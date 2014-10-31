@@ -1165,6 +1165,7 @@ uint32，当前游戏的时间，这里指周期数，周期受频率影响，频率由配置文件kbengine.xml
 <div class="function_description">
 <b>功能说明：</b><br><br>
 当前baseapp进程已经准备好的时候回调此函数。
+<br>注意：该回调接口必须实现在入口模块(kbengine_defs.xml->entryScriptFile)中。
 </div>
 
 <p>
@@ -1185,6 +1186,7 @@ uint32，当前游戏的时间，这里指周期数，周期受频率影响，频率由配置文件kbengine.xml
 <div class="function_description">
 <b>功能说明：</b><br><br>
 这个baseapp被关闭前回调此函数。
+<br>注意：该回调接口必须实现在入口模块(kbengine_defs.xml->entryScriptFile)中。
 </div>
 
 <p>
@@ -1205,6 +1207,7 @@ uint32，当前游戏的时间，这里指周期数，周期受频率影响，频率由配置文件kbengine.xml
 <div class="function_description">
 <b>功能说明：</b><br><br>
 某个cellapp死亡。
+<br>注意：该回调接口必须实现在入口模块(kbengine_defs.xml->entryScriptFile)中。
 </div>
 
 <p>
@@ -1226,6 +1229,7 @@ tuple:(ip, port) 网络字节序
 <div class="function_description">
 <b>功能说明：</b><br><br>
 引擎正式关闭后回调此函数。
+<br>注意：该回调接口必须实现在入口模块(kbengine_defs.xml->entryScriptFile)中。
 </div>
 
 <a name="onBaseAppData"></a><p class="function_definition">
@@ -1235,6 +1239,7 @@ tuple:(ip, port) 网络字节序
 <div class="function_description">
 <b>功能说明：</b><br><br>
 KBEngine.baseAppData有改变时回调此函数。
+<br>注意：该回调接口必须实现在入口模块(kbengine_defs.xml->entryScriptFile)中。
 </div>
 
 <p>
@@ -1259,6 +1264,7 @@ KBEngine.baseAppData有改变时回调此函数。
 <div class="function_description">
 <b>功能说明：</b><br><br>
 KBEngine.baseAppData有删除的时候回调此函数。
+<br>注意：该回调接口必须实现在入口模块(kbengine_defs.xml->entryScriptFile)中。
 </div>
 
 <p>
@@ -1279,6 +1285,7 @@ KBEngine.baseAppData有删除的时候回调此函数。
 <div class="function_description">
 <b>功能说明：</b><br><br>
 KBEngine.globalData有改变的时候回调此函数。
+<br>注意：该回调接口必须实现在入口模块(kbengine_defs.xml->entryScriptFile)中。
 </div>
 
 <p>
@@ -1303,6 +1310,7 @@ KBEngine.globalData有改变的时候回调此函数。
 <div class="function_description">
 <b>功能说明：</b><br><br>
 KBEngine.globalData有删除的时候回调此函数。
+<br>注意：该回调接口必须实现在入口模块(kbengine_defs.xml->entryScriptFile)中。
 </div>
 
 <p>
@@ -1323,6 +1331,7 @@ KBEngine.globalData有删除的时候回调此函数。
 <div class="function_description">
 <b>功能说明：</b><br><br>
 当引擎启动后初始化完所有的脚本后这个接口被调用。
+<br>注意：该回调接口必须实现在入口模块(kbengine_defs.xml->entryScriptFile)中。
 </div>
 
 <p>
@@ -1343,6 +1352,7 @@ bool，是否是被重写加载脚本后触发的。
 <div class="function_description">
 <b>功能说明：</b><br><br>
 当一个订单丢失或者不明订单被处理会收到此回调通知。
+<br>注意：该回调接口必须实现在入口模块(kbengine_defs.xml->entryScriptFile)中。
 </div>
 
 <p>
@@ -1374,6 +1384,7 @@ bool，是否成功。
 <div class="function_description">
 <b>功能说明：</b><br><br>
 当引擎启动并初始化完成后会一直调用此接口询问脚本层是否准备完毕，如果脚本层准备完毕则loginapp允许客户端登录。
+<br>注意：该回调接口必须实现在入口模块(kbengine_defs.xml->entryScriptFile)中。
 </div>
 
 <p>
