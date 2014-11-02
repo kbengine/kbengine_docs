@@ -1203,8 +1203,8 @@ bool，是否是被重写加载脚本后触发的。
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-这个属性包含一个类字典的对象，这个对象会在所有的CellApp之间自动复制。
-当字典的一个值被修改，这个修改会广播到所有的CellApp。CellAppMgr解决竞争条件，保证信息复制的权威性。
+这个属性包含一个类字典的对象，这个对象会在所有的CellApps之间自动同步。
+当字典的一个值被修改，这个修改会广播到所有的CellApps。
 
 <br><br>
 例子：
@@ -1222,7 +1222,7 @@ bool，是否是被重写加载脚本后触发的。
 当一个值被改变或被删除，一个回调函数会在所有组件被调用。
 参看：<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#onCellAppData>onCellAppData</a>和<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#onDelCellAppData>onDelCellAppData</a>。
 <br><br>
-注意：只有顶层的值才会被广播，如果你有一个易变的值（比如一个列表），它改变了内部的值（比如只是改变一个数），这个信息不会被广播。
+注意：只有顶层的值才会被广播，如果你有一个值（比如一个列表），它改变了内部的值（比如只是改变一个数），这个信息不会被广播。
 <br><br>
 不要进行下面的操作：
 

@@ -243,23 +243,23 @@
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数与观察者调试系统交互，允许观察者变量的创建。
+这个函数与监视系统交互，允许用户向监视系统注册一个监视变量。
 <br><br>
-该函数在Python里允许一个特别的观察者变量的创建。
 例：
-<br><br>
+<br>
 
-<pre>>>> maxBandwidth = 20000
->>> def getMaxBps( ):
->>>     return str(maxBandwidth)
->>> def setMaxBps( bps ):
->>>     maxBandwidth = int(bps)
->>>     setBandwidthPerSecond( int(bps) )
+<pre>
+>>> def countPlayers( ):
+>>>     i = 0
+>>>     for e in KBEngine.entities.values():
+>>>     	if e.__class__.__name__ == "Avatar":
+>>>     		i += 1
+>>>     return i
 >>>
->>> <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#addWatcher>addWatcher</a>( "Comms/Max bandwidth per second", getMaxBps, setMaxBps )
+>>> <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#addWatcher>addWatcher</a>( "players", "UINT32", countPlayers )
 </pre>
 <br><br>
-这个函数添加一个观察者变量在"Comms"观察树之下。函数getMaxBps是获取观察者的值调用，函数setMaxBps是当观察者的值有变化时调用。
+这个函数添加一个监视变量在"scripts/players"监视路径之下。函数countPlayers在观察者观察时被调用。
 </div>
 
 <p>
@@ -267,18 +267,18 @@
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>path</i></span></td><td><span class="function_parameter_description">
-创建观察者的路径。
+创建监视的路径。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>datatype</i></span></td><td><span class="function_parameter_description">
+监视变量的值类型。参考: <a href="http://www.kbengine.org/docs/programming/alias.html">基本类型</a>
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>getFunction</i></span></td><td><span class="function_parameter_description">
-这个函数当检索该观察者变量时调用。
-这个函数不带参数返回一个代表观察者变量值的字符串。
+这个函数当观察者检索该变量时调用。
+这个函数不带参数返回一个代表监视变量的值。
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>setFunction</i></span></td><td><span class="function_parameter_description">
-（可选的）这个函数是当设置观察者变量时调用的。该函数带有一个字符串参数作为观察者变量的最新值。
-这个函数没有返回值。如果这个函数不存在则创建出来的观察者是一个只读的观察者变量。
-</span></td></tr>
 
 </table>
 </p>
@@ -293,7 +293,7 @@
 </div>
 
 <a name="charge"></a><p class="function_definition">
-<span class="function_definition">def charge( <i>ordersID, dbid, byteDatas, pycallback</i> ):</span>
+<span class="function_definition">def charge( <i>ordersID, dbID, byteDatas, pycallback</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -309,8 +309,8 @@
 string，订单ID。
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>dbid</i></span></td><td><span class="function_parameter_description">
-uint64，通常为entity的dbid。
+<tr valign=top><td><span class="function_parameter_name"><i>dbID</i></span></td><td><span class="function_parameter_description">
+uint64，通常为entity的dbID。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>byteDatas</i></span></td><td><span class="function_parameter_description">
@@ -365,19 +365,16 @@ datas：bytes|BLOB，返回信息<br>
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>*params</i></span></td><td><span class="function_parameter_description">
-剩下的可选的的参数。这些参数可以是Python字典，关键字参数，或者是一个<a href="DataSection.html">DataSection</a>。
+可选参数。这些参数可以是Python字典，关键字参数。
 如果一个指定的键是一个<a href="../Classes/Base.html">Base</a>属性，他的值会用来初始化这个<a href="../Classes/Base.html">Base</a>实体的属性。
 如果这个键是一个<a href="Cell.html">Cell</a>属性，它会被添加到base实体的'cellData'属性，这个'cellData'属性是一个Python字典，
 然后在后面会用来初始化cell实体的属性。
-<br><br>
-如果同样的属性通过一个<a href="DataSection.html">DataSection</a>，字典或者关键字多次提供，关键字参数拥有优先权而
-其它参数依次从左到右。
 <br><br>
 注意：如果最后一个参数是回调函数，它不应该包含在*params里。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
-callback是一个可选的回调函数，当实体完成创建时被调用。回调函数带有一个参数，当成功的时候是base实体的mailbox，失败时是None。
+callback是一个可选的回调函数，当实体完成创建时被调用。回调函数带有一个参数，当成功的时候是Base实体的mailbox，失败时是None。
 </span></td></tr>
 
 </table>
@@ -417,7 +414,7 @@ callback是一个可选的回调函数，当实体完成创建时被调用。回调函数带有一个参数，当成
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
 这是一个可选的回调函数，当操作完成的时候它会被调用。这个回调函数带有3个参数：baseRef，databaseID和wasActive。
-如果操作成功，baseRef会是一个mailbox或者是新创建的base实体的直接引用，databaseID会是实体的数据库ID，无论该实体是否已经激活
+如果操作成功，baseRef会是一个mailbox或者是新创建的Base实体的直接引用，databaseID会是实体的数据库ID，无论该实体是否已经激活
 wasActive都会有所指示，如果wasActive是True则baseRef是已经存在的实体的引用。如果操作失败，baseRef会是None，databaseID会是0，
 wasActive会是False。失败最常见的原因是实体在数据库里不存在，但偶尔也会出现其它错误比如说超时或者是分配ID失败。
 </span></td></tr>
@@ -445,7 +442,7 @@ wasActive会是False。失败最常见的原因是实体在数据库里不存在，但偶尔也会出现其它错
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>entityType</i></span></td><td><span class="function_parameter_description">
-指定要创建的base实体的类型。它必须是一个指定实体类型名字的字符串类型。有效的实体类型在<res>/scripts/entities.xml列出。
+指定要创建的Base实体的类型。它必须是一个指定实体类型名字的字符串类型。有效的实体类型在<res>/scripts/entities.xml列出。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>dbID</i></span></td><td><span class="function_parameter_description">
@@ -453,7 +450,7 @@ wasActive会是False。失败最常见的原因是实体在数据库里不存在，但偶尔也会出现其它错
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
-callback是一个可选的回调函数，当实体完成创建时被调用。回调函数带有一个参数，当成功的时候是base实体的mailbox，失败时是None。
+callback是一个可选的回调函数，当实体完成创建时被调用。回调函数带有一个参数，当成功的时候是Base实体的mailbox，失败时是None。
 </span></td></tr>
 
 </table>
@@ -489,16 +486,16 @@ callback是一个可选的回调函数，当实体完成创建时被调用。回调函数带有一个参数，当成
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>entityType</i></span></td><td><span class="function_parameter_description">
-指定要创建的base实体的类型。它必须是一个指定实体类型名字的字符串类型。有效的实体类型在<res>/scripts/entities.xml列出。
+指定要创建的Base实体的类型。它必须是一个指定实体类型名字的字符串类型。有效的实体类型在<res>/scripts/entities.xml列出。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>*params</i></span></td><td><span class="function_parameter_description">
 剩下的可选的的参数。这些参数可以是Python字典，关键字参数，或者是一个<a href="DataSection.html">DataSection</a>。
 如果一个指定的键是一个<a href="../Classes/Base.html">Base</a>属性，他的值会用来初始化这个<a href="../Classes/Base.html">Base</a>实体的属性。
-如果这个键是一个<a href="Cell.html">Cell</a>属性，它会被添加到base实体的'cellData'属性，这个'cellData'属性是一个Python字典，
+如果这个键是一个<a href="Cell.html">Cell</a>属性，它会被添加到Base实体的'cellData'属性，这个'cellData'属性是一个Python字典，
 然后在后面会用来初始化cell实体的属性。
 <br><br>
-如果在".def"文件里没有指定，该属性会作为一个普通属性添加到base实体。这个行为将无效。你应该把这些值添加到".def"文件里。
+如果在".def"文件里没有指定，该属性会作为一个普通属性添加到Base实体。这个行为将无效。你应该把这些值添加到".def"文件里。
 <br><br>
 如果同样的属性通过一个<a href="DataSection.html">DataSection</a>，字典或者关键字多次提供，关键字参数拥有优先权而
 其它参数依次从左到右。
@@ -510,7 +507,7 @@ callback是一个可选的回调函数，当实体完成创建时被调用。回调函数带有一个参数，当成
 <p>
 <span class="function_return">返回：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>新创建的base实体（参考<a href="../Classes/Base.html">Base</a>）
+<tr><td>新创建的Base实体（参考<a href="../Classes/Base.html">Base</a>）
 </td></tr>
 </table>
 </p>
@@ -561,7 +558,7 @@ callback是一个可选的回调函数，当实体完成创建时被调用。回调函数带有一个参数，当成
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>entityType</i></span></td><td><span class="function_parameter_description">
-指定要创建的base实体的类型。它必须是一个指定实体类型名字的字符串类型。有效的实体类型在<res>/scripts/entities.xml列出。
+指定要创建的Base实体的类型。它必须是一个指定实体类型名字的字符串类型。有效的实体类型在<res>/scripts/entities.xml列出。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>dbID</i></span></td><td><span class="function_parameter_description">
@@ -912,7 +909,7 @@ Tuple, 资源列表。
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>entityType</i></span></td><td><span class="function_parameter_description">
-指定要创建的base实体的类型。它必须是一个指定实体类型名字的字符串类型。有效的实体类型在<res>/scripts/entities.xml列出。
+指定要创建的Base实体的类型。它必须是一个指定实体类型名字的字符串类型。有效的实体类型在<res>/scripts/entities.xml列出。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>dbID</i></span></td><td><span class="function_parameter_description">
@@ -1526,16 +1523,34 @@ entities包含驻留在该base上所有实体组成的一个列表。
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-baseAppData是一个字典，这个字典对应base或者base mailbox的字符串。
-</div>
+这个属性包含一个类字典的对象，这个对象会在所有的BaseApps之间自动同步。
+当字典的一个值被修改，这个修改会广播到所有的BaseApps。
 
-<p>
-<span class="attribute_type">类型：</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href="GlobalDataClient.html">GlobalDataClient</a>
-</td></tr>
-</table>
-</p>
+<br><br>
+例子：
+
+<pre><a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#baseAppData>baseAppData</a>[ "hello" ] = "there"
+</pre>
+<br><br>
+其余CellApp可以访问下面的：
+
+<pre>print <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#baseAppData>baseAppData</a>[ "hello" ]
+</pre>
+<br><br>
+键和值可以是任意类型，但这些类型必须在所有目标组件上能够被封装和被拆封。
+<br><br>
+当一个值被改变或被删除，一个回调函数会在所有组件被调用。
+参看：<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#onCellAppData>onCellAppData</a>和<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#onDelBaseAppData>onDelBaseAppData</a>。
+<br><br>
+注意：只有顶层的值才会被广播，如果你有一个值（比如一个列表），它改变了内部的值（比如只是改变一个数），这个信息不会被广播。
+<br><br>
+不要进行下面的操作：
+
+<pre><a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#baseAppData>baseAppData</a>[ "list" ] = [1, 2, 3]
+<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#baseAppData>baseAppData</a>[ "list" ][1] = 7
+</pre>
+这样，本地访问是[1, 7, 3]，远程访问是[1, 2, 3]。
+</div>
 
 <a name="globalData"></a><p class="attribute_definition">
 <span class="attribute_definition">globalData</span>
