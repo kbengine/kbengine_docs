@@ -8,8 +8,8 @@
 <tr><td align=left style="background:#708090"> <font size=15 color=#ffffff> KBEngine </font></td></tr>
 </table> <hr>
 <h1>KBEngine模块</h1>
-<a href="KBEngine.html">KBEngine</a>模块提供了Python脚本访问<a href="../Classes/Base.html">Base</a>的部分，特别是它提供了定时器的注册和移除，
-以及<a href="../Classes/Base.html">Base</a>的创建。
+<a href="KBEngine.html">KBEngine</a>模块提供了Python脚本访问<a href="../Classes/Base.html">实体</a>的部分，特别是它提供了定时器的注册与移除，
+以及<a href="../Classes/Base.html">实体</a>的创建。
 <h2><a href="#" onClick="obj=document.getElementById( 'classes' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">类</a></h2>
 <table id="classes" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
@@ -279,9 +279,10 @@
 这个函数不带参数返回一个代表监视变量的值。
 </span></td></tr>
 
-
 </table>
 </p>
+
+
 
 <a name="address"></a><p class="function_definition">
 <span class="function_definition">def address( <i></i> ):</span>
@@ -616,16 +617,17 @@ socket描述符/文件描述符。
 </table>
 </p>
 
+
+
 <a name="executeRawDatabaseCommand"></a><p class="function_definition">
 <span class="function_definition">def executeRawDatabaseCommand( <i>command, callback</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个脚本函数在数据库上执行原始数据库命令。该命令不被解析——它直接传到相关的数据库。
-它的特性是不支持XML数据库。
+这个脚本函数在数据库上执行原始数据库命令。该命令将直接由相关数据库进行解析。
 <br><br>
-请注意数据库里的实体数据可能不会更新，尤其是当第二次数据库还可以被写入的时候。
+请注意使用该函数修改实体数据可能不生效，如果实体已经检出，被修改过的实体数据将仍会被实体存档而覆盖。
 强烈不推荐这个函数用于读取或修改实体数据。
 </div>
 
@@ -634,11 +636,11 @@ socket描述符/文件描述符。
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>command</i></span></td><td><span class="function_parameter_description">
-这个字符串命令具体到当前数据库层。对于MySQL数据库它是一个SQL查询语句。
+这个数据库命令将会因为不同数据库配置方案而不同。对于方案为MySQL数据库它是一个SQL查询语句。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
-带有命令执行结果的回调对象（比如说是一个函数）。这个回调带有3个参数：结果集合，影响的行数和错误信息。
+带有命令执行结果的回调对象（比如说是一个函数）。这个回调带有3个参数：结果集合，影响的行数与错误信息。
 <br><br>
 这个结果集合参数是一个行列表。每一行是一个包含字段值的字符串列表。命令执行没有返回结果集合（比如说是DELETE命令），或者
 命令执行有错误时这个结果集合为None。
@@ -652,13 +654,21 @@ socket描述符/文件描述符。
 </table>
 </p>
 
+
+
 <a name="genUUID64"></a><p class="function_definition">
 <span class="function_definition">def genUUID64( <i></i> ):</span>
 </p>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-该函数生成一个64位的唯一ID。
+该函数生成一个64位的唯一ID。<br>
+注意：这个函数依赖于Baseapps服务进程启动参数cid与globalorder，请正确设置启动参数保持唯一性。
+<br>
+<br>
+用途：<br>
+多个服务进程上产生唯一物品ID并且在合服时不会产生冲突。<br>
+多个服务进程上产生一个房间ID，不需要进行唯一性校验。<br>
 </div>
 
 <p>
@@ -909,11 +919,11 @@ Tuple, 资源列表。
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>entityType</i></span></td><td><span class="function_parameter_description">
-指定要创建的Base实体的类型。它必须是一个指定实体类型名字的字符串类型。有效的实体类型在<res>/scripts/entities.xml列出。
+指定要查询的Base实体的类型。它必须是一个指定实体类型名字的字符串类型。有效的实体类型在<res>/scripts/entities.xml列出。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>dbID</i></span></td><td><span class="function_parameter_description">
-这是一个指定要创建的实体的数据库ID。这个实体的数据库ID存储在该实体的databaseID属性。
+这是一个指定要查询的Base实体的数据库ID。这个实体的数据库ID存储在该实体的databaseID属性。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
@@ -1389,7 +1399,7 @@ bool，是否成功。
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>bootstrapIdx</i></span></td><td><span class="function_parameter_description">
-Int32，当前进程在多个baseapp中的启动顺序（从1开始计数）。
+int32，当前进程在多个baseapp中的启动顺序（从1开始计数）。
 </span></td></tr>
 
 
@@ -1413,7 +1423,8 @@ Int32，当前进程在多个baseapp中的启动顺序（从1开始计数）。
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-这个常量应由onLogOnAttempt返回，意指允许允许新的client连接<a href="Proxy.html">Proxy</a>。
+这个常量由<a href="../Classes/Proxy.html">Proxy</a>.<a href=../Classes/Proxy.html#onLogOnAttempt>onLogOnAttempt</a>返回，意指允许新的client与一个<a href="../Classes/Proxy.html">Proxy实体</a>绑定。<br>
+如果<a href="../Classes/Proxy.html">Proxy实体</a>已经存在一个client绑定关系，那么将踢出之前的client。
 </div>
 
 <a name="LOG_ON_REJECT"></a><p class="attribute_definition">
@@ -1422,7 +1433,7 @@ Int32，当前进程在多个baseapp中的启动顺序（从1开始计数）。
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-这个常量应由onLogOnAttempt返回，意指拒绝登陆。
+这个常量由<a href="../Classes/Proxy.html">Proxy</a>.<a href=../Classes/Proxy.html#onLogOnAttempt>onLogOnAttempt</a>返回，意指拒绝当前client与<a href="../Classes/Proxy.html">Proxy实体</a>绑定。
 </div>
 
 <a name="LOG_ON_WAIT_FOR_DESTROY"></a><p class="attribute_definition">
@@ -1431,9 +1442,8 @@ Int32，当前进程在多个baseapp中的启动顺序（从1开始计数）。
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-如果当前登陆应该等待直到当前<a href="Proxy.html">Proxy</a>完成登出，
-这个常量应由<a href="Proxy.html">Proxy</a>.<a href=Proxy.html#onLogOnAttempt>onLogOnAttempt</a>返回。在这返回之前
-<a href="Proxy.html">Proxy</a>.<a href=Proxy.html#destroy>destroy</a>或者<a href="Proxy.html">Proxy</a>.<a href=Proxy.html#destroyCellEntity>destroyCellEntity</a>
+这个常量由<a href="../Classes/Proxy.html">Proxy</a>.<a href=../Classes/Proxy.html#onLogOnAttempt>onLogOnAttempt</a>返回，当前请求client将会等待直到<a href="../Classes/Proxy.html">Proxy实体</a>完全销毁，底层再完成后续绑定过程。
+在这返回之前<a href="../Classes/Proxy.html">Proxy</a>.<a href=../Classes/Base.html#destroy>destroy</a>或者<a href="../Classes/Proxy.html">Proxy</a>.<a href=../Classes/Base.html#destroyCellEntity>destroyCellEntity</a>
 应该被调用。
 </div>
 
@@ -1443,7 +1453,8 @@ Int32，当前进程在多个baseapp中的启动顺序（从1开始计数）。
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-日志输出的类型-调试类型。
+日志输出类型为调试类型。<br>
+由<a href=#scriptLogType>scriptLogType</a>设置。
 </div>
 
 <a name="LOG_TYPE_ERR"></a><p class="attribute_definition">
@@ -1452,7 +1463,8 @@ Int32，当前进程在多个baseapp中的启动顺序（从1开始计数）。
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-日志输出的类型-错误类型。
+日志输出类型为错误类型。<br>
+由<a href=#scriptLogType>scriptLogType</a>设置。
 </div>
 
 <a name="LOG_TYPE_INFO"></a><p class="attribute_definition">
@@ -1461,7 +1473,8 @@ Int32，当前进程在多个baseapp中的启动顺序（从1开始计数）。
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-日志输出的类型-常规信息类型。
+日志输出类型为常规信息类型。<br>
+由<a href=#scriptLogType>scriptLogType</a>设置。
 </div>
 
 <a name="LOG_TYPE_NORMAL"></a><p class="attribute_definition">
@@ -1470,7 +1483,8 @@ Int32，当前进程在多个baseapp中的启动顺序（从1开始计数）。
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-日志输出的类型-常规类型。
+日志输出类型为常规类型。<br>
+由<a href=#scriptLogType>scriptLogType</a>设置。
 </div>
 
 <a name="LOG_TYPE_WAR"></a><p class="attribute_definition">
@@ -1479,7 +1493,8 @@ Int32，当前进程在多个baseapp中的启动顺序（从1开始计数）。
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-日志输出的类型-警告类型。
+日志输出类型为警告类型。<br>
+由<a href=#scriptLogType>scriptLogType</a>设置。
 </div>
 
 <a name="NEXT_ONLY"></a><p class="attribute_definition">
@@ -1506,7 +1521,7 @@ Int32，当前进程在多个baseapp中的启动顺序（从1开始计数）。
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-entities包含驻留在该base上所有实体组成的一个列表。
+entities是一个字典对象，包含当前进程上所有的实体。
 </div>
 
 <p>

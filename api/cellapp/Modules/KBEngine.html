@@ -8,7 +8,8 @@
 <tr><td align=left style="background:#708090"> <font size=15 color=#ffffff> KBEngine </font></td></tr>
 </table> <hr>
 <h1>KBEngine模块</h1>
-
+<a href="KBEngine.html">KBEngine</a>模块提供了Python脚本访问<a href="../Classes/Entity.html">实体</a>的部分，特别是它提供了定时器的注册与移除，
+以及<a href="../Classes/Entity.html">实体</a>的创建。
 <h2><a href="#" onClick="obj=document.getElementById( 'classes' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">类</a></h2>
 <table id="classes" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
@@ -236,23 +237,23 @@
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数与观察者调试系统交互，允许观察者变量的创建。
+这个函数与监视系统交互，允许用户向监视系统注册一个监视变量。
 <br><br>
-该函数在Python里允许一个特别的观察者变量的创建。
 例：
-<br><br>
+<br>
 
-<pre>>>> maxBandwidth = 20000
->>> def getMaxBps( ):
->>>     return str(maxBandwidth)
->>> def setMaxBps( bps ):
->>>     maxBandwidth = int(bps)
->>>     setBandwidthPerSecond( int(bps) )
+<pre>
+>>> def countPlayers( ):
+>>>     i = 0
+>>>     for e in KBEngine.entities.values():
+>>>     	if e.__class__.__name__ == "Avatar":
+>>>     		i += 1
+>>>     return i
 >>>
->>> <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#addWatcher>addWatcher</a>( "Comms/Max bandwidth per second", getMaxBps, setMaxBps )
+>>> <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#addWatcher>addWatcher</a>( "players", "UINT32", countPlayers )
 </pre>
 <br><br>
-这个函数添加一个观察者变量在"Comms"观察树之下。函数getMaxBps是获取观察者的值调用，函数setMaxBps是当观察者的值有变化时调用。
+这个函数添加一个监视变量在"scripts/players"监视路径之下。函数countPlayers在观察者观察时被调用。
 </div>
 
 <p>
@@ -260,21 +261,22 @@
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>path</i></span></td><td><span class="function_parameter_description">
-创建观察者的路径。
+创建监视的路径。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>datatype</i></span></td><td><span class="function_parameter_description">
+监视变量的值类型。参考: <a href="http://www.kbengine.org/docs/programming/alias.html">基本类型</a>
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>getFunction</i></span></td><td><span class="function_parameter_description">
-这个函数当检索该观察者变量时调用。
-这个函数不带参数返回一个代表观察者变量值的字符串。
-</span></td></tr>
-
-<tr valign=top><td><span class="function_parameter_name"><i>setFunction</i></span></td><td><span class="function_parameter_description">
-（可选的）这个函数是当设置观察者变量时调用的。该函数带有一个字符串参数作为观察者变量的最新值。
-这个函数没有返回值。如果这个函数不存在则创建出来的观察者是一个只读的观察者变量。
+这个函数当观察者检索该变量时调用。
+这个函数不带参数返回一个代表监视变量的值。
 </span></td></tr>
 
 </table>
 </p>
+
+
 
 <a name="address"></a><p class="function_definition">
 <span class="function_definition">def address( <i></i> ):</span>
@@ -405,10 +407,9 @@ string，一个字符串关键字。
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个脚本函数在数据库上执行原始数据库命令。该命令不被解析——它直接传到相关的数据库。
-它的特性是不支持XML数据库。
+这个脚本函数在数据库上执行原始数据库命令。该命令将直接由相关数据库进行解析。
 <br><br>
-请注意数据库里的实体数据可能不会更新，尤其是当第二次数据库还可以被写入的时候。
+请注意使用该函数修改实体数据可能不生效，如果实体已经检出，被修改过的实体数据将仍会被实体存档而覆盖。
 强烈不推荐这个函数用于读取或修改实体数据。
 </div>
 
@@ -417,11 +418,11 @@ string，一个字符串关键字。
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>command</i></span></td><td><span class="function_parameter_description">
-这个字符串命令具体到当前数据库层。对于MySQL数据库它是一个SQL查询语句。
+这个数据库命令将会因为不同数据库配置方案而不同。对于方案为MySQL数据库它是一个SQL查询语句。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
-带有命令执行结果的回调对象（比如说是一个函数）。这个回调带有3个参数：结果集合，影响的行数和错误信息。
+带有命令执行结果的回调对象（比如说是一个函数）。这个回调带有3个参数：结果集合，影响的行数与错误信息。
 <br><br>
 这个结果集合参数是一个行列表。每一行是一个包含字段值的字符串列表。命令执行没有返回结果集合（比如说是DELETE命令），或者
 命令执行有错误时这个结果集合为None。
@@ -441,7 +442,13 @@ string，一个字符串关键字。
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-该函数生成一个64位的唯一ID。
+该函数生成一个64位的唯一ID。<br>
+注意：这个函数依赖于Baseapps服务进程启动参数cid与globalorder，请正确设置启动参数保持唯一性。
+<br>
+<br>
+用途：<br>
+多个服务进程上产生唯一物品ID并且在合服时不会产生冲突。<br>
+多个服务进程上产生一个房间ID，不需要进行唯一性校验。<br>
 </div>
 
 <p>
@@ -1149,7 +1156,8 @@ bool，是否是被重写加载脚本后触发的。
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-日志输出的类型-调试类型。
+日志输出类型为调试类型。<br>
+由<a href=#scriptLogType>scriptLogType</a>设置。
 </div>
 
 <a name="LOG_TYPE_ERR"></a><p class="attribute_definition">
@@ -1158,7 +1166,8 @@ bool，是否是被重写加载脚本后触发的。
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-日志输出的类型-错误类型。
+日志输出类型为错误类型。<br>
+由<a href=#scriptLogType>scriptLogType</a>设置。
 </div>
 
 <a name="LOG_TYPE_INFO"></a><p class="attribute_definition">
@@ -1167,7 +1176,8 @@ bool，是否是被重写加载脚本后触发的。
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-日志输出的类型-常规信息类型。
+日志输出类型为常规信息类型。<br>
+由<a href=#scriptLogType>scriptLogType</a>设置。
 </div>
 
 <a name="LOG_TYPE_NORMAL"></a><p class="attribute_definition">
@@ -1176,7 +1186,8 @@ bool，是否是被重写加载脚本后触发的。
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-日志输出的类型-常规类型。
+日志输出类型为常规类型。<br>
+由<a href=#scriptLogType>scriptLogType</a>设置。
 </div>
 
 <a name="LOG_TYPE_WAR"></a><p class="attribute_definition">
@@ -1185,7 +1196,8 @@ bool，是否是被重写加载脚本后触发的。
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-日志输出的类型-警告类型。
+日志输出类型为警告类型。<br>
+由<a href=#scriptLogType>scriptLogType</a>设置。
 </div>
 
 <a name="NEXT_ONLY"></a><p class="attribute_definition">
@@ -1247,7 +1259,7 @@ bool，是否是被重写加载脚本后触发的。
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-entities包含一个由所有当前驻留在这个cell上的实体组成的列表，包括幽灵实体。
+entities是一个字典对象，包含当前进程上所有的实体，包括ghost实体。
 </div>
 
 <p>
