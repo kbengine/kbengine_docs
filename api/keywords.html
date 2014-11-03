@@ -127,6 +127,54 @@ avatar.client.hello()<br>
 
 
 
+<a name="cn_entity"></a><p class="function_definition">
+<span class="function_definition">实体</span>
+</p>
+
+<div class="function_description">
+<br><br>
+实体被定义为服务端最基本的对象，类似Python的基础对象object。<br>
+什么时候需要定义实体? 请参见<a href=http://www.kbengine.org/docs/programming/entitydef.html>http://www.kbengine.org/docs/programming/entitydef.html</a>
+</div>
+
+<a name="entity"></a><p class="function_definition">
+<span class="function_definition">entity</span>
+</p>
+
+<div class="function_description">
+<br><br>
+参见: <a href=#cn_entity>实体</a>
+</div>
+
+
+
+<a name="AOI"></a><p class="function_definition">
+<span class="function_definition">AOI</span>
+</p>
+
+<div class="function_description">
+<br><br>
+area of interest。<br>
+服务端将客户端感兴趣的区域中发生的所有事件同步给客户端。<br>
+事件包括: 实体移动、客户端广播类型的属性改变、死亡销毁等等。
+</div>
+
+
+
+<a name="Witness"></a><p class="function_definition">
+<span class="function_definition">Witness</span>
+</p>
+
+<div class="function_description">
+<br><br>
+目击者。<br>
+只有绑定了Witness的cell实体AOI才能产生作用，换句话来说witness就是客户端的一个cell代理。<br>
+服务端一个NPC被目击者目击时会调用实体的onWitness回调，服务端可以依赖于此特性降低CPU的消耗，当一个实体<br>
+没有被目击时，用户可以停止它的任何行为。<br>
+</div>
+
+
+
 
 <br></br>
 <br></br>

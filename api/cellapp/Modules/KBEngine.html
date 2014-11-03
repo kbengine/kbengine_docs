@@ -191,7 +191,7 @@
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数关联一个给定空间的几何映射。这使得几何体在客户端和服务端上被加载起来。
+关联一个给定空间的几何映射。这使得几何体在客户端和服务端上被加载起来。
 <br><br>
 在服务端上，来自给定目录里所有块的几何加载到指定的空间。这些块文件是异步加载的，当所有的几何加载
 完成的时候下面的通知方法会被调用：
@@ -237,7 +237,7 @@
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数与调试监视系统交互，允许用户向监视系统注册一个监视变量。
+与调试监视系统交互，允许用户向监视系统注册一个监视变量。
 <br><br>
 例：
 <br>
@@ -284,8 +284,9 @@
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数返回内部网络接口的地址。
+返回内部网络接口的地址。
 </div>
+
 
 <a name="Blob"></a><p class="function_definition">
 <span class="function_definition">def Blob( <i></i> ):</span>
@@ -293,8 +294,9 @@
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数返回一个blob对象。
+返回一个新的blob对象。
 </div>
+
 
 <a name="createEntity"></a><p class="function_definition">
 <span class="function_definition">def createEntity( <i>class, spaceID, position, direction, state</i> ):</span>
@@ -533,7 +535,7 @@ string，指定key的字符串数据。
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数返回一个指定空间的"客户端-服务端"的几何映射。每一个列表元素由一个映射
+返回一个指定空间的"客户端-服务端"的几何映射。每一个列表元素由一个映射
 元组，它的变化矩阵和一个表明是否只是客户端的boolean值组成。
 </div>
 
@@ -839,7 +841,7 @@ int8，0：debug，1：release，其它可自定义。
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数重新加载与实体和自定义数据类型相关的Python模块。当前实体类会设置为新加载的类。
+重新加载与实体和自定义数据类型相关的Python模块。当前实体类会设置为新加载的类。
 这个方法应该只用于开发模式，对于产品模式不合适。下面几点应该注意：
 <br><br>
 1）重载脚本仅仅能在baseapp上执行， 用户应该确保所有的服务端组件加载完成。
@@ -879,7 +881,7 @@ int8，0：debug，1：release，其它可自定义。
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数设置当前Python.print输出的信息类型(参考: KBEngine.LOG_TYPE_*)。
+设置当前Python.print输出的信息类型(参考: KBEngine.LOG_TYPE_*)。
 </div>
 
 
@@ -1277,8 +1279,8 @@ entities是一个字典对象，包含当前进程上所有的实体，包括ghost实体。
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-这个属性包含一个类字典的对象，这个对象会在所有的BaseApp和CellApp之间自动复制。
-当字典的一个值被修改，这个修改会广播到所有的BaseApp和CellApp。CellAppMgr解决竞争条件，保证信息复制的权威性。
+这个属性包含一个类字典的对象，这个对象会在所有的BaseApps和CellApps之间自动复制。
+当字典的一个值被修改，这个修改会广播到所有的BaseApps和CellApps。CellAppMgr解决竞争条件，保证信息复制的权威性。
 <br><br>
 例子：
 

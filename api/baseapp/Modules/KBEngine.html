@@ -35,6 +35,10 @@
 </td></tr>
 
 <tr><td>
+<span class="function_list">def <a href="#Blob" class="function_list" >Blob</a>(  ):</span>
+</td></tr>
+
+<tr><td>
 <span class="function_list">def <a href="#charge" class="function_list" >charge</a>( ordersID, dbid, byteDatas, pycallback ):</span>
 </td></tr>
 
@@ -290,8 +294,22 @@
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数返回内部网络接口的地址。
+返回内部网络接口的地址。
 </div>
+
+
+
+
+<a name="Blob"></a><p class="function_definition">
+<span class="function_definition">def Blob( <i></i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+返回一个新的blob对象。
+</div>
+
+
 
 <a name="charge"></a><p class="function_definition">
 <span class="function_definition">def charge( <i>ordersID, dbID, byteDatas, pycallback</i> ):</span>
@@ -568,7 +586,7 @@ string，指定要创建的Base实体的类型。有效的实体类型在<res><a href=../../keywords.
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数从数据库删除指定的实体（包括属性所产生的子表数据），如果实体没有从数据库检出则删除成功，
+从数据库删除指定的实体（包括属性所产生的子表数据），如果实体没有从数据库检出则删除成功，
 如果实体已经从数据库检出那么<a href="KBEngine.html">KBEngine</a>服务系统将会删除失败，并且从回调中返回
 <a href="../Classes/Base.html">Base</a>实体的<a href=../../keywords.html#Mailbox>mailbox</a>。
 </div>
@@ -600,7 +618,7 @@ callback是一个可选的回调函数，只有一个参数，当实体没有从数据库检出时将会成功删除
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数注销已经通过<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#registerFileDescriptor>registerFileDescriptor</a>注册的回调。
+注销已经通过<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#registerFileDescriptor>registerFileDescriptor</a>注册的回调。
 </div>
 
 <p>
@@ -620,7 +638,7 @@ socket描述符/文件描述符。
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数注销已经通过<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#registerWriteFileDescriptor>registerWriteFileDescriptor</a>注册的回调。
+注销已经通过<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#registerWriteFileDescriptor>registerWriteFileDescriptor</a>注册的回调。
 </div>
 
 <p>
@@ -1053,7 +1071,7 @@ int8，0：debug，1：release，其它可自定义。
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数返回取得当前tick占用一个时钟周期的百分比。
+返回取得当前tick占用一个时钟周期的百分比。
 </div>
 
 <p>
@@ -1071,7 +1089,7 @@ int8，0：debug，1：release，其它可自定义。
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数注册一个回调函数，这个回调函数当文件描述符可读时被调用。
+注册一个回调函数，这个回调函数当文件描述符可读时被调用。
 </div>
 
 <p>
@@ -1096,7 +1114,7 @@ def registerWriteFileDescriptor( <i>fileDescriptor, callback</i> ):</span>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数注册一个回调函数，这个回调函数当socket描述符/文件描述符可写时被调用。
+注册一个回调函数，这个回调函数当socket描述符/文件描述符可写时被调用。
 </div>
 
 <p>
@@ -1120,7 +1138,7 @@ socket描述符/文件描述符。
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数重新加载与实体和自定义数据类型相关的Python模块。当前实体类会设置为新加载的类。
+重新加载与实体和自定义数据类型相关的Python模块。当前实体类会设置为新加载的类。
 这个方法应该只用于开发模式，对于产品模式不合适。下面几点应该注意：
 <br><br>
 1）重载脚本仅仅能在baseapp上执行， 用户应该确保所有的服务端组件加载完成。
@@ -1160,7 +1178,7 @@ socket描述符/文件描述符。
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数设置当前Python.print输出的信息类型(参考: KBEngine.LOG_TYPE_*)。
+设置当前Python.print输出的信息类型(参考: KBEngine.LOG_TYPE_*)。
 </div>
 
 <a name="time"></a><p class="function_definition">
@@ -1211,7 +1229,7 @@ uint32，当前游戏的时间，这里指周期数，周期受频率影响，频率由配置文件<a href=../.
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个baseapp被关闭前回调此函数。
+baseapp关闭过程会回调此函数。
 <br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
 </div>
 
@@ -1220,7 +1238,7 @@ uint32，当前游戏的时间，这里指周期数，周期受频率影响，频率由配置文件<a href=../.
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>state</i></span></td><td><span class="function_parameter_description">
-如果state为0，意指在断开所有客户端之前，如果state为1，意指在将所有entity写入数据库之前，如果state为2，意指在所有entity被写入数据库之后。
+如果state为0，意指在断开所有客户端之前，如果state为1，意指在将所有实体写入数据库之前，如果state为2，意指在所有实体被写入数据库之后。
 </span></td></tr>
 
 </table>
@@ -1232,7 +1250,7 @@ uint32，当前游戏的时间，这里指周期数，周期受频率影响，频率由配置文件<a href=../.
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-某个cellapp死亡。
+某个cellapp死亡会回调此函数。
 <br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
 </div>
 
@@ -1566,7 +1584,7 @@ entities是一个字典对象，包含当前进程上所有的实体。
 <pre><a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#baseAppData>baseAppData</a>[ "hello" ] = "there"
 </pre>
 <br><br>
-其余CellApp可以访问下面的：
+其余BaseApps可以访问下面的：
 
 <pre>print <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#baseAppData>baseAppData</a>[ "hello" ]
 </pre>
@@ -1574,7 +1592,7 @@ entities是一个字典对象，包含当前进程上所有的实体。
 键和值可以是任意类型，但这些类型必须在所有目标组件上能够被封装和被拆封。
 <br><br>
 当一个值被改变或被删除，一个回调函数会在所有组件被调用。
-参看：<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#onCellAppData>onCellAppData</a>和<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#onDelBaseAppData>onDelBaseAppData</a>。
+参看：<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#onBaseAppData>onBaseAppData</a>和<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#onDelBaseAppData>onDelBaseAppData</a>。
 <br><br>
 注意：只有顶层的值才会被广播，如果你有一个值（比如一个列表），它改变了内部的值（比如只是改变一个数），这个信息不会被广播。
 <br><br>
@@ -1592,15 +1610,15 @@ entities是一个字典对象，包含当前进程上所有的实体。
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-这个属性包含一个类字典的对象，这个对象会在所有的BaseApp和CellApp之间自动同步。
-当字典的一个值被修改，这个修改会广播到所有的BaseApp和CellApp。
+这个属性包含一个类字典的对象，这个对象会在所有的BaseApps和CellApps之间自动同步。
+当字典的一个值被修改，这个修改会广播到所有的BaseApps和CellApps。
 <br><br>
 例子：
 
 <pre><a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#globalData>globalData</a>[ "hello" ] = "there"
 </pre>
 <br><br>
-其余CellApp或者BaseApp可以访问下面的：
+其余CellApps或者BaseApps可以访问下面的：
 
 <pre>print <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#globalData>globalData</a>[ "hello" ]
 </pre>
