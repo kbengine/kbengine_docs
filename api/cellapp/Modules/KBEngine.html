@@ -39,7 +39,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#createEntity" class="function_list" >createEntity</a>( class, spaceID, position, direction, state ):</span>
+<span class="function_list">def <a href="#createEntity" class="function_list" >createEntity</a>( class, spaceID, position, direction, params ):</span>
 </td></tr>
 
 <tr><td>
@@ -67,7 +67,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#getSpaceGeometryMappings" class="function_list" >getSpaceGeometryMappings</a>( spaceID ):</span>
+<span class="function_list">def <a href="#getSpaceGeometryMapping" class="function_list" >getSpaceGeometryMapping</a>( spaceID ):</span>
 </td></tr>
 
 <tr><td>
@@ -293,18 +293,34 @@ uint32，空间的ID，指定在哪个空间操作
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-返回一个新的blob对象。
+返回一个新的blob对象。<br>
+<br>
+Blob对象存储的是二进制信息，提供这个类型是为了让用户能够方便的序列化与反序列化Python基本类型同时能与KBEngine底层序列化规则相同。<br>
+<br><br>
+例如：你可以使用这个对象构造一个KBEngine能解析的网络数据包。
+<br><br>
+用法：
+<pre>
+>>> s = KBEngine.Blob()
+>>> s
+>>> b''
+>>> s.append("UINT32", 1)
+>>> s.pop("UINT32")
+>>> 1
+</pre>
+<br><br>
+目前Blob能够支持的类型仅为基本数据类型。参考: <a href=../../basetypes.html>基本类型</a>
 </div>
 
 
 <a name="createEntity"></a><p class="function_definition">
-<span class="function_definition">def createEntity( <i>class, spaceID, position, direction, state</i> ):</span>
+<span class="function_definition">def createEntity( <i>class, spaceID, position, direction, params</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-createEntity在cell上创建一个新的实体和把它放到世界里。这个函数设置新实体的
-类，位置和方向，还可以选择性地设置实体的任意属性（属性在实体的.def文件里描述）。
+createEntity在当前进程指定space中创建一个新的实体。<br>
+这个函数需要指定要创建的实体的类别，位置和方向，还可以选择性地设置实体的任意属性（属性在实体的.def文件里描述）。
 <br><br>
 例子：
 
@@ -321,7 +337,7 @@ properties = { "open":1 }
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>class</i></span></td><td><span class="function_parameter_description">
-要实例化的类的名字。需要注意的是这必须是一个实体类，在entities.xml文件里声明。
+string，要实例化的类的名字。需要注意的是这必须是一个实体类，在<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>文件里声明。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>spaceID</i></span></td><td><span class="function_parameter_description">
@@ -329,15 +345,16 @@ int32，要放置实体的空间的ID。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>position</i></span></td><td><span class="function_parameter_description">
-由3个float组成的序列，指定新实体的出生点，在世界的坐标。
+由3个float组成的序列，指定新实体的出生点，在世界中的坐标。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>direction</i></span></td><td><span class="function_parameter_description">
-由3个float组成的序列，指定新实体的初始方向(roll, pitch, yaw)，相对于世界坐标系。
+由3个float组成的序列，指定新实体的初始朝向(roll, pitch, yaw)，相对于世界坐标系。
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>state</i></span></td><td><span class="function_parameter_description">
-一个描述实体属性的初始状态的字典。一个属性如果没有列在这里，将带上它在.def文件里的默认值。
+<tr valign=top><td><span class="function_parameter_name"><i>params</i></span></td><td><span class="function_parameter_description">
+可选参数, 一个Python字典对象。
+如果一个指定的键是一个<a href="../Classes/Entity.html">Entity</a>属性，他的值会用来初始化这个<a href="../Classes/Entity.html">Entity</a>实体的属性。
 </span></td></tr>
 
 </table>
@@ -347,7 +364,7 @@ int32，要放置实体的空间的ID。
 <span class="function_return">返回：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-新实体。
+新<a href="../../keywords.html#cn_entity">实体</a>。
 </td></tr>
 </table>
 </p>
@@ -361,7 +378,7 @@ int32，要放置实体的空间的ID。
 <b>功能说明：</b><br><br>
 删除指定key的space数据（如果space分割成多个部分，将进行同步删除）。
 <br>
-space数据由用户通过setSpaceData设置。
+space数据由用户通过<a href=#setSpaceData>setSpaceData</a>设置。
 </div>
 
 <p>
@@ -501,7 +518,7 @@ string，资源的绝对路径。
 <b>功能说明：</b><br><br>
 获取指定key的space数据。
 <br>
-space数据由用户通过setSpaceData设置。
+space数据由用户通过<a href=#setSpaceData>setSpaceData</a>设置。
 </div>
 
 <p>
@@ -528,14 +545,13 @@ string，指定key的字符串数据。
 </p>
 
 
-<a name="getSpaceGeometryMappings"></a><p class="function_definition">
-<span class="function_definition">def getSpaceGeometryMappings( <i>spaceID</i> ):</span>
+<a name="getSpaceGeometryMapping"></a><p class="function_definition">
+<span class="function_definition">def getSpaceGeometryMapping( <i>spaceID</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-返回一个指定空间的"客户端-服务端"的几何映射。每一个列表元素由一个映射
-元组，它的变化矩阵和一个表明是否只是客户端的boolean值组成。
+返回一个指定空间的几何映射名称。
 </div>
 
 <p>
@@ -548,6 +564,16 @@ string，指定key的字符串数据。
 
 </table>
 </p>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+string，几何映射名称。
+</td></tr>
+</table>
+</p>
+
 
 
 
@@ -642,7 +668,7 @@ string，该变量的绝对路径(可以在GUIConsole的watcher页查看)。
 例子:
 <br>
 <br>
->>>KBEngine.hasRes("scripts/entities.xml")
+>>>KBEngine.hasRes("<a href=../../keywords.html#entities.xml>scripts/entities.xml</a>")
 <br>
 True
 </div>
@@ -893,7 +919,7 @@ int8，0：debug，1：release，其它可自定义。
 <b>功能说明：</b><br><br>
 设置指定key的space数据。
 <br>
-space数据可以通过getSpaceData获取。
+space数据可以通过<a href=#getSpaceData>getSpaceData</a>获取。
 </div>
 
 <p>
@@ -1059,8 +1085,8 @@ bool，是否是被重写加载脚本后触发的。
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-当引擎启动后初始化完所有的脚本后这个接口被调用。
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
+当space数据有改变的时候被调用。<br>
+space数据由用户通过<a href=#setSpaceData>setSpaceData</a>设置。
 </div>
 
 <p>
@@ -1092,8 +1118,8 @@ bool，是否是被重写加载脚本后触发的。
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-空间所需求的网格碰撞等chunk信息加载完毕。
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
+空间所需求的网格碰撞等数据加载完毕。<br>
+由用户通过<a href=#addSpaceGeometryMapping>addSpaceGeometryMapping</a>设置。
 </div>
 
 <p>
@@ -1105,7 +1131,7 @@ bool，是否是被重写加载脚本后触发的。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>mapping</i></span></td><td><span class="function_parameter_description">
-网格数据的chunk映射值。
+网格碰撞数据的映射值。
 </span></td></tr>
 
 </table>
@@ -1122,8 +1148,8 @@ bool，是否是被重写加载脚本后触发的。
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-空间的网格碰撞等chunk信息全部加载完毕。
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
+空间所需求的网格碰撞等数据全部加载完毕。<br>
+由用户通过<a href=#addSpaceGeometryMapping>addSpaceGeometryMapping</a>设置。
 </div>
 
 <p>
@@ -1139,7 +1165,7 @@ bool，是否是被重写加载脚本后触发的。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>mapping</i></span></td><td><span class="function_parameter_description">
-网格数据的chunk映射值。
+网格碰撞数据的映射值。
 </span></td></tr>
 
 </table>
@@ -1208,7 +1234,7 @@ bool，是否是被重写加载脚本后触发的。
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-这个常量用于Entity.shouldAutoBackup和Entity.shouldAutoArchive属性。这个值意指在下一次认为可以的时候自动备份该实体，然后这个属性自动设为False（0）。
+这个常量目前在Cellapp未被使用。
 </div>
 
 <a name="cellAppData"></a><p class="attribute_definition">
@@ -1252,7 +1278,7 @@ bool，是否是被重写加载脚本后触发的。
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-这是正运行在当前python环境的组件。（至今为止）可能值有'cell', 'base', 'client', 'database', 'bot' 和 'editor'。
+这是正运行在当前Python环境的组件。（至今为止）可能值有'cell', 'base', 'client', 'database', 'bot' 和 'editor'。
 </div>
 
 <a name="entities"></a><p class="attribute_definition">
