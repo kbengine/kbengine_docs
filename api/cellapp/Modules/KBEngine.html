@@ -237,7 +237,7 @@
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数与监视系统交互，允许用户向监视系统注册一个监视变量。
+这个函数与调试监视系统交互，允许用户向监视系统注册一个监视变量。
 <br><br>
 例：
 <br>
@@ -385,7 +385,7 @@ string，一个字符串关键字。
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-该函数与观察者调试系统交互，允许观察者变量的删除。
+与调试监视系统交互，允许用户在脚本删除监视的变量。
 </div>
 
 <p>
@@ -393,7 +393,7 @@ string，一个字符串关键字。
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>path</i></span></td><td><span class="function_parameter_description">
-要删除的观察者的路径。
+要删除的变量的路径。
 </span></td></tr>
 
 </table>
@@ -407,9 +407,9 @@ string，一个字符串关键字。
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个脚本函数在数据库上执行原始数据库命令。该命令将直接由相关数据库进行解析。
+这个脚本函数在数据库上执行原始数据库命令，该命令将直接由相关数据库进行解析。
 <br><br>
-请注意使用该函数修改实体数据可能不生效，如果实体已经检出，被修改过的实体数据将仍会被实体存档而覆盖。
+请注意使用该函数修改实体数据可能不生效，因为如果实体已经检出，被修改过的实体数据将仍会被实体存档而导致覆盖。
 强烈不推荐这个函数用于读取或修改实体数据。
 </div>
 
@@ -467,6 +467,7 @@ string，一个字符串关键字。
 <div class="function_description">
 <b>功能说明：</b><br><br>
 获取资源的绝对路径。
+<br>注意：资源必须在KBE_RES_PATH之下才可以访问到。 
 </div>
 
 <p>
