@@ -17,6 +17,10 @@
 		<param name="Local" value="keywords.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Base Types">
+		<param name="Local" value="basetypes.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="client">
 		</OBJECT>
 	<UL>

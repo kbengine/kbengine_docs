@@ -191,19 +191,18 @@
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-关联一个给定空间的几何映射。这使得几何体在客户端和服务端上被加载起来。
+关联一个给定空间的几何映射，函数调用之后服务端和客户端都会加载相应的几何体数据。<br>
 <br><br>
-在服务端上，来自给定目录里所有块的几何加载到指定的空间。这些块文件是异步加载的，当所有的几何加载
+在服务端上，从给定目录里加载所有的几何数据到指定的空间。这些数据可能被分成很多区块，不同区块是异步加载的，当所有的几何数据加载
 完成的时候下面的通知方法会被调用：
-
 <pre>	def onAllSpaceGeometryLoaded( self, spaceID, mappingName ):
 </pre>
-<br><br>
-服务端只加载它需要的数据。例如，它只加载每个模型的BSP，而不加载质感和模型的所有网格。
-<br><br>
-加载地形高度数据，但不加载地形结构化数据。为了节省内存，服务端可以加载较低分辨率的
-地形高度数据。这在space目录里的space.settings文件里指定。标签<terrain/lodInfo/server/heightMapLod>控制
-选择哪个LOD级别。标签值可以设为0到6。每一个级别是前一个分辨率的一半，所以0是完整的网格分辨率，1是这个分辨率的一半，以此类推。
+<br>
+
+服务端仅加载场景的几何数据提供给导航和碰撞功能使用，客户端除了几何数据外还会加载纹理等数据。
+<br>
+3D场景当前默认使用的是recastnavigation插件所导出的数据，2D场景当前默认使用的是MapEditor编辑器导出的数据。
+
 <br><br>
 有一种可能会导致onAllSpaceGeometryLoaded()不被调用，就是如果在某一个
 时刻多个CellApp同时调用这个方法来添加几何到相同的空间的时候CellAppMgr崩溃了。
@@ -213,7 +212,7 @@
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>spaceID</i></span></td><td><span class="function_parameter_description">
-指定在哪个空间操作
+uint32，空间的ID，指定在哪个空间操作
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>mapper</i></span></td><td><span class="function_parameter_description">
@@ -221,7 +220,7 @@
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>path</i></span></td><td><span class="function_parameter_description">
-包含块的目录路径
+包含几何数据的目录路径
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>shouldLoadOnServer</i></span></td><td><span class="function_parameter_description">
@@ -265,7 +264,7 @@
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>datatype</i></span></td><td><span class="function_parameter_description">
-监视变量的值类型。参考: <a href="http://www.kbengine.org/docs/programming/alias.html">基本类型</a>
+监视变量的值类型。参考: <a href=../../basetypes.html>基本类型</a>
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>getFunction</i></span></td><td><span class="function_parameter_description">
