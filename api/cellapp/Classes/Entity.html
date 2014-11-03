@@ -220,13 +220,13 @@
 <h2><a href="#" onClick="obj=document.getElementById( 'attributes' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">属性</a></h2>
 <table id="attributes" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><a href="#allClients" class="attribute_list" >allClients</a></td><td>&nbsp; 只读 <a href="MAILBOX.html">MAILBOX</a>
+<tr valign=top><td><a href="#allClients" class="attribute_list" >allClients</a></td><td>&nbsp; 只读 <a href=../../keywords.html#Mailbox>MAILBOX</a>
 </td></tr>
 
-<tr valign=top><td><a href="#base" class="attribute_list" >base</a></td><td>&nbsp; 只读 <a href="MAILBOX.html">MAILBOX</a>
+<tr valign=top><td><a href="#base" class="attribute_list" >base</a></td><td>&nbsp; 只读 <a href=../../keywords.html#Mailbox>MAILBOX</a>
 </td></tr>
 
-<tr valign=top><td><a href="#client" class="attribute_list" >client</a></td><td>&nbsp; 只读 <a href="MAILBOX.html">MAILBOX</a>
+<tr valign=top><td><a href="#client" class="attribute_list" >client</a></td><td>&nbsp; 只读 <a href=../../keywords.html#Mailbox>MAILBOX</a>
 </td></tr>
 
 <tr valign=top><td><a href="#direction" class="attribute_list" >direction</a></td><td>&nbsp; Tuple of 3 floats as (roll, pitch, yaw)
@@ -243,7 +243,7 @@
 
 <tr valign=top><td><a href="#isWitnessed" class="attribute_list" >isWitnessed</a></td><td>&nbsp; </td></tr>
 
-<tr valign=top><td><a href="#otherClients" class="attribute_list" >otherClients</a></td><td>&nbsp; 只读 <a href="MAILBOX.html">MAILBOX</a>
+<tr valign=top><td><a href="#otherClients" class="attribute_list" >otherClients</a></td><td>&nbsp; 只读 <a href=../../keywords.html#Mailbox>MAILBOX</a>
 </td></tr>
 
 <tr valign=top><td><a href="#position" class="attribute_list" >position</a></td><td>&nbsp; <a href="Vector3.html">Vector3</a>
@@ -285,7 +285,7 @@ cellApp上新的<a href="Entity.html">Entity</a>可以使用<a href="KBEngine.html">KBE
 创建。一个实体还可以通过baseApp远程调用<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#createCellEntity>createCellEntity</a>函数
 来创建。
 <br><br>
-一个<a href="Entity.html">Entity</a>可以通过MAILBOX访问在base和client应用程序上的等价的实体。这需要
+一个<a href="Entity.html">Entity</a>可以通过<a href=../../keywords.html#Mailbox>MAILBOX</a>访问在base和client应用程序上的等价的实体。这需要
 一组远程调用的函数（在实体的.def文件里指定）。
 
 <hr>
@@ -818,7 +818,7 @@ None
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数设置<a href="Entity.html">Entity</a>的位置和方向。可选的，一个MAILBOX可以传给这个函数，指定
+这个函数设置<a href="Entity.html">Entity</a>的位置和方向。可选的，一个<a href=../../keywords.html#Mailbox>MAILBOX</a>可以传给这个函数，指定
 一个cell实体邻近这个<a href="Entity.html">Entity</a>的期望目的地（和在这个期望的目标空间里）。
 <br><br>
 需要注意的是有不允许传播位置数据的易变信息的实体会以一种低效的方式发送它们的更新位置给客户端。
@@ -832,7 +832,7 @@ None
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>nearbyMBRef</i></span></td><td><span class="function_parameter_description">
-一个决定<a href="Entity.html">Entity</a>跳往哪个Space和CellApp的MAILBOX，它被认为是邻近传送目的地。
+一个决定<a href="Entity.html">Entity</a>跳往哪个Space和CellApp的<a href=../../keywords.html#Mailbox>MAILBOX</a>，它被认为是邻近传送目的地。
 这个可以设为None，在这种情形下它会停留在当前的cell上直到cell通过常规的方式迁移。
 </span></td></tr>
 

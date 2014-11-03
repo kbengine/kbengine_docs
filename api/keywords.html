@@ -1,0 +1,140 @@
+<html>
+
+<head>
+<title>KBEngine - Keywords</title>
+<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td align=left style="background:#708090"> <font size=15 color=#ffffff> KBEngine </font></td></tr>
+</table> <hr>
+
+<h1>关键词释义</h1>
+<br></br>
+
+<a name="Mailbox"></a><p class="function_definition">
+<span class="function_definition">Mailbox:</span>
+</p>
+
+<div class="function_description">
+<br><br>
+脚本层与实体远程交互（RPC）的唯一手段。<br>
+Mailbox对象在C++底层实现非常简单，它只包含了实体的ID、目的地的地址、实体类型、Mailbox类型。当用户请求一次远程交互时，底层首先能够通过实体类型找到实体定义的描述，<br>
+通过实体定义的描述对用户输入的数据进行检查，如果检查合法那么底层将数据打包并发往目的地，目的地进程根据协议进行解包最终调用到脚本层。<br><br>
+
+注意: Mailbox只能调用其对应def文件中声明过的方法，不能访问实体的属性以及其他任何信息。
+
+<br><br>
+一个实体最多可以包含三个部分：<br>
+client： 当实体包括客户端部分时(通常为玩家)，在服务端可以访问实体的client(Mailbox)属性。<br>
+base：当实体的一部分创建在Baseapp时，在非Baseapp中可以访问实体的base(Mailbox)属性。<br>
+cell：当实体的一部分创建在Cellapp时，在非Cellapp中可以访问实体的cell(Mailbox)属性。<br>
+<br>
+举例:<br><br>
+Avatar.def中定义client远程方法:
+<pre>
+	&lt;ClientMethods&gt;
+		&lt;hello&gt;
+		&lt;/hello&gt;
+	&lt;/ClientMethods&gt;
+</pre>
+
+<br><br>
+client\Avatar.py
+<pre>
+	class Avatar:
+		def hello(self):
+			print("hello")
+</pre>
+<br><br>
+用GUIConsole在服务端找到Avatar的实体或者Mailbox:<br>
+avatar.client.hello()<br>
+<br>
+此时客户端log文件中将输出"hello", 一次远程调用过程完成。
+</div>
+
+
+
+<a name="KBE_ROOT"></a><p class="function_definition">
+<span class="function_definition">KBE_ROOT:</span>
+</p>
+
+<div class="function_description">
+<br><br>
+这是一个KBEngine的环境变量，描述的是KBEngine所在的根目录。
+</div>
+
+
+
+<a name="KBE_RES_PATH"></a><p class="function_definition">
+<span class="function_definition">KBE_RES_PATH:</span>
+</p>
+
+<div class="function_description">
+<br><br>
+这是一个KBEngine的环境变量，描述的是KBEngine引擎能够读取到的资源目录。
+</div>
+
+
+
+<a name="KBE_HYBRID_PATH"></a><p class="function_definition">
+<span class="function_definition">KBE_HYBRID_PATH:</span>
+</p>
+
+<div class="function_description">
+<br><br>
+这是一个KBEngine的环境变量，描述的是KBEngine引擎可执行文件所在的目录。
+</div>
+
+
+
+<a name="entities.xml"></a><p class="function_definition">
+<span class="function_definition">entities.xml:</span>
+</p>
+
+<div class="function_description">
+<br><br>
+服务端所有有效的实体类型必须在此进行注册，引擎初始化时会根据此处依次加载实体的描述信息。
+</div>
+
+
+
+<a name="kbengine_defs.xml"></a><p class="function_definition">
+<span class="function_definition">kbengine_defs.xml:</span>
+</p>
+
+<div class="function_description">
+<br><br>
+服务端默认配置，在此用户可以修改cellapp、baseapp、loginapp等所有的组件配置。
+<br>
+注意：你可能经常需要对引擎进行升级，直接修改此处可能在升级时产生冲突，另外也不适合多个项目放在同一KBEngine环境的情况。
+<br>
+建议在<a href=#kbengine.xml>kbengine.xml</a>中进行重载修改，你只需要对想修改的部分按照格式在xml中重写就可以了。
+</div>
+
+
+
+<a name="kbengine.xml"></a><p class="function_definition">
+<span class="function_definition">kbengine.xml:</span>
+</p>
+
+<div class="function_description">
+<br><br>
+服务端配置，在此用户可以修改cellapp、baseapp、loginapp等所有的组件配置。<br><br>
+详细请参考<a href=#kbengine_defs.xml>kbengine_defs.xml</a>
+</div>
+
+
+
+
+<br></br>
+<br></br>
+<br></br>
+<br></br>
+<hr></hr>
+
+<hr>
+<p class="copyrightFooter">版权归KBEngine所有。</p>
+</body>
+</html>
