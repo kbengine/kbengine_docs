@@ -13,6 +13,10 @@
 		<param name="Local" value="index.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Keywords">
+		<param name="Local" value="keywords.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="client">
 		</OBJECT>
 	<UL>
@@ -27,6 +31,10 @@
 		<param name="Name" value="cellapp">
 		</OBJECT>
 	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Introduction">
+			<param name="Local" value="cellapp\index.html">
+			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="modules">
 			</OBJECT>
@@ -50,6 +58,10 @@
 		<param name="Name" value="baseapp">
 		</OBJECT>
 	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Introduction">
+			<param name="Local" value="baseapp\index.html">
+			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="modules">
 			</OBJECT>
