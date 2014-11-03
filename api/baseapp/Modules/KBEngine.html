@@ -381,10 +381,10 @@ datas：bytes或BLOB，附带数据，由开发者自己解析和定义<br>
 <div class="function_description">
 <b>功能说明：</b><br><br>
 创建一个新的<a href="../Classes/Base.html">Base</a>实体，
-服务端可能选择任何的BaseApp来创建<a href="../Classes/Base.html">Base</a>实体。
+服务端可能选择任何的<a href="../index.html">Baseapp</a>来创建<a href="../Classes/Base.html">Base</a>实体。
 <br><br>
 这个方法应作为<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#createBaseLocally>createBaseLocally</a>的首选，
-这样服务端会灵活地选择一个合适的BaseApp来创建实体。
+这样服务端会灵活地选择一个合适的<a href="../index.html">Baseapp</a>来创建实体。
 <br><br>
 函数参数需要创建的实体的类型，还有一个Python字典作为参数来初始化实体的值。
 <br><br>
@@ -444,7 +444,7 @@ callback是一个可选的回调函数，当实体完成创建时被调用。回调函数带有一个参数，当成
 <div class="function_description">
 <b>功能说明：</b><br><br>
 从数据库里加载数据创建一个<a href="../Classes/Base.html">Base</a>实体。
-这个新的<a href="../Classes/Base.html">Base</a>实体会在调用这个函数的BaseApp上创建。
+这个新的<a href="../Classes/Base.html">Base</a>实体会在调用这个函数的<a href="../index.html">Baseapp</a>上创建。
 如果该实体已经存在，那么将返回这个存在的<a href="../Classes/Base.html">Base</a>实体的引用。
 </div>
 
@@ -478,7 +478,7 @@ wasActive会是False。失败最常见的原因是实体在数据库里不存在，但偶尔也会出现其它错
 <div class="function_description">
 <b>功能说明：</b><br><br>
 从数据库里加载数据创建一个<a href="../Classes/Base.html">Base</a>实体。
-服务端可能选择任何的BaseApp来创建<a href="../Classes/Base.html">Base</a>实体。
+服务端可能选择任何的<a href="../index.html">Baseapp</a>来创建<a href="../Classes/Base.html">Base</a>实体。
 <br><br>
 使用这个函数将有助于BaseApps负载平衡。
 <br><br>
@@ -526,7 +526,7 @@ callback是一个可选的回调函数，当实体完成创建时被调用。回调函数带有一个参数，当成
 这个Python字典不需要用户提供所有的属性，没有提供的属性默认为实体定义文件".def"提供的默认值。
 <br><br>
 <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#createBaseAnywhere>createBaseAnywhere</a>应该作为这个方法的首选，因为服务端可以灵活地
-在合适的BaseApp上创建实体。
+在合适的<a href="../index.html">Baseapp</a>上创建实体。
 <br><br>
 例子：<br>
 <pre>
@@ -1157,7 +1157,7 @@ socket描述符/文件描述符。
 重新加载与实体和自定义数据类型相关的Python模块。当前实体类会设置为新加载的类。
 这个方法应该只用于开发模式，对于产品模式不合适。下面几点应该注意：
 <br><br>
-1）重载脚本仅仅能在baseapp上执行， 用户应该确保所有的服务端组件加载完成。
+1）重载脚本仅仅能在<a href="../index.html">Baseapp</a>上执行， 用户应该确保所有的服务端组件加载完成。
 <br><br>
 2）自定义类型在脚本重载后应该确保内存中已经实例化的对象也被更新，下面是一个例子:
 <br><br>
@@ -1224,7 +1224,7 @@ uint32，当前游戏的时间，这里指周期数，周期受频率影响，频率由配置文件<a href=../.
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-当前baseapp进程已经准备好的时候回调此函数。
+当前<a href="../index.html">Baseapp</a>进程已经准备好的时候回调此函数。
 <br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
 </div>
 
@@ -1233,7 +1233,7 @@ uint32，当前游戏的时间，这里指周期数，周期受频率影响，频率由配置文件<a href=../.
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>bootstrapIdx</i></span></td><td><span class="function_parameter_description">
-当前进程在多个baseapp中的启动顺序（从1开始计数）。
+当前进程在多个<a href="../index.html">Baseapp</a>中的启动顺序（从1开始计数）。
 </span></td></tr>
 
 </table>
@@ -1245,7 +1245,7 @@ uint32，当前游戏的时间，这里指周期数，周期受频率影响，频率由配置文件<a href=../.
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-baseapp关闭过程会回调此函数。
+<a href="../index.html">Baseapp</a>关闭过程会回调此函数。
 <br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
 </div>
 
@@ -1452,7 +1452,7 @@ bool，是否成功。
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>bootstrapIdx</i></span></td><td><span class="function_parameter_description">
-int32，当前进程在多个baseapp中的启动顺序（从1开始计数）。
+int32，当前进程在多个<a href="../index.html">Baseapp</a>中的启动顺序（从1开始计数）。
 </span></td></tr>
 
 
@@ -1634,7 +1634,7 @@ entities是一个字典对象，包含当前进程上所有的实体。
 <pre><a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#globalData>globalData</a>[ "hello" ] = "there"
 </pre>
 <br><br>
-其余CellApps或者BaseApps可以访问下面的：
+其余<a href="../index.html">Baseapp</a>或者<a href="../index.html"><a href="../../cellapp/index.html">Cellapp</a></a>可以访问下面的：
 
 <pre>print <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#globalData>globalData</a>[ "hello" ]
 </pre>

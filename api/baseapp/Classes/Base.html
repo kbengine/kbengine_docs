@@ -122,13 +122,12 @@
 
 <hr>
 <a name="detailed_description"></a><h2>详细描述</h2>
-类<a href="Base.html">Base</a>代表一个驻留在baseapp上的实体。 <a href="Base.html">Base</a>
-实体可以通过<a href="../Modules/KBEngine.html">KBEngine</a>.<a href=KBEngine.html#createBase>createBase</a>函数(以及以createBase为前缀的函数)创建。一个base实体实例也可以通过cellapp的函数<a href="../Modules/KBEngine.html">KBEngine</a>.<a href=KBEngine.html#createEntityOnBaseApp>createEntityOnBaseApp</a>远程调用。
+<a href="Base.html">Base</a>类代表一个驻留在<a href="../index.html">Baseapp</a>上的实体。 <a href="Base.html">Base</a>
+实体可以通过<a href="../Modules/KBEngine.html">KBEngine</a>.<a href=KBEngine.html#createBase>createBase</a>函数(以及以createBase为前缀的函数)创建。一个<a href="Base.html">Base</a>实体实例也可以通过cellapp的函数<a href="../Modules/KBEngine.html">KBEngine</a>.<a href=../../cellapp/Modules/KBEngine.html#createEntityOnBaseApp>createEntityOnBaseApp</a>远程调用。
 <br><br>
-一个base实体可以在一个活动的cells里面链接到一个实体，还可以被用来在一个合适的cell上创建一个关联的实体。
-这个类允许你创建和销毁在cell上的实体，在base实体上注册一个定时器的回调函数，访问此对象的联系信息，还可以访问
-一个<a href="CellEntityMailBox.html">CellEntityMailBox</a>，通过它这个base实体可以与它的cell实体通信（这个被关联的cell实体可以移动到不同
-cell上，作为该cell实体移动的结果，或负载均衡）。
+一个<a href="Base.html">Base</a>实体可以在一个活动的<a href=../../keywords.html#cell>cells</a>里面链接到一个实体，还可以被用来在一个合适的<a href=../../keywords.html#cell>cell</a>上创建一个关联的实体。
+这个类允许你创建和销毁在<a href=../../keywords.html#cell>cell</a>上的实体或者在base实体上注册一个定时器也或者访问此对象的联系信息，<br>
+还可以访问一个<a href="../../keywords.html#mailbox">CellEntityMailBox</a>，通过它这个base实体可以与它的<a href=../../keywords.html#cell>cell</a>实体通信（这个被关联的<a href=../../keywords.html#cell>cell</a>实体可以移动到不同<a href=../../keywords.html#cell>cell</a>上，作为该<a href=../../keywords.html#cell>cell</a>实体移动的结果KBEngine会进行负载均衡）。
 
 <hr>
 <h2>成员函数文档</h2>
@@ -139,9 +138,9 @@ cell上，作为该cell实体移动的结果，或负载均衡）。
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-函数addTimer注册回调函数<i>onTimer</i>，回调函数将在"initialOffset"秒后被执行第1次，而后将每间隔"repeatOffset"秒执行1次，可透传用户参数"userArg"（仅限integer类型）。
+函数addTimer注册回调函数<i><a href="#onTimer">onTimer</a></i>，回调函数将在"initialOffset"秒后被执行第1次，而后将每间隔"repeatOffset"秒执行1次，可设定一个用户参数"userArg"（仅限integer类型）。
 <br><br>
-<i>onTimer</i> 函数必须在entity的base部分被定义，且带有2个参数，第1个integer类型的是timer的id（可用于移除timer的"delTimer"函数），第2个是用户透传的参数"userArg"。
+注册base定时器，<i><a href="#onTimer">onTimer</a></i> 函数必须在entity的base部分被定义，且带有2个参数，第1个integer类型的是timer的id（可用于移除timer的"<a href="#delTimer">delTimer</a>"函数），第2个是用户参数"userArg"。
 <br><br>
 例子:
 
@@ -159,7 +158,7 @@ class MyBaseEntity( <a href="../Modules/KBEngine.html">KBEngine</a>.<a href="Bas
         # 增加一个定时器，1秒后执行，用户参数缺省是0
         self.addTimer( 1 )
 &nbsp;
-    # 增加到一个<a href="Base.html">Base</a>的定时器有"onTimer" 作为它们定时器的函数被调用
+    # <a href="Base.html">Base</a>的定时器回调"onTimer"被调用
     def onTimer( self, id, userArg ):
         print "MyBaseEntity.onTimer called: id %i, userArg: %i" % ( id, userArg )
         # if 这是不断重复的定时器，当不再需要该定时器的时候，调用下面函数移除:
@@ -173,17 +172,17 @@ class MyBaseEntity( <a href="../Modules/KBEngine.html">KBEngine</a>.<a href="Bas
 
 <tr valign=top><td><span class="function_parameter_name"><i>initialOffset</i></span></td><td><span class="function_parameter_description">
 initialOffset是float类型参数，
-指定从定时器的注册到第一次回调的时间间隔（单位秒）。
+指定定时器从注册到第一次回调的时间间隔（秒）。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>repeatOffset</i></span></td><td><span class="function_parameter_description">
 repeatOffset一个可选的float类型参数，
-指定第一次回调执行后每次执行的时间间隔（单位秒）。必须用函数delTimer移除定时器，否则它会一直重复下去。值小于等于0将被忽略。
+指定第一次回调执行后每次执行的时间间隔（秒）。必须用函数delTimer移除定时器，否则它会一直重复下去。值小于等于0将被忽略。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>userArg</i></span></td><td><span class="function_parameter_description">
 userArg是一个可选的integer类型参数，
-指定用户提供传给base实体"onTimer"函数的数值。
+指定用户提供底层回调base实体"<a href="#onTimer">onTimer</a>"函数的userArg。
 </span></td></tr>
 
 </table>

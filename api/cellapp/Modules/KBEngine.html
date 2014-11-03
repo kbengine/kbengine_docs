@@ -869,7 +869,7 @@ int8，0：debug，1：release，其它可自定义。
 重新加载与实体和自定义数据类型相关的Python模块。当前实体类会设置为新加载的类。
 这个方法应该只用于开发模式，对于产品模式不合适。下面几点应该注意：
 <br><br>
-1）重载脚本仅仅能在baseapp上执行， 用户应该确保所有的服务端组件加载完成。
+1）重载脚本仅仅能在<a href="../index.html">Cellapp</a>上执行， 用户应该确保所有的服务端组件加载完成。
 <br><br>
 2）自定义类型在脚本重载后应该确保内存中已经实例化的对象也被更新，下面是一个例子:
 <br><br>
@@ -1312,7 +1312,7 @@ entities是一个字典对象，包含当前进程上所有的实体，包括ghost实体。
 <pre><a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#globalData>globalData</a>[ "hello" ] = "there"
 </pre>
 <br><br>
-其余CellApp或者BaseApp可以访问下面的：
+其余<a href="../index.html">Cellapp</a>或者<a href="../index.html"><a href="../../baseapp/index.html">Baseapp</a></a>可以访问下面的：
 
 <pre>print <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#globalData>globalData</a>[ "hello" ]
 </pre>

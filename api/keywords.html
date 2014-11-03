@@ -106,7 +106,7 @@ avatar.client.hello()<br>
 
 <div class="function_description">
 <br><br>
-服务端默认配置，在此用户可以修改cellapp、baseapp、loginapp等所有的组件配置。
+服务端默认配置，在此用户可以修改<a href=cellapp/index.html>cellapp</a>、<a href=baseapp/index.html>baseapp</a>、loginapp等所有的组件配置。
 <br>
 注意：你可能经常需要对引擎进行升级，直接修改此处可能在升级时产生冲突，另外也不适合多个项目放在同一KBEngine环境的情况。
 <br>
@@ -121,7 +121,7 @@ avatar.client.hello()<br>
 
 <div class="function_description">
 <br><br>
-服务端配置，在此用户可以修改cellapp、baseapp、loginapp等所有的组件配置。<br><br>
+服务端配置，在此用户可以修改<a href=cellapp/index.html>cellapp</a>、<a href=baseapp/index.html>baseapp</a>、loginapp等所有的组件配置。<br><br>
 详细请参考<a href=#kbengine_defs.xml>kbengine_defs.xml</a>
 </div>
 
@@ -168,12 +168,66 @@ area of interest。<br>
 <div class="function_description">
 <br><br>
 目击者。<br>
-只有绑定了Witness的cell实体AOI才能产生作用，换句话来说witness就是客户端的一个cell代理。<br>
+只有绑定了Witness的<a href=#cell>cell</a>实体AOI才能产生作用，换句话来说witness就是客户端的一个<a href=#cell>cell</a>代理。<br>
 服务端一个NPC被目击者目击时会调用实体的onWitness回调，服务端可以依赖于此特性降低CPU的消耗，当一个实体<br>
 没有被目击时，用户可以停止它的任何行为。<br>
 </div>
 
 
+<a name="Space"></a><p class="function_definition">
+<span class="function_definition">Space</span>
+</p>
+
+<div class="function_description">
+<br><br>
+空间，KBEngine在cellapp上分配一个空间，这个空间与其他空间隔离，AOI、陷阱、实体碰撞等等只在当前空间相互影响。<br>
+空间具体是什么由用户来定义，它可以是一个场景、副本、房间...
+</div>
+
+
+<a name="cn_Space"></a><p class="function_definition">
+<span class="function_definition">空间</span>
+</p>
+
+<div class="function_description">
+<br><br>
+参见: <a href=#Space>Space</a>
+</div>
+
+
+<a name="cell"></a><p class="function_definition">
+<span class="function_definition">cell</span>
+</p>
+
+<div class="function_description">
+<br><br>
+cell在文档中存在二个不同的意思。<br>
+通常如果描述的是<a href=baseapp/classes/Base.html#cell>Base.cell</a>属性， 此时实际是在描述实体的<a href=#Mailbox>CellMailbox</a>。<br>
+
+如果是在cellapp上有关cell的描述通常是在描述一个<a href=#cn_Space>空间</a>的一部分，一个空间在<a href=cellapp/index.html>cellapp</a>进行负载平衡时有可能被分割成N份，每一份称之为一个cell，每个cell由不同进程维护。<br>
+</div>
+
+
+<a name="cellapp"></a><p class="function_definition">
+<span class="function_definition">cellapp</span>
+</p>
+
+<div class="function_description">
+<br><br>
+Cellapp进程主要负责与位置有关类游戏逻辑、AOI、AI、场景房间等等。<br>
+参见: <a href=cellapp/index.html>cellapp</a>
+</div>
+
+
+<a name="baseapp"></a><p class="function_definition">
+<span class="function_definition">baseapp</span>
+</p>
+
+<div class="function_description">
+<br><br>
+Baseapp进程主要负责与客户端通讯、与位置无关类游戏逻辑(公会管理器、聊天系统、游戏大厅、排行榜等等)、存档与备份等等。<br>
+参见: <a href=baseapp/index.html>baseapp</a>
+</div>
 
 
 <br></br>
