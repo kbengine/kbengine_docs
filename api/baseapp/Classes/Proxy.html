@@ -127,8 +127,7 @@ CLIENT_TYPE_END					= 5		// end<br/>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数传输这个proxy关联的客户端给另外一个proxy。当前的proxy必须有一个客户端
-而目标proxy则不必须有。
+将客户端的控制器转交给另一个Proxy，当前的Proxy必须有一个客户端而目标Proxy则必须没有关联客户端，否则将会提示错误。
 </div>
 
 <p>
@@ -143,7 +142,7 @@ CLIENT_TYPE_END					= 5		// end<br/>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>proxy</i></span></td><td><span class="function_parameter_description">
-传输客户端到的proxy。
+控制权将转交给这个实体。
 </span></td></tr>
 
 </table>
