@@ -38,10 +38,6 @@
 <table id="callbacks" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr><td>
-<span class="function_list">def <a href="#clientDead" class="function_list" >clientDead</a>( self ):</span>
-</td></tr>
-
-<tr><td>
 <span class="function_list">def <a href="#onClientDeath" class="function_list" >onClientDeath</a>( self ):</span>
 </td></tr>
 
@@ -55,10 +51,6 @@
 
 <tr><td>
 <span class="function_list">def <a href="#onGiveClientToFailure" class="function_list" >onGiveClientToFailure</a>( self ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#onLatencyTrigger" class="function_list" >onLatencyTrigger</a>( self, latency, goneAboveThis ):</span>
 </td></tr>
 
 <tr><td>
@@ -154,9 +146,7 @@ CLIENT_TYPE_END					= 5		// end<br/>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数类似于streamStringToClient()，与之不同的是第一个字符串参数是一个
-要发送给客户端的文件路径，而不是数据本身。这个应该用于当数据全部从磁盘里
-读出时发送给客户端，所有文件在不同的线程上操作，因此不会危及主线程。
+这个函数类似于<a href="Proxy.html#streamStringToClient">streamStringToClient()</a>，将一个资源文件发送给客户端。发送过程在不同的线程上操作，因此不会危及主线程。
 </div>
 
 <p>
@@ -171,15 +161,15 @@ CLIENT_TYPE_END					= 5		// end<br/>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>resourceName</i></span></td><td><span class="function_parameter_description">
-要发送的资源名称。
+要发送的资源名称，包含路径。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>desc</i></span></td><td><span class="function_parameter_description">
-一个可选的字符串，发送给客户端的描述。
+一个可选的字符串，发送给客户端的资源描述。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>id</i></span></td><td><span class="function_parameter_description">
-一个16位的id，它的值完全取决于调用者。如果传入-1系统将会在队列里面选择一个没有在用的id。
+一个16位的id，它的值完全取决于调用者。如果传入-1系统将会在队列里面选择一个没有在用的id。可以在客户端根据这个id做资源判断。
 </span></td></tr>
 
 </table>
@@ -200,15 +190,15 @@ CLIENT_TYPE_END					= 5		// end<br/>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数发送一些数据到当前依附它的客户端。如果客户端是分离的则数据被清除，
-当客户端依附的时候才可调用这个函数。16位的id完全取决于调用者。如果调用者没有指定
-这个ID则系统会分配一个未用过的id。
+发送一些数据到当前实体绑定的客户端。如果客户端端口则数据被清除，
+当客户端再次绑定到实体的时候才可调用这个函数。16位的id完全取决于调用者。
+<br>
+如果调用者没有指定这个ID则系统会分配一个未用过的id。可以在客户端根据这个id做资源判断。
 <br><br>
-你可以在Proxy的派生类中定义回调函数（onStreamComplete），所有数据发送成功给
-客户端时，或下载失败时会调用这个回调函数。
+你可以在Proxy的派生类中定义回调函数（onStreamComplete），所有数据成功发送给客户端时或下载失败时会调用这个回调函数。
 <br><br>
-参看base Python API文档的<a href="Proxy.html">Proxy</a>.<a href=Proxy.html#onStreamComplete>onStreamComplete</a>，
-和client Python API文档的<a href="BWPersonality.html">BWPersonality</a>.<a href=BWPersonality.html#onStreamComplete>onStreamComplete</a>。
+参看：<a href="Proxy.html">Proxy</a>.<a href=Proxy.html#onStreamComplete>onStreamComplete</a>与客户端实体<a href=../../client/classes/Entity.html>Entity</a>.<a href=../../client/classes/Entity.html#onStreamDataStarted>onStreamDataStarted</a>和
+<a href=../../client/classes/Entity.html>Entity</a>.<a href=../../client/classes/Entity.html#onStreamDataRecv>onStreamDataRecv</a>还有<a href=../../client/classes/Entity.html>Entity</a>.<a href=../../client/classes/Entity.html#onStreamDataCompleted>onStreamDataCompleted</a>。
 </div>
 
 <p>
@@ -242,108 +232,62 @@ CLIENT_TYPE_END					= 5		// end<br/>
 <hr>
 <h2>回调函数文档</h2>
 
-<a name="clientDead"></a><p class="function_definition">
-<span class="function_definition">def clientDead( <i>self</i> ):</span>
-</p>
-
-<div class="function_description">This callback method is obsolete. It is replaced by onClientDeath.
-</div>
 
 <a name="onClientDeath"></a><p class="function_definition">
 <span class="function_definition">def onClientDeath( <i>self</i> ):</span>
 </p>
 
-<div class="function_description">If present, this method is called when it has been detected that the
-associated client has disconnected. This method has no arguments.
+<div class="function_description">如果在脚本中实现了此回调，这个方法将在客户端断开连接时被调用。 这个方法没有参数。
 </div>
 
 <a name="onClientGetCell"></a><p class="function_definition">
 <span class="function_definition">def onClientGetCell( <i>self</i> ):</span>
 </p>
 
-<div class="function_description">If present, this method is called when the message to the client that it now
-has a cell is called.
+<div class="function_description">如果在脚本中实现了此回调，当客户端能够调用实体的<a href=../../keywords.html#cell>cell</a>属性时，该回调被调用。
 </div>
 
 <a name="onEntitiesEnabled"></a><p class="function_definition">
 <span class="function_definition">def onEntitiesEnabled( <i>self</i> ):</span>
 </p>
 
-<div class="function_description">If present, this method is called when the client requests that updates
-from the cell be enabled. This method has no arguments.
+<div class="function_description">如果在脚本中实现了此回调，当实体可用时（ 各种初始化完毕并且可以与客户端通讯 ）该回调被调用。 这个方法没有参数。
 </div>
 
 <a name="onGiveClientToFailure"></a><p class="function_definition">
 <span class="function_definition">def onGiveClientToFailure( <i>self</i> ):</span>
 </p>
 
-<div class="function_description">This is called if giveClientTo has been called for a remote proxy that could
-not accept this client connection. For example if it already has a client
-connected.
+<div class="function_description">
+如果在脚本中实现了此回调，当实体调用<a href=#onStreamComplete>giveClientTo</a>失败时，该回调被调用。这个方法没有参数。
 </div>
 
-<a name="onLatencyTrigger"></a><p class="function_definition">
-<span class="function_definition">def onLatencyTrigger( <i>self, latency, goneAboveThis</i> ):</span>
-</p>
-
-<div class="function_description">This method is called when the latency associated with the channel to this
-proxy's client, crosses a threshold in the latencyTriggers attribute. To
-check the current latency use <a href="Proxy.html">Proxy</a>.<a href=Proxy.html#roundTripTime>roundTripTime</a> or
-<a href="Proxy.html">Proxy</a>.<a href=Proxy.html#timeSinceHeardFromClient>timeSinceHeardFromClient</a>.
-</div>
-
-<p>
-<span class="function_parameter">参数：</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-
-<tr valign=top><td><span class="function_parameter_name"><i>latency</i></span></td><td><span class="function_parameter_description">&nbsp;The latency trigger value.
-</span></td></tr>
-
-<tr valign=top><td><span class="function_parameter_name"><i>goneAboveThis</i></span></td><td><span class="function_parameter_description">&nbsp;Indicates whether the latency has gone above or
-	below this.
-</span></td></tr>
-
-</table>
-</p>
 
 <a name="onLogOnAttempt"></a><p class="function_definition">
 <span class="function_definition">def onLogOnAttempt( <i>self, ip, port, password</i> ):</span>
 </p>
 
-<div class="function_description">If present, this method is called if a client attempts to log in and wants
-to use this entity.
+<div class="function_description">如果在脚本中实现了此回调，这个函数在客户端尝试使用当前账号实体进行登录时触发回调。<br>
+这种情况通常是实体存在于内存中处于有效状态，最明显的例子是用户A使用此账号登录了，用户B使用同一账号进行登录，此时回调触发。
 <br><br>
-This callback should return one of the following: <a href="../Modules/KBEngine.html">KBEngine</a>.<a href=KBEngine.html#LOG_ON_ACCEPT>LOG_ON_ACCEPT</a>,
-<a href="../Modules/KBEngine.html">KBEngine</a>.<a href=KBEngine.html#LOG_ON_REJECT>LOG_ON_REJECT</a>, <a href="../Modules/KBEngine.html">KBEngine</a>.<a href=KBEngine.html#LOG_ON_WAIT_FOR_DESTROY>LOG_ON_WAIT_FOR_DESTROY</a>.
+这个回调函数可以返回如下常量值：<br> 
+<a href="../Modules/KBEngine.html">KBEngine</a>.<a href=KBEngine.html#LOG_ON_ACCEPT>LOG_ON_ACCEPT</a>：允许新的客户端与实体进行绑定，如果实体已经绑定了一个客户端，之前的客户端将被踢出。<br>
+<a href="../Modules/KBEngine.html">KBEngine</a>.<a href=KBEngine.html#LOG_ON_REJECT>LOG_ON_REJECT</a>：拒绝新的客户端与实体绑定。 
+<br><a href="../Modules/KBEngine.html">KBEngine</a>.<a href=KBEngine.html#LOG_ON_WAIT_FOR_DESTROY>LOG_ON_WAIT_FOR_DESTROY</a>：等待实体销毁后再进行客户端绑定。
 <br><br>
-If this callback returns <a href="../Modules/KBEngine.html">KBEngine</a>.<a href=KBEngine.html#LOG_ON_REJECT>LOG_ON_REJECT</a>, the log on attempt fails.
-<br><br>
-If this callback returns <a href="../Modules/KBEngine.html">KBEngine</a>.<a href=KBEngine.html#LOG_ON_ACCEPT>LOG_ON_ACCEPT</a>, the client is attached to
-this active entity.
-<br><br>
-If this callback returns <a href="../Modules/KBEngine.html">KBEngine</a>.<a href=KBEngine.html#LOG_ON_WAIT_FOR_DESTROY>LOG_ON_WAIT_FOR_DESTROY</a> or the proxy
-destroys itself in this callback, the log on attempt will wait until the
-current entity has logged off and then log on as normal. Note: The
-calling code is still responsible for ensuring the current entity
-is destroyed via <a href="Base.html">Base</a>.<a href=Base.html#destroy>destroy</a>. If the current entity has not been
-destroyed within 5 seconds, the relogon attempt will be automatically
-rejected.
 </div>
 
 <p>
 <span class="function_parameter">参数：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><span class="function_parameter_name"><i>ip</i></span></td><td><span class="function_parameter_description">&nbsp;The IP address of the client attempting to connect.
+<tr valign=top><td><span class="function_parameter_name"><i>ip</i></span></td><td><span class="function_parameter_description">&nbsp;尝试登录的客户端IP地址。
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>port</i></span></td><td><span class="function_parameter_description">&nbsp;The port number of the client attempting to connect.
+<tr valign=top><td><span class="function_parameter_name"><i>port</i></span></td><td><span class="function_parameter_description">&nbsp;尝试登录的客户端连接的端口。
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>password</i></span></td><td><span class="function_parameter_description">&nbsp;The password that the user attempted to log on with. This
-argument is only present if the entity has a property called "password".
-If the entity does not have a "password" property, onLogOnAttempt will be
-called with only two arguments.
+<tr valign=top><td><span class="function_parameter_name"><i>password</i></span></td><td><span class="function_parameter_description">&nbsp;用户登录时使用的MD5密码。
 </span></td></tr>
 
 </table>
@@ -353,20 +297,19 @@ called with only two arguments.
 <span class="function_definition">def onStreamComplete( <i>self, id, success</i> ):</span>
 </p>
 
-<div class="function_description">If present, this is called when a download to the attached client started
-with either <a href="Proxy.html">Proxy</a>.<a href=Proxy.html#streamStringToClient>streamStringToClient</a>() or <a href="Proxy.html">Proxy</a>.<a href=Proxy.html#streamFileToClient>streamFileToClient</a>() has
-terminated.
+<div class="function_description">如果在脚本中实现了此回调，当用户使用<a href="Proxy.html">Proxy</a>.<a href=Proxy.html#streamStringToClient>streamStringToClient</a>()或<a href="Proxy.html">Proxy</a>.<a href=Proxy.html#streamFileToClient>streamFileToClient</a>()完成时，该回调被调用。
+
+
 </div>
 
 <p>
 <span class="function_parameter">参数：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><span class="function_parameter_name"><i>id</i></span></td><td><span class="function_parameter_description">&nbsp;The id of the terminated download.
+<tr valign=top><td><span class="function_parameter_name"><i>id</i></span></td><td><span class="function_parameter_description">&nbsp;与下载关联的id。
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>success</i></span></td><td><span class="function_parameter_description">&nbsp;Boolean indicating whether or not the download completed
-                successfully.
+<tr valign=top><td><span class="function_parameter_name"><i>success</i></span></td><td><span class="function_parameter_description">&nbsp;成功与否。
 </span></td></tr>
 
 </table>
