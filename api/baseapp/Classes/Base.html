@@ -453,8 +453,8 @@ integer£¬ËüÖ¸¶¨ÒªÒÆ³ýµÄ¶¨Ê±Æ÷id¡£
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>cellData</i></span></td><td><span class="function_parameter_description">
-cellData°üº¬½«Òª´æ½øÊý¾Ý¿âµÄcellÊôÐÔ¡£
-cellDataÊÇÒ»¸ö×Öµä¡£
+°üº¬½«Òª´æ½øÊý¾Ý¿âµÄcellÊôÐÔ¡£
+<a href="Base.html#cellData">cellData</a>ÊÇÒ»¸ö×Öµä¡£
 </span></td></tr>
 
 </table>
@@ -469,11 +469,8 @@ cellDataÊÇÒ»¸ö×Öµä¡£
 
 <div class="attribute_description">
 <b>ËµÃ÷£º</b><br><br>
-cellÊÇÓÃÓÚÁªÏµcellÊµÌåµÄ<a href=../../keywords.html#Mailbox>MAILBOX</a>¡£Õâ¸öÊôÐÔÊÇÖ»¶ÁµÄ£¬ÇÒÈç¹ûÕâ¸öbaseÊµÌåÃ»ÓÐ¹ØÁªµÄcellÊ±ÒýÓÃcell½«²úÉú´íÎó¡£
+cellÊÇÓÃÓÚÁªÏµcellÊµÌåµÄ<a href=../../keywords.html#Mailbox>MAILBOX</a>¡£Õâ¸öÊôÐÔÊÇÖ»¶ÁµÄ£¬ÇÒÈç¹ûÕâ¸öbaseÊµÌåÃ»ÓÐ¹ØÁªµÄcellÊ±ÊôÐÔÊÇNone¡£
 <br><br>
-ÐèÒª×¢ÒâµÄÊÇµ±ÊµÌåÓÐÒ»¸öcell mailboxµ«Ëü»¹Ã»ÓÐÖ¸ÏòÕýÈ·µÄCellAppÊ±½«Òª»¨·ÑÒ»¶ÎÊ±¼ä£¬Õâ¶ÎÊ±¼ä¾ÍÊÇÔÚ<a href="Base.html">Base</a>.<a href=Base.html#createCellEntity>createCellEntity</a>()µ÷ÓÃÖ®ºó
-µ«<a href="Base.html">Base</a>.<a href=Base.html#onGetCell>onGetCell</a>()»Øµ÷»¹Ã»±»µ÷ÓÃÆÚ¼ä¡£ÔÚÕâ¸öÆÚ¼ä£¬Õâ¸ö<a href=../../keywords.html#Mailbox>mailbox</a>ÈÔ¿É±»Ê¹ÓÃÓÚ´ÓbaseÊµÌåÖ±½Ó·¢³öµ«
-²»ÄÜ±»Ê¹ÓÃ¡£
 </div>
 
 <p>
@@ -485,7 +482,7 @@ cellÊÇÓÃÓÚÁªÏµcellÊµÌåµÄ<a href=../../keywords.html#Mailbox>MAILBOX</a>¡£Õâ¸öÊôÐ
 </p>
 
 <a name="cellData"></a><p class="attribute_definition">
-<span class="attribute_definition"><a href=#cellData>cellData</a></span>
+<span class="attribute_definition">cellData</span>
 </p>
 
 <div class="attribute_description">
@@ -527,7 +524,7 @@ spaceID¡£
 
 <div class="attribute_description">
 <b>ËµÃ÷£º</b><br><br>
-clientÊÇÓÃÓÚÁªÏµ¿Í»§¶ËµÄmailbox¡£Õâ¸öÊôÐÔÊÇÖ»¶ÁµÄ£¬ÇÒÈç¹ûÕâ¸öbaseÊµÌåÃ»ÓÐ¹ØÁªµÄ¿Í»§¶ËÊ±ÒýÓÃclient½«²úÉú´íÎó¡£
+clientÊÇÓÃÓÚÁªÏµ¿Í»§¶ËµÄmailbox¡£Õâ¸öÊôÐÔÊÇÖ»¶ÁµÄ£¬ÇÒÈç¹ûÕâ¸öbaseÊµÌåÃ»ÓÐ¹ØÁªµÄ¿Í»§¶ËÊ±ÊôÐÔÊÇNone¡£
 </div>
 
 <p>
@@ -544,7 +541,7 @@ clientÊÇÓÃÓÚÁªÏµ¿Í»§¶ËµÄmailbox¡£Õâ¸öÊôÐÔÊÇÖ»¶ÁµÄ£¬ÇÒÈç¹ûÕâ¸öbaseÊµÌåÃ»ÓÐ¹ØÁªµÄ¿
 
 <div class="attribute_description">
 <b>ËµÃ÷£º</b><br><br>
-databaseIDÊÇÊµÌåµÄÓÀ¾ÃID¡£Õâ¸öidÊÇint64ÀàÐÍÇÒ>0£¬Èç¹ûÊÇ0Ôò±íÊ¾¸ÃÊµÌå²»ÊÇÓÀ¾ÃµÄ¡£
+databaseIDÊÇÊµÌåµÄÓÀ¾ÃID(Êý¾Ý¿âid)¡£Õâ¸öidÊÇuint64ÀàÐÍÇÒ´óÓÚ0£¬Èç¹ûÊÇ0Ôò±íÊ¾¸ÃÊµÌå²»ÊÇÓÀ¾ÃµÄ¡£
 </div>
 
 <p>
