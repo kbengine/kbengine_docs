@@ -51,7 +51,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#executeRawDatabaseCommand" class="function_list" >executeRawDatabaseCommand</a>( command, callback ):</span>
+<span class="function_list">def <a href="#executeRawDatabaseCommand" class="function_list" >executeRawDatabaseCommand</a>( command, callback, threadID ):</span>
 </td></tr>
 
 <tr><td>
@@ -420,14 +420,14 @@ string，一个字符串关键字。
 
 
 <a name="executeRawDatabaseCommand"></a><p class="function_definition">
-<span class="function_definition">def executeRawDatabaseCommand( <i>command, callback</i> ):</span>
+<span class="function_definition">def executeRawDatabaseCommand( <i>command, callback, threadID</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
 这个脚本函数在数据库上执行原始数据库命令，该命令将直接由相关数据库进行解析。
 <br><br>
-请注意使用该函数修改实体数据可能不生效，因为如果实体已经检出，被修改过的实体数据将仍会被实体存档而导致覆盖。
+请注意使用该函数修改实体数据可能不生效，因为如果实体已经检出，被修改过的实体数据将仍会被实体存档而导致覆盖。<br>
 强烈不推荐这个函数用于读取或修改实体数据。
 </div>
 
@@ -440,19 +440,26 @@ string，一个字符串关键字。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
-带有命令执行结果的回调对象（比如说是一个函数）。这个回调带有3个参数：结果集合，影响的行数与错误信息。
+可选参数，带有命令执行结果的回调对象（比如说是一个函数）。这个回调带有3个参数：结果集合，影响的行数与错误信息。
 <br><br>
-这个结果集合参数是一个行列表。每一行是一个包含字段值的字符串列表。命令执行没有返回结果集合（比如说是DELETE命令），或者
+这个结果集合参数是一个行列表。每一行是一个包含字段值的字符串列表。命令执行没有返回结果集合（比如说是DELETE命令），或者<br>
 命令执行有错误时这个结果集合为None。
 <br><br>
-这个数字是命令执行受影响的行数。这个参数只和不返回结果结合的命令（如DELETE）相关。
+这个数字是命令执行受影响的行数。这个参数只和不返回结果结合的命令（如DELETE）相关。<br>
 如果有结果集合返回或者命令执行有错误时这个参数为None。
 <br><br>
 命令执行有错误时这个错误信息参数是一个描述错误的字符串。命令执行没有发生错误时这个参数为None。
 </span></td></tr>
 
+<tr valign=top><td><span class="function_parameter_name"><i>threadID</i></span></td><td><span class="function_parameter_description">
+int32，可选参数，指定一个线程来处理本条命令。用户可以通过这个参数控制某一类命令的执行先后顺序（dbmgr是多线程处理的），默认是不指定，如果threadID是实体的ID，<br>
+那么将加入到该实体的存档队列中由线程逐条写入。
+</span></td></tr>
+
 </table>
 </p>
+
+
 
 <a name="genUUID64"></a><p class="function_definition">
 <span class="function_definition">def genUUID64( <i></i> ):</span>

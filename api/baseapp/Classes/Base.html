@@ -123,7 +123,7 @@
 <hr>
 <a name="detailed_description"></a><h2>详细描述</h2>
 <a href="Base.html">Base</a>类代表一个驻留在<a href="../index.html">Baseapp</a>上的实体。 <a href="Base.html">Base</a>
-实体可以通过<a href="../Modules/KBEngine.html">KBEngine</a>.<a href=KBEngine.html#createBase>createBase</a>函数(以及以createBase为前缀的函数)创建。一个<a href="Base.html">Base</a>实体实例也可以通过cellapp的函数<a href="../Modules/KBEngine.html">KBEngine</a>.<a href=../../cellapp/Modules/KBEngine.html#createEntityOnBaseApp>createEntityOnBaseApp</a>远程调用。
+实体可以通过<a href="../Modules/KBEngine.html">KBEngine</a>.<a href=KBEngine.html#createBase>createBase</a>函数(以及以createBase为前缀的函数)创建。一个<a href="Base.html">Base</a>实体也可以通过<a href="../../cellapp/index.html">Cellapp</a>的函数<a href="../Modules/KBEngine.html">KBEngine</a>.<a href=../../cellapp/Modules/KBEngine.html#createEntityOnBaseApp>createEntityOnBaseApp</a>远程创建。
 <br><br>
 一个<a href="Base.html">Base</a>实体可以在一个活动的<a href=../../keywords.html#cell>cells</a>里面链接到一个实体，还可以被用来在一个合适的<a href=../../keywords.html#cell>cell</a>上创建一个关联的实体。
 这个类允许你创建和销毁在<a href=../../keywords.html#cell>cell</a>上的实体或者在base实体上注册一个定时器也或者访问此对象的联系信息，<br>
@@ -138,9 +138,9 @@
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-函数addTimer注册回调函数<i><a href="#onTimer">onTimer</a></i>，回调函数将在"initialOffset"秒后被执行第1次，而后将每间隔"repeatOffset"秒执行1次，可设定一个用户参数"userArg"（仅限integer类型）。
+注册一个定时器，定时器由回调函数<i><a href="#onTimer">onTimer</a></i>触发，回调函数将在"initialOffset"秒后被执行第1次，而后将每间隔"repeatOffset"秒执行1次，可设定一个用户参数"userArg"（仅限integer类型）。
 <br><br>
-注册base定时器，<i><a href="#onTimer">onTimer</a></i> 函数必须在entity的base部分被定义，且带有2个参数，第1个integer类型的是timer的id（可用于移除timer的"<a href="#delTimer">delTimer</a>"函数），第2个是用户参数"userArg"。
+<i><a href="#onTimer">onTimer</a></i> 函数必须在entity的base部分被定义，且带有2个参数，第1个integer类型的是timer的id（可用于移除timer的"<a href="#delTimer">delTimer</a>"函数），第2个是用户参数"userArg"。
 <br><br>
 例子:
 
@@ -171,18 +171,15 @@ class MyBaseEntity( <a href="../Modules/KBEngine.html">KBEngine</a>.<a href="Bas
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>initialOffset</i></span></td><td><span class="function_parameter_description">
-initialOffset是float类型参数，
-指定定时器从注册到第一次回调的时间间隔（秒）。
+float，指定定时器从注册到第一次回调的时间间隔（秒）。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>repeatOffset</i></span></td><td><span class="function_parameter_description">
-repeatOffset一个可选的float类型参数，
-指定第一次回调执行后每次执行的时间间隔（秒）。必须用函数delTimer移除定时器，否则它会一直重复下去。值小于等于0将被忽略。
+float，指定第一次回调执行后每次执行的时间间隔（秒）。必须用函数<a href="#delTimer">delTimer</a>移除定时器，否则它会一直重复下去。值小于等于0将被忽略。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>userArg</i></span></td><td><span class="function_parameter_description">
-userArg是一个可选的integer类型参数，
-指定用户提供底层回调base实体"<a href="#onTimer">onTimer</a>"函数的userArg。
+integer，指定底层回调"<a href="#onTimer">onTimer</a>"时的userArg参数值。
 </span></td></tr>
 
 </table>
@@ -191,7 +188,7 @@ userArg是一个可选的integer类型参数，
 <p>
 <span class="function_return">返回:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>integer. 该函数返回timer的内部id，这个id可用于delTimer移除定时器。
+<tr><td>integer，该函数返回timer的内部id，这个id可用于<a href="#delTimer">delTimer</a>移除定时器。
 </td></tr>
 </table>
 </p>
@@ -261,7 +258,7 @@ userArg是一个可选的integer类型参数，
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>id</i></span></td><td><span class="function_parameter_description">
-id是一个integer类型参数，它指定要移除的定时器id。
+integer，它指定要移除的定时器id。
 </span></td></tr>
 
 </table>

@@ -208,6 +208,28 @@ cell在文档中存在二个不同的意思。<br>
 </div>
 
 
+<a name="base"></a><p class="function_definition">
+<span class="function_definition">base</span>
+</p>
+
+<div class="function_description">
+<br><br>
+通常是指<a href=baseapp/index.html>baseapp</a>上的Base实体或者是一个指向Base实体的<a href=#Mailbox>BaseMailbox</a>, 例如：<a href=cellapp/classes/Entity.html#base>Entity.base</a>。<br>
+</div>
+
+
+
+<a name="client"></a><p class="function_definition">
+<span class="function_definition">client</span>
+</p>
+
+<div class="function_description">
+<br><br>
+通常是指客户端或者是一个指向客户端实体的<a href=#Mailbox>Mailbox</a>, 例如：<a href=baseapp/classes/Base.html#client>Base.client</a>。<br>
+</div>
+
+
+
 <a name="cellapp"></a><p class="function_definition">
 <span class="function_definition">cellapp</span>
 </p>
@@ -228,6 +250,33 @@ Cellapp进程主要负责与位置有关类游戏逻辑、AOI、AI、场景房间等等。<br>
 Baseapp进程主要负责与客户端通讯、与位置无关类游戏逻辑(公会管理器、聊天系统、游戏大厅、排行榜等等)、存档与备份等等。<br>
 参见: <a href=baseapp/index.html>baseapp</a>
 </div>
+
+
+
+<a name="real"></a><p class="function_definition">
+<span class="function_definition">real</span>
+</p>
+
+<div class="function_description">
+<br><br>
+指的是一个cell上的实体，这个实体是真实存在于当期cell上的（有一种实体只是另一个cell广播过来的影像，参见：<a href=#ghost>ghost</a>）。<br>
+</div>
+
+
+
+<a name="ghost"></a><p class="function_definition">
+<span class="function_definition">ghost</span>
+</p>
+
+<div class="function_description">
+<br><br>
+这种实体其实是由于cellapp动态负载均衡机制将一个完整的space分割成N份并交给不同的进程中的cell共同维护从而产生的一种边界区影像实体。<br>
+由于space被分割成多个区域，所以space存在边界。要让客户端无法感知到边界的存在我们将每个cell边界区域一定范围内的实体同步一份到另一个边邻的cell上，<br>
+这样就不会在边界区域时无法和另一个边界区的实体进行交互了。而这种实体只有部分数据被同步过来(CELL_PUBLIC等cell广播类型的属性)。<br>
+<br>
+非ghost实体我们称为<a href=#real>real</a>实体。
+</div>
+
 
 
 <br></br>

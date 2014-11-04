@@ -292,18 +292,18 @@ cellAppÉÏĞÂµÄ<a href="Entity.html">Entity</a>¿ÉÒÔÊ¹ÓÃ<a href="KBEngine.html">KBE
 <h2>³ÉÔ±º¯ÊıÎÄµµ</h2>
 
 <a name="addProximity"></a><p class="function_definition">
-<span class="function_definition">def addProximity( <i>self, range, userArg</i> ):</span>
+<span class="function_definition">def addProximity( <i>self, rangeXZ, rangeY, userArg</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>¹¦ÄÜËµÃ÷£º</b><br><br>
-Õâ¸öº¯Êı´´½¨Ò»¸öÏİÚå£¬µ±ÓĞÆäËüÊµÌå½øÈë»òÀë¿ªÕâ¸öÏİÚåÇøÓòµÄÊ±ºò»áÍ¨ÖªÕâ¸ö<a href="Entity.html">Entity</a>¡£Õâ¸öÇøÓòÊÇÒ»¸ö·½ĞÎ£¨ÎªÁËĞ§ÂÊ£©¡£Èç¹û
-ÆäËüÊµÌåÔÚxÖáºÍzÖáÉÏ¾ùÔÚ¸ø¶¨µÄ¾àÀëÀïÃæ£¬ÔòÊµÌå±»ÊÓÎªÔÚÕâ¸ö·¶Î§ÀïÃæ¡£Õâ¸ö<a href="Entity.html">Entity</a>Í¨¹ıonEnterTrapºÍonLeaveTrapº¯Êı±»
+Õâ¸öº¯Êı´´½¨Ò»¸öÏİÚå£¬µ±ÓĞÆäËüÊµÌå½øÈë»òÀë¿ªÕâ¸öÏİÚåÇøÓòµÄÊ±ºò»áÍ¨ÖªÕâ¸ö<a href="Entity.html">Entity</a>¡£Õâ¸öÇøÓòÊÇÒ»¸ö·½ĞÎ£¨ÎªÁËĞ§ÂÊ£©¡£Èç¹û<br>
+ÆäËüÊµÌåÔÚxÖáºÍzÖáÉÏ¾ùÔÚ¸ø¶¨µÄ¾àÀëÀïÃæ£¬ÔòÊµÌå±»ÊÓÎªÔÚÕâ¸ö·¶Î§ÀïÃæ¡£Õâ¸ö<a href="Entity.html">Entity</a>Í¨¹ıonEnterTrapºÍonLeaveTrapº¯Êı±»<br>
 Í¨Öª£¬ÕâÁ½¸öº¯Êı¿ÉÒÔÈçÏÂ¶¨Òå£º
 <br><br>
 
-<pre>	def onEnterTrap( self, entityEntering, range, controllerID, userArg = 0 ):
-	def onLeaveTrap( self, entityLeaving, range, controllerID, userArg = 0 ):
+<pre>	def onEnterTrap( self, entityEntering, rangeXZ, rangeY, controllerID, userArg = 0 ):
+	def onLeaveTrap( self, entityLeaving, rangeXZ, rangeY, controllerID, userArg = 0 ):
 </pre>
 Ò²»áÓĞ¼«µÍµÄ¸ÅÂÊµ±Õâ¸öÊµÌå×°ÔØµ½Ò»¸öĞÂµÄcellÉÏºÍÒ»¸öÖ®Ç°´æÔÚµÄÏİÚåÊµÌåÃ»ÓĞ³öÏÖÔÚĞÂµÄcellÉÏ£¬
 ÔÚÕâ¸öÇéĞÎÏÂ£¬µÃµ½Õâ¸öÏİÚåÊµÌå¶ÔÏóµÄÒıÓÃÊÇ²»¿ÉÄÜµÄ¡ª¡ªÖ»ÓĞÊµÌåID¿ÉÓÃ¡£
@@ -328,8 +328,16 @@ cellAppÉÏĞÂµÄ<a href="Entity.html">Entity</a>¿ÉÒÔÊ¹ÓÃ<a href="KBEngine.html">KBE
 <span class="function_parameter">²ÎÊı£º</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><span class="function_parameter_name"><i>range</i></span></td><td><span class="function_parameter_description">
-¸ø¶¨ÏİÚåÇøÓòµÄ´óĞ¡£¬floatÀàĞÍ£¬±ØĞë´óÓÚµÈÓÚ0¡£
+<tr valign=top><td><span class="function_parameter_name"><i>rangeXZ</i></span></td><td><span class="function_parameter_description">
+float£¬¸ø¶¨ÏİÚåxzÖáÇøÓòµÄ´óĞ¡£¬±ØĞë´óÓÚµÈÓÚ0¡£
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>rangeY</i></span></td><td><span class="function_parameter_description">
+float£¬¸ø¶¨ÏİÚåyÖá¸ß¶È£¬±ØĞë´óÓÚµÈÓÚ0¡£<br>
+ĞèÒª×¢ÒâµÄÊÇ£¬Õâ¸ö²ÎÊıÒªÉúĞ§±ØĞë¿ª·Å<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->cellapp->coordinate_system->rangemgr_y
+<br>
+¿ª·ÅyÖá¹ÜÀí»á´øÀ´Ò»Ğ©ÏûºÄ£¬ÒòÎªÒ»Ğ©ÓÎÏ·´óÁ¿µÄÊµÌå¶¼ÔÚÍ¬Ò»yÖá¸ß¶È»òÕßÔÚ²î²»¶àË®Æ½Ïß¸ß¶È£¬´ËÊ±Åö×²±äµÃ·Ç³£ÃÜ¼¯¡£<br>
+3DÌ«¿ÕÀàÓÎÏ·»òÕßĞ¡·¿¼äÀàÊµÌå½ÏÉÙµÄÓÎÏ·±È½ÏÊÊºÏ¿ª·Å´ËÑ¡Ïî¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>userArg</i></span></td><td><span class="function_parameter_description">
@@ -355,49 +363,62 @@ cellAppÉÏĞÂµÄ<a href="Entity.html">Entity</a>¿ÉÒÔÊ¹ÓÃ<a href="KBEngine.html">KBE
 
 <div class="function_description">
 <b>¹¦ÄÜËµÃ÷£º</b><br><br>
-addTimerº¯ÊıÔÚ¸ø¶¨µÄÒ»¶ÎÊ±¼äºó£¨ËÄÉáÎåÈëµ½×î½Ó½üµÄÊ±¿Ì£©Æô¶¯Ò»¸ö¶¨Ê±Æ÷¡£Õâ¸ö
-¶¨Ê±Æ÷¿ÉÒÔÉèÖÃ³É²»¶ÏÖØ¸´µÄ£¬»òÊÇÖ»Ö´ĞĞÒ»´ÎµÄ¡£Ã¿´ÎÒ»¸ö¼ä¸ôÊ±¼äµ½£¬»áÍ¨Öª<a href="Entity.html">Entity</a>µÄonTimerº¯
-Êı£¬onTimerº¯ÊıÈçÏÂ¶¨Òå£º
+×¢²áÒ»¸ö¶¨Ê±Æ÷£¬¶¨Ê±Æ÷ÓÉ»Øµ÷º¯Êı<i><a href="#onTimer">onTimer</a></i>´¥·¢£¬»Øµ÷º¯Êı½«ÔÚ"initialOffset"Ãëºó±»Ö´ĞĞµÚ1´Î£¬¶øºó½«Ã¿¼ä¸ô"repeatOffset"ÃëÖ´ĞĞ1´Î£¬¿ÉÉè¶¨Ò»¸öÓÃ»§²ÎÊı"userArg"£¨½öÏŞintegerÀàĞÍ£©¡£
 <br><br>
+<i><a href="#onTimer">onTimer</a></i> º¯Êı±ØĞëÔÚentityµÄcell²¿·Ö±»¶¨Òå£¬ÇÒ´øÓĞ2¸ö²ÎÊı£¬µÚ1¸öintegerÀàĞÍµÄÊÇtimerµÄid£¨¿ÉÓÃÓÚÒÆ³ıtimerµÄ"<a href="#delTimer">delTimer</a>"º¯Êı£©£¬µÚ2¸öÊÇÓÃ»§²ÎÊı"userArg"¡£
+<br><br>
+Àı×Ó:
 
-<pre>	def onTimer( self, controllerID, userData ):
+<pre><pre># ÕâÀïÊÇÊ¹ÓÃaddTimerµÄÒ»¸öÀı×Ó
+import <a href="../Modules/KBEngine.html">KBEngine</a>
+&nbsp;
+class MyCellEntity( <a href="../Modules/KBEngine.html">KBEngine</a>.<a href="Entity.html">Entity</a> ):
+&nbsp;
+    def __init__( self ):
+        <a href="../Modules/KBEngine.html">KBEngine</a>.<a href="Entity.html">Entity</a>.__init__( self )
+&nbsp;
+        # Ôö¼ÓÒ»¸ö¶¨Ê±Æ÷£¬5ÃëºóÖ´ĞĞµÚ1´Î£¬¶øºóÃ¿1ÃëÖ´ĞĞ1´Î£¬ÓÃ»§²ÎÊıÊÇ9
+        self.addTimer( 5, 1, 9 )
+&nbsp;
+        # Ôö¼ÓÒ»¸ö¶¨Ê±Æ÷£¬1ÃëºóÖ´ĞĞ£¬ÓÃ»§²ÎÊıÈ±Ê¡ÊÇ0
+        self.addTimer( 1 )
+&nbsp;
+    # <a href="Entity.html">Entity</a>µÄ¶¨Ê±Æ÷»Øµ÷"onTimer"±»µ÷ÓÃ
+    def onTimer( self, id, userArg ):
+        print "MyCellEntity.onTimer called: id %i, userArg: %i" % ( id, userArg )
+        # if ÕâÊÇ²»¶ÏÖØ¸´µÄ¶¨Ê±Æ÷£¬µ±²»ÔÙĞèÒª¸Ã¶¨Ê±Æ÷µÄÊ±ºò£¬µ÷ÓÃÏÂÃæº¯ÊıÒÆ³ı:
+        #     self.delTimer( id )</pre>
 </pre>
 </div>
-
-<p>
-<span class="function_links"><b>²Î¿´£º</b></span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href="Entity.html">Entity</a>.<a href="Entity.html#cancel">cancel</a><br></td></tr>
-</table>
-</p>
 
 <p>
 <span class="function_parameter">²ÎÊı£º</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><span class="function_parameter_name"><i>start</i></span></td><td><span class="function_parameter_description">
-µ½µÚÒ»´Î»Øµ÷µÄÃëÊı¡£
+<tr valign=top><td><span class="function_parameter_name"><i>initialOffset</i></span></td><td><span class="function_parameter_description">
+float£¬Ö¸¶¨¶¨Ê±Æ÷´Ó×¢²áµ½µÚÒ»´Î»Øµ÷µÄÊ±¼ä¼ä¸ô£¨Ãë£©¡£
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>interval</i></span></td><td><span class="function_parameter_description">
-ËæºóÃ¿´Î»Øµ÷Ê±¼ä¼ä¸ôµÄÃëÊı¡£ÉèÖÃÎª0ÔòÖ»Ö´ĞĞÒ»±é¡£
+<tr valign=top><td><span class="function_parameter_name"><i>repeatOffset</i></span></td><td><span class="function_parameter_description">
+float£¬Ö¸¶¨µÚÒ»´Î»Øµ÷Ö´ĞĞºóÃ¿´ÎÖ´ĞĞµÄÊ±¼ä¼ä¸ô£¨Ãë£©¡£±ØĞëÓÃº¯Êı<a href="#delTimer">delTimer</a>ÒÆ³ı¶¨Ê±Æ÷£¬·ñÔòËü»áÒ»Ö±ÖØ¸´ÏÂÈ¥¡£ÖµĞ¡ÓÚµÈÓÚ0½«±»ºöÂÔ¡£
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>userData</i></span></td><td><span class="function_parameter_description">
-´«¸øonTimerº¯ÊıµÄÒ»¸ö¿ÉÑ¡µÄÕûĞÍ²ÎÊı¡£
+<tr valign=top><td><span class="function_parameter_name"><i>userArg</i></span></td><td><span class="function_parameter_description">
+integer£¬Ö¸¶¨µ×²ã»Øµ÷"<a href="#onTimer">onTimer</a>"Ê±µÄuserArg²ÎÊıÖµ¡£
 </span></td></tr>
-
 </table>
 </p>
 
 <p>
-<span class="function_return">·µ»Ø£º</span>
+<span class="function_return">·µ»Ø:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>
-ĞÂ´´½¨¿ØÖÆÆ÷µÄid¡£
+<tr><td>integer£¬¸Ãº¯Êı·µ»ØtimerµÄÄÚ²¿id£¬Õâ¸öid¿ÉÓÃÓÚ<a href="#delTimer">delTimer</a>ÒÆ³ı¶¨Ê±Æ÷¡£
 </td></tr>
 </table>
 </p>
+
+
+
 
 <a name="cancel"></a><p class="function_definition">
 <span class="function_definition">def cancel( <i>self, controllerID</i> ):</span>
@@ -405,7 +426,7 @@ addTimerº¯ÊıÔÚ¸ø¶¨µÄÒ»¶ÎÊ±¼äºó£¨ËÄÉáÎåÈëµ½×î½Ó½üµÄÊ±¿Ì£©Æô¶¯Ò»¸ö¶¨Ê±Æ÷¡£Õâ¸ö
 
 <div class="function_description">
 <b>¹¦ÄÜËµÃ÷£º</b><br><br>
-º¯ÊıcancelÍ£Ö¹Ò»¸ö¿ØÖÆÆ÷¶Ô<a href="Entity.html">Entity</a>µÄÓ°Ïì¡£ËüÖ»ÄÜÔÚÒ»¸öÕæÊµÊµÌåÉÏ±»µ÷ÓÃ¡£
+º¯ÊıcancelÍ£Ö¹Ò»¸ö¿ØÖÆÆ÷¶Ô<a href="Entity.html">Entity</a>µÄÓ°Ïì¡£ËüÖ»ÄÜÔÚÒ»¸ö<a href=../../keywords.html#real>real</a>ÊµÌåÉÏ±»µ÷ÓÃ¡£
 </div>
 
 <p>
@@ -426,37 +447,25 @@ controllerIDÊÇÒªÈ¡ÏûµÄ¿ØÖÆÆ÷µÄË÷Òı£¬ËüÊÇÒ»¸öÕûĞÍ¡£Ò»¸ö×¨ÓÃµÄ¿ØÖÆÆ÷ÀàĞÍµÄ×Ö·û´®Ò²
 
 <div class="function_description">
 <b>¹¦ÄÜËµÃ÷£º</b><br><br>
-debugAOI·¢ËÍ<a href="Entity.html">Entity</a>µÄAOIµÄÏêÏ¸ĞÅÏ¢µ½cellµÄµ÷ÊÔĞÅÏ¢ÆµµÀ¡£Õâ¸öÆµµÀÊÇÄ¬ÈÏµÄ±ê×¼Êä³öÎÄ¼ş¡£
+debugAOIÊä³ö<a href="Entity.html">Entity</a>µÄAOIµÄÏêÏ¸ĞÅÏ¢µ½cellµÄµ÷ÊÔÈÕÖ¾¡£
 Ò»·İAOIÏµÍ³¹¤×÷µÄÃèÊö¿ÉÒÔÔÚ<a href="Entity.html">Entity</a>ÀàÎÄµµÖĞÕÒµ½¡£
 <br><br>
 Ò»·İÑùÆ·ĞÅÏ¢ÈçÏÂ£º
 
-<pre>451.8 DEBUG: Dumping AoI for entity 1000. Seen = 2, Pending=0. AoIRadius =  5.000 AoIHyst = 50.000
-451.8 DEBUG: 16777218 vut 0 lut 1 curpri 0.000000
-451.8 DEBUG: 16778216 vut 0 lut 4 curpri 0.000000
-451.8 DEBUG: Entities marked as left AoI for entity 1000. left= 2
-451.8 DEBUG: <a href="Entity.html">Entity</a> 16777218 left AoI
-451.8 DEBUG: <a href="Entity.html">Entity</a> 16778216 left AoI
+<pre>  INFO cellapp [0x00001a1c] [2014-11-04 00:28:41,409] - Avatar::debugAOI: 100 size=4, Seen=4, Pending=0, aoiRadius=50.000, aoiHyst=5.000
+  INFO cellapp [0x00001a1c] [2014-11-04 00:28:41,409] - Avatar::debugAOI: 100 Avatar(102), position(771.586.211.002.776.55), dist=0
+  INFO cellapp [0x00001a1c] [2014-11-04 00:28:41,409] - Avatar::debugAOI: 100 Monster(1028), position(820.834.211.635.768.749), dist=49.8659
+  INFO cellapp [0x00001a1c] [2014-11-04 00:28:41,409] - Avatar::debugAOI: 100 NPC(1025), position(784.024.210.95.782.273), dist=13.6915
+  INFO cellapp [0x00001a1c] [2014-11-04 00:28:41,409] - Avatar::debugAOI: 100 Avatar(106), position(771.586.211.002.776.55), dist=0
 </pre>
 ĞÅÏ¢µÄµÚÒ»ĞĞ¸æËßÎÒÃÇ£º
 <ul>
-<li>ÊµÌåµÄÊı¾İ#1000</li>
-<li>ÓĞ2¸öÊµÌåÔÚËüµÄAOIÇøÓò</li>
-<li>ÓĞ0¸öÊµÌåÔÚËüµÄAOIÇøÓò£¬<a href="Entity.html">Entity</a>µÄ¿Í»§¶ËÕıÔÚÎªAOIÇøÓòµÈ´ı³õÊ¼»¯Êı¾İ¡£</li>
-<li>AOIµÄ°ë¾¶ÊÇ 5.000</li>
-<li>AOIµÄÖÍºóÇøÓòÏòÍâÑÓÉìÁË50.000</li>
+<li>ÊµÌå#1000µÄÊı¾İ</li>
+<li>ÓĞ4¸öÊµÌåÔÚËüµÄAOIÇøÓò²¢ÇÒÒÑ¾­Í¬²½¸ø¿Í»§¶Ë¡£</li>
+<li>ÓĞ0¸öÊµÌåÔÚËüµÄAOIÇøÓò£¬ÕıÔÚµÈ´ıÍ¬²½µ½¿Í»§¶Ë¡£</li>
+<li>AOIµÄ°ë¾¶ÊÇ 50.000</li>
+<li>AOIµÄÖÍºóÇøÓòÏòÍâÑÓÉìÁË5.000</li>
 </ul>
-½ÓÏÂÀ´µÄ¼¸ĞĞÌá¹©Õâ¸ö<a href="Entity.html">Entity</a>ÕıÔÚ¹Û²ìµÄÃ¿Ò»¸öÊµÌåµÄĞÅÏ¢¡£ÔÚÕâ¸öÀı×ÓµÄµÚ2ĞĞ¸æËßÎÒÃÇ£º
-<ul>
-<li><a href="Entity.html">Entity</a>ÕıÔÚ¹Û²ìÊµÌå#16777218</li>
-<li><a href="Entity.html">Entity</a>µÄ¿Í»§¶ËÎª#16777218µÄ×îºóÒ»´Î¸üĞÂÊÇ#0</li>
-<li>¿Í»§¶ËÎª#16777218»ñµÃµÄ×îºóµÄÊÂ¼şÊÇ#1</li>
-<li>ÔÚÕâ¸ö<a href="Entity.html">Entity</a>µÄAOIÀïÃæ£¬ÊµÌå#16777218µ±Ç°µÄ¸üĞÂÓÅÏÈÈ¨ÊÇ0.000000</li>
-</ul>
-ÔÚÕâ¸öÀı×ÓµÄµÚ4ĞĞ¸æËßÎÒÃÇÓĞ2¸öÊµÌåÔÚÊµÌå#1000µÄÖÍºóÇøÓò¡£
-<br><br>
-½ÓÏÂÀ´µÄÃ¿Ò»ĞĞÁĞ³öÁËÒ»¸öµ±Ç°ÔÚÕâ¸ö<a href="Entity.html">Entity</a>µÄÖÍºóÇøÓòµÄÊµÌå¡£¾¡¹ÜÕâĞ©ÊµÌåÒÑ¾­
-Àë¿ªAOI£¬ËüÃÇÈÔÈ»Îª¿Í»§¶Ë¸üĞÂ¡£
 </div>
 
 <a name="delTimer"></a><p class="function_definition">
@@ -474,7 +483,7 @@ debugAOI·¢ËÍ<a href="Entity.html">Entity</a>µÄAOIµÄÏêÏ¸ĞÅÏ¢µ½cellµÄµ÷ÊÔĞÅÏ¢ÆµµÀ¡
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>id</i></span></td><td><span class="function_parameter_description">
-idÊÇÒ»¸öintegerÀàĞÍ²ÎÊı£¬ËüÖ¸¶¨ÒªÒÆ³ıµÄ¶¨Ê±Æ÷id¡£
+integer£¬ËüÖ¸¶¨ÒªÒÆ³ıµÄ¶¨Ê±Æ÷id¡£
 </span></td></tr>
 
 </table>
@@ -496,7 +505,7 @@ idÊÇÒ»¸öintegerÀàĞÍ²ÎÊı£¬ËüÖ¸¶¨ÒªÒÆ³ıµÄ¶¨Ê±Æ÷id¡£
 
 <div class="function_description">
 <b>¹¦ÄÜËµÃ÷£º</b><br><br>
-Õâ¸öº¯ÊıÏú»ÙÕâ¸öÊµÌåËùÔÚµÄ¿Õ¼ä¡£
+Ïú»ÙÕâ¸öÊµÌåËùÔÚµÄ<a href=../../keywords.html#cn_Space>¿Õ¼ä</a>¡£
 </div>
 
 <a name="entitiesInAOI"></a><p class="function_definition">
@@ -505,7 +514,7 @@ idÊÇÒ»¸öintegerÀàĞÍ²ÎÊı£¬ËüÖ¸¶¨ÒªÒÆ³ıµÄ¶¨Ê±Æ÷id¡£
 
 <div class="function_description">
 <b>¹¦ÄÜËµÃ÷£º</b><br><br>
-Õâ¸öº¯Êı·µ»ØÒ»¸öÔÚÕâ¸öÊµÌåµÄ¸ĞĞËÈ¤µÄ·¶Î§ÄÚµÄÊµÌåÁĞ±í¡£
+»ñµÃÕâ¸öÊµÌåµÄ<a href=../../keywords.html#AOI>AOI</a>·¶Î§ÄÚµÄÊµÌåÁĞ±í¡£
 
 <a name="entitiesInRange"></a><p class="function_definition">
 <span class="function_definition">def entitiesInRange( <i>self, range, entityType=None, position=None</i> ):</span>
@@ -513,14 +522,13 @@ idÊÇÒ»¸öintegerÀàĞÍ²ÎÊı£¬ËüÖ¸¶¨ÒªÒÆ³ıµÄ¶¨Ê±Æ÷id¡£
 
 <div class="function_description">
 <b>¹¦ÄÜËµÃ÷£º</b><br><br>
-Õâ¸öº¯ÊıËÑË÷¾àÀë<a href="Entity.html">Entity</a>ÔÚ¸ø¶¨µÄ¾àÀëÄÚµÄÊµÌå¡£ÕâÊÇÒ»¸öÇòĞÎµÄËÑË÷£¬3¸öÖáµÄ¾àÀë
-¶¼Òª²âÁ¿¡£Õâ¿ÉÒÔÕÒµ½ÔÚÕâ¸ö<a href="Entity.html">Entity</a>µÄAOIÖ®ÍâµÄÊµÌå£¬µ«²»ÄÜÕÒµ½²»ÖªµÀÕâ¸öcellµÄÊµÌå¡£
+ÔÚ¸ø¶¨µÄ¾àÀëÄÚËÑË÷<a href="Entity.html">ÊµÌå</a>¡£ÕâÊÇÒ»¸öÇòĞÎµÄËÑË÷£¬3¸öÖáµÄ¾àÀë
+¶¼Òª²âÁ¿¡£Õâ¿ÉÒÔÕÒµ½ÔÚÕâ¸ö<a href="Entity.html">ÊµÌå</a>µÄ<a href=../../keywords.html#AOI>AOI</a>·¶Î§Ö®ÍâµÄÊµÌå£¬µ«²»ÄÜÕÒµ½ÆäËû<a href=../../keywords.html#cell>cell</a>µÄÊµÌå¡£
 Àı×Ó£º
 
-<pre>  self.entitiesInRange( 100, 'Creature', (100,0,100) )
+<pre>  self.entitiesInRange( 100, 'Creature', (100, 0, 100) )
 </pre>
-¸ø³ö¡®Creature¡¯ÀàµÄÊµÀı»¯µÄÊµÌåÁĞ±í£¬µ«²»°üÀ¨¡®Creature¡¯µÄ×ÓÀàÊµÀı»¯µÄÊµÌå¡£ÖĞĞÄµã
-ÊÇ(100,0,100)£¬ËÑË÷°ë¾¶ÊÇ100Ã×¡£
+ËÑË÷µ½¡®Creature¡¯ÀàĞÍµÄÊµÌåÁĞ±í£¨¡®Creature¡¯µÄ×ÓÀàÊµÀı»¯µÄÊµÌå£©¡£ÖĞĞÄµãÊÇ(100, 0, 100)£¬ËÑË÷°ë¾¶ÊÇ100Ã×¡£
 
 <pre>  [ e for e in self.entitiesInRange( 100, None, (100,0,100) ) if isinstance( e, BaseType ) ]
 </pre>
@@ -536,12 +544,12 @@ idÊÇÒ»¸öintegerÀàĞÍ²ÎÊı£¬ËüÖ¸¶¨ÒªÒÆ³ıµÄ¶¨Ê±Æ÷id¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>entityType</i></span></td><td><span class="function_parameter_description">
-Ò»¸ö¿ÉÑ¡µÄ×Ö·û´®²ÎÊı£¬ÊµÌåµÄÀàĞÍÃû³Æ£¬ÓÃÓÚÆ¥ÅäÊµÌå¡£Èç¹ûÊµÌåÀàĞÍÊÇÒ»¸öÓĞĞ§µÄÀàÃû£¬
-ÔòÖ»ÓĞÕâ¸öÀàµÄÊµÌå»á±»·µ»Ø£¬·ñÔòÔÚÕâ¸ö·¶Î§µÄËùÓĞÊµÌå¶¼»á±»·µ¡£
+Ò»¸ö¿ÉÑ¡µÄ×Ö·û´®²ÎÊı£¬ÊµÌåµÄÀàĞÍÃû³Æ£¬ÓÃÓÚÆ¥ÅäÊµÌå¡£Èç¹ûÊµÌåÀàĞÍÊÇÒ»¸öÓĞĞ§µÄÀàÃû(ÓĞĞ§µÄÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>ÁĞ³ö)£¬<br>
+ÔòÖ»ÓĞÕâ¸öÀàĞÍµÄÊµÌå»á±»·µ»Ø£¬·ñÔò½«Õâ¸ö·¶Î§µÄËùÓĞÊµÌå¶¼·µ»Ø¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>position</i></span></td><td><span class="function_parameter_description">
-Ò»¸ö¿ÉÑ¡µÄ<a href="Vector3.html">Vector3</a>ÀàĞÍ²ÎÊı£¬×÷ÎªËÑË÷°ë¾¶µÄÖĞĞÄ¡£
+Ò»¸ö¿ÉÑ¡µÄ<a href="Vector3.html">Vector3</a>ÀàĞÍ²ÎÊı£¬×÷ÎªËÑË÷°ë¾¶µÄÖĞĞÄ, Ä¬ÈÏÒÔÊµÌå×ÔÉíÎªÖĞĞÄ¡£
 </span></td></tr>
 
 </table>
@@ -562,7 +570,7 @@ idÊÇÒ»¸öintegerÀàĞÍ²ÎÊı£¬ËüÖ¸¶¨ÒªÒÆ³ıµÄ¶¨Ê±Æ÷id¡£
 
 <div class="function_description">
 <b>¹¦ÄÜËµÃ÷£º</b><br><br>
-Õâ¸öº¯Êı·µ»ØÕâ¸ö<a href="Entity.html">Entity</a>ÊÇÕæÊµµÄ»¹ÊÇÒ»¸öÓÄÁéµÄ¡£
+Õâ¸öº¯Êı·µ»ØÕâ¸ö<a href="Entity.html">Entity</a>ÊÇ<a href=../../keywords.html#real>real</a>µÄ»¹ÊÇÒ»¸ö<a href=../../keywords.html#ghost>ghost</a>µÄ¡£
 <br><br>
 Õâ¸öº¯ÊıºÜÉÙ±»ÓÃµ½µ«¶Ôµ÷ÊÔºÜÓĞÓÃ¡£
 </div>
@@ -570,7 +578,7 @@ idÊÇÒ»¸öintegerÀàĞÍ²ÎÊı£¬ËüÖ¸¶¨ÒªÒÆ³ıµÄ¶¨Ê±Æ÷id¡£
 <p>
 <span class="function_return">·µ»Ø£º</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>(bool) True if the entity is real, False if it is not.
+<tr><td>bool£¬ Èç¹ûÊÇrealÊµÌå·µ»ØTrue£¬·ñÔò·µ»ØFalse¡£
 </td></tr>
 </table>
 </p>
@@ -581,11 +589,12 @@ idÊÇÒ»¸öintegerÀàĞÍ²ÎÊı£¬ËüÖ¸¶¨ÒªÒÆ³ıµÄ¶¨Ê±Æ÷id¡£
 
 <div class="function_description">
 <b>¹¦ÄÜËµÃ÷£º</b><br><br>
-Õâ¸öº¯ÊıÒÆ¶¯Õâ¸ö<a href="Entity.html">Entity</a>Ö±ÏßÏòÁíÒ»¸ö<a href="Entity.html">Entity</a>£¬µ÷ÓÃ³É¹¦»òÊ§°ÜµÄÍ¨Öª·½·¨¡£¶ÔÓÚ
-Ò»¸ö¸ø¶¨µÄ<a href="Entity.html">Entity</a>£¬ÔÚÈÎÒâÊ±¿ÌÖ»ÓĞÒ»¸öÒÆ¶¯¿ØÖÆÆ÷ÊÇ¼¤»îµÄ¡£
-·µ»ØÒ»¸ö¿ÉÒÔÓÃÓÚÈ¡ÏûÕâ´ÎÒÆ¶¯µÄ¿ØÖÆÆ÷ID¡£ÀıÈç£¬<a href="Entity.html">Entity</a>.<a href=Entity.html#cancel>cancel</a>( movementID )¡£
-ÒÆ¶¯È¡Ïû»¹¿ÉÒÔµ÷ÓÃ<a href="Entity.html">Entity</a>.<a href=Entity.html#cancel>cancel</a>( "Movement" )¡£µ±ÒÆ¶¯±»È¡ÏûÖ®ºóÍ¨Öª·½·¨½«
-²»±»µ÷ÓÃ¡£
+Ö±ÏßÒÆ¶¯<a href="Entity.html">ÊµÌå</a>µ½ÁíÒ»¸ö<a href="Entity.html">Entity</a>Î»ÖÃ¡£<br>
+ÈÎºÎ<a href="Entity.html">ÊµÌå</a>£¬ÔÚÈÎÒâÊ±¿ÌÖ»ÄÜÓĞÒ»¸öÒÆ¶¯¿ØÖÆÆ÷£¬ÖØ¸´µ÷ÓÃÈÎºÎÒÆ¶¯º¯Êı½«ÖÕÖ¹Ö®Ç°µÄÒÆ¶¯¿ØÖÆÆ÷¡£<br>
+µ÷ÓÃºóº¯Êı½«·µ»ØÒ»¸ö¿ÉÒÔÓÃÓÚÈ¡ÏûÕâ´ÎÒÆ¶¯µÄ¿ØÖÆÆ÷ID¡£<br>
+<br>
+ÀıÈç£¬<a href="Entity.html">Entity</a>.<a href=Entity.html#cancel>cancel</a>( movementID )¡£
+ÒÆ¶¯È¡Ïû»¹¿ÉÒÔµ÷ÓÃ<a href="Entity.html">Entity</a>.<a href=Entity.html#cancel>cancel</a>( "Movement" )¡£µ±ÒÆ¶¯±»È¡ÏûÖ®ºó»Øµ÷Í¨Öª·½·¨½«²»±»µ÷ÓÃ¡£
 <br><br>
 
 <pre>	def onMove( self, controllerId, userData ):
@@ -594,7 +603,7 @@ idÊÇÒ»¸öintegerÀàĞÍ²ÎÊı£¬ËüÖ¸¶¨ÒªÒÆ³ıµÄ¶¨Ê±Æ÷id¡£
 </div>
 
 <p>
-<span class="function_links"><b>See:</b></span>
+<span class="function_links"><b>²Î¿¼:</b></span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td><a href="Entity.html">Entity</a>.<a href="Entity.html#cancel">cancel</a><br></td></tr>
 </table>
@@ -605,27 +614,27 @@ idÊÇÒ»¸öintegerÀàĞÍ²ÎÊı£¬ËüÖ¸¶¨ÒªÒÆ³ıµÄ¶¨Ê±Æ÷id¡£
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>destEntityID</i></span></td><td><span class="function_parameter_description">
-(int) Ä¿±ê<a href="Entity.html">Entity</a>µÄID
+int£¬Ä¿±ê<a href="Entity.html">Entity</a>µÄID
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>velocity</i></span></td><td><span class="function_parameter_description">
-(float) <a href="Entity.html">Entity</a>ÒÆ¶¯µÄËÙ¶È£¬µ¥Î»m/s
+float£¬<a href="Entity.html">Entity</a>ÒÆ¶¯µÄËÙ¶È£¬µ¥Î»m/s
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>range</i></span></td><td><span class="function_parameter_description">
-(float) µ½´ïÄ¿±êÍ£Ö¹µÄ·¶Î§
+float£¬µ½´ïÄ¿±êÍ£Ö¹µÄ·¶Î§
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>userData</i></span></td><td><span class="function_parameter_description">
-(¿ÉÑ¡µÄ object) ´«¸øÍ¨Öªº¯ÊıµÄÊı¾İ
+object£¬¿ÉÑ¡²ÎÊı£¬»Øµ÷Í¨Öª±»µ÷ÓÃÊ±ÆäÖĞuserData²ÎÊı½«Îª´ËÖµ¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>faceMovement</i></span></td><td><span class="function_parameter_description">
-(¿ÉÑ¡µÄ bool) Èç¹ûÊµÌåÃæÏòÒÆ¶¯·½ÏòÔòÎªtrue£¨Ä¬ÈÏ£©¡£Èç¹ûÊÇÆäËü»úÖÆÔòÎªfalse¡£
+bool£¬¿ÉÑ¡²ÎÊı£¬Èç¹ûÊµÌåÃæÏòÒÆ¶¯·½ÏòÔòÎªtrue£¨Ä¬ÈÏ£©¡£Èç¹ûÊÇÆäËü»úÖÆÔòÎªfalse¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>moveVertically</i></span></td><td><span class="function_parameter_description">
-(¿ÉÑ¡µÄ bool) ÉèÎªtrueÖ¸ÒÆ¶¯ÎªÖ±ÏßÒÆ¶¯£¬ÉèÎªfalseÖ¸Ìù×ÅµØÃæÒÆ¶¯£¨Ä¬ÈÏÎªfalse£©¡£
+bool£¬¿ÉÑ¡²ÎÊı£¬ÉèÎªTrueÖ¸ÒÆ¶¯ÎªÖ±ÏßÒÆ¶¯£¬ÉèÎªFalseÖ¸Ìù×ÅµØÃæÖ±ÏßÒÆ¶¯£¨Ä¬ÈÏÎªFalse£©¡£
 </span></td></tr>
 
 </table>
@@ -635,7 +644,7 @@ idÊÇÒ»¸öintegerÀàĞÍ²ÎÊı£¬ËüÖ¸¶¨ÒªÒÆ³ıµÄ¶¨Ê±Æ÷id¡£
 <span class="function_return">·µ»Ø£º</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-(int) ×îĞÂ´´½¨µÄ¿ØÖÆÆ÷µÄID¡£
+int£¬ĞÂ´´½¨µÄ¿ØÖÆÆ÷ID¡£
 </td></tr>
 </table>
 </p>
@@ -824,7 +833,7 @@ None
 ĞèÒª×¢ÒâµÄÊÇÓĞ²»ÔÊĞí´«²¥Î»ÖÃÊı¾İµÄÒ×±äĞÅÏ¢µÄÊµÌå»áÒÔÒ»ÖÖµÍĞ§µÄ·½Ê½·¢ËÍËüÃÇµÄ¸üĞÂÎ»ÖÃ¸ø¿Í»§¶Ë¡£
 ×¢ÒâÔÚÒ»¸ö²»ÎÈ¶¨µÄÊµÌåÉÏ²»Ó¦¸ÃÆµ·±µØµ÷ÓÃÕâ¸öº¯Êı¡£
 <br><br>
-Õâ¸öº¯ÊıÖ»ÄÜÔÚÕæÊµµÄÊµÌåÉÏ±»µ÷ÓÃ¡£
+Õâ¸öº¯ÊıÖ»ÄÜÔÚ<a href=../../keywords.html#real>real</a>µÄÊµÌåÉÏ±»µ÷ÓÃ¡£
 </div>
 
 <p>
@@ -866,7 +875,7 @@ None
 <br><br>
 cellÊµÌåµÄÊı¾İÍ¬Ê±±¸·İÔÚbaseÊµÌå£¬È·±£Óöµ½ÔÖÄÑ»Ö¸´Êı¾İÊ±Êı¾İÊÇ×îĞÂµÄ¡£
 <br><br>
-Õâ¸öº¯ÊıÖ»ÄÜÔÚÕæÊµµÄÇÒÓĞ¹ØÁªbaseÊµÌåµÄÊµÌåÉÏ±»µ÷ÓÃ¡£
+Õâ¸öº¯ÊıÖ»ÄÜÔÚ<a href=../../keywords.html#real>real</a>µÄÇÒÓĞ¹ØÁªbaseÊµÌåµÄÊµÌåÉÏ±»µ÷ÓÃ¡£
 </div>
 
 <hr>
