@@ -168,7 +168,7 @@ area of interest。<br>
 <div class="function_description">
 <br><br>
 目击者。<br>
-只有绑定了Witness的<a href=#cell>cell</a>实体AOI才能产生作用，换句话来说witness就是客户端的一个<a href=#cell>cell</a>代理。<br>
+只有绑定了Witness的<a href=#cell>cell</a>实体AOI才能产生作用，换句话来说witness就是客户端的一个<a href=#cell>cell</a>代理，cellapp将AOI内的信息不断的通过Witness同步给客户端。<br>
 服务端一个NPC被目击者目击时会调用实体的onWitness回调，服务端可以依赖于此特性降低CPU的消耗，当一个实体<br>
 没有被目击时，用户可以停止它的任何行为。<br>
 </div>
@@ -275,6 +275,18 @@ Baseapp进程主要负责与客户端通讯、与位置无关类游戏逻辑(公会管理器、聊天系统、游戏
 这样就不会在边界区域时无法和另一个边界区的实体进行交互了。而这种实体只有部分数据被同步过来(CELL_PUBLIC等cell广播类型的属性)。<br>
 <br>
 非ghost实体我们称为<a href=#real>real</a>实体。
+</div>
+
+
+
+<a name="vector3"></a><p class="function_definition">
+<span class="function_definition">vector3</span>
+</p>
+
+<div class="function_description">
+<br><br>
+描述和管理3D空間的向量。<br>
+其中有x，y，z三个属性代表不同的轴向。
 </div>
 
 

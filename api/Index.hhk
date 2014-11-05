@@ -6,6 +6,18 @@
 </HEAD><BODY>
 <UL>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="addProximity">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#addProximity">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="vector3">
+		<param name="Name" value="KBEngine - Keywords">
+		<param name="Local" value="keywords.html#vector3">
+		<param name="Name" value="KBEngine - Base Types">
+		<param name="Local" value="basetypes.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="createBaseLocally">
 		<param name="Name" value="KBEngine - KBEngine base 文档">
 		<param name="Local" value="baseapp\Modules\KBEngine.html#createBaseLocally">
@@ -30,11 +42,235 @@
 		<param name="Local" value="cellapp\Classes\Entity.html#addTimer">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="cancel">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#cancel">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="debugAOI">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#debugAOI">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="delTimer">
 		<param name="Name" value="Base - KBEngine base 文档">
 		<param name="Local" value="baseapp\Classes\Base.html#delTimer">
 		<param name="Name" value="Entity - KBEngine cell 文档">
 		<param name="Local" value="cellapp\Classes\Entity.html#delTimer">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="entitiesInAOI">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#entitiesInAOI">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="entitiesInRange">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#entitiesInRange">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="isReal">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#isReal">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="moveToEntity">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#moveToEntity">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="moveToPoint">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#moveToPoint">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="navigate">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#navigate">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="setAoIRadius">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#setAoIRadius">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="teleport">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#teleport">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onEnterTrap">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onEnteredAoI">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#onEnteredAoI">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onEnteredCell">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#onEnteredCell">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onEnteringCell">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#onEnteringCell">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onGetWitness">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#onGetWitness">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onLeaveTrap">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#onLeaveTrap">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onLeaveTrapID">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#onLeaveTrapID">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onLeavingCell">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#onLeavingCell">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onLeftCell">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#onLeftCell">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onLoseControlledBy">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#onLoseControlledBy">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onLoseWitness">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#onLoseWitness">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onMove">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#onMove">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onMoveFailure">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#onMoveFailure">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onNavigate">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#onNavigate">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onNavigateFailed">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#onNavigateFailed">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onTeleport">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#onTeleport">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onTeleportFailure">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#onTeleportFailure">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onTeleportSuccess">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#onTeleportSuccess">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onWitnessed">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#onWitnessed">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="allClients">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#allClients">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="base">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#base">
+		<param name="Name" value="KBEngine - Keywords">
+		<param name="Local" value="keywords.html#base">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="client">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html">
+		<param name="Name" value="KBEngine - Keywords">
+		<param name="Local" value="keywords.html#client">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="controlledBy">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#controlledBy">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="direction">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#direction">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="hasWitness">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#hasWitness">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="isOnGround">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#isOnGround">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="isWitnessed">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#isWitnessed">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="otherClients">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#otherClients">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="ownClient">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#ownClient">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="pitch">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#pitch">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="position">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#position">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="roll">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#roll">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="seeingHeight">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#seeingHeight">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="shouldAutoBackup">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#shouldAutoBackup">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="destroy">
@@ -217,6 +453,51 @@
 		<param name="Name" value="shouldAutoBackup">
 		<param name="Name" value="Base - KBEngine base 文档">
 		<param name="Local" value="baseapp\Classes\Base.html#shouldAutoBackup">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="spaceID">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#spaceID">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="topSpeed">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#topSpeed">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="topSpeedY">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#topSpeedY">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="velocity">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#velocity">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="visibleHeight">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#visibleHeight">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="visionAngle">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#visionAngle">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="visionRange">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#visionRange">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="volatileInfo">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#volatileInfo">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="yaw">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#yaw">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="spaceID">
