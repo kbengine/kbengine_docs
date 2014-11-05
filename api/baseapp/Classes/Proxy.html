@@ -340,69 +340,35 @@ CLIENT_TYPE_END					= 5		// end<br/>
 <span class="attribute_definition">clientAddr</span>
 </p>
 
-<div class="attribute_description">This tuple contains the ip and port of the Client machine
+<div class="attribute_description">这是一个tuple对象，包含了客户端的ip与端口。
 </div>
 
 <a name="entitiesEnabled"></a><p class="attribute_definition">
 <span class="attribute_definition">entitiesEnabled</span>
 </p>
 
-<div class="attribute_description">This is whether or not entities have been enabled by the Client.
-Scripts cannot communicate with the Client until it enables entities.
+<div class="attribute_description">实体是否已经可用。在实体可用之前脚本不能与客户端进行通讯。
 </div>
 
 <a name="hasClient"></a><p class="attribute_definition">
 <span class="attribute_definition">hasClient</span>
 </p>
 
-<div class="attribute_description">This is whether or not a client is currently attached to this <a href="Proxy.html">Proxy</a>.
-</div>
-
-<a name="latencyLast"></a><p class="attribute_definition">
-<span class="attribute_definition">latencyLast</span>
-</p>
-
-<div class="attribute_description">This is the latency value that was used for the last check of the
-latency triggers. It may be useful for initialising the state of
-trigger call handlers when inserting their trigger value into the list.
-</div>
-
-<a name="latencyTriggers"></a><p class="attribute_definition">
-<span class="attribute_definition">latencyTriggers</span>
-</p>
-
-<div class="attribute_description">This is a sequence of latency trigger values. Whenever the latency
-passes this value in either direction, the onLatencyTrigger method
-is called. The call is made with the relevant trigger value and
-the direction (1 = above, 0 = below) as arguments. The latency is
-checked roughly every second, but the calls occur in sorted order,
-as if the latency value moved smoothly through its range. The latency
-value used for this calculation is that of 'timeSinceHeardFromClient'.
+<div class="attribute_description">Proxy是否绑定了一个客户端连接。
 </div>
 
 <a name="roundTripTime"></a><p class="attribute_definition">
 <span class="attribute_definition">roundTripTime</span>
 </p>
 
-<div class="attribute_description">This is the average round trip time in seconds for communication to the
-client.
+<div class="attribute_description">在一段时间内服务器与这个Proxy绑定的客户端通讯平均往返时间。这个属性只在Linux下生效。
 </div>
 
 <a name="timeSinceHeardFromClient"></a><p class="attribute_definition">
 <span class="attribute_definition">timeSinceHeardFromClient</span>
 </p>
 
-<div class="attribute_description">This is the number of seconds since a packet from the client was last
-received.
-</div>
-
-<a name="wards"></a><p class="attribute_definition">
-<span class="attribute_definition">wards</span>
-</p>
-
-<div class="attribute_description">This is a list of EntityIDs that the associated Client is allowed to control.  When controlEntity()
-is called on the Client, the newly controlled Entity should be added to this list so the updates will
-be propagated to the Cell, rather than the Cell updating the Client.
+<div class="attribute_description">最后一次收到客户端数据包时到目前为止所过去的时间（秒）。
 </div>
 
 <hr>
