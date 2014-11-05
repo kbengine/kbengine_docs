@@ -84,52 +84,26 @@
 <table id="callbacks" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr><td>
-<span class="function_list">def <a href="#__init__" class="function_list" >__init__</a>( self, nearbyEntity ):</span>
-</td></tr>
-
-<tr><td>
 <span class="function_list">def <a href="#onDestroy" class="function_list" >onDestroy</a>( self ):</span>
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#onEnterTrap" class="function_list" >onEnterTrap</a>( self, entity, range, controllerID, userArg ):</span>
+<span class="function_list">def <a href="#onEnterTrap" class="function_list" >onEnterTrap</a>( self, entity, range_xz, range_y, controllerID, userArg ):</span>
 </td></tr>
 
 <tr><td>
 <span class="function_list">def <a href="#onEnteredAoI" class="function_list" >onEnteredAoI</a>( self, entity ):</span>
 </td></tr>
 
-<tr><td>
-<span class="function_list">def <a href="#onEnteredCell" class="function_list" >onEnteredCell</a>( self ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#onEnteringCell" class="function_list" >onEnteringCell</a>( self ):</span>
-</td></tr>
 
 <tr><td>
 <span class="function_list">def <a href="#onGetWitness" class="function_list" >onGetWitness</a>( self ):</span>
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#onLeaveTrap" class="function_list" >onLeaveTrap</a>( self, entity, range, controllerID, userArg ):</span>
+<span class="function_list">def <a href="#onLeaveTrap" class="function_list" >onLeaveTrap</a>( self, entity, range_xz, range_y, controllerID, userArg ):</span>
 </td></tr>
 
-<tr><td>
-<span class="function_list">def <a href="#onLeaveTrapID" class="function_list" >onLeaveTrapID</a>( self, entityID, range, controllerID, userArg ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#onLeavingCell" class="function_list" >onLeavingCell</a>( self ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#onLeftCell" class="function_list" >onLeftCell</a>( self ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#onLoseControlledBy" class="function_list" >onLoseControlledBy</a>( self, id ):</span>
-</td></tr>
 
 <tr><td>
 <span class="function_list">def <a href="#onLoseWitness" class="function_list" >onLoseWitness</a>( self ):</span>
@@ -144,43 +118,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#onNavigate" class="function_list" >onNavigate</a>( self, controllerID, userData ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#onNavigateFailed" class="function_list" >onNavigateFailed</a>( self, controllerID, userData ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#onNoise" class="function_list" >onNoise</a>( self, entity, propRange, distance, event, info ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#onPassengerAlightAttempt" class="function_list" >onPassengerAlightAttempt</a>( self ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#onPassengerBoardAttempt" class="function_list" >onPassengerBoardAttempt</a>( self ):</span>
-</td></tr>
-
-<tr><td>
 <span class="function_list">def <a href="#onRestore" class="function_list" >onRestore</a>( self ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#onSpaceGone" class="function_list" >onSpaceGone</a>( self ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#onStartSeeing" class="function_list" >onStartSeeing</a>( self, entity, userData ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#onStopSeeing" class="function_list" >onStopSeeing</a>( self, entity, userData ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#onStopSeeingID" class="function_list" >onStopSeeingID</a>( self, entityID, userData ):</span>
 </td></tr>
 
 <tr><td>
@@ -197,14 +135,6 @@
 
 <tr><td>
 <span class="function_list">def <a href="#onTimer" class="function_list" >onTimer</a>( self, timerHandle, userData ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#onTurn" class="function_list" >onTurn</a>( self, controllerID, userData ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#onWindowOverflow" class="function_list" >onWindowOverflow</a>( self ):</span>
 </td></tr>
 
 <tr><td>
@@ -725,7 +655,7 @@ int，新创建的控制器ID。
 回调函数如下定义：
 
 <pre>	def onMove( self, controllerId, userData ):
-	def onNavigateFailed( self, controllerId, userData ):
+	def onMoveFailure( self, controllerId, userData ):
 </pre>
 </div>
 
@@ -873,62 +803,36 @@ cell实体的数据同时备份在base实体，确保遇到灾难恢复数据时数据是最新的。
 <hr>
 <h2>回调函数文档</h2>
 
-<a name="__init__"></a><p class="function_definition">
-<span class="function_definition">def __init__( <i>self, nearbyEntity</i> ):</span>
-</p>
-
-<div class="function_description">This method is called when the real entity is initially created. It is not
-called on ghost entities or when the real entity is offloaded.
-</div>
-
-<p>
-<span class="function_parameter">参数：</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-
-<tr valign=top><td><span class="function_parameter_name"><i>nearbyEntity</i></span></td><td><span class="function_parameter_description">&nbsp;This optional argument accepts the entity that was used
-	in the Base.createCellEntity call. This is useful for setting the
-	initial position of the entity. This argument is guaranteed to be a
-	real entity.
-<br><br>
-@see <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#onTeleportSuccess>onTeleportSuccess</a>
-</span></td></tr>
-
-</table>
-</p>
 
 <a name="onDestroy"></a><p class="function_definition">
 <span class="function_definition">def onDestroy( <i>self</i> ):</span>
 </p>
 
-<div class="function_description">If present, this method is called when this entity is being destroyed.
-Customised clean-up should be put in this callback. This method has no
-arguments.
+<div class="function_description">如果这个函数在脚本中有实现，这个函数在调用<a href="Base.html">Base</a>.<a href=Base.html#destroy>destroy</a>()后，在实际销毁之前被调用。
+这个函数没有参数。
 </div>
 
 <a name="onEnterTrap"></a><p class="function_definition">
-<span class="function_definition">def onEnterTrap( <i>self, entity, range, controllerID, userArg</i> ):</span>
+<span class="function_definition">def onEnterTrap( <i>self, entity, range_xz, range_y, controllerID, userArg</i> ):</span>
 </p>
 
-<div class="function_description">This method is associated with the <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#addProximity>addProximity</a> method. It is called
-when an entity enters a proximity trap of this entity.
+<div class="function_description">当注册了使用<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#addProximity>addProximity</a>注册了一个范围触发器，有其他实体进入触发器时，该回调函数被调用。
 </div>
 
 <p>
 <span class="function_parameter">参数：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><span class="function_parameter_name"><i>entity</i></span></td><td><span class="function_parameter_description">&nbsp;The entity that has entered.
+<tr valign=top><td><span class="function_parameter_name"><i>entity</i></span></td><td><span class="function_parameter_description">&nbsp;已经进入了范围的实体。
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>range</i></span></td><td><span class="function_parameter_description">&nbsp;The range of the trigger.
+<tr valign=top><td><span class="function_parameter_name"><i>range</i></span></td><td><span class="function_parameter_description">&nbsp;这个触发器的范围半径。
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>controllerID</i></span></td><td><span class="function_parameter_description">&nbsp;The id of the proximity trap controller.
+<tr valign=top><td><span class="function_parameter_name"><i>controllerID</i></span></td><td><span class="function_parameter_description">&nbsp;这个触发器的控制器id。
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>userArg</i></span></td><td><span class="function_parameter_description">&nbsp;If userArg is not 0, this is also passed to the
-	callback. The prototype should assign a default value of 0 if it is
-	possible that addProximity() can be called with a userArg value of 0.
+<tr valign=top><td><span class="function_parameter_name"><i>userArg</i></span></td><td><span class="function_parameter_description">&nbsp;这个参数的值由用户调用<a href=Entity.html#addProximity>addProximity</a>时给出，用户可以根据此参数对当前行为做一些判断。
 </span></td></tr>
 
 </table>
@@ -938,84 +842,32 @@ when an entity enters a proximity trap of this entity.
 <span class="function_definition">def onEnteredAoI( <i>self, entity</i> ):</span>
 </p>
 
-<div class="function_description">This method is called on a real entity with witness whenever an entity
-enters its Area of Interest.
+<div class="function_description">如果这个函数在脚本中有实现，当一个实体进入了当前实体的<a href=../../keywords.html#AOI>AOI</a>范围，该回调被触发。
 </div>
 
 <p>
 <span class="function_parameter">参数：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><span class="function_parameter_name"><i>entity</i></span></td><td><span class="function_parameter_description">&nbsp;The entity that made entered the AoI.
+<tr valign=top><td><span class="function_parameter_name"><i>entity</i></span></td><td><span class="function_parameter_description">&nbsp;进入AOI范围的实体。
 </span></td></tr>
 
 </table>
 </p>
 
-<a name="onEnteredCell"></a><p class="function_definition">
-<span class="function_definition">def onEnteredCell( <i>self</i> ):</span>
-</p>
-
-<div class="function_description">This method is called on a real entity when it has just entered a new cell.
-<br><br>
-On the source cell, onLeavingCell is called on the real before it is
-offloaded.
-onLeftCell is then called on this entity after being converted to a ghost.
-<br><br>
-On the destination cell, onEnteringCell is called on the ghost entity. This
-ghost is then converted to a real entity and onEnteredCell is called.
-<br><br>
-Note: Think twice before using this callback. These can often be avoided by
-using smarter data types.
-</div>
-
-<p>
-<span class="function_links"><b>See:</b></span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#onEnteringCell">onEnteringCell</a><br><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#onLeavingCell">onLeavingCell</a><br><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#onLeftCell">onLeftCell</a><br></td></tr>
-</table>
-</p>
-
-<a name="onEnteringCell"></a><p class="function_definition">
-<span class="function_definition">def onEnteringCell( <i>self</i> ):</span>
-</p>
-
-<div class="function_description">This method is called on a ghost entity when it is about to become real.
-<br><br>
-On the source cell, onLeavingCell is called on the real before it is
-offloaded. onLeftCell is then called on this entity after being converted
-to a ghost.
-<br><br>
-On the destination cell, onEnteringCell is called on the ghost entity. This
-ghost is then converted to a real entity and onEnteredCell is called.
-<br><br>
-This method should be decorated with @bwdecorators.callableOnGhost since
-it will only be called on ghost entities.
-<br><br>
-Note: Think twice before using this callback. These can often be avoided by
-using smarter data types.
-</div>
-
-<p>
-<span class="function_links"><b>See:</b></span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#onEnteredCell">onEnteredCell</a><br><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#onLeavingCell">onLeavingCell</a><br><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#onLeftCell">onLeftCell</a><br></td></tr>
-</table>
-</p>
 
 <a name="onGetWitness"></a><p class="function_definition">
 <span class="function_definition">def onGetWitness( <i>self</i> ):</span>
 </p>
 
-<div class="function_description">This method is called when a witness attaches to this entity.
+<div class="function_description">如果这个函数在脚本中有实现，当实体绑定了<a href=../../keywords.html#Witness>Witness</a>时被调用。
 </div>
 
 <a name="onLeaveTrap"></a><p class="function_definition">
-<span class="function_definition">def onLeaveTrap( <i>self, entity, range, controllerID, userArg</i> ):</span>
+<span class="function_definition">def onLeaveTrap( <i>self, entity, range_xz, range_y, controllerID, userArg</i> ):</span>
 </p>
 
-<div class="function_description">This method is associated with the <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#addProximity>addProximity</a> method. It is called
-when an entity leaves a proximity trap of this entity.
+<div class="function_description">如果这个函数在脚本中有实现，当实体离开了当前实体注册的范围触发器区域时被触发，范围触发器由<a href=../../keywords.html#entity>Entity</a>.<a href=#addProximity>addProximity</a>注册。
 </div>
 
 <p>
@@ -1039,113 +891,13 @@ when an entity leaves a proximity trap of this entity.
 </table>
 </p>
 
-<a name="onLeaveTrapID"></a><p class="function_definition">
-<span class="function_definition">def onLeaveTrapID( <i>self, entityID, range, controllerID, userArg</i> ):</span>
-</p>
 
-<div class="function_description">This method is associated with the <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#addProximity>addProximity</a> method. It is called
-when an entity leaves a proximity trap of this entity. Getting this method
-called should be rare. It can only occur if this entity is onloaded to a new
-cell that does not have a currently trapped entity.
-</div>
-
-<p>
-<span class="function_parameter">参数：</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-
-<tr valign=top><td><span class="function_parameter_name"><i>entityID</i></span></td><td><span class="function_parameter_description">&nbsp;The id of the entity that has left.
-</span></td></tr>
-
-<tr valign=top><td><span class="function_parameter_name"><i>range</i></span></td><td><span class="function_parameter_description">&nbsp;The range of the trigger.
-</span></td></tr>
-
-<tr valign=top><td><span class="function_parameter_name"><i>controllerID</i></span></td><td><span class="function_parameter_description">&nbsp;The id of the proximity trap controller.
-</span></td></tr>
-
-<tr valign=top><td><span class="function_parameter_name"><i>userArg</i></span></td><td><span class="function_parameter_description">&nbsp;If userArg is not 0, this is also passed to the
-	callback. The prototype should assign a default value of 0 if it is
-	possible that addProximity() can be called with a userArg value of 0.
-</span></td></tr>
-
-</table>
-</p>
-
-<a name="onLeavingCell"></a><p class="function_definition">
-<span class="function_definition">def onLeavingCell( <i>self</i> ):</span>
-</p>
-
-<div class="function_description">This method is called on a real entity when it is about to move to a new
-cell.
-<br><br>
-On the source cell, onLeavingCell is called on the real before it is
-offloaded. onLeftCell is then called on this entity after being converted
-to a ghost.
-<br><br>
-On the destination cell, onEnteringCell is called on the ghost entity. This
-ghost is then converted to a real entity and onEnteredCell is called.
-<br><br>
-Note: Think twice before using this callback. These can often be avoided by
-using smarter data types.
-</div>
-
-<p>
-<span class="function_links"><b>See:</b></span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#onEnteringCell">onEnteringCell</a><br><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#onEnteredCell">onEnteredCell</a><br><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#onLeftCell">onLeftCell</a><br></td></tr>
-</table>
-</p>
-
-<a name="onLeftCell"></a><p class="function_definition">
-<span class="function_definition">def onLeftCell( <i>self</i> ):</span>
-</p>
-
-<div class="function_description">This method is called on a ghost entity when the real entity has just left
-this cell.
-<br><br>
-On the source cell, onLeavingCell is called on the real before it is
-offloaded. onLeftCell is then called on this entity after being converted
-to a ghost.
-<br><br>
-On the destination cell, onEnteringCell is called on the ghost entity. This
-ghost is then converted to a real entity and onEnteredCell is called.
-<br><br>
-This method should be decorated with @bwdecorators.callableOnGhost since
-it will only be called on ghost entities.
-<br><br>
-Note: Think twice before using this callback. These can often be avoided by
-using smarter data types.
-</div>
-
-<p>
-<span class="function_links"><b>See:</b></span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#onEnteringCell">onEnteringCell</a><br><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#onEnteredCell">onEnteredCell</a><br><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#onLeavingCell">onLeavingCell</a><br></td></tr>
-</table>
-</p>
-
-<a name="onLoseControlledBy"></a><p class="function_definition">
-<span class="function_definition">def onLoseControlledBy( <i>self, id</i> ):</span>
-</p>
-
-<div class="function_description">This method is called when the entity associated with the controlledBy
-property is destroyed.
-</div>
-
-<p>
-<span class="function_parameter">参数：</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-
-<tr valign=top><td><span class="function_parameter_name"><i>id</i></span></td><td><span class="function_parameter_description">&nbsp;The id of the controlledBy entity.
-</span></td></tr>
-
-</table>
-</p>
 
 <a name="onLoseWitness"></a><p class="function_definition">
 <span class="function_definition">def onLoseWitness( <i>self</i> ):</span>
 </p>
 
-<div class="function_description">This method is called when a witness detaches from this entity.
+<div class="function_description">This method is called when a <a href=../../keywords.html#Witness>Witness</a> detaches from this entity.
 </div>
 
 <a name="onMove"></a><p class="function_definition">
@@ -1192,127 +944,8 @@ methods. It is called if the entity fails to reach its destination.
 </table>
 </p>
 
-<a name="onNavigate"></a><p class="function_definition">
-<span class="function_definition">def onNavigate( <i>self, controllerID, userData</i> ):</span>
-</p>
 
-<div class="function_description">This callback is associated with the <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#navigate>navigate</a> and
-<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#navigateStep>navigateStep</a> methods. It is called when the entity reaches the
-desired location.
-</div>
 
-<p>
-<span class="function_parameter">参数：</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-
-<tr valign=top><td><span class="function_parameter_name"><i>controllerID</i></span></td><td><span class="function_parameter_description">&nbsp;The id of the controller that triggered this
-						callback.
-</span></td></tr>
-
-<tr valign=top><td><span class="function_parameter_name"><i>userData</i></span></td><td><span class="function_parameter_description">&nbsp;The user data that was passed to <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#navigate>navigate</a> or
-						<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#navigateStep>navigateStep</a>.
-</span></td></tr>
-
-</table>
-</p>
-
-<a name="onNavigateFailed"></a><p class="function_definition">
-<span class="function_definition">def onNavigateFailed( <i>self, controllerID, userData</i> ):</span>
-</p>
-
-<div class="function_description">This callback is associated with the <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#navigate>navigate</a> and
-<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#navigateStep>navigateStep</a> methods. It is called when the entity fails to reach the
-desired location.
-</div>
-
-<p>
-<span class="function_parameter">参数：</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-
-<tr valign=top><td><span class="function_parameter_name"><i>controllerID</i></span></td><td><span class="function_parameter_description">&nbsp;The id of the controller that triggered this
-						callback.
-</span></td></tr>
-
-<tr valign=top><td><span class="function_parameter_name"><i>userData</i></span></td><td><span class="function_parameter_description">&nbsp;The user data that was passed to <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#navigate>navigate</a> or
-						<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#navigateStep>navigateStep</a>.
-</span></td></tr>
-
-</table>
-</p>
-
-<a name="onNoise"></a><p class="function_definition">
-<span class="function_definition">def onNoise( <i>self, entity, propRange, distance, event, info</i> ):</span>
-</p>
-
-<div class="function_description">This method is called when this entity hears a noise. See <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#makeNoise>makeNoise</a>
-for more information about how an entity can make noise.
-</div>
-
-<p>
-<span class="function_parameter">参数：</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-
-<tr valign=top><td><span class="function_parameter_name"><i>entity</i></span></td><td><span class="function_parameter_description">&nbsp;The entity that made the noise.
-</span></td></tr>
-
-<tr valign=top><td><span class="function_parameter_name"><i>propRange</i></span></td><td><span class="function_parameter_description">&nbsp;The propagation range of the noise.
-</span></td></tr>
-
-<tr valign=top><td><span class="function_parameter_name"><i>distance</i></span></td><td><span class="function_parameter_description">&nbsp;This is how far away the noise was made.
-</span></td></tr>
-
-<tr valign=top><td><span class="function_parameter_name"><i>event</i></span></td><td><span class="function_parameter_description">&nbsp;The integer event number that was passed to <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#makeNoise>makeNoise</a>.
-</span></td></tr>
-
-<tr valign=top><td><span class="function_parameter_name"><i>info</i></span></td><td><span class="function_parameter_description">&nbsp;The integer info argument that was passed to <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#makeNoise>makeNoise</a>.
-</span></td></tr>
-
-</table>
-</p>
-
-<a name="onPassengerAlightAttempt"></a><p class="function_definition">
-<span class="function_definition">def onPassengerAlightAttempt( <i>self</i> ):</span>
-</p>
-
-<div class="function_description">If present, this method is called on a vehicle when a entity
-controlled by a client attempts to get off it, if physics checking
-is enabled for that entity. If the method returns True, then the
-operation is permitted. If the method returns anything else,
-including an exception, then the operation is not permitted and
-a physics correction will be sent.
-The method may be called on a ghost vehicle, so it must take care
-to rely on only ghosted properties. Also, the position of the
-entity making the attempt must not be interfered with - all the
-method should do is return True or False.
-Note that the operation can still be failed at a number of points
-by later physics checks, even if your method returns True.
-</div>
-
-<a name="onPassengerBoardAttempt"></a><p class="function_definition">
-<span class="function_definition">def onPassengerBoardAttempt( <i>self</i> ):</span>
-</p>
-
-<div class="function_description">If present, this method is called on a vehicle when a entity
-controlled by a client attempts to board it, if physics checking
-is enabled for that entity. If the method returns True, then the
-operation is permitted. If the method returns anything else,
-including an exception, then the operation is not permitted and
-a physics correction will be sent.
-The method may be called on a ghost vehicle, so it must take care
-to rely on only ghosted properties. Also, the position of the
-entity making the attempt must not be interfered with - all the
-method should do is return True or False.
-Note that the operation can still be failed at a number of points
-by later physics checks, even if your method returns True.
-<br><br>
-This method is not a good place to synchronise boarding of a
-single-seated vehicle, since it may be called simultaneously
-from two different cells. If you need to enforce such a rule,
-you should have a separate reservation step which sets a ghosted
-property to the (id of the) entity that has permission to ride it.
-This method can then check that the entity attempting to board
-does indeed hold the reservation.
-</div>
 
 <a name="onRestore"></a><p class="function_definition">
 <span class="function_definition">def onRestore( <i>self</i> ):</span>
@@ -1322,95 +955,7 @@ does indeed hold the reservation.
 failure of a Cell application. This method has no arguments.
 </div>
 
-<a name="onSpaceGone"></a><p class="function_definition">
-<span class="function_definition">def onSpaceGone( <i>self</i> ):</span>
-</p>
 
-<div class="function_description">This method is called when the space this entity is in wants to shut down.
-</div>
-
-<a name="onStartSeeing"></a><p class="function_definition">
-<span class="function_definition">def onStartSeeing( <i>self, entity, userData</i> ):</span>
-</p>
-
-<div class="function_description">This method is called when a new entity enters this entity's vision. See
-<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#addVision>addVision</a> for how to add vision to an entity.
-</div>
-
-<p>
-<span class="function_links"><b>See:</b></span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#addVision">addVision</a><br></td></tr>
-</table>
-</p>
-
-<p>
-<span class="function_parameter">参数：</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-
-<tr valign=top><td><span class="function_parameter_name"><i>entity</i></span></td><td><span class="function_parameter_description">&nbsp;The entity that has just entered this entity's vision.
-</span></td></tr>
-
-<tr valign=top><td><span class="function_parameter_name"><i>userData</i></span></td><td><span class="function_parameter_description">&nbsp;</span></td></tr>
-
-</table>
-</p>
-
-<a name="onStopSeeing"></a><p class="function_definition">
-<span class="function_definition">def onStopSeeing( <i>self, entity, userData</i> ):</span>
-</p>
-
-<div class="function_description">This method is called when an entity leaves this entity's vision.
-</div>
-
-<p>
-<span class="function_links"><b>See:</b></span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#addVision">addVision</a><br><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#onStopSeeingID">onStopSeeingID</a><br></td></tr>
-</table>
-</p>
-
-<p>
-<span class="function_parameter">参数：</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-
-<tr valign=top><td><span class="function_parameter_name"><i>entity</i></span></td><td><span class="function_parameter_description">&nbsp;The entity that has just left this entity's vision.
-</span></td></tr>
-
-<tr valign=top><td><span class="function_parameter_name"><i>userData</i></span></td><td><span class="function_parameter_description">&nbsp;</span></td></tr>
-
-</table>
-</p>
-
-<a name="onStopSeeingID"></a><p class="function_definition">
-<span class="function_definition">def onStopSeeingID( <i>self, entityID, userData</i> ):</span>
-</p>
-
-<div class="function_description">This method is called when an entity leaves this entity's vision and the
-entity is not on this cell. Getting this method called should be rare. It
-can only occur if the entity is onloaded to a new cell that does not have
-a currently seen entity.
-</div>
-
-<p>
-<span class="function_links"><b>See:</b></span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#addVision">addVision</a><br><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#onStopSeeing">onStopSeeing</a><br></td></tr>
-</table>
-</p>
-
-<p>
-<span class="function_parameter">参数：</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-
-<tr valign=top><td><span class="function_parameter_name"><i>entityID</i></span></td><td><span class="function_parameter_description">&nbsp;The id of the entity that has just left this entity's
-					vision.
-</span></td></tr>
-
-<tr valign=top><td><span class="function_parameter_name"><i>userData</i></span></td><td><span class="function_parameter_description">&nbsp;</span></td></tr>
-
-</table>
-</p>
 
 <a name="onTeleport"></a><p class="function_definition">
 <span class="function_definition">def onTeleport( <i>self</i> ):</span>
@@ -1499,34 +1044,6 @@ A timer can be added with the <a href=../../keywords.html#entity>Entity</a>.<a h
 </table>
 </p>
 
-<a name="onTurn"></a><p class="function_definition">
-<span class="function_definition">def onTurn( <i>self, controllerID, userData</i> ):</span>
-</p>
-
-<div class="function_description">This method is called on the completion of a call to <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#addYawRotator>addYawRotator</a>.
-</div>
-
-<p>
-<span class="function_parameter">参数：</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-
-<tr valign=top><td><span class="function_parameter_name"><i>controllerID</i></span></td><td><span class="function_parameter_description">&nbsp;The id of the controller.
-</span></td></tr>
-
-<tr valign=top><td><span class="function_parameter_name"><i>userData</i></span></td><td><span class="function_parameter_description">&nbsp;The user data passed in to the <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#addYawRotator>addYawRotator</a> call.
-</span></td></tr>
-
-</table>
-</p>
-
-<a name="onWindowOverflow"></a><p class="function_definition">
-<span class="function_definition">def onWindowOverflow( <i>self</i> ):</span>
-</p>
-
-<div class="function_description">If present, this method is called if this entity's channel is close to
-overflowing. This threshold is configured by the
-cellApp/sendWindowCallbackThreshold setting in bw.xml.
-</div>
 
 <a name="onWitnessed"></a><p class="function_definition">
 <span class="function_definition">def onWitnessed( <i>self, isWitnessed</i> ):</span>
@@ -1599,36 +1116,6 @@ via this <a href="PyClient.html">PyClient</a> object are passed to all clients.
 </table>
 </p>
 
-<a name="aoiUpdateScheme"></a><p class="attribute_definition">
-<span class="attribute_definition">aoiUpdateScheme</span>
-</p>
-
-<div class="attribute_description">This property affects the frequency at which updates about this entity
-are sent to clients. Note that this only affects the scheme used by new
-AoIs that this entity enters.
-<br><br>
-The available schemes are specified in bw.xml's cellApp/aoiUpdateSchemes
-section.
-</div>
-
-<a name="artificialLoad"></a><p class="attribute_definition">
-<span class="attribute_definition">artificialLoad</span>
-</p>
-
-<div class="attribute_description">This attribute allows this entity to report an additional amount of
-artificial load. It is useful as a hint to the load balancing if it is
-expected that this entity's load may increase by this amount in the
-future.
-<br><br>
-The value is added directly to the load of the local CellApp process.
-<br><br>
-This feature should be used with care. Setting this value too large, for
-example, could adversely affect the load balancing.
-</div>
-
-<a name="base"></a><p class="attribute_definition">
-<span class="attribute_definition">base</span>
-</p>
 
 <div class="attribute_description">This attribute provides a BaseEntityMailbox object. This can
 be used to call functions on the base <a href=../../keywords.html#entity>Entity</a>.
@@ -1642,31 +1129,7 @@ be used to call functions on the base <a href=../../keywords.html#entity>Entity<
 </table>
 </p>
 
-<a name="canBeSeen"></a><p class="attribute_definition">
-<span class="attribute_definition">canBeSeen</span>
-</p>
 
-<div class="attribute_description">If set to True, this attribute indicates that this <a href=../../keywords.html#entity>Entity</a> should be
-included in vision updates.
-<br><br>
-If set to False, the <a href=../../keywords.html#entity>Entity</a> will be 'invisible' to any <a href=../../keywords.html#entity>Entity</a>'s vision
-controller.
-</div>
-
-<p>
-<span class="attribute_links"><b>See:</b></span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#addVision">addVision</a><br></td></tr>
-</table>
-</p>
-
-<p>
-<span class="attribute_type">Type:</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>bool
-</td></tr>
-</table>
-</p>
 
 <a name="className"></a><p class="attribute_definition">
 <span class="attribute_definition">className</span>
@@ -1709,36 +1172,7 @@ entity.
 </table>
 </p>
 
-<a name="controlledBy"></a><p class="attribute_definition">
-<span class="attribute_definition">controlledBy</span>
-</p>
 
-<div class="attribute_description">This attribute is the <a href="BaseEntityMailBox.html">BaseEntityMailBox</a> of the client that is controlling
-the normal movement of this entity. If only the server is controlling it,
-then it is None. When a client attaches to a base with giveClientTo
-(or via login), it is automatically set to the base of that client.
-<br><br>
-If a script makes changes to the pose of an entity, e.g. sets its
-direction directly, or teleports it to another space, then those
-changes are sent down to the client as a forced pose change. Future
-pose updates from the client are ignored until the forced change is
-acknowledged. This same mechanism is used if the physics checking
-system rules a client-initiated movement illegal.
-<br><br>
-Scripts may set this on any (real) entity to grant a client control
-of that entity - or revoke it. It is even possible to revoke or redirect
-the client's control of its own entity, in which case its position
-(if volatile) will be sent to the client in every update. (Any volatile
-positions of vehicles the client is on will also be sent every update.)
-</div>
-
-<p>
-<span class="attribute_type">Type:</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href="BaseEntityMailBox.html">BaseEntityMailBox</a>
-</td></tr>
-</table>
-</p>
 
 <a name="direction"></a><p class="attribute_definition">
 <span class="attribute_definition">direction</span>
@@ -1763,34 +1197,7 @@ values are in radians.
 </table>
 </p>
 
-<a name="fieldOfView"></a><p class="attribute_definition">
-<span class="attribute_definition">fieldOfView</span>
-</p>
 
-<div class="attribute_description">This attribute stores the angle of the vision cone in radians.  Entities
-that are greater than this angle, in radians, from this entity's
-direction will not be seen. The field of view is double this number. For
-example, a field of view of 180 degrees (pi radians) would be equivalent
-to a vision cone angle of 90 degrees (pi/2 radians).
-<br><br>
-This attribute is deprecated due to the confusion it can cause. It is
-identical to the visionAngle attribute.
-</div>
-
-<p>
-<span class="attribute_links"><b>See:</b></span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#addVision">addVision</a><br></td></tr>
-</table>
-</p>
-
-<p>
-<span class="attribute_type">Type:</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>float
-</td></tr>
-</table>
-</p>
 
 <a name="hasWitness"></a><p class="attribute_definition">
 <span class="attribute_definition">hasWitness</span>
@@ -1840,13 +1247,7 @@ cell, and base applications.
 </table>
 </p>
 
-<a name="isIndoors"></a><p class="attribute_definition">
-<span class="attribute_definition">isIndoors</span>
-</p>
 
-<div class="attribute_description">The isIndoors attribute will be True if the entity is indoors and False
-if outdoors or in no chunk.
-</div>
 
 <a name="isOnGround"></a><p class="attribute_definition">
 <span class="attribute_definition">isOnGround</span>
@@ -1863,13 +1264,6 @@ if outdoors or in no chunk.
 </table>
 </p>
 
-<a name="isOutdoors"></a><p class="attribute_definition">
-<span class="attribute_definition">isOutdoors</span>
-</p>
-
-<div class="attribute_description">The isOutdoors attribute will be True if the entity is outdoors and False
-if indoors or in no chunk.
-</div>
 
 <a name="isWitnessed"></a><p class="attribute_definition">
 <span class="attribute_definition">isWitnessed</span>
@@ -1888,69 +1282,6 @@ it can take between 8 to 12 minutes after leaving the AoI of the last
 client-controlled entity before this attribute is set to False.
 </div>
 
-<a name="localPitch"></a><p class="attribute_definition">
-<span class="attribute_definition">localPitch</span>
-</p>
-
-<div class="attribute_description">This read-only attribute returns pitch of this entity relative to the
-vehicle that it is riding on.
-</div>
-
-<p>
-<span class="attribute_type">Type:</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>Read-only Float.
-</td></tr>
-</table>
-</p>
-
-<a name="localPosition"></a><p class="attribute_definition">
-<span class="attribute_definition">localPosition</span>
-</p>
-
-<div class="attribute_description">This read-only attribute returns the position of this entity relative
-to the vehicle that it is riding on.
-</div>
-
-<p>
-<span class="attribute_type">Type:</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>Tuple of 3 floats as (x, y, z).
-</td></tr>
-</table>
-</p>
-
-<a name="localRoll"></a><p class="attribute_definition">
-<span class="attribute_definition">localRoll</span>
-</p>
-
-<div class="attribute_description">This read-only attribute returns roll of this entity relative to the
-vehicle that it is riding on.
-</div>
-
-<p>
-<span class="attribute_type">Type:</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>Read-only Float.
-</td></tr>
-</table>
-</p>
-
-<a name="localYaw"></a><p class="attribute_definition">
-<span class="attribute_definition">localYaw</span>
-</p>
-
-<div class="attribute_description">This read-only attribute returns yaw of this entity relative to the
-vehicle that it is riding on.
-</div>
-
-<p>
-<span class="attribute_type">Type:</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>Read-only Float.
-</td></tr>
-</table>
-</p>
 
 <a name="otherClients"></a><p class="attribute_definition">
 <span class="attribute_definition">otherClients</span>
