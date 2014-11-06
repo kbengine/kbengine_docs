@@ -88,7 +88,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#onEnterTrap" class="function_list" >onEnterTrap</a>( self, entity, range_xz, range_y, controllerID, userArg ):</span>
+<span class="function_list">def <a href="#onEnterTrap" class="function_list" >onEnterTrap</a>( self, entity, rangeXZ, rangeY, controllerID, userArg ):</span>
 </td></tr>
 
 <tr><td>
@@ -101,7 +101,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#onLeaveTrap" class="function_list" >onLeaveTrap</a>( self, entity, range_xz, range_y, controllerID, userArg ):</span>
+<span class="function_list">def <a href="#onLeaveTrap" class="function_list" >onLeaveTrap</a>( self, entity, rangeXZ, rangeY, controllerID, userArg ):</span>
 </td></tr>
 
 
@@ -253,11 +253,11 @@ cellApp上新的<a href=../../keywords.html#entity>Entity</a>可以使用<a href="KBEng
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>rangeXZ</i></span></td><td><span class="function_parameter_description">
-float，给定陷阱xz轴区域的大小，必须大于等于0。
+float，给定触发器xz轴区域的大小，必须大于等于0。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>rangeY</i></span></td><td><span class="function_parameter_description">
-float，给定陷阱y轴高度，必须大于等于0。<br>
+float，给定触发器y轴高度，必须大于等于0。<br>
 需要注意的是，这个参数要生效必须开放<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->cellapp->coordinate_system->rangemgr_y
 <br>
 开放y轴管理会带来一些消耗，因为一些游戏大量的实体都在同一y轴高度或者在差不多水平线高度，此时碰撞变得非常密集。<br>
@@ -813,7 +813,7 @@ cell实体的数据同时备份在base实体，确保遇到灾难恢复数据时数据是最新的。
 </div>
 
 <a name="onEnterTrap"></a><p class="function_definition">
-<span class="function_definition">def onEnterTrap( <i>self, entity, range_xz, range_y, controllerID, userArg</i> ):</span>
+<span class="function_definition">def onEnterTrap( <i>self, entity, rangeXZ, rangeY, controllerID, userArg</i> ):</span>
 </p>
 
 <div class="function_description">当注册了使用<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#addProximity>addProximity</a>注册了一个范围触发器，有其他实体进入触发器时，该回调函数被调用。
@@ -826,7 +826,16 @@ cell实体的数据同时备份在base实体，确保遇到灾难恢复数据时数据是最新的。
 <tr valign=top><td><span class="function_parameter_name"><i>entity</i></span></td><td><span class="function_parameter_description">&nbsp;已经进入了范围的实体。
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>range</i></span></td><td><span class="function_parameter_description">&nbsp;这个触发器的范围半径。
+<tr valign=top><td><span class="function_parameter_name"><i>rangeXZ</i></span></td><td><span class="function_parameter_description">
+float，给定触发器xz轴区域的大小，必须大于等于0。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>rangeY</i></span></td><td><span class="function_parameter_description">
+float，给定触发器y轴高度，必须大于等于0。<br>
+需要注意的是，这个参数要生效必须开放<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->cellapp->coordinate_system->rangemgr_y
+<br>
+开放y轴管理会带来一些消耗，因为一些游戏大量的实体都在同一y轴高度或者在差不多水平线高度，此时碰撞变得非常密集。<br>
+3D太空类游戏或者小房间类实体较少的游戏比较适合开放此选项。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>controllerID</i></span></td><td><span class="function_parameter_description">&nbsp;这个触发器的控制器id。
@@ -860,11 +869,13 @@ cell实体的数据同时备份在base实体，确保遇到灾难恢复数据时数据是最新的。
 <span class="function_definition">def onGetWitness( <i>self</i> ):</span>
 </p>
 
-<div class="function_description">如果这个函数在脚本中有实现，当实体绑定了<a href=../../keywords.html#Witness>Witness</a>时被调用。
+<div class="function_description">如果这个函数在脚本中有实现，当实体绑定了<a href=../../keywords.html#Witness>Witness</a>时被调用。<br>
+也可以访问实体属性<a href=#hasWitness>Entity.hasWitness</a>得到实体当前的状态。
+
 </div>
 
 <a name="onLeaveTrap"></a><p class="function_definition">
-<span class="function_definition">def onLeaveTrap( <i>self, entity, range_xz, range_y, controllerID, userArg</i> ):</span>
+<span class="function_definition">def onLeaveTrap( <i>self, entity, rangeXZ, rangeY, controllerID, userArg</i> ):</span>
 </p>
 
 <div class="function_description">如果这个函数在脚本中有实现，当实体离开了当前实体注册的范围触发器区域时被触发，范围触发器由<a href=../../keywords.html#entity>Entity</a>.<a href=#addProximity>addProximity</a>注册。
@@ -874,18 +885,25 @@ cell实体的数据同时备份在base实体，确保遇到灾难恢复数据时数据是最新的。
 <span class="function_parameter">参数：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><span class="function_parameter_name"><i>entity</i></span></td><td><span class="function_parameter_description">&nbsp;The entity that has left.
+<tr valign=top><td><span class="function_parameter_name"><i>entity</i></span></td><td><span class="function_parameter_description">&nbsp;已经离开触发器区域的实体。
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>range</i></span></td><td><span class="function_parameter_description">&nbsp;The range of the trigger.
+<tr valign=top><td><span class="function_parameter_name"><i>rangeXZ</i></span></td><td><span class="function_parameter_description">
+float，给定触发器xz轴区域的大小，必须大于等于0。
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>controllerID</i></span></td><td><span class="function_parameter_description">&nbsp;The id of the proximity trap controller.
+<tr valign=top><td><span class="function_parameter_name"><i>rangeY</i></span></td><td><span class="function_parameter_description">
+float，给定触发器y轴高度，必须大于等于0。<br>
+需要注意的是，这个参数要生效必须开放<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->cellapp->coordinate_system->rangemgr_y
+<br>
+开放y轴管理会带来一些消耗，因为一些游戏大量的实体都在同一y轴高度或者在差不多水平线高度，此时碰撞变得非常密集。<br>
+3D太空类游戏或者小房间类实体较少的游戏比较适合开放此选项。
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>userArg</i></span></td><td><span class="function_parameter_description">&nbsp;If userArg is not 0, this is also passed to the
-	callback. The prototype should assign a default value of 0 if it is
-	possible that addProximity() can be called with a userArg value of 0.
+<tr valign=top><td><span class="function_parameter_name"><i>controllerID</i></span></td><td><span class="function_parameter_description">&nbsp;这个触发器的控制器ID。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>userArg</i></span></td><td><span class="function_parameter_description">&nbsp;这个参数的值由用户调用<a href=Entity.html#addProximity>addProximity</a>时给出，用户可以根据此参数对当前行为做一些判断。
 </span></td></tr>
 
 </table>
@@ -897,26 +915,26 @@ cell实体的数据同时备份在base实体，确保遇到灾难恢复数据时数据是最新的。
 <span class="function_definition">def onLoseWitness( <i>self</i> ):</span>
 </p>
 
-<div class="function_description">This method is called when a <a href=../../keywords.html#Witness>Witness</a> detaches from this entity.
+<div class="function_description">如果这个函数在脚本中有实现，当实体解除<a href=../../keywords.html#Witness>Witness</a>时，该回调被触发。<br>
+也可以访问实体属性<a href=#hasWitness>Entity.hasWitness</a>得到实体当前的状态。
 </div>
 
 <a name="onMove"></a><p class="function_definition">
 <span class="function_definition">def onMove( <i>self, controllerID, userData</i> ):</span>
 </p>
 
-<div class="function_description">This method is related to the <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#moveToPoint>moveToPoint</a> and <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#moveTo>moveTo</a><a href=../../keywords.html#entity>Entity</a>
-methods. It is called when the entity has reached its destination.
+<div class="function_description">如果这个函数在脚本中有实现，相关的<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#moveToPoint>moveToPoint</a>与<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#moveToEntity>moveToEntity</a>还有<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#navigate>navigate</a>方法被调用并且成功时会回调此函数。<br>
+
 </div>
 
 <p>
 <span class="function_parameter">参数：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><span class="function_parameter_name"><i>controllerID</i></span></td><td><span class="function_parameter_description">&nbsp;The id of the controller that triggered this callback.
+<tr valign=top><td><span class="function_parameter_name"><i>controllerID</i></span></td><td><span class="function_parameter_description">&nbsp;与某个移动相关的控制器ID。
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>userData</i></span></td><td><span class="function_parameter_description">&nbsp;The user data that was passed to <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#moveToPoint>moveToPoint</a> or
-<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#moveTo>moveTo</a><a href=../../keywords.html#entity>Entity</a>.
+<tr valign=top><td><span class="function_parameter_name"><i>userData</i></span></td><td><span class="function_parameter_description">&nbsp;这个参数值由用户在请求移动相关接口时给出。
 </span></td></tr>
 
 </table>
@@ -926,19 +944,17 @@ methods. It is called when the entity has reached its destination.
 <span class="function_definition">def onMoveFailure( <i>self, controllerID, userData</i> ):</span>
 </p>
 
-<div class="function_description">This method is related to the <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#moveToPoint>moveToPoint</a> and <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#moveTo>moveTo</a><a href=../../keywords.html#entity>Entity</a>
-methods. It is called if the entity fails to reach its destination.
+<div class="function_description">如果这个函数在脚本中有实现，相关的<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#moveToPoint>moveToPoint</a>与<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#moveToEntity>moveToEntity</a>还有<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#navigate>navigate</a>方法被调用并且失败时会回调此函数。<br>
 </div>
 
 <p>
 <span class="function_parameter">参数：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><span class="function_parameter_name"><i>controllerID</i></span></td><td><span class="function_parameter_description">&nbsp;The id of the controller that triggered this callback.
+<tr valign=top><td><span class="function_parameter_name"><i>controllerID</i></span></td><td><span class="function_parameter_description">&nbsp;与某个移动相关的控制器ID。
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>userData</i></span></td><td><span class="function_parameter_description">&nbsp;The user data that was passed to <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#moveToPoint>moveToPoint</a> or
-<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#moveTo>moveTo</a><a href=../../keywords.html#entity>Entity</a>.
+<tr valign=top><td><span class="function_parameter_name"><i>userData</i></span></td><td><span class="function_parameter_description">&nbsp;这个参数值由用户在请求移动相关接口时给出。
 </span></td></tr>
 
 </table>
@@ -951,8 +967,7 @@ methods. It is called if the entity fails to reach its destination.
 <span class="function_definition">def onRestore( <i>self</i> ):</span>
 </p>
 
-<div class="function_description">If present, this method is called if this entity has been restored after the
-failure of a Cell application. This method has no arguments.
+<div class="function_description">如果这个函数在脚本中有实现，这个函数在Cell应用程序崩溃后在其它Cell应用程序上重新创建该实体时被调用。这个函数没有参数。 
 </div>
 
 
@@ -961,64 +976,34 @@ failure of a Cell application. This method has no arguments.
 <span class="function_definition">def onTeleport( <i>self</i> ):</span>
 </p>
 
-<div class="function_description">This method is called on a real entity just before the entity is teleported
-via a Base.teleport call. Note that this method is not called when the
-entity is teleported via the cell's <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#teleport>teleport</a> method. You should
-explicit call this method if you need this functionality.
+<div class="function_description">如果这个函数在脚本中有实现，在Base.teleport调用成功之后该回调被调用。<br>
+请注意，在cell上调用实体的teleport并不会回调此接口，如果你需要这个功能请在<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#teleport>teleport</a>之后调用此回调。
 </div>
 
-<p>
-<span class="function_links"><b>See:</b></span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#teleport">teleport</a><br></td></tr>
-</table>
-</p>
+
 
 <a name="onTeleportFailure"></a><p class="function_definition">
 <span class="function_definition">def onTeleportFailure( <i>self</i> ):</span>
 </p>
 
-<div class="function_description">This method is called on a real entity when a teleport() call for that
-entity fails. This can occur if the nearby entity mailbox passed into
-teleport() is stale, meaning that the entity that it points to no longer
-exists on the destination CellApp pointed to by the mailbox.
+<div class="function_description">如果这个函数在脚本中有实现，当用户调用<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#teleport>teleport</a>失败时该回调被调用。
 </div>
 
-<p>
-<span class="function_links"><b>See:</b></span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#teleport">teleport</a><br></td></tr>
-</table>
-</p>
 
 <a name="onTeleportSuccess"></a><p class="function_definition">
 <span class="function_definition">def onTeleportSuccess( <i>self, nearbyEntity</i> ):</span>
 </p>
 
-<div class="function_description">This method is called on a real entity when a teleport() call for that
-entity has succeeded. The nearby entity is passed as the only argument.
-<br><br>
-When the teleport has been caused by a call from the base entity, the
-position of the entity will be <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#INVALID_POSITION>INVALID_POSITION</a>. The desired
-position should be set in this callback. This will typically be the
-position of the nearby entity or a close offset.
-<br><br>
-The nearby entity argument is guaranteed to be a real entity. Two-way
-methods that modify state can be called on this argument. This can be useful
-if the nearby entity contains state for where the entity should be
-positioned.
+<div class="function_description">如果这个函数在脚本中有实现，当用户调用<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#teleport>teleport</a>成功时该回调被调用。
 </div>
 
 <p>
 <span class="function_parameter">参数：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><span class="function_parameter_name"><i>nearbyEntity</i></span></td><td><span class="function_parameter_description">&nbsp;The entity associated with the mailbox passed to
-	<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#teleport>teleport</a> or Base.. This is guaranteed to be a real
-	entity.
+<tr valign=top><td><span class="function_parameter_name"><i>nearbyEntity</i></span></td><td><span class="function_parameter_description">&nbsp;这个参数由用户调用
+	<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#teleport>teleport</a>时给出。这是一个real实体。
 <br><br>
-@see <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#teleport>teleport</a>
-</span></td></tr>
 
 </table>
 </p>
@@ -1027,18 +1012,22 @@ positioned.
 <span class="function_definition">def onTimer( <i>self, timerHandle, userData</i> ):</span>
 </p>
 
-<div class="function_description">This method is called when a timer associated with this entity is triggered.
-A timer can be added with the <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#addTimer>addTimer</a> method.
+<div class="function_description">
+<b>功能说明：</b><br><br>
+这个函数当一个与此实体关联的定时器触发的时候被调用。
+一个定时器可以使用<a href=../../keywords.html#entity>Entity</a>.<a href=#addTimer>addTimer</a>函数添加。
 </div>
 
 <p>
 <span class="function_parameter">参数：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><span class="function_parameter_name"><i>timerHandle</i></span></td><td><span class="function_parameter_description">&nbsp;The id of the timer.
+<tr valign=top><td><span class="function_parameter_name"><i>timerHandle</i></span></td><td><span class="function_parameter_description">
+定时器的id。
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>userData</i></span></td><td><span class="function_parameter_description">&nbsp;The user data passed in to <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#addTimer>addTimer</a>.
+<tr valign=top><td><span class="function_parameter_name"><i>userData</i></span></td><td><span class="function_parameter_description">
+传进<a href=../../keywords.html#entity>Entity</a>.<a href=#addTimer>addTimer</a>的integer用户数据。
 </span></td></tr>
 
 </table>
@@ -1049,33 +1038,18 @@ A timer can be added with the <a href=../../keywords.html#entity>Entity</a>.<a h
 <span class="function_definition">def onWitnessed( <i>self, isWitnessed</i> ):</span>
 </p>
 
-<div class="function_description">This method is called when the state of this entity being witnessed changes.
-That is, if there are no attached clients who have this entity in their Area
-of Interest, this entity's witnessed state will be False. If a client is
-interested in this entity, its witnessed state will be True.
-<br><br>
-When entities are created, their initial witness state is unwitnessed. If
-they are created within the AoI of a witness, then they will have
-<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#onWitnessed>onWitnessed</a>( True ) called as soon as the witness is notified of
-this entity.
-<br><br>
-This can be useful as an optimisation. For example, CPU intensive entities
-may be able to pause their AI while they are not being watched.
+<div class="function_description">如果这个函数在脚本中有实现，如果一个实体进入了另一个绑定了Witness的实体的AOI范围（也可以理解为一个实体被观察者观察到了），则该实体的回调函数被调用。<br>
+可以利用这个函数在实体被观察时激活实体的AI，实体停止被观察时可以停止AI的执行，这样可以降低服务端的计算量从而提升效率。
 </div>
 
-<p>
-<span class="function_links"><b>See:</b></span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#isWitnessed">isWitnessed</a><br></td></tr>
-</table>
-</p>
+
 
 <p>
 <span class="function_parameter">参数：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><span class="function_parameter_name"><i>isWitnessed</i></span></td><td><span class="function_parameter_description">&nbsp;A boolean indicating whether or not the entity is now
-witnessed.
+<tr valign=top><td><span class="function_parameter_name"><i>isWitnessed</i></span></td><td><span class="function_parameter_description">&nbsp;bool，实体被观察时为True，实体被停止观察时是False。<br>
+也可以访问实体属性<a href=#isWitnessed>Entity.isWitnessed</a>得到实体当前的状态。
 </span></td></tr>
 
 </table>
@@ -1085,49 +1059,32 @@ witnessed.
 <span class="function_definition">def onWriteToDB( <i>self</i> ):</span>
 </p>
 
-<div class="function_description">If present, this method is called on the entity when it is about to write
-its data to the database.
+<div class="function_description">如果这个函数在脚本中有实现，这个函数在实体将要存档到数据库时被调用。
 </div>
 
 <hr>
-<h2>Attribute Documentation</h2>
+<h2>属性文档</h2>
 
 <a name="allClients"></a><p class="attribute_definition">
 <span class="attribute_definition">allClients</span>
 </p>
 
-<div class="attribute_description">When read, the allClients attribute provides a <a href="PyClient.html">PyClient</a> object. This can be
-used to call functions on the client <a href=../../keywords.html#entity>Entity</a>. Function calls that are made
-via this <a href="PyClient.html">PyClient</a> object are passed to all clients.
+<div class="attribute_description">使用这个属性调用实体的客户端远程方法，引擎会将这个消息广播给实体AOI范围内所有的其他绑定了客户端的实体(包括自己的客户端，绑定了客户端的实体通常为玩家)。<br><br>
+例子：<br>
+avatar的AOI范围内有玩家A和玩家B以及怪物C。<br>
+avatar.allClients.attack(monsterID，skillID, damage)<br><br>
+此时，玩家自己喝玩家A还有玩家B的客户端都会调用到attack方法，在他们的客户端可以调用指定技能的攻击动作做表现。
 </div>
 
 <p>
-<span class="attribute_links"><b>See:</b></span>
+<span class="attribute_links"><b>其他参考：</b></span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#ownClient">ownClient</a><br><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#clientEntity">clientEntity</a><br><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#otherClients">otherClients</a><br></td></tr>
 </table>
 </p>
 
-<p>
-<span class="attribute_type">Type:</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>Read-only <a href="PyClient.html">PyClient</a>
-</td></tr>
-</table>
-</p>
 
 
-<div class="attribute_description">This attribute provides a BaseEntityMailbox object. This can
-be used to call functions on the base <a href=../../keywords.html#entity>Entity</a>.
-</div>
-
-<p>
-<span class="attribute_type">Type:</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>Read-only <a href="BaseEntityMailBox.html">BaseEntityMailBox</a>
-</td></tr>
-</table>
-</p>
 
 
 
@@ -1135,13 +1092,13 @@ be used to call functions on the base <a href=../../keywords.html#entity>Entity<
 <span class="attribute_definition">className</span>
 </p>
 
-<div class="attribute_description">The class name of this <a href=../../keywords.html#entity>Entity</a>.
+<div class="attribute_description">实体的类名。 
 </div>
 
 <p>
 <span class="attribute_type">Type:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>Read-only string
+<tr><td>只读，string
 </td></tr>
 </table>
 </p>
@@ -1337,16 +1294,14 @@ entity.
 <span class="attribute_definition">pitch</span>
 </p>
 
-<div class="attribute_description">pitch provides the pitch component of the direction attribute. It is
-the pitch of the current facing direction of the <a href=../../keywords.html#entity>Entity</a>, in radians
-and in world space.
-This can be set via the direction attribute.
+<div class="attribute_description">实体在世界空间中的俯仰角，绕X轴旋转。
+<br>这个属性也可以通过<a href="#direction">direction</a>属性访问。
 </div>
 
 <p>
 <span class="attribute_type">Type:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>Read-only Float
+<tr><td>Float，只读属性
 </td></tr>
 </table>
 </p>
@@ -1391,45 +1346,19 @@ For example,
 <span class="attribute_definition">roll</span>
 </p>
 
-<div class="attribute_description">roll provides the roll component of the direction attribute. It is the
-roll of the current facing direction of the <a href=../../keywords.html#entity>Entity</a>, in radians and in
-world space.
-This can be set via the direction attribute.
+<div class="attribute_description">实体在世界空间中的横滚角，绕Z轴旋转。
+<br>这个属性也可以通过<a href="#direction">direction</a>属性访问。
 </div>
 
 <p>
 <span class="attribute_type">Type:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>Read-only Float
+<tr><td>Float，只读属性
 </td></tr>
 </table>
 </p>
 
-<a name="seeingHeight"></a><p class="attribute_definition">
-<span class="attribute_definition">seeingHeight</span>
-</p>
 
-<div class="attribute_description">This attribute stores the height on the <a href=../../keywords.html#entity>Entity</a> to use as the source of
-the current field of view, eg, eye-level of current Model.  This should
-be changed as the point of vision changes, eg, if the Model crouches,
-but not when jumping because the height from the base of the Model is
-the same.
-</div>
-
-<p>
-<span class="attribute_links"><b>See:</b></span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#addVision">addVision</a><br></td></tr>
-</table>
-</p>
-
-<p>
-<span class="attribute_type">Type:</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>float
-</td></tr>
-</table>
-</p>
 
 <a name="shouldAutoBackup"></a><p class="attribute_definition">
 <span class="attribute_definition">shouldAutoBackup</span>
@@ -1445,36 +1374,6 @@ is set to False.
 This can be set to True, False or <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#NEXT_ONLY>NEXT_ONLY</a>.
 </div>
 
-<a name="shouldDropVision"></a><p class="attribute_definition">
-<span class="attribute_definition">shouldDropVision</span>
-</p>
-
-<div class="attribute_description">If set to True, this attribute indicates that this <a href=../../keywords.html#entity>Entity</a>'s seeingHeight
-and visibleHeight should be dropped by 2 metres or to the terrain
-surface, if within that 2m range.  This is because on the Cell, the
-<a href=../../keywords.html#entity>Entity</a> moves on the <a href="KBEngine.html">KBEngine</a> navPoly system.  No part of any navPoly
-will be beneath the terrain or more than 2 metres higher, so by dropping
-these seeingHeight and visibleHeight by 2m, we ensure that the heights
-are relative to the terrain.
-<br><br>
-If set to False, the heights will remain relative to the navPoly, rather
-than the terrain.
-</div>
-
-<p>
-<span class="attribute_links"><b>See:</b></span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#addVision">addVision</a><br></td></tr>
-</table>
-</p>
-
-<p>
-<span class="attribute_type">Type:</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>bool
-</td></tr>
-</table>
-</p>
 
 <a name="spaceID"></a><p class="attribute_definition">
 <span class="attribute_definition">spaceID</span>
@@ -1492,28 +1391,7 @@ than the terrain.
 </table>
 </p>
 
-<a name="stealthFactor"></a><p class="attribute_definition">
-<span class="attribute_definition">stealthFactor</span>
-</p>
 
-<div class="attribute_description">stealthFactor is the value that is used to determine how much noise
-this entity makes (from a stealth perspective) due to movement.
-This attribute is only available on the entity that has an associated witness.
-Whenever an entity with witness moves at a speed faster than
-cellApp/noise/horizontalSpeed (from bw.xml) along the horizontal plane or below a
-velocity of -cellApp/noise/verticalSpeed (from bw.xml) along the vertical axis, it will
-inform other entities of the noise it is making by calling "makeNoise" every
-10 ticks, with a noiseLevel equal to the stealth factor and an event type of 0.
-The value that this sets does not have any other effect on the stealth system.
-</div>
-
-<p>
-<span class="attribute_type">Type:</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>float
-</td></tr>
-</table>
-</p>
 
 <a name="topSpeed"></a><p class="attribute_definition">
 <span class="attribute_definition">topSpeed</span>
@@ -1585,115 +1463,8 @@ magnitude of the velocity along x-, y- and z-axes.
 </table>
 </p>
 
-<a name="vehicle"></a><p class="attribute_definition">
-<span class="attribute_definition">vehicle</span>
-</p>
 
-<div class="attribute_description">vehicle is the vehicle <a href=../../keywords.html#entity>Entity</a> that this <a href=../../keywords.html#entity>Entity</a> is currently riding in.
-</div>
 
-<p>
-<span class="attribute_type">Type:</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href=../../keywords.html#entity>Entity</a>
-</td></tr>
-</table>
-</p>
-
-<a name="velocity"></a><p class="attribute_definition">
-<span class="attribute_definition">velocity</span>
-</p>
-
-<div class="attribute_description">The velocity attribute is the current velocity of the <a href=../../keywords.html#entity>Entity</a>, in world
-coordinates. This is calculated by the cell each time the <a href=../../keywords.html#entity>Entity</a> is moved,
-and is assumed to equal the displacement from the last move divided by the
-time between position updates. Accessing this throws a TypeError if the
-<a href=../../keywords.html#entity>Entity</a> is a ghost.
-</div>
-
-<p>
-<span class="attribute_type">Type:</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>Read-only tuple of 3 floats, as (x, y, z)
-</td></tr>
-</table>
-</p>
-
-<a name="visibleHeight"></a><p class="attribute_definition">
-<span class="attribute_definition">visibleHeight</span>
-</p>
-
-<div class="attribute_description">This attribute stores the height that the vision controllers will use to
-determine whether this <a href=../../keywords.html#entity>Entity</a> can be seen.  It should correspond to the
-height of the current Model and be updated if the Model changes height,
-eg, when crouched, but not when jumping because the height from the base
-of the Model is the same.
-</div>
-
-<p>
-<span class="attribute_links"><b>See:</b></span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#addVision">addVision</a><br></td></tr>
-</table>
-</p>
-
-<p>
-<span class="attribute_type">Type:</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>float
-</td></tr>
-</table>
-</p>
-
-<a name="visionAngle"></a><p class="attribute_definition">
-<span class="attribute_definition">visionAngle</span>
-</p>
-
-<div class="attribute_description">This attribute stores the angle of the vision cone in radians.  Entities
-that are greater than this angle, in radians, from this entity's
-direction will not be seen. The field of view is double this number. For
-example, a field of view of 180 degrees (pi radians) would be equivalent
-to a vision cone angle of 90 degrees (pi/2 radians).
-</div>
-
-<p>
-<span class="attribute_links"><b>See:</b></span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#addVision">addVision</a><br></td></tr>
-</table>
-</p>
-
-<p>
-<span class="attribute_type">Type:</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>float
-</td></tr>
-</table>
-</p>
-
-<a name="visionRange"></a><p class="attribute_definition">
-<span class="attribute_definition">visionRange</span>
-</p>
-
-<div class="attribute_description">This attribute stores the range, in metres, of the entity's
-vision. Entities further away than this distance will not be
-seen by this entity.
-</div>
-
-<p>
-<span class="attribute_links"><b>See:</b></span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#addVision">addVision</a><br></td></tr>
-</table>
-</p>
-
-<p>
-<span class="attribute_type">Type:</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>float
-</td></tr>
-</table>
-</p>
 
 <a name="volatileInfo"></a><p class="attribute_definition">
 <span class="attribute_definition">volatileInfo</span>
@@ -1733,16 +1504,14 @@ Sample .def Excerpt:
 <span class="attribute_definition">yaw</span>
 </p>
 
-<div class="attribute_description">yaw provides the yaw component of the direction attribute. It is the yaw
-of the current facing direction of the <a href=../../keywords.html#entity>Entity</a>, in radians and in world
-space.
-This can be set via the direction attribute.
+<div class="attribute_description">实体在世界空间中的偏航角，绕Y轴旋转。
+<br>这个属性也可以通过<a href="#direction">direction</a>属性访问。
 </div>
 
 <p>
 <span class="attribute_type">Type:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>Read-only Float
+<tr><td>Float，只读属性
 </td></tr>
 </table>
 </p>
