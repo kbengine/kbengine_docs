@@ -179,8 +179,6 @@
 <tr valign=top><td><a href="#position" class="attribute_list" >position</a></td><td>&nbsp; <a href=../../keywords.html#vector3>Vector3</a>
 </td></tr>
 
-<tr valign=top><td><a href="#shouldAutoBackup" class="attribute_list" >shouldAutoBackup</a></td><td>&nbsp; </td></tr>
-
 <tr valign=top><td><a href="#spaceID" class="attribute_list" >spaceID</a></td><td>&nbsp; 只读 uint32
 </td></tr>
 
@@ -1038,7 +1036,7 @@ float，给定触发器y轴高度，必须大于等于0。<br>
 <span class="function_definition">def onWitnessed( <i>self, isWitnessed</i> ):</span>
 </p>
 
-<div class="function_description">如果这个函数在脚本中有实现，如果一个实体进入了另一个绑定了Witness的实体的AOI范围（也可以理解为一个实体被观察者观察到了），则该实体的回调函数被调用。<br>
+<div class="function_description">如果这个函数在脚本中有实现，如果当前实体进入了另一个绑定了Witness的实体的AOI范围（也可以理解为一个实体被观察者观察到了），则该实体的回调函数被调用。<br>
 可以利用这个函数在实体被观察时激活实体的AI，实体停止被观察时可以停止AI的执行，这样可以降低服务端的计算量从而提升效率。
 </div>
 
@@ -1069,17 +1067,17 @@ float，给定触发器y轴高度，必须大于等于0。<br>
 <span class="attribute_definition">allClients</span>
 </p>
 
-<div class="attribute_description">使用这个属性调用实体的客户端远程方法，引擎会将这个消息广播给实体AOI范围内所有的其他绑定了客户端的实体(包括自己的客户端，绑定了客户端的实体通常为玩家)。<br><br>
+<div class="attribute_description">通过这个属性调用实体的客户端远程方法，引擎会将这个消息广播给实体AOI范围内所有的其他绑定了客户端的实体(包括自己的客户端，绑定了客户端的实体通常为玩家)。<br><br>
 例子：<br>
 avatar的AOI范围内有玩家A和玩家B以及怪物C。<br>
 avatar.allClients.attack(monsterID，skillID, damage)<br><br>
-此时，玩家自己喝玩家A还有玩家B的客户端都会调用到attack方法，在他们的客户端可以调用指定技能的攻击动作做表现。
+此时，玩家自己和玩家A还有玩家B的客户端都会调用到该实体attack方法，在他们的客户端可以调用指定技能的攻击动作做表现。
 </div>
 
 <p>
 <span class="attribute_links"><b>其他参考：</b></span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#ownClient">ownClient</a><br><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#clientEntity">clientEntity</a><br><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#otherClients">otherClients</a><br></td></tr>
+<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#clientEntity">clientEntity</a><br><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#otherClients">otherClients</a><br></td></tr>
 </table>
 </p>
 
@@ -1096,7 +1094,7 @@ avatar.allClients.attack(monsterID，skillID, damage)<br><br>
 </div>
 
 <p>
-<span class="attribute_type">Type:</span>
+<span class="attribute_type">类型：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>只读，string
 </td></tr>
@@ -1107,24 +1105,20 @@ avatar.allClients.attack(monsterID，skillID, damage)<br><br>
 <span class="attribute_definition">client</span>
 </p>
 
-<div class="attribute_description">This attribute is an alias for <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#ownClient>ownClient</a>.
-It provides a <a href="PyClient.html">PyClient</a> object. This can be
-used to call functions on the client <a href=../../keywords.html#entity>Entity</a>. Function calls that are made
-via this <a href="PyClient.html">PyClient</a> object are only passed to the client that owns the
-entity.
+<div class="attribute_description">client是用于联系客户端的mailbox。这个属性是只读的，且如果这个实体没有关联的客户端时属性是None。
 </div>
 
 <p>
-<span class="attribute_links"><b>See:</b></span>
+<span class="attribute_links"><b>其他参考：</b></span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#clientEntity">clientEntity</a><br><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#allClients">allClients</a><br><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#otherClients">otherClients</a><br></td></tr>
 </table>
 </p>
 
 <p>
-<span class="attribute_type">Type:</span>
+<span class="attribute_type">类型：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>Read-only <a href="PyClient.html">PyClient</a>
+<tr><td>只读的，<a href=../../keywords.html#Mailbox>MAILBOX</a>
 </td></tr>
 </table>
 </p>
@@ -1135,21 +1129,13 @@ entity.
 <span class="attribute_definition">direction</span>
 </p>
 
-<div class="attribute_description">The direction attribute is the current orientation of the <a href=../../keywords.html#entity>Entity</a>, in
-world space. This can be written to, however entities for whom
-a client is authoritative (in regards to position) will have this
-data overwritten.
-Changes to this data will not be propagated to clients if the
-volatileInfo for this <a href=../../keywords.html#entity>Entity</a> specifies that position is not to be
-updated.
-This property is roll, pitch and yaw combined (in that order). All
-values are in radians.
+<div class="attribute_description">这个属性描述的是<a href=../../keywords.html#entity>Entity</a>在世界空间中的朝向，用户可以改变这个属性，数据会同步到客户端。
 </div>
 
 <p>
-<span class="attribute_type">Type:</span>
+<span class="attribute_type">类型：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>Tuple of 3 floats as (roll, pitch, yaw)
+<tr><td>Vector3, 其中包含(roll, pitch, yaw)，以弧度表示。
 </td></tr>
 </table>
 </p>
@@ -1160,15 +1146,13 @@ values are in radians.
 <span class="attribute_definition">hasWitness</span>
 </p>
 
-<div class="attribute_description">This read-only attribute indicates whether or not this real entity
-has a witness object attached. Witness objects relay the world as seen
-from the point of view of the entity to a client, via a base entity
+<div class="attribute_description">这个只读属性如果为True，表示实体已经绑定了一个<a href=../../keywords.html#Witness>Witness</a>，绑定了Witness的实体则客户端可以通过实体获得实体AOI范围内的信息。否则为False。
 </div>
 
 <p>
-<span class="attribute_type">Type:</span>
+<span class="attribute_type">类型：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>boolean
+<tr><td>只读的， bool 
 </td></tr>
 </table>
 </p>
@@ -1177,14 +1161,13 @@ from the point of view of the entity to a client, via a base entity
 <span class="attribute_definition">id</span>
 </p>
 
-<div class="attribute_description">This is the unique identifier for the <a href=../../keywords.html#entity>Entity</a>. It is common across client,
-cell, and base applications.
+<div class="attribute_description">id是<a href=../../keywords.html#entity>Entity</a>的对象id。这个id是一个整型，在base，cell和client相关联的实体之间是相同的。 这个属性是只读的。 
 </div>
 
 <p>
-<span class="attribute_type">Type:</span>
+<span class="attribute_type">类型：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>Read-only Integer
+<tr><td>只读的，int32 
 </td></tr>
 </table>
 </p>
@@ -1193,13 +1176,13 @@ cell, and base applications.
 <span class="attribute_definition">isDestroyed</span>
 </p>
 
-<div class="attribute_description">The isDestroyed attribute will be True if the <a href=../../keywords.html#entity>Entity</a> has been destroyed.
+<div class="attribute_description">如果这个属性的值为True，<a href=../../keywords.html#entity>Entity</a>则已经被销毁了。
 </div>
 
 <p>
-<span class="attribute_type">Type:</span>
+<span class="attribute_type">类型：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>Read-only bool
+<tr><td>只读的， bool
 </td></tr>
 </table>
 </p>
@@ -1210,13 +1193,13 @@ cell, and base applications.
 <span class="attribute_definition">isOnGround</span>
 </p>
 
-<div class="attribute_description">The isOnGround attribute will be True if the position of the <a href=../../keywords.html#entity>Entity</a> is on the ground and false otherwise.
+<div class="attribute_description">如果这个属性的值为True，<a href=../../keywords.html#entity>Entity</a>在地面上，否则为False。
 </div>
 
 <p>
-<span class="attribute_type">Type:</span>
+<span class="attribute_type">类型：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>Read-write bool
+<tr><td>只读的， bool
 </td></tr>
 </table>
 </p>
@@ -1226,69 +1209,40 @@ cell, and base applications.
 <span class="attribute_definition">isWitnessed</span>
 </p>
 
-<div class="attribute_description">This read-only attribute indicates whether or not this real entity is
-considered as being witnessed. If the state of this property changes,
-<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#onWitnessed>onWitnessed</a> is called.
+<div class="attribute_description">如果当前实体进入了另一个绑定了Witness的实体的AOI范围（也可以理解为一个实体被观察者观察到了, 这个属性值为True，否则为False。
 <br><br>
-An entity is considered as being witnessed if it in a client-controlled
-entity's Area of Interest (AoI). This attribute is True when the entity
-is first created and will be set to True immediately upon entering the
-AoI of a client-controlled entity. However, <a href="KBEngine.html">KBEngine</a> uses a lazy
-algorithm to change this attribute from True to False. Currently,
-it can take between 8 to 12 minutes after leaving the AoI of the last
-client-controlled entity before this attribute is set to False.
+参考：<br>
+<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#onWitnessed>onWitnessed</a>
 </div>
+
+<p>
+<span class="attribute_type">类型：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>只读的， bool 
+</td></tr>
+</table>
+</p>
 
 
 <a name="otherClients"></a><p class="attribute_definition">
 <span class="attribute_definition">otherClients</span>
 </p>
 
-<div class="attribute_description">When read, the otherClients attribute provides a <a href="PyClient.html">PyClient</a> object. This can
-be used to call functions on the client <a href=../../keywords.html#entity>Entity</a>. Function calls that are
-made via this <a href="PyClient.html">PyClient</a> object are passed to all clients except the one that
-owns the entity.
+<div class="attribute_description">通过这个属性调用实体的客户端远程方法，引擎会将这个消息广播给实体AOI范围内所有的其他绑定了客户端的实体(不包括自己的客户端，绑定了客户端的实体通常为玩家)。<br><br>
+例子：<br>
+avatar的AOI范围内有玩家A和玩家B以及怪物C。<br>
+avatar.otherClients.attack(monsterID，skillID, damage)<br><br>
+此时，玩家A与玩家B的客户端都会调用到该实体attack方法，在他们的客户端可以调用指定技能的攻击动作做表现。
 </div>
 
 <p>
-<span class="attribute_links"><b>See:</b></span>
+<span class="attribute_links"><b>其他参考：</b></span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#ownClient">ownClient</a><br><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#allClients">allClients</a><br><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#clientEntity">clientEntity</a><br></td></tr>
+<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#clientEntity">clientEntity</a><br><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#otherClients">otherClients</a><br></td></tr>
 </table>
 </p>
 
-<p>
-<span class="attribute_type">Type:</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>Read-only <a href="PyClient.html">PyClient</a>
-</td></tr>
-</table>
-</p>
 
-<a name="ownClient"></a><p class="attribute_definition">
-<span class="attribute_definition">ownClient</span>
-</p>
-
-<div class="attribute_description">This attribute provides a <a href="PyClient.html">PyClient</a> object. This can be
-used to call functions on the client <a href=../../keywords.html#entity>Entity</a>. Function calls that are made
-via this <a href="PyClient.html">PyClient</a> object are only passed to the client that owns the
-entity.
-</div>
-
-<p>
-<span class="attribute_links"><b>See:</b></span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#clientEntity">clientEntity</a><br><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#allClients">allClients</a><br><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#otherClients">otherClients</a><br></td></tr>
-</table>
-</p>
-
-<p>
-<span class="attribute_type">Type:</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>Read-only <a href="PyClient.html">PyClient</a>
-</td></tr>
-</table>
-</p>
 
 <a name="pitch"></a><p class="attribute_definition">
 <span class="attribute_definition">pitch</span>
@@ -1310,32 +1264,24 @@ entity.
 <span class="attribute_definition">position</span>
 </p>
 
-<div class="attribute_description">The position attribute is the location of the <a href=../../keywords.html#entity>Entity</a>, in world
-coordinates. This can be written to. If the entity has a client who is
-modifying its position, these changes will be ignored until the client
-acknowledges this position change.
+<div class="attribute_description">这个实体在世界空间中的坐标(x, y, z)，这个属性可以被用户改变，改变后会同步到客户端。
+需要注意的是，不要引用这个属性，引用这个属性很有可能错误的修改了实体的真实坐标。
 <br><br>
-It is also important to consider the volatileInfo of the entity. If the
-position is not volatile, each change to this value will be sent down to
-all client applications within range.
-<br><br>
-Note: This property is mutable which means that you can change individual
-elements of the position. It also means if you keep a reference to it and
-the entity moves, this property will change.
 
-<pre>self.position.y = 50.0
+例子：
+<pre>self.position.y = 10.0
 </pre>
 <br><br>
-If you want a copy of the current value, you should cast to a <a href=../../keywords.html#vector3>Vector3</a>.
-<br><br>
-For example,
-
-<pre>self.startPosition = <a href="Math.html">Math</a>.<a href=../../keywords.html#vector3>Vector3</a>( self.position )
+如果你想拷贝这个属性值可以使用如下方式：
+<br>
+<pre>
+	import Math
+	self.copyPosition = Math.<a href=../../keywords.html#vector3>Vector3</a>( self.position )
 </pre>
 </div>
 
 <p>
-<span class="attribute_type">Type:</span>
+<span class="attribute_type">类型：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td><a href=../../keywords.html#vector3>Vector3</a>
 </td></tr>
@@ -1360,33 +1306,18 @@ For example,
 
 
 
-<a name="shouldAutoBackup"></a><p class="attribute_definition">
-<span class="attribute_definition">shouldAutoBackup</span>
-</p>
-
-<div class="attribute_description">This attribute determines the policy for automatic backups.
-If set to True, automatic backups are enabled, if set to False,
-automatic backups are disabled.
-If set to <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#NEXT_ONLY>NEXT_ONLY</a>, automatic backups are enabled for the
-next scheduled time; after the next automatic backup, this is attribute
-is set to False.
-<br><br>
-This can be set to True, False or <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#NEXT_ONLY>NEXT_ONLY</a>.
-</div>
-
 
 <a name="spaceID"></a><p class="attribute_definition">
 <span class="attribute_definition">spaceID</span>
 </p>
 
-<div class="attribute_description">This is the unique identifier for the space that currently contains the
-<a href=../../keywords.html#entity>Entity</a>. It is common across client and cell applications.
+<div class="attribute_description">这个属性是实体所在的<a href=../../keywords.html#cn_Space>空间</a>的ID，cell与客户端这个值都保持一致。
 </div>
 
 <p>
-<span class="attribute_type">Type:</span>
+<span class="attribute_type">类型：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>Read-only Integer.
+<tr><td>只读的，Integer
 </td></tr>
 </table>
 </p>
@@ -1397,32 +1328,18 @@ This can be set to True, False or <a href="KBEngine.html">KBEngine</a>.<a href=K
 <span class="attribute_definition">topSpeed</span>
 </p>
 
-<div class="attribute_description">This is the top speed of the entity for physics checking purposes.  It
-only makes sense to set it on real entities, setting it on ghosts has no
-effect and will some day generate an exception.
-<br><br>
-If set to 0 (the default) no physics checking is done. If set to greater
-than zero, entity movements are checked against chunk portals, and speed
-is checked against the value of this property.
-<br><br>
-Setting this value to a negative value is undefined.
-<br><br>
-Additionally, if this attribute value is greater than zero and if the
-value of the attribute topSpeedY is also greater than zero, then this
-attribute's value enforces the magnitude of the velocity along the x-
-and z-axes only, and value of the attribute topSpeedY restricts the
-magnitude of the velocity along the y-axis.
+<div class="attribute_description">实体的最大xz轴移动速度，这个属性通常要比实际移动速度要大一些，服务端通过这个属性检查客户端的移动合法性，如果移动距离超出速度限制则被强制拉回上一个坐标位置。<br>
 </div>
 
 <p>
-<span class="attribute_links"><b>See:</b></span>
+<span class="attribute_links"><b>其他参考：</b></span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#topSpeedY">topSpeedY</a><br></td></tr>
 </table>
 </p>
 
 <p>
-<span class="attribute_type">Type:</span>
+<span class="attribute_type">类型：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>float
 </td></tr>
@@ -1433,30 +1350,18 @@ magnitude of the velocity along the y-axis.
 <span class="attribute_definition">topSpeedY</span>
 </p>
 
-<div class="attribute_description">If the value of this attribute is greater than 0 and value of the
-topSpeed attribute is also greater than 0, then the topSpeed attribute
-applies only along the x- and z-axes, and this attribute restricts the
-top speed of entities along the y-axis.
-<br><br>
-If value of topSpeed attribute is not greater than zero, then the value
-of the topSpeedY attribute has no effect.
-<br><br>
-This attribute is only available on the real entity and reading/writing
-to this value on a ghost is not defined.
-<br><br>
-If set to zero, then the value of the attribute topSpeed applies to the
-magnitude of the velocity along x-, y- and z-axes.
+<div class="attribute_description">实体的最大y轴移动速度，这个属性通常要比实际移动速度要大一些，服务端通过这个属性检查客户端的移动合法性，如果移动距离超出速度限制则被强制拉回上一个坐标位置。
 </div>
 
 <p>
-<span class="attribute_links"><b>See:</b></span>
+<span class="attribute_links"><b>其他参考：</b></span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#topSpeed">topSpeed</a><br></td></tr>
 </table>
 </p>
 
 <p>
-<span class="attribute_type">Type:</span>
+<span class="attribute_type">类型：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>float
 </td></tr>
@@ -1470,32 +1375,24 @@ magnitude of the velocity along x-, y- and z-axes.
 <span class="attribute_definition">volatileInfo</span>
 </p>
 
-<div class="attribute_description">The volatileInfo attribute specifies how often (if ever) the <a href=../../keywords.html#entity>Entity</a>'s
-volatile data should be sent to clients. The four float (or None) values
-that this contains are the position priority, yaw priority, pitch priority,
-and roll priority (where higher numbers result in more frequent updates,
-and None indicates that no updates are to be sent at all).
-The values for these are initially read from the entity's .def file,
-defaulting to None if not provided. They can later be specified, and are
-each clamped between <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#VOLATILE_NEVER>VOLATILE_NEVER</a> and <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#VOLATILE_ALWAYS>VOLATILE_ALWAYS</a>.
-The latter three elements must be in descending order (where 0 is
-interpreted as being greater than None), or else a TypeError will be
-thrown.
+<div class="attribute_description">这个属性指定<a href=../../keywords.html#entity>Entity</a>的易变类数据同步到客户端的策略。<br>
+易变类数据包括实体的坐标position和实体的朝向direction，易变类数据由于极易改变的特性，引擎底层使用了一套优化的方案将其同步到客户端。<br>
+这个属性是四个float的序列（position，yaw，pitch，roll）代表距离值，当一个实体靠近当前实体达到距离则服务端向其同步相关数据。<br>
 <br><br>
-Sample .def Excerpt:
+用户也可以在.def制定不同实体的同步策略：<br>
 
 <pre>&lt;Volatile&gt;
-    &lt;position/&gt;           &lt;!-- always --&gt;
-    &lt;yaw/&gt;                &lt;!-- always --&gt;
-    &lt;pitch&gt;20&lt;/pitch&gt;     &lt;!-- 20     --&gt;
-&lt;/Volatile&gt;               &lt;!-- roll never  --&gt;
+    &lt;position/&gt;           &lt;!-- 总是同步 --&gt;
+    &lt;yaw/&gt;                &lt;!-- 总是同步 --&gt;
+    &lt;pitch&gt;20&lt;/pitch&gt;     &lt;!-- 相距20米或以内同步     --&gt;
+&lt;/Volatile&gt;               &lt;!-- roll未指明则总是同步  --&gt;
 </pre>
 </div>
 
 <p>
-<span class="attribute_type">Type:</span>
+<span class="attribute_type">类型：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>A sequence of 4 floats (or None objects)
+<tr><td>sequence， 四个浮点数(float, float, float, float)
 </td></tr>
 </table>
 </p>
