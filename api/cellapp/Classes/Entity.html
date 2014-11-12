@@ -27,6 +27,10 @@
 </td></tr>
 
 <tr><td>
+<span class="function_list">def <a href="#clientEntity" class="function_list" >clientEntity</a>( self, destID  ):</span>
+</td></tr>
+
+<tr><td>
 <span class="function_list">def <a href="#debugAOI" class="function_list" >debugAOI</a>( self ):</span>
 </td></tr>
 
@@ -150,7 +154,7 @@
 <h2><a href="#" onClick="obj=document.getElementById( 'attributes' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">属性</a></h2>
 <table id="attributes" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><a href="#allClients" class="attribute_list" >allClients</a></td><td>&nbsp; 只读 <a href=../../keywords.html#Mailbox>MAILBOX</a>
+<tr valign=top><td><a href="#allClients" class="attribute_list" >allClients</a></td><td>&nbsp; 只读 PyClient
 </td></tr>
 
 <tr valign=top><td><a href="#base" class="attribute_list" >base</a></td><td>&nbsp; 只读 <a href=../../keywords.html#Mailbox>MAILBOX</a>
@@ -173,7 +177,7 @@
 
 <tr valign=top><td><a href="#isWitnessed" class="attribute_list" >isWitnessed</a></td><td>&nbsp; </td></tr>
 
-<tr valign=top><td><a href="#otherClients" class="attribute_list" >otherClients</a></td><td>&nbsp; 只读 <a href=../../keywords.html#Mailbox>MAILBOX</a>
+<tr valign=top><td><a href="#otherClients" class="attribute_list" >otherClients</a></td><td>&nbsp; 只读 PyClient
 </td></tr>
 
 <tr valign=top><td><a href="#position" class="attribute_list" >position</a></td><td>&nbsp; <a href=../../keywords.html#vector3>Vector3</a>
@@ -362,6 +366,30 @@ controllerID是要取消的控制器的索引，它是一个整型。一个专用的控制器类型的字符串也
 
 </table>
 </p>
+
+
+
+<a name="clientEntity"></a><p class="function_definition">
+<span class="function_definition">def clientEntity( <i>self, destID</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+通过这个方法可以访问自己客户端（当前实体必须绑定了客户端）中某个实体的方法，只有在AOI范围内的实体才会同步到客户端。它只能在一个<a href=../../keywords.html#real>real</a>实体上被调用。
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>destID</i></span></td><td><span class="function_parameter_description">
+目标实体的ID。
+</span></td></tr>
+
+</table>
+</p>
+
+
 
 <a name="debugAOI"></a><p class="function_definition">
 <span class="function_definition">def debugAOI( <i>self</i> ):</span>
@@ -1083,6 +1111,27 @@ avatar.allClients.attack(monsterID，skillID, damage)<br><br>
 
 
 
+<a name="base"></a><p class="attribute_definition">
+<span class="attribute_definition">base</span>
+</p>
+
+<div class="attribute_description">base是用于联系<a href=../../baseapp/classes/Base.html>Base</a>实体的mailbox。这个属性是只读的，且如果这个实体没有关联的<a href=../../baseapp/classes/Base.html>Base</a>实体时属性是None。
+</div>
+
+<p>
+<span class="attribute_links"><b>其他参考：</b></span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#clientEntity">clientEntity</a><br><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#allClients">allClients</a><br><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#otherClients">otherClients</a><br></td></tr>
+</table>
+</p>
+
+<p>
+<span class="attribute_type">类型：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>只读的，<a href=../../keywords.html#Mailbox>MAILBOX</a>
+</td></tr>
+</table>
+</p>
 
 
 

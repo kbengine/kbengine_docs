@@ -19,7 +19,7 @@
 
 <div class="function_description">
 <br><br>
-脚本层与实体远程交互的唯一手段。<br>
+脚本层与实体远程交互的常规手段(其他参考：<a href=cellapp/classes/Entity.html#allClients>allClients</a>、<a href=cellapp/classes/Entity.html#otherClients>otherClients</a>、<a href=cellapp/classes/Entity.html#clientEntity>clientEntity</a>)。<br>
 Mailbox对象在C++底层实现非常简单，它只包含了实体的ID、目的地的地址、实体类型、Mailbox类型。当用户请求一次远程交互时，底层首先能够通过实体类型找到实体定义的描述，<br>
 通过实体定义的描述对用户输入的数据进行检查，如果检查合法那么底层将数据打包并发往目的地，目的地进程根据协议进行解包最终调用到脚本层。<br><br>
 

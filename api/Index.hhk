@@ -6,6 +6,11 @@
 </HEAD><BODY>
 <UL>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="clientEntity">
+		<param name="Name" value="Entity - KBEngine cell ÎÄµµ">
+		<param name="Local" value="cellapp\Classes\Entity.html#clientEntity">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="debugTracing">
 		<param name="Name" value="KBEngine - KBEngine cell ÎÄµµ">
 		<param name="Local" value="cellapp\Modules\KBEngine.html#debugTracing">
