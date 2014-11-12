@@ -43,6 +43,10 @@
 </td></tr>
 
 <tr><td>
+<span class="function_list">def <a href="#debugTracing" class="function_list" >debugTracing</a>(  ):</span>
+</td></tr>
+
+<tr><td>
 <span class="function_list">def <a href="#delSpaceData" class="function_list" >delSpaceData</a>( spaceID, key ):</span>
 </td></tr>
 
@@ -368,6 +372,21 @@ int32，要放置实体的空间的ID。
 </td></tr>
 </table>
 </p>
+
+
+
+<a name="debugTracing"></a><p class="function_definition">
+<span class="function_definition">def debugTracing( <i></i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+输出当前KBEngine追踪的Python扩展对象计数器。<br>
+扩展对象包括：固定字典、固定数组、Entity、Mailbox...<br>
+在服务端正常关闭时如果计数器不为零，此时说明泄露已存在，日志将会输出错误信息。<br><br>
+ERROR cellapp [0x0000cd64] [2014-11-12 00:38:07,300] - PyGC::debugTracing(): FixedArray : leaked(128)<br>
+ERROR cellapp [0x0000cd64] [2014-11-12 00:38:07,300] - PyGC::debugTracing(): EntityMailbox : leaked(8)
+</div>
 
 
 <a name="delSpaceData"></a><p class="function_definition">
@@ -1294,7 +1313,21 @@ space数据由用户通过<a href=#setSpaceData>setSpaceData</a>设置。
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-entities是一个字典对象，包含当前进程上所有的实体，包括<a href=../../keywords.html#ghost>ghost</a>实体。
+entities是一个字典对象，包含当前进程上所有的实体，包括<a href=../../keywords.html#ghost>ghost</a>实体。<br>
+<br>
+调试泄露的实体（调用过destroy却没有释放内存的实体，通常是由于被引用导致无法释放）：<br>
+<pre>
+>>> KBEngine.entities.garbages.items()
+[(1025, Avatar object at 0x7f92431ceae8.)]
+<br>
+>>> e = _[0][1]
+>>> import gc
+>>> gc.get_referents(e)
+[{'spacesIsOk': True, 'bootstrapIdx': 1}, <class 'Avatar.Avatar'>]
+</pre>
+<br>
+调试泄露的KBEngine封装的Python对象：<br>
+<a href=#debugTracing>KBEngine.debugTracing</a>
 </div>
 
 <p>

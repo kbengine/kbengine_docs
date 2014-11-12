@@ -67,6 +67,10 @@
 </td></tr>
 
 <tr><td>
+<span class="function_list">def <a href="#debugTracing" class="function_list" >debugTracing</a>(  ):</span>
+</td></tr>
+
+<tr><td>
 <span class="function_list">def <a href="#delWatcher" class="function_list" >delWatcher</a>( path ):</span>
 </td></tr>
 
@@ -574,6 +578,34 @@ string£¬Ö¸¶¨Òª´´½¨µÄBaseÊµÌåµÄÀàĞÍ¡£ÓĞĞ§µÄÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.
 <b>¹¦ÄÜËµÃ÷£º</b><br><br>
 <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#createBaseLocally>createBaseLocally</a>µÄ±ğÃû.
 </div>
+
+
+
+<a name="debugTracing"></a><p class="function_definition">
+<span class="function_definition">def debugTracing( <i></i> ):</span>
+</p>
+
+<div class="function_description">
+<b>¹¦ÄÜËµÃ÷£º</b><br><br>
+Êä³öµ±Ç°KBEngine×·×ÙµÄPythonÀ©Õ¹¶ÔÏó¼ÆÊıÆ÷¡£<br>
+À©Õ¹¶ÔÏó°üÀ¨£º¹Ì¶¨×Öµä¡¢¹Ì¶¨Êı×é¡¢Entity¡¢Mailbox...<br>
+ÔÚ·şÎñ¶ËÕı³£¹Ø±ÕÊ±Èç¹û¼ÆÊıÆ÷²»ÎªÁã£¬´ËÊ±ËµÃ÷Ğ¹Â¶ÒÑ´æÔÚ£¬ÈÕÖ¾½«»áÊä³ö´íÎóĞÅÏ¢¡£<br><br>
+ERROR cellapp [0x0000cd64] [2014-11-12 00:38:07,300] - PyGC::debugTracing(): FixedArray : leaked(128)<br>
+ERROR cellapp [0x0000cd64] [2014-11-12 00:38:07,300] - PyGC::debugTracing(): EntityMailbox : leaked(8)
+</div>
+
+<p>
+<span class="function_parameter">²ÎÊı£º</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>path</i></span></td><td><span class="function_parameter_description">
+ÒªÉ¾³ıµÄ±äÁ¿µÄÂ·¾¶¡£
+</span></td></tr>
+
+</table>
+</p>
+
+
 
 <a name="delWatcher"></a><p class="function_definition">
 <span class="function_definition">def delWatcher( <i>path</i> ):</span>
@@ -1580,6 +1612,20 @@ int32£¬µ±Ç°½ø³ÌÔÚ¶à¸ö<a href="../index.html">Baseapp</a>ÖĞµÄÆô¶¯Ë³Ğò£¨´Ó1¿ªÊ¼¼ÆÊ
 <div class="attribute_description">
 <b>ËµÃ÷£º</b><br><br>
 entitiesÊÇÒ»¸ö×Öµä¶ÔÏó£¬°üº¬µ±Ç°½ø³ÌÉÏËùÓĞµÄÊµÌå¡£
+<br>
+µ÷ÊÔĞ¹Â¶µÄÊµÌå£¨µ÷ÓÃ¹ıdestroyÈ´Ã»ÓĞÊÍ·ÅÄÚ´æµÄÊµÌå£¬Í¨³£ÊÇÓÉÓÚ±»ÒıÓÃµ¼ÖÂÎŞ·¨ÊÍ·Å£©£º<br>
+<pre>
+>>> KBEngine.entities.garbages.items()
+[(1025, Avatar object at 0x7f92431ceae8.)]
+<br>
+>>> e = _[0][1]
+>>> import gc
+>>> gc.get_referents(e)
+[{'spacesIsOk': True, 'bootstrapIdx': 1}, <class 'Avatar.Avatar'>]
+</pre>
+<br>
+µ÷ÊÔĞ¹Â¶µÄKBEngine·â×°µÄPython¶ÔÏó£º<br>
+<a href=#debugTracing>KBEngine.debugTracing</a>
 </div>
 
 <p>
