@@ -502,7 +502,10 @@ string，指定要创建的Base实体的类型。有效的实体类型在<res><a href=../../keywords.
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
-callback是一个可选的回调函数，当实体完成创建时被调用。回调函数带有一个参数，当成功的时候是<a href="../Classes/Base.html">Base</a>实体的<a href=../../keywords.html#Mailbox>mailbox</a>，失败时是None。
+这是一个可选的回调函数，当操作完成的时候它会被调用。回调函数带有3个参数：baseRef，databaseID和wasActive。
+如果操作成功，baseRef会是一个<a href=../../keywords.html#Mailbox>mailbox</a>或者是新创建的<a href="../Classes/Base.html">Base</a>实体的直接引用，databaseID会是实体的数据库ID，无论该实体是否已经激活<br>
+wasActive都会有所指示，如果wasActive是True则baseRef是已经存在的实体的引用(已经从数据库检出)。如果操作失败，baseRef会是None，databaseID会是0，<br>
+wasActive会是False。失败最常见的原因是实体在数据库里不存在，但偶尔也会出现其它错误比如说超时或者是分配ID失败。
 </span></td></tr>
 
 </table>
