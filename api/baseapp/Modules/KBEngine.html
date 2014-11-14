@@ -449,7 +449,7 @@ callback是一个可选的回调函数，当实体完成创建时被调用。回调函数带有一个参数，当成
 <b>功能说明：</b><br><br>
 从数据库里加载数据创建一个<a href="../Classes/Base.html">Base</a>实体。
 这个新的<a href="../Classes/Base.html">Base</a>实体会在调用这个函数的<a href="../index.html">Baseapp</a>上创建。
-如果该实体已经存在，那么将返回这个存在的<a href="../Classes/Base.html">Base</a>实体的引用。
+如果该实体已经从数据库检出，那么将返回这个存在的<a href="../Classes/Base.html">Base</a>实体的引用。
 </div>
 
 <p>
@@ -466,8 +466,8 @@ string，指定要加载的<a href="../Classes/Base.html">Base</a>实体类型。实体类型在<
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
 这是一个可选的回调函数，当操作完成的时候它会被调用。回调函数带有3个参数：baseRef，databaseID和wasActive。
-如果操作成功，baseRef会是一个<a href=../../keywords.html#Mailbox>mailbox</a>或者是新创建的<a href="../Classes/Base.html">Base</a>实体的直接引用，databaseID会是实体的数据库ID，无论该实体是否已经激活
-wasActive都会有所指示，如果wasActive是True则baseRef是已经存在的实体的引用。如果操作失败，baseRef会是None，databaseID会是0，
+如果操作成功，baseRef会是一个<a href=../../keywords.html#Mailbox>mailbox</a>或者是新创建的<a href="../Classes/Base.html">Base</a>实体的直接引用，databaseID会是实体的数据库ID，无论该实体是否已经激活<br>
+wasActive都会有所指示，如果wasActive是True则baseRef是已经存在的实体的引用(已经从数据库检出)。如果操作失败，baseRef会是None，databaseID会是0，<br>
 wasActive会是False。失败最常见的原因是实体在数据库里不存在，但偶尔也会出现其它错误比如说超时或者是分配ID失败。
 </span></td></tr>
 
