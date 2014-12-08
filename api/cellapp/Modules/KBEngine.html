@@ -39,7 +39,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#createEntity" class="function_list" >createEntity</a>( class, spaceID, position, direction, params ):</span>
+<span class="function_list">def <a href="#createEntity" class="function_list" >createEntity</a>( entityType, spaceID, position, direction, params ):</span>
 </td></tr>
 
 <tr><td>
@@ -177,7 +177,7 @@
 
 <tr valign=top><td><a href="#cellAppData" class="attribute_list" >cellAppData</a></td><td>&nbsp; </td></tr>
 
-<tr valign=top><td><a href="#component" class="attribute_list" >component</a></td><td>&nbsp; </td></tr>
+<tr valign=top><td><a href="#component" class="attribute_list" >component</a></td><td>&nbsp; 只读 <a href="STRING.html">string</a></td></tr>
 
 <tr valign=top><td><a href="#entities" class="attribute_list" >entities</a></td><td>&nbsp; <a href="Entities.html">Entities</a>
 </td></tr>
@@ -318,7 +318,7 @@ Blob对象存储的是二进制信息，提供这个类型是为了让用户能够方便的序列化与反序列化Py
 
 
 <a name="createEntity"></a><p class="function_definition">
-<span class="function_definition">def createEntity( <i>class, spaceID, position, direction, params</i> ):</span>
+<span class="function_definition">def createEntity( <i>entityType, spaceID, position, direction, params</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -340,8 +340,8 @@ properties = { "open":1 }
 <span class="function_parameter">参数：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><span class="function_parameter_name"><i>class</i></span></td><td><span class="function_parameter_description">
-string，要实例化的类的名字。需要注意的是这必须是一个实体类，在<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>文件里声明。
+<tr valign=top><td><span class="function_parameter_name"><i>entityType</i></span></td><td><span class="function_parameter_description">
+string，要创建的实体名称，在<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>文件里声明。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>spaceID</i></span></td><td><span class="function_parameter_description">
