@@ -1,0 +1,387 @@
+<html>
+<head>
+<title>KBEngine - KBEngine client 文档</title>
+<link href="../../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td align=left style="background:#708090"> <font size=15 color=#ffffff> KBEngine </font></td></tr>
+</table> <hr>
+<h1>KBEngine模块</h1>
+<a href="KBEngine.html">KBEngine</a>模块提供了逻辑脚本层访问<a href="../Classes/Entity.html">实体</a>的部分, 以及当前space的数据等等。
+<h2><a href="#" onClick="obj=document.getElementById( 'classes' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">类</a></h2>
+<table id="classes" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr><td>
+<span class="class_list"><a href="../Classes/Entity.html" class="class_list" >Entity</a></span>
+</td></tr>
+
+</table>
+
+<h2><a href="#" onClick="obj=document.getElementById( 'functions' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">成员函数</a></h2>
+<table id="functions" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr><td>
+<span class="function_list">def <a href="#login" class="function_list" >login</a>( username, password ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#createAccount" class="function_list" >createAccount</a>( username, password ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#relogin_baseapp" class="function_list" >relogin_baseapp</a>():</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#player" class="function_list" >player</a>(  ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#reset_password" class="function_list" >reset_password</a>(username):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#bind_email" class="function_list" >bind_email</a>( emailaddress ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#new_password" class="function_list" >new_password</a>( oldpassword, newpassword ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#findEntity" class="function_list" >findEntity</a>( entityID ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#getSpaceData" class="function_list" >getSpaceData</a>( key ):</span>
+</td></tr>
+
+</table>
+
+<h2><a href="#" onClick="obj=document.getElementById( 'callbacks' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">回调函数</a></h2>
+<table id="callbacks" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+<span class="function_list">def <a href="#onInit" class="function_list" >onInit</a>( isReload ):</span>
+</td></tr>
+</table>
+
+<h2><a href="#" onClick="obj=document.getElementById( 'attributes' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">属性</a></h2>
+<table id="attributes" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><a href="#component" class="attribute_list" >component</a></td><td>&nbsp; 只读 <a href="STRING.html">string</a></td></tr>
+
+<tr valign=top><td><a href="#entities" class="attribute_list" >entities</a></td><td>&nbsp; <a href="Entities.html">Entities</a>
+
+<tr valign=top><td><a href="#entity_uuid" class="attribute_list" >entity_uuid</a></td><td>&nbsp; uint64
+
+<tr valign=top><td><a href="#entity_id" class="attribute_list" >entity_id</a></td><td>&nbsp; int32
+
+<tr valign=top><td><a href="#spaceID" class="attribute_list" >spaceID</a></td><td>&nbsp; int32
+
+</td></tr>
+
+</table>
+
+<hr>
+<h2>成员函数文档</h2>
+
+<a name="login"></a><p class="function_definition">
+<span class="function_definition">def login( <i>username, password </i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+登录账号到KBEngine服务端。<br>
+注意：如果插件与UI层使用事件交互模式，在UI层不要直接调用，请触发一个"login"事件给插件，事件附带数据username和password。
+<br>
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>username</i></span></td><td><span class="function_parameter_description">
+string，用户名。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>password</i></span></td><td><span class="function_parameter_description">
+string，密码。
+</span></td></tr>
+</table>
+</p>
+
+
+
+<a name="createAccount"></a><p class="function_definition">
+<span class="function_definition">def createAccount( <i>username, password </i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+请求向KBEngine服务端创建一个登录账号。<br>
+注意：如果插件与UI层使用事件交互模式，在UI层不要直接调用，请触发一个"createAccount"事件给插件，事件附带数据username和password。
+<br>
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>username</i></span></td><td><span class="function_parameter_description">
+string，用户名。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>password</i></span></td><td><span class="function_parameter_description">
+string，密码。
+</span></td></tr>
+</table>
+</p>
+
+
+
+<a name="relogin_baseapp"></a><p class="function_definition">
+<span class="function_definition">def relogin_baseapp( <i> </i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+请求重登录到KBEngine服务端(通常在掉线之后希望更及时的连接到服务端并继续控制服务端角色时使用)。<br>
+注意：如果插件与UI层使用事件交互模式，在UI层不要直接调用，请触发一个"relogin_baseapp"事件给插件，事件附带数据为空。
+<br>
+</div>
+
+
+
+<a name="player"></a><p class="function_definition">
+<span class="function_definition">def player( <i></i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+获得当前客户端所控制的实体。<br>
+<br>
+</div>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+<a href=../../keywords.html#entity>Entity</a>，返回控制的实体, 如果不存在(如：未能连接到服务端)则返回空。
+</td></tr>
+</table>
+</p>
+
+
+
+
+<a name="reset_password"></a><p class="function_definition">
+<span class="function_definition">def reset_password( <i>username</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+请求loginapp重置账号的密码, 服务端将会向该账号绑定的邮箱发送一封重置密码邮件(通常是忘记密码功能使用)。<br>
+<br>
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>username</i></span></td><td><span class="function_parameter_description">
+string，用户名。
+</span></td></tr>
+</table>
+</p>
+
+
+
+<a name="bind_email"></a><p class="function_definition">
+<span class="function_definition">def bind_email( <i>emailaddress</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+请求baseapp绑定账号的email地址。<br>
+<br>
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>emailaddress</i></span></td><td><span class="function_parameter_description">
+string，邮箱地址。
+</span></td></tr>
+</table>
+</p>
+
+
+
+<a name="new_password"></a><p class="function_definition">
+<span class="function_definition">def new_password( <i>oldpassword, newpassword</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+请求设置账号的新密码。<br>
+<br>
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>oldpassword</i></span></td><td><span class="function_parameter_description">
+string，旧密码。
+</span></td></tr>
+<tr valign=top><td><span class="function_parameter_name"><i>newpassword</i></span></td><td><span class="function_parameter_description">
+string，新密码。
+</span></td></tr>
+</table>
+</p>
+
+
+
+<a name="findEntity"></a><p class="function_definition">
+<span class="function_definition">def findEntity( <i>entityID </i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+通过实体的ID查找实体的实力。
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>entityID</i></span></td><td><span class="function_parameter_description">
+int32，实体ID。
+</span></td></tr>
+</table>
+</p>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+<a href=../../keywords.html#entity>Entity</a>，存在返回实体实例，不存在返回空。
+</td></tr>
+</table>
+</p>
+
+<hr>
+<h2>回调函数文档</h2>
+</table>
+</p>
+
+</table>
+</p>
+
+
+
+
+<a name="getSpaceData"></a><p class="function_definition">
+<span class="function_definition">def getSpaceData( <i>key </i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+获取指定key的space数据。
+<br>
+space数据由用户在服务端通过<a href=../../cellapp/Modules/KBEngine.html#setSpaceData>setSpaceData</a>设置。
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>key</i></span></td><td><span class="function_parameter_description">
+string，一个字符串关键字。
+</span></td></tr>
+</table>
+</p>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+string，指定key的字符串数据。
+</td></tr>
+</table>
+</p>
+
+<hr>
+<h2>回调函数文档</h2>
+</table>
+</p>
+
+</table>
+</p>
+
+
+<hr>
+<h2>属性文档</h2>
+
+<a name="component"></a><p class="attribute_definition">
+<span class="attribute_definition">component</span>
+</p>
+
+<div class="attribute_description">
+<b>说明：</b><br><br>
+这是正运行在当前脚本环境的组件。（至今为止）可能值有'cell', 'base', 'client', 'database', 'bot' 和 'editor'。
+</div>
+
+<a name="entities"></a><p class="attribute_definition">
+<span class="attribute_definition">entities</span>
+</p>
+
+<div class="attribute_description">
+<b>说明：</b><br><br>
+entities是一个字典对象，包含当前进程上所有的实体。<br>
+</div>
+
+<p>
+<span class="attribute_type">类型：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td><a href="Entities.html">Entities</a>
+</td></tr>
+</table>
+</p>
+
+<a name="entity_uuid"></a><p class="attribute_definition">
+<span class="attribute_definition">entity_uuid</span>
+</p>
+
+<div class="attribute_description">
+<b>说明：</b><br><br>
+实体的uuid，改ID与实体本次登录绑定。当使用重登陆功能时服务端会与此ID进行比对，判断合法性。
+</div>
+
+
+<a name="entity_id"></a><p class="attribute_definition">
+<span class="attribute_definition">entity_id</span>
+</p>
+
+<div class="attribute_description">
+<b>说明：</b><br><br>
+当前客户端所控制的实体的ID。
+</div>
+
+
+<a name="spaceID"></a><p class="attribute_definition">
+<span class="attribute_definition">spaceID</span>
+</p>
+
+<div class="attribute_description">
+<b>说明：</b><br><br>
+当前客户端控制的实体所在的<a href=../../keywords.html#cn_Space>空间</a>ID(也可以理解为所在对应的场景、房间、副本)。
+</div>
+
+
+<hr>
+<p class="copyrightFooter">版权归KBEngine所有。</p>
+</body>
+</html>
