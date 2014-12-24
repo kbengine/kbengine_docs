@@ -21,9 +21,14 @@
 		<param name="Local" value="basetypes.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="client">
+		<param name="Name" value="client_plugins">
+		<param name="Local" value="client\index.html">
 		</OBJECT>
 	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Introduction">
+			<param name="Local" value="client\index.html">
+			</OBJECT>
 		<LI> <OBJECT type="text/sitemap">
 			<param name="Name" value="modules">
 			</OBJECT>

@@ -1,17 +1,18 @@
 <html>
 <head>
 <title>KBEngine - KBEngine client 文档</title>
-<link href="../../style.css" rel="stylesheet" type="text/css">
+<link href="../style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
 <tr><td align=left style="background:#708090"> <font size=15 color=#ffffff> KBEngine </font></td></tr>
 </table> <hr>
-<h1>模块 KBEngine</h1>
-模块<a href="KBEngine.html">KBEngine</a>提供了可以访问<a href="../Classes/Base.html">Base</a>的python脚本，特别是它提供了定时器的注册和移除，
-以及<a href="../Classes/Base.html">Base</a>的创建。
-<h2><a href="#" onClick="obj=document.getElementById( 'classes' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">类</a></h2>
-<table id="classes" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<h1>client插件</h1>
+KBEngine是一个开源的游戏服务端引擎，不包含完整的客户端部分，但我们提供了能与服务端快速对接的客户端插件部分。客户端插件包含了与服务端的通讯、注册账号、登录接口、类似于服务端client部分的逻辑脚本等等。
+插件与客户端表现层之间通过一种机制进行交互，表现层获得插件的数据进行表现(例如：血量变化，实体进入AOI)，插件获得表现层的输入进行改变(例如：角色位置与朝向)。
+
+
+
 
 <hr>
 <p class="copyrightFooter">版权归KBEngine所有。</p>
