@@ -339,7 +339,9 @@ integer，它指定要移除的定时器id。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>shouldAutoLoad</i></span></td><td><span class="function_parameter_description">
-这个可选参数指定这个实体在服务启动的时候是否需要从数据库加载。
+这个可选参数指定这个实体在服务启动的时候是否需要从数据库加载。<br>
+注意：服务器启动时自动加载实体，底层将会调用createBaseAnywhereFromDBID将实体创建到一个负载最小的baseapp上，整个过程将会在baseapp调用onBaseAppReady之前完成。<br>
+另外，当服务端有多个baseapp时，由第一个baseapp负责数据库查询与创建工作。底层检查baseapp启动参数grouporder是否为1来确定是否是第一个baseapp，如果该参数是用户手填的请确保启动顺序由1~N，否则底层无法确定第一个baseapp。<br>
 </span></td></tr>
 
 </table>
