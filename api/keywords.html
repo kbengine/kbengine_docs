@@ -48,8 +48,9 @@ client\Avatar.py
 			print("hello")
 </pre>
 <br><br>
-用GUIConsole在服务端找到Avatar的实体或者Mailbox:<br>
-avatar.client.hello()<br>
+在GUIConsole工具的Debug页输入框中输入(请先在左边列表中勾选要调试的进程)：<br>
+首先在服务端Baseapp的日志找到玩家实体(Avatar)的ID, 然后通过实体ID获得玩家实体(Avatar)或者Mailbox:<br>
+>>> KBEngine.entities[玩家ID].client.hello()<br>
 <br>
 此时客户端log文件中将输出"hello", 一次远程调用过程完成。
 </div>
