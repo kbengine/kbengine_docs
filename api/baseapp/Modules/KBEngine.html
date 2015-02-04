@@ -164,7 +164,7 @@
 <table id="callbacks" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr><td>
-<span class="function_list">def <a href="#onBaseAppReady" class="function_list" >onBaseAppReady</a>( bootstrapIdx ):</span>
+<span class="function_list">def <a href="#onBaseAppReady" class="function_list" >onBaseAppReady</a>( isBootstrap ):</span>
 </td></tr>
 
 <tr><td>
@@ -204,7 +204,11 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#onReadyForLogin" class="function_list" >onReadyForLogin</a>( bootstrapIdx ):</span>
+<span class="function_list">def <a href="#onReadyForLogin" class="function_list" >onReadyForLogin</a>( isBootstrap ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#onAutoLoadEntityCreate" class="function_list" >onAutoLoadEntityCreate</a>( entityType, dbID ):</span>
 </td></tr>
 
 </table>
@@ -1276,7 +1280,7 @@ uint32，当前游戏的时间，这里指周期数，周期受频率影响，频率由配置文件<a href=../.
 <h2>回调函数文档</h2>
 
 <a name="onBaseAppReady"></a><p class="function_definition">
-<span class="function_definition">def onBaseAppReady( <i>bootstrapIdx</i> ):</span>
+<span class="function_definition">def onBaseAppReady( <i>isBootstrap</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -1289,8 +1293,8 @@ uint32，当前游戏的时间，这里指周期数，周期受频率影响，频率由配置文件<a href=../.
 <span class="function_parameter">参数：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><span class="function_parameter_name"><i>bootstrapIdx</i></span></td><td><span class="function_parameter_description">
-当前进程在多个<a href="../index.html">Baseapp</a>中的启动顺序（从1开始计数）。
+<tr valign=top><td><span class="function_parameter_name"><i>isBootstrap</i></span></td><td><span class="function_parameter_description">
+bool，是否为第一个启动的<a href="../index.html">Baseapp</a>。
 </span></td></tr>
 
 </table>
@@ -1495,7 +1499,7 @@ bool，是否成功。
 </p>
 
 <a name="onReadyForLogin"></a><p class="function_definition">
-<span class="function_definition">def onReadyForLogin( <i>bootstrapIdx</i> ):</span>
+<span class="function_definition">def onReadyForLogin( <i>isBootstrap</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -1508,21 +1512,42 @@ bool，是否成功。
 <span class="function_parameter">参数：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><span class="function_parameter_name"><i>bootstrapIdx</i></span></td><td><span class="function_parameter_description">
-int32，当前进程在多个<a href="../index.html">Baseapp</a>中的启动顺序（从1开始计数）。
+<tr valign=top><td><span class="function_parameter_name"><i>isBootstrap</i></span></td><td><span class="function_parameter_description">
+bool，是否为第一个启动的<a href="../index.html">Baseapp</a>。
 </span></td></tr>
 
 
+
+
+<a name="onAutoLoadEntityCreate"></a><p class="function_definition">
+<span class="function_definition">def onAutoLoadEntityCreate( <i>entityType, dbID</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+自动加载的实体创建时的回调，如果脚本层实现此回调，那么实体由脚本层创建，否则引擎默认使用createBaseAnywhereFromDBID来创建实体。<br><br>
+这个回调被调用是由于<a href=../Classes/Base.html#writeToDB>Base.writeToDB</a>时设置了实体自动加载。
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>entityType</i></span></td><td><span class="function_parameter_description">
+string，指定要查询的Base实体的类型。有效的实体类型在<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>列出。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>dbID</i></span></td><td><span class="function_parameter_description">
+指定要查询的<a href="../Classes/Base.html">Base</a>实体的数据库ID。这个实体的数据库ID存储在该实体的<a href=../Classes/Base.html#databaseID>databaseID</a>属性。
+</span></td></tr>
+
+
+
+
 </table>
 </p>
 
-<p>
-<span class="function_return">返回：</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>返回值大于等于1.0则脚本层准备完成，否则返回准备的进度值0.0~1.0。
-</td></tr>
-</table>
-</p>
+
 
 <hr>
 <h2>属性文档</h2>
