@@ -28,6 +28,11 @@
 		<param name="Local" value="cellapp\Classes\Entity.html#addProximity">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="destroySpace">
+		<param name="Name" value="Entity - KBEngine cell ÎÄµµ">
+		<param name="Local" value="cellapp\Classes\Entity.html#destroySpace">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="vector3">
 		<param name="Name" value="KBEngine - Keywords">
 		<param name="Local" value="keywords.html#vector3">
