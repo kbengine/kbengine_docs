@@ -59,15 +59,15 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#moveToEntity" class="function_list" >moveToEntity</a>( self, destEntityID, velocity, range, userData, faceMovement, moveVertically ):</span>
+<span class="function_list">def <a href="#moveToEntity" class="function_list" >moveToEntity</a>( self, destEntityID, velocity, distance, userData, faceMovement, moveVertically ):</span>
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#moveToPoint" class="function_list" >moveToPoint</a>( self, destination, velocity, userData, faceMovement, moveVertically ):</span>
+<span class="function_list">def <a href="#moveToPoint" class="function_list" >moveToPoint</a>( self, destination, velocity, distance, userData, faceMovement, moveVertically ):</span>
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#navigate" class="function_list" >navigate</a>( self, destination, velocity, maxMoveDistance, maxSearchDistance, faceMovement, girth, userData ):</span>
+<span class="function_list">def <a href="#navigate" class="function_list" >navigate</a>( self, destination, velocity, distance, maxMoveDistance, maxSearchDistance, faceMovement, girth, userData ):</span>
 </td></tr>
 
 <tr><td>
@@ -534,7 +534,7 @@ integer，它指定要移除的定时器id。
 </p>
 
 <a name="moveToEntity"></a><p class="function_definition">
-<span class="function_definition">def moveToEntity( <i>self, destEntityID, velocity, range, userData, faceMovement, moveVertically</i> ):</span>
+<span class="function_definition">def moveToEntity( <i>self, destEntityID, velocity, distance, userData, faceMovement, moveVertically</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -571,8 +571,8 @@ int，目标<a href=../../keywords.html#entity>Entity</a>的ID
 float，<a href=../../keywords.html#entity>Entity</a>移动的速度，单位m/s
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>range</i></span></td><td><span class="function_parameter_description">
-float，到达目标停止的范围
+<tr valign=top><td><span class="function_parameter_name"><i>distance</i></span></td><td><span class="function_parameter_description">
+float，距离目标小于该值停止移动，如果该值为0则移动到目标位置。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>userData</i></span></td><td><span class="function_parameter_description">
@@ -600,7 +600,7 @@ int，新创建的控制器ID。
 </p>
 
 <a name="moveToPoint"></a><p class="function_definition">
-<span class="function_definition">def moveToPoint( <i>self, destination, velocity, userData, faceMovement, moveVertically</i> ):</span>
+<span class="function_definition">def moveToPoint( <i>self, destination, velocity, distance, userData, faceMovement, moveVertically</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -638,6 +638,10 @@ Vector3，<a href=../../keywords.html#entity>Entity</a>要移动到的目标位置点</span
 <tr valign=top><td><span class="function_parameter_name"><i>velocity</i></span></td><td><span class="function_parameter_description">
 float，<a href=../../keywords.html#entity>Entity</a>的移动速度，单位m/s</span></td></tr>
 
+<tr valign=top><td><span class="function_parameter_name"><i>distance</i></span></td><td><span class="function_parameter_description">
+float，距离目标小于该值停止移动，如果该值为0则移动到目标位置。
+</span></td></tr>
+
 <tr valign=top><td><span class="function_parameter_name"><i>userData</i></span></td><td><span class="function_parameter_description">
 object，传给通知函数的数据
 </span></td></tr>
@@ -663,7 +667,7 @@ int，新创建的控制器ID。
 </p>
 
 <a name="navigate"></a><p class="function_definition">
-<span class="function_definition">def navigate( <i>self, destination, velocity, maxMoveDistance, maxSearchDistance, faceMovement, girth, userData</i> ):</span>
+<span class="function_definition">def navigate( <i>self, destination, velocity, distance, maxMoveDistance, maxSearchDistance, faceMovement, girth, userData</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -702,6 +706,10 @@ Vector3，<a href=../../keywords.html#entity>Entity</a>移向的目标点
 
 <tr valign=top><td><span class="function_parameter_name"><i>velocity</i></span></td><td><span class="function_parameter_description">
 float，<a href=../../keywords.html#entity>Entity</a>的移动速度，单位m/s
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>distance</i></span></td><td><span class="function_parameter_description">
+float，距离目标小于该值停止移动，如果该值为0则移动到目标位置。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>maxMoveDistance</i></span></td><td><span class="function_parameter_description">
@@ -1469,6 +1477,6 @@ avatar.otherClients.attack(monsterID，skillID, damage)<br><br>
 </p>
 
 <hr>
-<p class="copyrightFooter">Copyright 1999-2011 KBEngine Pty. Ltd. All rights reserved. Proprietary commercial in confidence.</p>
+<p class="copyrightFooter">版权归KBEngine所有。</p>
 </body>
 </html>
