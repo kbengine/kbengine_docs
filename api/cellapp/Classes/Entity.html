@@ -118,6 +118,10 @@
 </td></tr>
 
 <tr><td>
+<span class="function_list">def <a href="#onMoveOver" class="function_list" >onMoveOver</a>( self, controllerID, userData ):</span>
+</td></tr>
+
+<tr><td>
 <span class="function_list">def <a href="#onMoveFailure" class="function_list" >onMoveFailure</a>( self, controllerID, userData ):</span>
 </td></tr>
 
@@ -548,6 +552,7 @@ integer，它指定要移除的定时器id。
 <br><br>
 
 <pre>	def onMove( self, controllerId, userData ):
+	def onMoveOver( self, controllerId, userData ):
 	def onMoveFailure( self, controllerId, userData ):
 </pre>
 </div>
@@ -617,6 +622,7 @@ int，新创建的控制器ID。
 回调函数如下定义：
 
 <pre>	def onMove( self, controllerId, userData ):
+	def onMoveOver( self, controllerId, userData ):
 	def onMoveFailure( self, controllerId, userData ):
 </pre>
 </div>
@@ -685,6 +691,7 @@ int，新创建的控制器ID。
 回调函数如下定义：
 
 <pre>	def onMove( self, controllerId, userData ):
+	def onMoveOver( self, controllerId, userData ):
 	def onMoveFailure( self, controllerId, userData ):
 </pre>
 </div>
@@ -973,6 +980,30 @@ float，给定触发器y轴高度，必须大于等于0。<br>
 
 </table>
 </p>
+
+
+
+<a name="onMoveOver"></a><p class="function_definition">
+<span class="function_definition">def onMoveOver( <i>self, controllerID, userData</i> ):</span>
+</p>
+
+<div class="function_description">如果这个函数在脚本中有实现，相关的<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#moveToPoint>moveToPoint</a>与<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#moveToEntity>moveToEntity</a>还有<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#navigate>navigate</a>方法被调用后到达指定目标点时会回调此函数。<br>
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>controllerID</i></span></td><td><span class="function_parameter_description">&nbsp;与某个移动相关的控制器ID。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>userData</i></span></td><td><span class="function_parameter_description">&nbsp;这个参数值由用户在请求移动相关接口时给出。
+</span></td></tr>
+
+</table>
+</p>
+
+
 
 <a name="onMoveFailure"></a><p class="function_definition">
 <span class="function_definition">def onMoveFailure( <i>self, controllerID, userData</i> ):</span>
