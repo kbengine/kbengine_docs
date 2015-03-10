@@ -25,7 +25,7 @@
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="addProximity">
 		<param name="Name" value="Entity - KBEngine cell ÎÄµµ">
-		<param name="Local" value="cellapp\Classes\Entity.html#addProximity">
+		<param name="Local" value="cellapp\Classes\Entity.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="destroySpace">
@@ -42,12 +42,12 @@
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="createBaseLocally">
 		<param name="Name" value="KBEngine - KBEngine base ÎÄµµ">
-		<param name="Local" value="baseapp\Modules\KBEngine.html#createBaseLocally">
+		<param name="Local" value="baseapp\Modules\KBEngine.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="createBaseAnywhereFromDBID">
 		<param name="Name" value="KBEngine - KBEngine base ÎÄµµ">
-		<param name="Local" value="baseapp\Modules\KBEngine.html">
+		<param name="Local" value="baseapp\Modules\KBEngine.html#createBaseAnywhereFromDBID">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="createEntity">
