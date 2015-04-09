@@ -21,6 +21,10 @@
 </td></tr>
 
 <tr><td>
+<span class="function_list">def <a href="#getClientDatas" class="function_list" >getClientDatas</a>( self ):</span>
+</td></tr>
+
+<tr><td>
 <span class="function_list">def <a href="#giveClientTo" class="function_list" >giveClientTo</a>( self, proxy ):</span>
 </td></tr>
 
@@ -112,6 +116,29 @@ CLIENT_TYPE_END					= 5		// end<br/>
 </td></tr>
 </table>
 </p>
+
+
+
+<a name="getClientDatas"></a><p class="function_definition">
+<span class="function_definition">def getClientDatas( <i>self</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+这个函数返回客户端登录时所附带的数据。<br>
+此数据可用于运营系统扩展，如果连接了第三方账号服务，此数据会经过interfaces进程发往第三方服务系统。
+</div>
+
+<p>
+<span class="function_return">返回:</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+bytes, 字节流数据。
+</td></tr>
+</table>
+</p>
+
+
 
 <a name="giveClientTo"></a><p class="function_definition">
 <span class="function_definition">def giveClientTo( <i>self, proxy</i> ):</span>

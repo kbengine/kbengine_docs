@@ -23,6 +23,11 @@
 		<param name="Local" value="baseapp\Modules\KBEngine.html#debugTracing">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="getClientDatas">
+		<param name="Name" value="Proxy - KBEngine base ÎÄµµ">
+		<param name="Local" value="baseapp\Classes\Proxy.html#getClientDatas">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="addProximity">
 		<param name="Name" value="Entity - KBEngine cell ÎÄµµ">
 		<param name="Local" value="cellapp\Classes\Entity.html">
