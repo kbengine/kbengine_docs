@@ -67,11 +67,19 @@
 </td></tr>
 
 <tr><td>
+<span class="function_list">def <a href="#getAoiRadius" class="function_list" >getAoiRadius</a>( self ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#getAoiHystArea" class="function_list" >getAoiHystArea</a>( self ):</span>
+</td></tr>
+
+<tr><td>
 <span class="function_list">def <a href="#navigate" class="function_list" >navigate</a>( self, destination, velocity, distance, maxMoveDistance, maxSearchDistance, faceMovement, girth, userData ):</span>
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#setAoIRadius" class="function_list" >setAoIRadius</a>( self, radius, hyst=5 ):</span>
+<span class="function_list">def <a href="#setAoiRadius" class="function_list" >setAoiRadius</a>( self, radius, hyst=5 ):</span>
 </td></tr>
 
 <tr><td>
@@ -214,7 +222,7 @@
 一个实体的AOI是围绕这个实体的客户端（如果它有）所能感知的区域。这用于选择发给客户端的数据量。AOI的实际
 形状由x轴和z轴上的距离范围定义，还有一个类似形状向外延伸的滞后区域。一个<a href=../../keywords.html#entity>Entity</a>进入
 另一个<a href=../../keywords.html#entity>Entity</a>的AOI，但不会离开它直到它离开滞后区域。一个<a href=../../keywords.html#entity>Entity</a>可以
-通过"setAoIRadius"修改它的AOI大小。
+通过"setAoiRadius"修改它的AOI大小。
 可以通过"entitiesInRange"找到一个具体距离之内的所有实体，通过"addProximity"设置一个陷阱捕获进入陷阱的所有实体。
 <br><br>
 cellApp上新的<a href=../../keywords.html#entity>Entity</a>可以使用<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#createEntity>createEntity</a>
@@ -672,6 +680,52 @@ int，新创建的控制器ID。
 </table>
 </p>
 
+
+
+<a name="getAoiRadius"></a><p class="function_definition">
+<span class="function_definition">def getAoiRadius( <i>self</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+这个函数返回这个<a href=../../keywords.html#entity>Entity</a>当前的Aoi半径值。
+<br><br>
+数据可以通过
+<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#setAoiRadius>setAoiRadius</a>( radius, hyst )设置。
+</div>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>float， Aoi半径。
+</td></tr>
+</table>
+</p>
+
+
+
+<a name="getAoiHystArea"></a><p class="function_definition">
+<span class="function_definition">def getAoiHystArea( <i>self</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+这个函数返回这个<a href=../../keywords.html#entity>Entity</a>的Aoi当前滞后区域值。
+<br><br>
+数据可以通过
+<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#setAoiRadius>setAoiRadius</a>( radius, hyst )设置。
+</div>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>float， Aoi当前滞后区域值。
+</td></tr>
+</table>
+</p>
+
+
+
 <a name="navigate"></a><p class="function_definition">
 <span class="function_definition">def navigate( <i>self, destination, velocity, distance, maxMoveDistance, maxSearchDistance, faceMovement, girth, userData</i> ):</span>
 </p>
@@ -751,8 +805,8 @@ int，新创建的控制器ID。
 </table>
 </p>
 
-<a name="setAoIRadius"></a><p class="function_definition">
-<span class="function_definition">def setAoIRadius( <i>self, radius, hyst=5</i> ):</span>
+<a name="setAoiRadius"></a><p class="function_definition">
+<span class="function_definition">def setAoiRadius( <i>self, radius, hyst=5</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -766,6 +820,9 @@ int，新创建的控制器ID。
 注意：如果你设置这个大于500米，<a href=../../keywords.html#AOI>AOI</a>半径会被锁定在500米，因为cell边界区域为500米，设置大于边界区域将不会获得到更多的信息将毫无意义。
 <br><br>
 你可以通过设置<a href=../../keywords.html#kbengine.xml>kbengine.xml</a>配置选项'cellapp/defaultAoIRadius'来设置默认的AOI半径。
+<br><br>
+数据可以通过
+<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#getAoiRadius>getAoiRadius</a>( )与<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#getAoiHystArea>getAoiHystArea</a>( )获得。
 </div>
 
 <p>

@@ -118,7 +118,22 @@
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="setAoIRadius">
 		<param name="Name" value="Entity - KBEngine cell 文档">
-		<param name="Local" value="cellapp\Classes\Entity.html#setAoIRadius">
+		<param name="Local" value="cellapp\Classes\Entity.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="setAoiRadius">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#setAoiRadius">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="getAoiRadius">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#getAoiRadius">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="getAoiHystArea">
+		<param name="Name" value="Entity - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Classes\Entity.html#getAoiHystArea">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="teleport">
