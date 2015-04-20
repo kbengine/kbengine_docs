@@ -69,9 +69,9 @@
 		<param name="Local" value="cellapp\Classes\Entity.html#addTimer">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="cancel">
+		<param name="Name" value="cancelController">
 		<param name="Name" value="Entity - KBEngine cell ÎÄµµ">
-		<param name="Local" value="cellapp\Classes\Entity.html#cancel">
+		<param name="Local" value="cellapp\Classes\Entity.html#cancelController">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="debugAOI">
