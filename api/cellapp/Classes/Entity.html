@@ -31,6 +31,10 @@
 </td></tr>
 
 <tr><td>
+<span class="function_list">def <a href="#canNavigate" class="function_list" >canNavigate</a>( self ):</span>
+</td></tr>
+
+<tr><td>
 <span class="function_list">def <a href="#debugAOI" class="function_list" >debugAOI</a>( self ):</span>
 </td></tr>
 
@@ -398,6 +402,26 @@ controllerID是要取消的控制器的索引，它是一个整型。一个专用的控制器类型的字符串也
 目标实体的ID。
 </span></td></tr>
 
+</table>
+</p>
+
+
+
+<a name="canNavigate"></a><p class="function_definition">
+<span class="function_definition">def canNavigate( <i>self</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+通过这个方法判断当前实体是否可以使用导航（<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#navigate>navigate</a>）功能。它只能在一个<a href=../../keywords.html#real>real</a>实体上被调用。<br>
+通常当实体所在Space使用<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#addSpaceGeometryMapping>addSpaceGeometryMapping</a>加载过有效的导航用的碰撞数据（Navmesh或者2D的tile数据）并且实体在有效导航区域该功能可用。
+</div>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>bool， 如果实体可在当前Space中使用导航功能返回True，否则返回False。
+</td></tr>
 </table>
 </p>
 
