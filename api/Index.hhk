@@ -52,7 +52,7 @@
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="createBaseLocally">
 		<param name="Name" value="KBEngine - KBEngine base ÎÄµµ">
-		<param name="Local" value="baseapp\Modules\KBEngine.html">
+		<param name="Local" value="baseapp\Modules\KBEngine.html#createBaseLocally">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="createBaseAnywhereFromDBID">
