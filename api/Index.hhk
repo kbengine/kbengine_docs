@@ -38,6 +38,16 @@
 		<param name="Local" value="cellapp\Classes\Entity.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="layer">
+		<param name="Name" value="Entity - KBEngine cell ÎÄµµ">
+		<param name="Local" value="cellapp\Classes\Entity.html#layer">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="raycast">
+		<param name="Name" value="KBEngine - KBEngine cell ÎÄµµ">
+		<param name="Local" value="cellapp\Modules\KBEngine.html#raycast">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="destroySpace">
 		<param name="Name" value="Entity - KBEngine cell ÎÄµµ">
 		<param name="Local" value="cellapp\Classes\Entity.html#destroySpace">

@@ -107,6 +107,10 @@
 </td></tr>
 
 <tr><td>
+<span class="function_list">def <a href="#raycast" class="function_list" >raycast</a>( spaceID, layer, src, dst ):</span>
+</td></tr>
+
+<tr><td>
 <span class="function_list">def <a href="#reloadScript" class="function_list" >reloadScript</a>( fullReload ):</span>
 </td></tr>
 
@@ -886,6 +890,54 @@ int8，0：debug，1：release，其它可自定义。
 </td></tr>
 </table>
 </p>
+
+
+
+
+<a name="raycast"></a><p class="function_definition">
+<span class="function_definition">def raycast( <i>spaceID, layer, src, dst</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+在指定的space中指定的layer中由源坐标向目的坐标射出一道射线，返回碰撞到的坐标点。
+<br><br>
+注意：space必须使用<a href=#addSpaceGeometryMapping>addSpaceGeometryMapping</a>加载过几何数据。
+<br><br>
+下面是一个例子:
+<br><br>
+
+<pre>	>>> KBEngine.raycast( spaceID, entity.layer, (0, 10, 0), (0,-10,0) )
+	((0.0000, 0.0000, 0.0000), ( (0.0000, 0.0000, 0.0000),
+	(4.0000, 0.0000, 0.0000), (4.0000, 0.0000, 4.0000)), 0)
+</pre>
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>spaceID</i></span></td><td><span class="function_parameter_description">
+int32, space的id。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>layer</i></span></td><td><span class="function_parameter_description">
+int8，几何层。一个space可以同时加载多个navmesh数据，不同的navmesh在不同的layer中，不同的layer可被抽象成地面、水面等等。
+</span></td></tr>
+
+</table>
+</p>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>list， 碰撞到的坐标点列表。
+</td></tr>
+</table>
+</p>
+
+
+
 
 <a name="reloadScript"></a><p class="function_definition">
 <span class="function_definition">def reloadScript( <i>fullReload</i> ):</span>

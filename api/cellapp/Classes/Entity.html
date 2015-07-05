@@ -193,6 +193,9 @@
 
 <tr valign=top><td><a href="#isWitnessed" class="attribute_list" >isWitnessed</a></td><td>&nbsp; </td></tr>
 
+<tr valign=top><td><a href="#layer" class="attribute_list" >layer</a></td><td>&nbsp; int8
+</td></tr>
+
 <tr valign=top><td><a href="#otherClients" class="attribute_list" >otherClients</a></td><td>&nbsp; 只读 PyClient
 </td></tr>
 
@@ -1397,6 +1400,27 @@ self.direction.z = 1.0
 </td></tr>
 </table>
 </p>
+
+
+<a name="layer"></a><p class="attribute_definition">
+<span class="attribute_definition">layer</span>
+</p>
+
+<div class="attribute_description">一个space可以同时加载多个navmesh数据，不同的navmesh在不同的layer中，不同的layer可被抽象成地面、水面等等。
+通过这个属性决定一个实体存在于哪个layer中。
+<br><br>
+参考：<br>
+<a href=KBEngine.html#addSpaceGeometryMapping>KBEngine.addSpaceGeometryMapping</a>
+</div>
+
+<p>
+<span class="attribute_type">类型：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>int8 
+</td></tr>
+</table>
+</p>
+
 
 
 <a name="otherClients"></a><p class="attribute_definition">
