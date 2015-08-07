@@ -48,6 +48,11 @@
 		<param name="Local" value="cellapp\Classes\Entity.html#layer">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="navigatePathPoints">
+		<param name="Name" value="Entity - KBEngine cell ÎÄµµ">
+		<param name="Local" value="cellapp\Classes\Entity.html#navigatePathPoints">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="raycast">
 		<param name="Name" value="KBEngine - KBEngine cell ÎÄµµ">
 		<param name="Local" value="cellapp\Modules\KBEngine.html#raycast">

@@ -79,7 +79,11 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#navigate" class="function_list" >navigate</a>( self, destination, velocity, distance, maxMoveDistance, maxSearchDistance, faceMovement, girth, userData ):</span>
+<span class="function_list">def <a href="#navigate" class="function_list" >navigate</a>( self, destination, velocity, distance, maxMoveDistance, faceMovement, layer, userData ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#navigatePathPoints" class="function_list" >navigatePathPoints</a>( self,  destination, maxSearchDistance, layer ):</span>
 </td></tr>
 
 <tr><td>
@@ -758,7 +762,7 @@ int，新创建的控制器ID。
 
 
 <a name="navigate"></a><p class="function_definition">
-<span class="function_definition">def navigate( <i>self, destination, velocity, distance, maxMoveDistance, maxSearchDistance, faceMovement, girth, userData</i> ):</span>
+<span class="function_definition">def navigate( <i>self, destination, velocity, distance, maxMoveDistance, maxSearchDistance, faceMovement, layer, userData</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -808,16 +812,12 @@ float，距离目标小于该值停止移动，如果该值为0则移动到目标位置。
 float，最大的移动距离
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>maxSearchDistance</i></span></td><td><span class="function_parameter_description">
-float，最大的搜索距离
-</span></td></tr>
-
 <tr valign=top><td><span class="function_parameter_name"><i>faceMovement</i></span></td><td><span class="function_parameter_description">
 bool，如果实体面向移动方向则为true（默认）。如果是其它机制则为false。
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>girth</i></span></td><td><span class="function_parameter_description">
-float，使用的网格大小
+<tr valign=top><td><span class="function_parameter_name"><i>layer</i></span></td><td><span class="function_parameter_description">
+int8，使用某个层的navmesh来寻路。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>userData</i></span></td><td><span class="function_parameter_description">
@@ -835,6 +835,37 @@ int，新创建的控制器ID。
 </td></tr>
 </table>
 </p>
+
+<a name="navigatePathPoints"></a><p class="function_definition">
+<span class="function_definition">def navigatePathPoints( <i>self, destination, maxSearchDistance, layer</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+这个函数返回有当前<a href=../../keywords.html#entity>Entity</a>的位置到destination位置所经过的路径点列表。
+<br><br>
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>destination</i></span></td><td><span class="function_parameter_description">
+Vector3，<a href=../../keywords.html#entity>Entity</a>移向的目标点
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>maxSearchDistance</i></span></td><td><span class="function_parameter_description">
+float，最大的搜索距离
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>layer</i></span></td><td><span class="function_parameter_description">
+int8，使用某个层的navmesh来查找路径列表。
+</span></td></tr>
+
+</table>
+</p>
+
+
 
 <a name="setAoiRadius"></a><p class="function_definition">
 <span class="function_definition">def setAoiRadius( <i>self, radius, hyst=5</i> ):</span>
