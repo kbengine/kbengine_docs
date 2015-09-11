@@ -28,8 +28,8 @@ Mailbox对象在C++底层实现非常简单，它只包含了实体的ID、目的地的地址、实体类型、Ma
 <br><br>
 一个实体最多可以包含三个部分：<br>
 client： 当实体包括客户端部分时(通常为玩家)，在服务端可以访问实体的client(Mailbox)属性。<br>
-base：当实体的一部分创建在Baseapp时，在非Baseapp中可以访问实体的base(Mailbox)属性。<br>
-cell：当实体的一部分创建在Cellapp时，在非Cellapp中可以访问实体的cell(Mailbox)属性。<br>
+base：当实体的一部分创建在Baseapp时，在非当前Baseapp中可以访问实体的base(Mailbox)属性。<br>
+cell：当实体的一部分创建在Cellapp时，在非当前Cellapp中可以访问实体的cell(Mailbox)属性。<br>
 <br>
 举例:<br><br>
 Avatar.def中定义client远程方法:
