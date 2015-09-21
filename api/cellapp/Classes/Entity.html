@@ -15,6 +15,10 @@
 <table id="functions" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr><td>
+<span class="function_list">def <a href="#addYawRotator" class="function_list" >addYawRotator</a>( self, targetYaw, velocity, userArg ):</span>
+</td></tr>
+
+<tr><td>
 <span class="function_list">def <a href="#addProximity" class="function_list" >addProximity</a>( self, range, userArg ):</span>
 </td></tr>
 
@@ -150,6 +154,10 @@
 </td></tr>
 
 <tr><td>
+<span class="function_list">def <a href="#onTurn" class="function_list" >onTurn</a>( self, controllerID, userData ):</span>
+</td></tr>
+
+<tr><td>
 <span class="function_list">def <a href="#onTeleport" class="function_list" >onTeleport</a>( self ):</span>
 </td></tr>
 
@@ -249,6 +257,47 @@ cellApp上新的<a href=../../keywords.html#entity>Entity</a>可以使用<a href="KBEng
 
 <hr>
 <h2>成员函数文档</h2>
+
+<a name="addYawRotator"></a><p class="function_definition">
+<span class="function_definition">def addYawRotator( <i>self, targetYaw, velocity, userArg</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+控制实体绕yaw旋转，旋转完成将会通过<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#onTurn>onTurn</a>通知。
+<br><br>
+使用<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#cancelController>cancelController</a>带上控制器ID或者使用<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#cancelController>cancelController("Movement")</a>来删除它。
+</div>
+
+<p>
+<span class="function_links"><b>参看：</b></span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#cancelController">cancelController</a><br></td></tr>
+</table>
+</p>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>targetYaw</i></span></td><td><span class="function_parameter_description">
+float，给定的目标yaw弧度。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>velocity</i></span></td><td><span class="function_parameter_description">
+float，旋转时每秒的弧度。<br>
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>userArg</i></span></td><td><span class="function_parameter_description">
+是一个可选的整型，所有控制器共有。如果这个值不为0则传给回调函数。建议
+在回调原型里设置默认值为0。
+</span></td></tr>
+
+</table>
+</p>
+
+
+
 
 <a name="addProximity"></a><p class="function_definition">
 <span class="function_definition">def addProximity( <i>self, rangeXZ, rangeY, userArg</i> ):</span>
@@ -1161,6 +1210,28 @@ float，给定触发器y轴高度，必须大于等于0。<br>
 
 <div class="function_description">如果这个函数在脚本中有实现，当前实体所在的<a href=../../keywords.html#cSpace>Space</a>将要销毁时触发 。这个函数没有参数。 
 </div>
+
+
+
+<a name="onTurn"></a><p class="function_definition">
+<span class="function_definition">def onTurn( <i>self, controllerID, userData</i> ):</span>
+</p>
+
+<div class="function_description">如果这个函数在脚本中有实现，相关的<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#addYawRotator>addYawRotator</a>方法被调用后到达指定yaw时会回调此函数。<br>
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>controllerID</i></span></td><td><span class="function_parameter_description">&nbsp;<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#addYawRotator>addYawRotator</a>返回的控制器ID。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>userData</i></span></td><td><span class="function_parameter_description">&nbsp;这个参数值由用户在请求移动相关接口时给出。
+</span></td></tr>
+
+</table>
+</p>
 
 
 <a name="onTeleport"></a><p class="function_definition">

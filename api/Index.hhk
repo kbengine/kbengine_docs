@@ -33,6 +33,16 @@
 		<param name="Local" value="cellapp\Classes\Entity.html#onSpaceGone">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onTurn">
+		<param name="Name" value="Entity - KBEngine cell ÎÄµµ">
+		<param name="Local" value="cellapp\Classes\Entity.html#onTurn">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="addYawRotator">
+		<param name="Name" value="Entity - KBEngine cell ÎÄµµ">
+		<param name="Local" value="cellapp\Classes\Entity.html#addYawRotator">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="getClientDatas">
 		<param name="Name" value="Proxy - KBEngine base ÎÄµµ">
 		<param name="Local" value="baseapp\Classes\Proxy.html#getClientDatas">
