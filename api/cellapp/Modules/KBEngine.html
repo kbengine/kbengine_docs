@@ -23,7 +23,7 @@
 <table id="functions" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr><td>
-<span class="function_list">def <a href="#addSpaceGeometryMapping" class="function_list" >addSpaceGeometryMapping</a>( spaceID, mapper, path, shouldLoadOnServer ):</span>
+<span class="function_list">def <a href="#addSpaceGeometryMapping" class="function_list" >addSpaceGeometryMapping</a>( spaceID, mapper, path, shouldLoadOnServer, params ):</span>
 </td></tr>
 
 <tr><td>
@@ -194,7 +194,7 @@
 <h2>成员函数文档</h2>
 
 <a name="addSpaceGeometryMapping"></a><p class="function_definition">
-<span class="function_definition">def addSpaceGeometryMapping( <i>spaceID, mapper, path, shouldLoadOnServer</i> ):</span>
+<span class="function_definition">def addSpaceGeometryMapping( <i>spaceID, mapper, path, shouldLoadOnServer, params</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -233,6 +233,11 @@ uint32，空间的ID，指定在哪个空间操作
 
 <tr valign=top><td><span class="function_parameter_name"><i>shouldLoadOnServer</i></span></td><td><span class="function_parameter_description">
 可选的boolean参数，指定是否在服务端上加载几何。默认为True
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>params</i></span></td><td><span class="function_parameter_description">
+可选的PyDict参数，指定不同layer所使用的navmesh，例如：<br>
+KBEngine.addSpaceGeometryMapping(self.spaceID, None, resPath, True, {0 : "srv_xinshoucun_1.navmesh", 1 : "srv_xinshoucun.navmesh"})
 </span></td></tr>
 
 </table>
