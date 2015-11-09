@@ -30,7 +30,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#relogin_baseapp" class="function_list" >relogin_baseapp</a>():</span>
+<span class="function_list">def <a href="#reLoginBaseapp" class="function_list" >reLoginBaseapp</a>():</span>
 </td></tr>
 
 <tr><td>
@@ -38,15 +38,15 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#reset_password" class="function_list" >reset_password</a>(username):</span>
+<span class="function_list">def <a href="#resetPassword" class="function_list" >resetPassword</a>(username):</span>
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#bind_email" class="function_list" >bind_email</a>( emailaddress ):</span>
+<span class="function_list">def <a href="#bindAccountEmail" class="function_list" >bindAccountEmail</a>( emailaddress ):</span>
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#new_password" class="function_list" >new_password</a>( oldpassword, newpassword ):</span>
+<span class="function_list">def <a href="#newPassword" class="function_list" >newPassword</a>( oldpassword, newpassword ):</span>
 </td></tr>
 
 <tr><td>
@@ -140,14 +140,14 @@ string，密码。
 
 
 
-<a name="relogin_baseapp"></a><p class="function_definition">
-<span class="function_definition">def relogin_baseapp( <i> </i> ):</span>
+<a name="reLoginBaseapp"></a><p class="function_definition">
+<span class="function_definition">def reLoginBaseapp( <i> </i> ):</span>
 </p>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
 请求重登录到KBEngine服务端(通常在掉线之后希望更及时的连接到服务端并继续控制服务端角色时使用)。<br>
-注意：如果插件与UI层使用事件交互模式，在UI层不要直接调用，请触发一个"relogin_baseapp"事件给插件，事件附带数据为空。
+注意：如果插件与UI层使用事件交互模式，在UI层不要直接调用，请触发一个"reLoginBaseapp"事件给插件，事件附带数据为空。
 <br>
 </div>
 
@@ -175,8 +175,8 @@ string，密码。
 
 
 
-<a name="reset_password"></a><p class="function_definition">
-<span class="function_definition">def reset_password( <i>username</i> ):</span>
+<a name="resetPassword"></a><p class="function_definition">
+<span class="function_definition">def resetPassword( <i>username</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -197,8 +197,8 @@ string，用户名。
 
 
 
-<a name="bind_email"></a><p class="function_definition">
-<span class="function_definition">def bind_email( <i>emailaddress</i> ):</span>
+<a name="bindAccountEmail"></a><p class="function_definition">
+<span class="function_definition">def bindAccountEmail( <i>emailaddress</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -219,8 +219,8 @@ string，邮箱地址。
 
 
 
-<a name="new_password"></a><p class="function_definition">
-<span class="function_definition">def new_password( <i>oldpassword, newpassword</i> ):</span>
+<a name="newPassword"></a><p class="function_definition">
+<span class="function_definition">def newPassword( <i>oldpassword, newpassword</i> ):</span>
 </p>
 
 <div class="function_description">
