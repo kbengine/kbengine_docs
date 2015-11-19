@@ -83,6 +83,10 @@
 </td></tr>
 
 <tr><td>
+<span class="function_list">def <a href="#getRandomPoints" class="function_list" >getRandomPoints</a>( self, centerPos, maxRadius, maxPoints, layer ):</span>
+</td></tr>
+
+<tr><td>
 <span class="function_list">def <a href="#navigate" class="function_list" >navigate</a>( self, destination, velocity, distance, maxMoveDistance, faceMovement, layer, userData ):</span>
 </td></tr>
 
@@ -810,6 +814,49 @@ int，新创建的控制器ID。
 
 
 
+<a name="getRandomPoints"></a><p class="function_definition">
+<span class="function_definition">def getRandomPoints( <i>self, centerPos, maxRadius, maxPoints, layer</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+这个函数用于获取以某个坐标点为中心一定区域内<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#navigate>navigate</a>可到达的随机坐标点。
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>centerPos</i></span></td><td><span class="function_parameter_description">
+Vector3，<a href=../../keywords.html#entity>Entity</a>中心坐标点
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>maxRadius</i></span></td><td><span class="function_parameter_description">
+float，最大的搜索半径
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>maxPoints</i></span></td><td><span class="function_parameter_description">
+uint32，最多返回的随机坐标点数量。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>layer</i></span></td><td><span class="function_parameter_description">
+int8，使用某个层的navmesh来搜索。
+</span></td></tr>
+
+</table>
+</p>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+int，新创建的控制器ID。 
+</td></tr>
+</table>
+</p>
+
+
+
 <a name="navigate"></a><p class="function_definition">
 <span class="function_definition">def navigate( <i>self, destination, velocity, distance, maxMoveDistance, faceMovement, layer, userData</i> ):</span>
 </p>
@@ -884,6 +931,9 @@ int，新创建的控制器ID。
 </td></tr>
 </table>
 </p>
+
+
+
 
 <a name="navigatePathPoints"></a><p class="function_definition">
 <span class="function_definition">def navigatePathPoints( <i>self, destination, maxSearchDistance, layer</i> ):</span>

@@ -77,6 +77,11 @@
 		<param name="Local" value="cellapp\Modules\KBEngine.html#setAppFlags">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="getRandomPoints">
+		<param name="Name" value="Entity - KBEngine cell ÎÄµµ">
+		<param name="Local" value="cellapp\Classes\Entity.html#getRandomPoints">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="raycast">
 		<param name="Name" value="KBEngine - KBEngine cell ÎÄµµ">
 		<param name="Local" value="cellapp\Modules\KBEngine.html#raycast">
