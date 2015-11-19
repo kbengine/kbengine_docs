@@ -107,6 +107,10 @@
 </td></tr>
 
 <tr><td>
+<span class="function_list">def <a href="#getAppFlags" class="function_list" >getAppFlags</a>( ):</span>
+</td></tr>
+
+<tr><td>
 <span class="function_list">def <a href="#hasRes" class="function_list" >hasRes</a>( res ):</span>
 </td></tr>
 
@@ -152,6 +156,10 @@
 
 <tr><td>
 <span class="function_list">def <a href="#scriptLogType" class="function_list" >scriptLogType</a>( logType ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#setAppFlags" class="function_list" >setAppFlags</a>( flags ):</span>
 </td></tr>
 
 <tr><td>
@@ -894,6 +902,27 @@ string，该变量的绝对路径(可以在GUIConsole的watcher页查看)。
 
 
 
+<a name="getAppFlags"></a><p class="function_definition">
+<span class="function_definition">def getAppFlags( <i></i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+获取当前引擎APP的标记, 参考:<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#setAppFlags>setAppFlags</a>。
+<br>
+</div>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+KBEngine.APP_FLAGS_*。
+</td></tr>
+</table>
+</p>
+
+
+
 <a name="hasRes"></a><p class="function_definition">
 <span class="function_definition">def hasRes( <i>res</i> ):</span>
 </p>
@@ -1249,6 +1278,9 @@ socket描述符/文件描述符。
 </table>
 </p>
 
+
+
+
 <a name="scriptLogType"></a><p class="function_definition">
 <span class="function_definition">def scriptLogType( <i>logType</i> ):</span>
 </p>
@@ -1257,6 +1289,23 @@ socket描述符/文件描述符。
 <b>功能说明：</b><br><br>
 设置当前Python.print输出的信息类型(参考: KBEngine.LOG_TYPE_*)。
 </div>
+
+
+
+<a name="setAppFlags"></a><p class="function_definition">
+<span class="function_definition">def setAppFlags( <i>flags</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+设置当前引擎APP的标记。
+<br>
+<br>
+KBEngine.APP_FLAGS_NONE // 默认的(未设置标记)<br>
+KBEngine.APP_FLAGS_NOT_PARTCIPATING_LOAD_BALANCING //不参与负载均衡<br>
+
+</div>
+
 
 <a name="time"></a><p class="function_definition">
 <span class="function_definition">def time( <i></i> ):</span>
