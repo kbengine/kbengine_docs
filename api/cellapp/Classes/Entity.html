@@ -103,7 +103,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#writeToDB" class="function_list" >writeToDB</a>( self, dbInterfaceName ):</span>
+<span class="function_list">def <a href="#writeToDB" class="function_list" >writeToDB</a>( self, shouldAutoLoad, dbInterfaceName ):</span>
 </td></tr>
 
 </table>
@@ -1047,7 +1047,7 @@ None
 
 
 <a name="writeToDB"></a><p class="function_definition">
-<span class="function_definition">def writeToDB( <i>self, dbInterfaceName</i> ):</span>
+<span class="function_definition">def writeToDB( <i>self, shouldAutoLoad, dbInterfaceName</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -1062,6 +1062,14 @@ cell实体的数据同时备份在base实体，确保遇到灾难恢复数据时数据是最新的。
 <p>
 <span class="function_parameter">参数：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>shouldAutoLoad</i></span></td><td><span class="function_parameter_description">
+这个可选参数指定这个实体在服务启动的时候是否需要从数据库加载。<br>
+注意：服务器启动时自动加载实体，底层默认将会调用createBaseAnywhereFromDBID将实体创建到一个负载最小的baseapp上，整个过程将会在第一个启动的baseapp调用onBaseAppReady之前完成。<br>
+<br>脚本层可以在个性化脚本(kbengine_defs.xml->baseapp->entryScriptFile定义)中重新实现实体的创建方法，例如：<br>
+def onAutoLoadEntityCreate(entityType, dbid): <br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KBEngine.createBaseFromDBID(entityType, dbid)<br>
+</span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>dbInterfaceName</i></span></td><td><span class="function_parameter_description">
 string，可选参数，指定由某个数据库接口来完成, 默认使用"default"接口。数据库接口由kbengine_defs.xml->dbmgr->databaseInterfaces中定义。
