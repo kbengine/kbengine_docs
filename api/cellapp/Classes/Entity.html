@@ -103,7 +103,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#writeToDB" class="function_list" >writeToDB</a>( self ):</span>
+<span class="function_list">def <a href="#writeToDB" class="function_list" >writeToDB</a>( self, dbInterfaceName ):</span>
 </td></tr>
 
 </table>
@@ -1047,7 +1047,7 @@ None
 
 
 <a name="writeToDB"></a><p class="function_definition">
-<span class="function_definition">def writeToDB( <i>self</i> ):</span>
+<span class="function_definition">def writeToDB( <i>self, dbInterfaceName</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -1058,6 +1058,20 @@ cell实体的数据同时备份在base实体，确保遇到灾难恢复数据时数据是最新的。
 <br><br>
 这个函数只能在<a href=../../keywords.html#real>real</a>实体且实体必须存在base部分时才允许被调用。
 </div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>dbInterfaceName</i></span></td><td><span class="function_parameter_description">
+string，可选参数，指定由某个数据库接口来完成, 默认使用"default"接口。数据库接口由kbengine_defs.xml->dbmgr->databaseInterfaces中定义。
+</span></td></tr>
+
+</table>
+</p>
+
+
+
 
 <hr>
 <h2>回调函数文档</h2>

@@ -43,7 +43,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#writeToDB" class="function_list" >writeToDB</a>( self, callback, shouldAutoLoad ):</span>
+<span class="function_list">def <a href="#writeToDB" class="function_list" >writeToDB</a>( self, callback, shouldAutoLoad, dbInterfaceName ):</span>
 </td></tr>
 
 </table>
@@ -319,7 +319,7 @@ integer，它指定要移除的定时器id。
 </p>
 
 <a name="writeToDB"></a><p class="function_definition">
-<span class="function_definition">def writeToDB( <i>self, callback, shouldAutoLoad</i> ):</span>
+<span class="function_definition">def writeToDB( <i>self, callback, shouldAutoLoad, dbInterfaceName</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -344,6 +344,10 @@ integer，它指定要移除的定时器id。
 <br>脚本层可以在个性化脚本(kbengine_defs.xml->baseapp->entryScriptFile定义)中重新实现实体的创建方法，例如：<br>
 def onAutoLoadEntityCreate(entityType, dbid): <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KBEngine.createBaseFromDBID(entityType, dbid)<br>
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>dbInterfaceName</i></span></td><td><span class="function_parameter_description">
+string，可选参数，指定由某个数据库接口来完成, 默认使用"default"接口。数据库接口由kbengine_defs.xml->dbmgr->databaseInterfaces中定义。
 </span></td></tr>
 
 </table>

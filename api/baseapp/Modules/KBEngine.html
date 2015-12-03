@@ -51,11 +51,11 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#createBaseFromDBID" class="function_list" >createBaseFromDBID</a>(  ):</span>
+<span class="function_list">def <a href="#createBaseFromDBID" class="function_list" >createBaseFromDBID</a>( entityType, dbID, callback, dbInterfaceName ):</span>
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#createBaseAnywhereFromDBID" class="function_list" >createBaseAnywhereFromDBID</a>( entityType, dbID, callback ):</span>
+<span class="function_list">def <a href="#createBaseAnywhereFromDBID" class="function_list" >createBaseAnywhereFromDBID</a>( entityType, dbID, callback, dbInterfaceName ):</span>
 </td></tr>
 
 <tr><td>
@@ -75,7 +75,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#deleteBaseByDBID" class="function_list" >deleteBaseByDBID</a>( entityType, dbID, callback ):</span>
+<span class="function_list">def <a href="#deleteBaseByDBID" class="function_list" >deleteBaseByDBID</a>( entityType, dbID, callback, dbInterfaceName ):</span>
 </td></tr>
 
 <tr><td>
@@ -87,7 +87,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#executeRawDatabaseCommand" class="function_list" >executeRawDatabaseCommand</a>( command, callback, threadID ):</span>
+<span class="function_list">def <a href="#executeRawDatabaseCommand" class="function_list" >executeRawDatabaseCommand</a>( command, callback, threadID, dbInterfaceName ):</span>
 </td></tr>
 
 <tr><td>
@@ -123,7 +123,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#lookUpBaseByDBID" class="function_list" >lookUpBaseByDBID</a>( entityType, dbID, callback ):</span>
+<span class="function_list">def <a href="#lookUpBaseByDBID" class="function_list" >lookUpBaseByDBID</a>( entityType, dbID, callback, dbInterfaceName ):</span>
 </td></tr>
 
 <tr><td>
@@ -454,7 +454,7 @@ callback是一个可选的回调函数，当实体完成创建时被调用。回调函数带有一个参数，当成
 </p>
 
 <a name="createBaseFromDBID"></a><p class="function_definition">
-<span class="function_definition">def createBaseFromDBID( <i>entityType, dbID, callback</i> ):</span>
+<span class="function_definition">def createBaseFromDBID( <i>entityType, dbID, callback, dbInterfaceName</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -483,12 +483,16 @@ wasActive都会有所指示，如果wasActive是True则baseRef是已经存在的实体的引用(已经从
 wasActive会是False。失败最常见的原因是实体在数据库里不存在，但偶尔也会出现其它错误比如说超时或者是分配ID失败。
 </span></td></tr>
 
+<tr valign=top><td><span class="function_parameter_name"><i>dbInterfaceName</i></span></td><td><span class="function_parameter_description">
+string，可选参数，指定由某个数据库接口来完成, 默认使用"default"接口。数据库接口由kbengine_defs.xml->dbmgr->databaseInterfaces中定义。
+</span></td></tr>
+
 </table>
 </p>
 
 
 <a name="createBaseAnywhereFromDBID"></a><p class="function_definition">
-<span class="function_definition">def createBaseAnywhereFromDBID( <i>entityType, dbID, callback</i> ):</span>
+<span class="function_definition">def createBaseAnywhereFromDBID( <i>entityType, dbID, callback, dbInterfaceName</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -518,6 +522,10 @@ string，指定要创建的Base实体的类型。有效的实体类型在<res><a href=../../keywords.
 如果操作成功，baseRef会是一个<a href=../../keywords.html#Mailbox>mailbox</a>或者是新创建的<a href="../Classes/Base.html">Base</a>实体的直接引用，databaseID会是实体的数据库ID，无论该实体是否已经激活<br>
 wasActive都会有所指示，如果wasActive是True则baseRef是已经存在的实体的引用(已经从数据库检出)。如果操作失败，baseRef会是None，databaseID会是0，<br>
 wasActive会是False。失败最常见的原因是实体在数据库里不存在，但偶尔也会出现其它错误比如说超时或者是分配ID失败。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>dbInterfaceName</i></span></td><td><span class="function_parameter_description">
+string，可选参数，指定由某个数据库接口来完成, 默认使用"default"接口。数据库接口由kbengine_defs.xml->dbmgr->databaseInterfaces中定义。
 </span></td></tr>
 
 </table>
@@ -644,7 +652,7 @@ ERROR cellapp [0x0000cd64] [2014-11-12 00:38:07,300] - PyGC::debugTracing(): Ent
 
 
 <a name="deleteBaseByDBID"></a><p class="function_definition">
-<span class="function_definition">def deleteBaseByDBID( <i>entityType, dbID, callback</i> ):</span>
+<span class="function_definition">def deleteBaseByDBID( <i>entityType, dbID, callback, dbInterfaceName</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -668,6 +676,10 @@ string，指定要删除的Base实体的类型。有效的实体类型在<res><a href=../../keywords.
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
 callback是一个可选的回调函数，只有一个参数，当实体没有从数据库检出时将会成功删除数据，参数是True。如果实体已经从数据库检出那么参数是<a href="../Classes/Base.html">Base</a>实体的<a href=../../keywords.html#Mailbox>mailbox</a>。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>dbInterfaceName</i></span></td><td><span class="function_parameter_description">
+string，可选参数，指定由某个数据库接口来完成, 默认使用"default"接口。数据库接口由kbengine_defs.xml->dbmgr->databaseInterfaces中定义。
 </span></td></tr>
 
 </table>
@@ -726,7 +738,7 @@ socket描述符/文件描述符。
 
 
 <a name="executeRawDatabaseCommand"></a><p class="function_definition">
-<span class="function_definition">def executeRawDatabaseCommand( <i>command, callback, threadID</i> ):</span>
+<span class="function_definition">def executeRawDatabaseCommand( <i>command, callback, threadID, dbInterfaceName</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -760,6 +772,10 @@ socket描述符/文件描述符。
 <tr valign=top><td><span class="function_parameter_name"><i>threadID</i></span></td><td><span class="function_parameter_description">
 int32，可选参数，指定一个线程来处理本条命令。用户可以通过这个参数控制某一类命令的执行先后顺序（dbmgr是多线程处理的），默认是不指定，如果threadID是实体的ID，<br>
 那么将加入到该实体的存档队列中由线程逐条写入。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>dbInterfaceName</i></span></td><td><span class="function_parameter_description">
+string，可选参数，指定由某个数据库接口来完成, 默认使用"default"接口。数据库接口由kbengine_defs.xml->dbmgr->databaseInterfaces中定义。
 </span></td></tr>
 
 </table>
@@ -1040,7 +1056,7 @@ Tuple, 资源列表。
 
 
 <a name="lookUpBaseByDBID"></a><p class="function_definition">
-<span class="function_definition">def lookUpBaseByDBID( <i>entityType, dbID, callback</i> ):</span>
+<span class="function_definition">def lookUpBaseByDBID( <i>entityType, dbID, callback, dbInterfaceName</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -1063,6 +1079,10 @@ string，指定要查询的Base实体的类型。有效的实体类型在<res><a href=../../keywords.
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
 callback只有一个参数，当实体没有从数据库检出时将会返回True。如果实体已经从数据库检出那么将返回<a href="../Classes/Base.html">Base</a>实体的<a href=../../keywords.html#Mailbox>mailbox</a>, 其他任何情况返回False。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>dbInterfaceName</i></span></td><td><span class="function_parameter_description">
+string，可选参数，指定由某个数据库接口来完成, 默认使用"default"接口。数据库接口由kbengine_defs.xml->dbmgr->databaseInterfaces中定义。
 </span></td></tr>
 
 </table>

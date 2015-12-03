@@ -55,7 +55,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#executeRawDatabaseCommand" class="function_list" >executeRawDatabaseCommand</a>( command, callback, threadID ):</span>
+<span class="function_list">def <a href="#executeRawDatabaseCommand" class="function_list" >executeRawDatabaseCommand</a>( command, callback, threadID, dbInterfaceName ):</span>
 </td></tr>
 
 <tr><td>
@@ -456,7 +456,7 @@ string，一个字符串关键字。
 
 
 <a name="executeRawDatabaseCommand"></a><p class="function_definition">
-<span class="function_definition">def executeRawDatabaseCommand( <i>command, callback, threadID</i> ):</span>
+<span class="function_definition">def executeRawDatabaseCommand( <i>command, callback, threadID, dbInterfaceName</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -490,6 +490,10 @@ string，一个字符串关键字。
 <tr valign=top><td><span class="function_parameter_name"><i>threadID</i></span></td><td><span class="function_parameter_description">
 int32，可选参数，指定一个线程来处理本条命令。用户可以通过这个参数控制某一类命令的执行先后顺序（dbmgr是多线程处理的），默认是不指定，如果threadID是实体的ID，<br>
 那么将加入到该实体的存档队列中由线程逐条写入。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>dbInterfaceName</i></span></td><td><span class="function_parameter_description">
+string，可选参数，指定由某个数据库接口来完成, 默认使用"default"接口。数据库接口由kbengine_defs.xml->dbmgr->databaseInterfaces中定义。
 </span></td></tr>
 
 </table>
