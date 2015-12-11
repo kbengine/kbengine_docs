@@ -1611,6 +1611,7 @@ bool，是否为第一个启动的<a href="../index.html">Baseapp</a>。
 <b>功能说明：</b><br><br>
 自动加载的实体创建时的回调，如果脚本层实现此回调，那么实体由脚本层创建，否则引擎默认使用createBaseAnywhereFromDBID来创建实体。<br><br>
 这个回调被调用是由于<a href=../Classes/Base.html#writeToDB>Base.writeToDB</a>时设置了实体自动加载。
+<br>注：该回调优先于onBaseAppReady执行，可在onBaseAppReady时检查是否已加载实体。
 </div>
 
 <p>
