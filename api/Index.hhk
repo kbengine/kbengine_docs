@@ -1004,11 +1004,11 @@
 		<param name="Local" value="baseapp\Modules\KBEngine.html#charge">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Blob">
+		<param name="Name" value="MemoryStream">
 		<param name="Name" value="KBEngine - KBEngine base ÎÄµµ">
-		<param name="Local" value="baseapp\Modules\KBEngine.html#Blob">
+		<param name="Local" value="baseapp\Modules\KBEngine.html#MemoryStream">
 		<param name="Name" value="KBEngine - KBEngine cell ÎÄµµ">
-		<param name="Local" value="cellapp\Modules\KBEngine.html#Blob">
+		<param name="Local" value="cellapp\Modules\KBEngine.html#MemoryStream">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="address">

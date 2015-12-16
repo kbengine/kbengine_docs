@@ -35,7 +35,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#Blob" class="function_list" >Blob</a>(  ):</span>
+<span class="function_list">def <a href="#MemoryStream" class="function_list" >MemoryStream</a>(  ):</span>
 </td></tr>
 
 <tr><td>
@@ -308,21 +308,21 @@ KBEngine.addSpaceGeometryMapping(self.spaceID, None, resPath, True, {0 : "srv_xi
 </div>
 
 
-<a name="Blob"></a><p class="function_definition">
-<span class="function_definition">def Blob( <i></i> ):</span>
+<a name="MemoryStream"></a><p class="function_definition">
+<span class="function_definition">def MemoryStream( <i></i> ):</span>
 </p>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-返回一个新的blob对象。<br>
+返回一个新的MemoryStream对象。<br>
 <br>
-Blob对象存储的是二进制信息，提供这个类型是为了让用户能够方便的序列化与反序列化Python基本类型同时能与KBEngine底层序列化规则相同。<br>
+MemoryStream对象存储的是二进制信息，提供这个类型是为了让用户能够方便的序列化与反序列化Python基本类型同时能与KBEngine底层序列化规则相同。<br>
 <br><br>
 例如：你可以使用这个对象构造一个KBEngine能解析的网络数据包。
 <br><br>
 用法：
 <pre>
->>> s = KBEngine.Blob()
+>>> s = KBEngine.MemoryStream()
 >>> s
 >>> b''
 >>> s.append("UINT32", 1)
@@ -330,7 +330,7 @@ Blob对象存储的是二进制信息，提供这个类型是为了让用户能够方便的序列化与反序列化Py
 >>> 1
 </pre>
 <br><br>
-目前Blob能够支持的类型仅为基本数据类型。参考: <a href=../../basetypes.html>基本类型</a>
+目前MemoryStream能够支持的类型仅为基本数据类型。参考: <a href=../../basetypes.html>基本类型</a>
 </div>
 
 
