@@ -8,7 +8,7 @@
 <tr><td align=left style="background:#708090"> <font size=15 color=#ffffff> KBEngine </font></td></tr>
 </table> <hr>
 <h1>KBEngine模块</h1>
-<a href="KBEngine.html">KBEngine</a>模块提供了Python脚本控制dbmgr进程处理实体登陆查询与数据存取等部分。
+<a href="KBEngine.html">KBEngine</a>模块主要处理KBEngine服务端与第三方平台的接入接出工作。
 
 
 <h2><a href="#" onClick="obj=document.getElementById( 'functions' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">成员函数</a></h2>
@@ -16,6 +16,18 @@
 
 <tr><td>
 <span class="function_list">def <a href="#addTimer" class="function_list" >addTimer</a>( initialOffset, repeatOffset=0, userArg=0 ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#accountLoginResponse" class="function_list" >accountLoginResponse</a>( commitName, realAccountName, extraDatas, errorCode ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#createAccountResponse" class="function_list" >createAccountResponse</a>( commitName, realAccountName, extraDatas, errorCode ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#chargeResponse" class="function_list" >chargeResponse</a>( orderID, extraDatas, errorCode ):</span>
 </td></tr>
 
 <tr><td>
@@ -28,15 +40,23 @@
 <table id="callbacks" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr><td>
-<span class="function_list">def <a href="#onDBMgrReady" class="function_list" >onDBMgrReady</a>( ):</span>
+<span class="function_list">def <a href="#onInterfaceAppReady" class="function_list" >onInterfaceAppReady</a>( ):</span>
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#onDBMgrShutDown" class="function_list" >onDBMgrShutDown</a>( ):</span>
+<span class="function_list">def <a href="#onInterfaceAppShutDown" class="function_list" >onInterfaceAppShutDown</a>( ):</span>
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#onSelectAccountDBInterface" class="function_list" >onSelectAccountDBInterface</a>( accountName ):</span>
+<span class="function_list">def <a href="#onRequestCreateAccount" class="function_list" >onRequestCreateAccount</a>( registerName, password, datas ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#onRequestAccountLogin" class="function_list" >onRequestAccountLogin</a>( loginName, password, datas ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#onRequestCharge" class="function_list" >onRequestCharge</a>( ordersID, entityDBID, datas ):</span>
 </td></tr>
 
 </table>
@@ -103,6 +123,104 @@ integer，指定底层回调"<a href="#onTimer">onTimer</a>"时的userArg参数值。
 
 
 
+<a name="accountLoginResponse"></a><p class="function_definition">
+<span class="function_definition">def accountLoginResponse( <i>commitName, realAccountName, extraDatas, errorCode</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+在onRequestAccountLogin被回调后，脚本需要调用此接口给出登陆处理结果。
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>commitName</i></span></td><td><span class="function_parameter_description">
+string，客户端请求时所提交的名称。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>realAccountName</i></span></td><td><span class="function_parameter_description">
+string，返回真实的账号名称（没有特殊要求通常就是commitName，使用各种别名账号登陆时可用到）。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>extraDatas</i></span></td><td><span class="function_parameter_description">
+bytes，客户端请求时所附带的数据，可将数据转发第三方平台，在此提供对其进行修改的机会。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>errorCode</i></span></td><td><span class="function_parameter_description">
+integer，错误码。如果需要中断用户的行为可在此设置错误码，错误码可参考（KBEngine.SERVER_ERROR_*， 描述在kbengine/kbe/res/server/server_errors.xml），否则提交KBEngine.SERVER_SUCCESS代表允许此处登陆。
+</span></td></tr>
+
+</table>
+</p>
+
+
+
+<a name="createAccountResponse"></a><p class="function_definition">
+<span class="function_definition">def createAccountResponse( <i>commitName, realAccountName, extraDatas, errorCode</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+在onRequestCreateAccount被回调后，脚本需要调用此接口给出账号创建处理结果。
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>commitName</i></span></td><td><span class="function_parameter_description">
+string，客户端请求时所提交的名称。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>realAccountName</i></span></td><td><span class="function_parameter_description">
+string，返回真实的账号名称（没有特殊要求通常就是commitName，使用各种别名账号登陆时可用到）。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>extraDatas</i></span></td><td><span class="function_parameter_description">
+bytes，客户端请求时所附带的数据，可将数据转发第三方平台，在此提供对其进行修改的机会。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>errorCode</i></span></td><td><span class="function_parameter_description">
+integer，错误码。如果需要中断用户的行为可在此设置错误码，错误码可参考（KBEngine.SERVER_ERROR_*， 描述在kbengine/kbe/res/server/server_errors.xml），否则提交KBEngine.SERVER_SUCCESS代表允许此处登陆。
+</span></td></tr>
+
+</table>
+</p>
+
+
+
+<a name="chargeResponse"></a><p class="function_definition">
+<span class="function_definition">def chargeResponse( <i>orderID, extraDatas, errorCode</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+在onRequestCharge被回调后，脚本需要调用此接口给出计费处理结果。
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>ordersID</i></span></td><td><span class="function_parameter_description">
+uint64，订单的ID。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>extraDatas</i></span></td><td><span class="function_parameter_description">
+bytes，客户端请求时所附带的数据，可将数据转发第三方平台，在此提供对其进行修改的机会。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>errorCode</i></span></td><td><span class="function_parameter_description">
+integer，错误码。如果需要中断用户的行为可在此设置错误码，错误码可参考（KBEngine.SERVER_ERROR_*， 描述在kbengine/kbe/res/server/server_errors.xml），否则提交KBEngine.SERVER_SUCCESS代表允许此处登陆。
+</span></td></tr>
+
+</table>
+</p>
+
+
+
 <a name="delTimer"></a><p class="function_definition">
 <span class="function_definition">def delTimer( <i>id</i> ):</span>
 </p>
@@ -132,8 +250,8 @@ integer，它指定要移除的定时器id。
 <hr>
 <h2>回调函数文档</h2>
 
-<a name="onDBMgrReady"></a><p class="function_definition">
-<span class="function_definition">def onDBMgrReady( <i></i> ):</span>
+<a name="onInterfaceAppReady"></a><p class="function_definition">
+<span class="function_definition">def onInterfaceAppReady( <i></i> ):</span>
 </p>
 
 <div class="function_description">
@@ -144,8 +262,8 @@ integer，它指定要移除的定时器id。
 
 
 
-<a name="onDBMgrShutDown"></a><p class="function_definition">
-<span class="function_definition">def onDBMgrShutDown( <i></i> ):</span>
+<a name="onInterfaceAppShutDown"></a><p class="function_definition">
+<span class="function_definition">def onInterfaceAppShutDown( <i></i> ):</span>
 </p>
 
 <div class="function_description">
@@ -156,15 +274,13 @@ integer，它指定要移除的定时器id。
 
 
 
-<a name="onSelectAccountDBInterface"></a><p class="function_definition">
-<span class="function_definition">def onSelectAccountDBInterface( <i>accountName</i> ):</span>
+<a name="onRequestCreateAccount"></a><p class="function_definition">
+<span class="function_definition">def onRequestCreateAccount( <i>registerName, password, datas</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个回调实现返回某个账号对应的数据库接口，选定接口后dbmgr针对这个账号的相关操作都由对应的数据库接口完成。<br><br>
-数据库接口在<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->dbmgr->databaseInterfaces定义。<br>
-利用该接口可以根据accountName来决定账号应该存储在哪个数据库。<br>
+当客户端请求服务器创建账号时，该回调被调用。<br><br>
 <br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。<br>
 </div>
 
@@ -172,10 +288,77 @@ integer，它指定要移除的定时器id。
 <span class="function_parameter">参数：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><span class="function_parameter_name"><i>accountName</i></span></td><td><span class="function_parameter_description">
-string，账号的名称。
+<tr valign=top><td><span class="function_parameter_name"><i>registerName</i></span></td><td><span class="function_parameter_description">
+string，客户端请求时所提交的名称。
 </span></td></tr>
 
+<tr valign=top><td><span class="function_parameter_name"><i>password</i></span></td><td><span class="function_parameter_description">
+string，密码。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>datas</i></span></td><td><span class="function_parameter_description">
+bytes，客户端请求时所附带的数据，可将数据转发第三方平台。
+</span></td></tr>
+</table>
+</p>
+
+
+
+<a name="onRequestAccountLogin"></a><p class="function_definition">
+<span class="function_definition">def onRequestAccountLogin( <i>loginName, password, datas</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+当客户端请求服务器登陆账号时，该回调被调用。<br><br>
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。<br>
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>loginName</i></span></td><td><span class="function_parameter_description">
+string，客户端请求时所提交的名称。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>password</i></span></td><td><span class="function_parameter_description">
+string，密码。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>datas</i></span></td><td><span class="function_parameter_description">
+bytes，客户端请求时所附带的数据，可将数据转发第三方平台。
+</span></td></tr>
+</table>
+</p>
+
+
+
+<a name="onRequestCharge"></a><p class="function_definition">
+<span class="function_definition">def onRequestCharge( <i>ordersID, entityDBID, datas</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+当请求计费时（通常是baseapp上调用了KBEngine.charge），该回调被调用。<br><br>
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。<br>
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>ordersID</i></span></td><td><span class="function_parameter_description">
+uint64，订单的ID。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>entityDBID</i></span></td><td><span class="function_parameter_description">
+uint64，提交订单的实体DBID。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>datas</i></span></td><td><span class="function_parameter_description">
+bytes，客户端请求时所附带的数据，可将数据转发第三方平台。
+</span></td></tr>
 </table>
 </p>
 

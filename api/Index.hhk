@@ -1120,5 +1120,37 @@
 		<param name="Name" value="onSelectAccountDBInterface">
 		<param name="Local" value="dbmgr\Modules\KBEngine.html#onSelectAccountDBInterface">
 		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="accountLoginResponse">
+		<param name="Local" value="interfaces\Modules\KBEngine.html#accountLoginResponse">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="createAccountResponse">
+		<param name="Local" value="interfaces\Modules\KBEngine.html#createAccountResponse">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="chargeResponse">
+		<param name="Local" value="interfaces\Modules\KBEngine.html#chargeResponse">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onInterfaceAppReady">
+		<param name="Local" value="interfaces\Modules\KBEngine.html#onInterfaceAppReady">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onInterfaceAppShutDown">
+		<param name="Local" value="interfaces\Modules\KBEngine.html#onInterfaceAppShutDown">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onRequestCreateAccount">
+		<param name="Local" value="interfaces\Modules\KBEngine.html#onRequestCreateAccount">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onRequestAccountLogin">
+		<param name="Local" value="interfaces\Modules\KBEngine.html#onRequestAccountLogin">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onRequestCharge">
+		<param name="Local" value="interfaces\Modules\KBEngine.html#onRequestCharge">
+		</OBJECT>
 </UL>
 </BODY></HTML>
