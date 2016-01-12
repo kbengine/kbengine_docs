@@ -8,7 +8,7 @@
 <tr><td align=left style="background:#708090"> <font size=15 color=#ffffff> KBEngine </font></td></tr>
 </table> <hr>
 <h1>KBEngine模块</h1>
-<a href="KBEngine.html">KBEngine</a>模块提供了Python脚本控制dbmgr进程处理实体登陆查询与数据存取等部分。
+<a href="KBEngine.html">KBEngine</a>模块提供了Python脚本控制对特定类型的日志进行分析和转储等能力。
 
 
 <h2><a href="#" onClick="obj=document.getElementById( 'functions' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">成员函数</a></h2>
@@ -28,15 +28,19 @@
 <table id="callbacks" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr><td>
-<span class="function_list">def <a href="#onDBMgrReady" class="function_list" >onDBMgrReady</a>( ):</span>
+<span class="function_list">def <a href="#onLoggerAppReady" class="function_list" >onLoggerAppReady</a>( ):</span>
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#onDBMgrShutDown" class="function_list" >onDBMgrShutDown</a>( ):</span>
+<span class="function_list">def <a href="#onLoggerAppShutDown" class="function_list" >onLoggerAppShutDown</a>( ):</span>
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#onSelectAccountDBInterface" class="function_list" >onSelectAccountDBInterface</a>( accountName ):</span>
+<span class="function_list">def <a href="#onLogWrote" class="function_list" >onLogWrote</a>( datas ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#onReadyForShutDown" class="function_list" >onReadyForShutDown</a>( ):</span>
 </td></tr>
 
 </table>
@@ -132,8 +136,8 @@ integer，它指定要移除的定时器id。
 <hr>
 <h2>回调函数文档</h2>
 
-<a name="onDBMgrReady"></a><p class="function_definition">
-<span class="function_definition">def onDBMgrReady( <i></i> ):</span>
+<a name="onLoggerAppReady"></a><p class="function_definition">
+<span class="function_definition">def onLoggerAppReady( <i></i> ):</span>
 </p>
 
 <div class="function_description">
@@ -144,8 +148,8 @@ integer，它指定要移除的定时器id。
 
 
 
-<a name="onDBMgrShutDown"></a><p class="function_definition">
-<span class="function_definition">def onDBMgrShutDown( <i></i> ):</span>
+<a name="onLoggerAppShutDown"></a><p class="function_definition">
+<span class="function_definition">def onLoggerAppShutDown( <i></i> ):</span>
 </p>
 
 <div class="function_description">
@@ -156,15 +160,15 @@ integer，它指定要移除的定时器id。
 
 
 
-<a name="onSelectAccountDBInterface"></a><p class="function_definition">
-<span class="function_definition">def onSelectAccountDBInterface( <i>accountName</i> ):</span>
+<a name="onLogWrote"></a><p class="function_definition">
+<span class="function_definition">def onLogWrote( <i>datas</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个回调实现返回某个账号对应的数据库接口，选定接口后dbmgr针对这个账号的相关操作都由对应的数据库接口完成。<br><br>
+如果这个函数在脚本中有实现，logger进程获得了一条新日志，该回调函数被调用。<br><br>
 数据库接口在<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->dbmgr->databaseInterfaces定义。<br>
-利用该接口可以根据accountName来决定账号应该存储在哪个数据库。<br>
+
 <br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。<br>
 </div>
 
@@ -172,12 +176,27 @@ integer，它指定要移除的定时器id。
 <span class="function_parameter">参数：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><span class="function_parameter_name"><i>accountName</i></span></td><td><span class="function_parameter_description">
-string，账号的名称。
+<tr valign=top><td><span class="function_parameter_name"><i>datas</i></span></td><td><span class="function_parameter_description">
+bytes，日志数据。
 </span></td></tr>
 
 </table>
 </p>
+
+
+
+<a name="onReadyForShutDown"></a><p class="function_definition">
+<span class="function_definition">def onReadyForShutDown( <i></i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+如果这个函数在脚本中有实现，当进程准备退出时，该回调函数被调用。<br><br>
+
+如果返回True，则进程会进入shutdown的流程，返回其它值则进程会过一段时间后再次询问。<br>
+可以在收到回调时进行脚本层的数据清理工作，以保证程序的安全退出。<br>
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
+</div>
 
 
 

@@ -1152,5 +1152,21 @@
 		<param name="Name" value="onRequestCharge">
 		<param name="Local" value="interfaces\Modules\KBEngine.html#onRequestCharge">
 		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onLoggerAppReady">
+		<param name="Local" value="logger\Modules\KBEngine.html#onLoggerAppReady">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onLoggerAppShutDown">
+		<param name="Local" value="logger\Modules\KBEngine.html#onLoggerAppShutDown">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onLogWrote">
+		<param name="Local" value="logger\Modules\KBEngine.html#onLogWrote">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onReadyForShutDown">
+		<param name="Local" value="logger\Modules\KBEngine.html#onReadyForShutDown">
+		</OBJECT>
 </UL>
 </BODY></HTML>
