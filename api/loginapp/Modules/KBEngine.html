@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>KBEngine - KBEngine dbmgr 文档</title>
+<title>KBEngine - KBEngine loginapp 文档</title>
 <link href="../../style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
@@ -8,7 +8,7 @@
 <tr><td align=left style="background:#708090"> <font size=15 color=#ffffff> KBEngine </font></td></tr>
 </table> <hr>
 <h1>KBEngine模块</h1>
-<a href="KBEngine.html">KBEngine</a>模块提供了Python脚本控制dbmgr进程处理实体登陆查询与数据存取等部分。
+<a href="KBEngine.html">KBEngine</a>模块提供了Python脚本控制loginapp进程处理实体登陆注册等部分。
 
 
 <h2><a href="#" onClick="obj=document.getElementById( 'functions' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">成员函数</a></h2>
@@ -28,17 +28,28 @@
 <table id="callbacks" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr><td>
-<span class="function_list">def <a href="#onDBMgrReady" class="function_list" >onDBMgrReady</a>( ):</span>
+<span class="function_list">def <a href="#onDBMgrReady" class="function_list" >onLoginAppReady</a>( ):</span>
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#onDBMgrShutDown" class="function_list" >onDBMgrShutDown</a>( ):</span>
+<span class="function_list">def <a href="#onDBMgrShutDown" class="function_list" >onLoginAppShutDown</a>( ):</span>
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#onSelectAccountDBInterface" class="function_list" >onSelectAccountDBInterface</a>( accountName ):</span>
+<span class="function_list">def <a href="#onReuqestLogin" class="function_list" >onReuqestLogin</a>( loginName, password, clientType, datas ):</span>
 </td></tr>
 
+<tr><td>
+<span class="function_list">def <a href="#onLoginCallbackFromDB" class="function_list" >onLoginCallbackFromDB</a>( loginName, accountName, errorno, datas ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#onRequestCreateAccount" class="function_list" >onRequestCreateAccount</a>( accountName, password, datas ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#onCreateAccountCallbackFromDB" class="function_list" >onCreateAccountCallbackFromDB</a>( accountName, errorno, datas ):</span>
+</td></tr>
 </table>
 
 

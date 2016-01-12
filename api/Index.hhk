@@ -1168,5 +1168,29 @@
 		<param name="Name" value="onReadyForShutDown">
 		<param name="Local" value="logger\Modules\KBEngine.html#onReadyForShutDown">
 		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onLoginAppReady">
+		<param name="Local" value="loginapp\Modules\KBEngine.html#onLoginAppReady">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onLoginAppShutDown">
+		<param name="Local" value="loginapp\Modules\KBEngine.html#onLoginAppShutDown">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onReuqestLogin">
+		<param name="Local" value="loginapp\Modules\KBEngine.html#onReuqestLogin">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onLoginCallbackFromDB">
+		<param name="Local" value="loginapp\Modules\KBEngine.html#onLoginCallbackFromDB">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onRequestCreateAccount">
+		<param name="Local" value="loginapp\Modules\KBEngine.html#onRequestCreateAccount">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onCreateAccountCallbackFromDB">
+		<param name="Local" value="loginapp\Modules\KBEngine.html#onCreateAccountCallbackFromDB">
+		</OBJECT>
 </UL>
 </BODY></HTML>
