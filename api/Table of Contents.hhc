@@ -50,6 +50,7 @@
 	</UL>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="cellapp">
+		<param name="Local" value="cellapp\index.html">
 		</OBJECT>
 	<UL>
 		<LI> <OBJECT type="text/sitemap">
@@ -77,6 +78,7 @@
 	</UL>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="baseapp">
+		<param name="Local" value="baseapp\index.html">
 		</OBJECT>
 	<UL>
 		<LI> <OBJECT type="text/sitemap">
@@ -103,6 +105,82 @@
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Proxy">
 				<param name="Local" value="baseapp\Classes\Proxy.html">
+				</OBJECT>
+		</UL>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="loginapp">
+		<param name="Local" value="loginapp\index.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Introduction">
+			<param name="Local" value="loginapp\index.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="modules">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="KBEngine">
+				<param name="Local" value="loginapp\Modules\KBEngine.html">
+				</OBJECT>
+		</UL>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="dbmgr">
+		<param name="Local" value="dbmgr\index.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Introduction">
+			<param name="Local" value="dbmgr\index.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="modules">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="KBEngine">
+				<param name="Local" value="dbmgr\Modules\KBEngine.html">
+				</OBJECT>
+		</UL>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="interfaces">
+		<param name="Local" value="interfaces\index.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Introduction">
+			<param name="Local" value="interfaces\index.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="modules">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="KBEngine">
+				<param name="Local" value="interfaces\Modules\KBEngine.html">
+				</OBJECT>
+		</UL>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="logger">
+		<param name="Local" value="logger\index.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Introduction">
+			<param name="Local" value="logger\index.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="modules">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="KBEngine">
+				<param name="Local" value="logger\Modules\KBEngine.html">
 				</OBJECT>
 		</UL>
 	</UL>
