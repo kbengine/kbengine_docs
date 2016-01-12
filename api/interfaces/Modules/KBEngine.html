@@ -1,0 +1,187 @@
+<html>
+<head>
+<title>KBEngine - KBEngine dbmgr 文档</title>
+<link href="../../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td align=left style="background:#708090"> <font size=15 color=#ffffff> KBEngine </font></td></tr>
+</table> <hr>
+<h1>KBEngine模块</h1>
+<a href="KBEngine.html">KBEngine</a>模块提供了Python脚本控制dbmgr进程处理实体登陆查询与数据存取等部分。
+
+
+<h2><a href="#" onClick="obj=document.getElementById( 'functions' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">成员函数</a></h2>
+<table id="functions" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr><td>
+<span class="function_list">def <a href="#addTimer" class="function_list" >addTimer</a>( initialOffset, repeatOffset=0, userArg=0 ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#delTimer" class="function_list" >delTimer</a>( id ):</span>
+</td></tr>
+
+</table>
+
+<h2><a href="#" onClick="obj=document.getElementById( 'callbacks' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">回调函数</a></h2>
+<table id="callbacks" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr><td>
+<span class="function_list">def <a href="#onDBMgrReady" class="function_list" >onDBMgrReady</a>( ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#onDBMgrShutDown" class="function_list" >onDBMgrShutDown</a>( ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#onSelectAccountDBInterface" class="function_list" >onSelectAccountDBInterface</a>( accountName ):</span>
+</td></tr>
+
+</table>
+
+
+<hr>
+<h2>成员函数文档</h2>
+
+<a name="addTimer"></a><p class="function_definition">
+<span class="function_definition">def addTimer( <i>initialOffset, repeatOffset=0, userArg=0</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+注册一个定时器，定时器由回调函数<i><a href="#onTimer">onTimer</a></i>触发，回调函数将在"initialOffset"秒后被执行第1次，而后将每间隔"repeatOffset"秒执行1次，可设定一个用户参数"userArg"（仅限integer类型）。
+<br><br>
+<i><a href="#onTimer">onTimer</a></i> 函数必须在entity的base部分被定义，且带有2个参数，第1个integer类型的是timer的id（可用于移除timer的"<a href="#delTimer">delTimer</a>"函数），第2个是用户参数"userArg"。
+<br><br>
+例子:
+
+<pre><pre># 这里是使用addTimer的一个例子
+        import <a href="../Modules/KBEngine.html">KBEngine</a>
+&nbsp;
+        # 增加一个定时器，5秒后执行第1次，而后每1秒执行1次，用户参数是9
+        KBEngine.addTimer( 5, 1, 9 )
+&nbsp;
+        # 增加一个定时器，1秒后执行，用户参数缺省是0
+        KBEngine.addTimer( 1 )
+&nbsp;
+    # <a href="Base.html">Base</a>的定时器回调"onTimer"被调用
+    def onTimer( id, userArg ):
+        print "onTimer called: id %i, userArg: %i" % ( id, userArg )
+        # if 这是不断重复的定时器，当不再需要该定时器的时候，调用下面函数移除:
+        #     KBEngine.delTimer( id )</pre>
+</pre>
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>initialOffset</i></span></td><td><span class="function_parameter_description">
+float，指定定时器从注册到第一次回调的时间间隔（秒）。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>repeatOffset</i></span></td><td><span class="function_parameter_description">
+float，指定第一次回调执行后每次执行的时间间隔（秒）。必须用函数<a href="#delTimer">delTimer</a>移除定时器，否则它会一直重复下去。值小于等于0将被忽略。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>userArg</i></span></td><td><span class="function_parameter_description">
+integer，指定底层回调"<a href="#onTimer">onTimer</a>"时的userArg参数值。
+</span></td></tr>
+
+</table>
+</p>
+
+<p>
+<span class="function_return">返回:</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>integer，该函数返回timer的内部id，这个id可用于<a href="#delTimer">delTimer</a>移除定时器。
+</td></tr>
+</table>
+</p>
+
+
+
+<a name="delTimer"></a><p class="function_definition">
+<span class="function_definition">def delTimer( <i>id</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+函数delTimer用于移除一个注册的定时器，移除后的定时器不再执行。只执行1次的定时器在执行回调后自动移除，不必要使用delTimer移除。
+如果delTimer函数使用一个无效的id（例如已经移除），将会产生错误。
+<br><br>
+到KBEngine.addTimer</a>参考定时器的一个使用例子。
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>id</i></span></td><td><span class="function_parameter_description">
+integer，它指定要移除的定时器id。
+</span></td></tr>
+
+</table>
+</p>
+
+
+
+
+<hr>
+<h2>回调函数文档</h2>
+
+<a name="onDBMgrReady"></a><p class="function_definition">
+<span class="function_definition">def onDBMgrReady( <i></i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+当前进程已经准备好的时候回调此函数。
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
+</div>
+
+
+
+<a name="onDBMgrShutDown"></a><p class="function_definition">
+<span class="function_definition">def onDBMgrShutDown( <i></i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+进程关闭会回调此函数。
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
+</div>
+
+
+
+<a name="onSelectAccountDBInterface"></a><p class="function_definition">
+<span class="function_definition">def onSelectAccountDBInterface( <i>accountName</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+这个回调实现返回某个账号对应的数据库接口，选定接口后dbmgr针对这个账号的相关操作都由对应的数据库接口完成。<br><br>
+数据库接口在<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->dbmgr->databaseInterfaces定义。<br>
+利用该接口可以根据accountName来决定账号应该存储在哪个数据库。<br>
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。<br>
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>accountName</i></span></td><td><span class="function_parameter_description">
+string，账号的名称。
+</span></td></tr>
+
+</table>
+</p>
+
+
+
+<hr>
+<p class="copyrightFooter">版权归KBEngine所有。</p>
+</body>
+</html>
