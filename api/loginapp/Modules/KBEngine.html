@@ -173,9 +173,115 @@ integer，它指定要移除的定时器id。
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个回调实现返回某个账号对应的数据库接口，客户端请求服务器登陆账号时回调。<br><br>
+客户端请求服务器登陆账号时回调。<br><br>
 
-利用该接口可以截断用户的登陆，将请求记录下来进行排队并返回一个错误码告诉客户端排队状态，客户端通过不断登陆从此处获得状态。<br>
+此处可以对用户登陆做一些管理控制，例如：<br>
+利用该接口可以在此截断用户的登陆，将请求记录下来进行排队并返回一个错误码告诉客户端排队状态，客户端通过不断登陆从此处获得状态。<br>
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。<br>
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>loginName</i></span></td><td><span class="function_parameter_description">
+string，登陆时提交的账号名称。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>password</i></span></td><td><span class="function_parameter_description">
+string，MD5密码。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>clientType</i></span></td><td><span class="function_parameter_description">
+integer，客户端类型，客户端登陆时给出。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>datas</i></span></td><td><span class="function_parameter_description">
+bytes，客户端请求时所附带的数据，可将数据转发第三方平台。
+</span></td></tr>
+
+</table>
+</p>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+Tuple，返回值分别为（错误码，真实账号名，密码，客户端类别，客户端提交的数据datas），如果没有任何需要扩展修改的则通常返回值为毁掉传入的值（KBEngine.SERVER_SUCCESS, loginName, password, clientType, datas）。
+</td></tr>
+</table>
+</p>
+
+
+
+<a name="onLoginAppReady"></a><p class="function_definition">
+<span class="function_definition">def onLoginAppReady( <i></i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+当前进程已经准备好的时候回调此函数。
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
+</div>
+
+
+
+<a name="onLoginAppShutDown"></a><p class="function_definition">
+<span class="function_definition">def onLoginAppShutDown( <i></i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+进程关闭会回调此函数。
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
+</div>
+
+
+
+<a name="onLoginCallbackFromDB"></a><p class="function_definition">
+<span class="function_definition">def onLoginCallbackFromDB( <i>loginName, accountName, errorno, datas</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+客户端请求服务器登陆账号后由dbmgr返回的回调。<br><br>
+
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。<br>
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>loginName</i></span></td><td><span class="function_parameter_description">
+string，登陆时提交的账号名称。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>accountName</i></span></td><td><span class="function_parameter_description">
+string，真实的账号名称（由dbmgr处查询获得）。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>errorno</i></span></td><td><span class="function_parameter_description">
+integer，错误码，如果非KBEngine.SERVER_SUCCESS则表示登陆失败。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>datas</i></span></td><td><span class="function_parameter_description">
+bytes，可能是任何数据，例如：第三方平台返回的数据或者由dbmgr以及interfaces中处理登陆时返回的数据。
+</span></td></tr>
+
+</table>
+</p>
+
+
+
+<a name="onRequestCreateAccount"></a><p class="function_definition">
+<span class="function_definition">def onRequestCreateAccount( <i>accountName, password, data</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+客户端请求服务器创建账号时回调。<br><br>
+
 <br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。<br>
 </div>
 
@@ -184,11 +290,63 @@ integer，它指定要移除的定时器id。
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>accountName</i></span></td><td><span class="function_parameter_description">
-string，账号的名称。
+string，客户端提交的账号名称。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>password</i></span></td><td><span class="function_parameter_description">
+string，MD5密码。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>datas</i></span></td><td><span class="function_parameter_description">
+bytes，客户端请求时所附带的数据，可将数据转发第三方平台。
 </span></td></tr>
 
 </table>
 </p>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+Tuple，返回值分别为（错误码，真实账号名，密码，客户端提交的数据datas），如果没有任何需要扩展修改的则通常返回值为毁掉传入的值（KBEngine.SERVER_SUCCESS, loginName, password, datas）。
+</td></tr>
+</table>
+</p>
+
+
+
+
+<a name="onCreateAccountCallbackFromDB"></a><p class="function_definition">
+<span class="function_definition">def onCreateAccountCallbackFromDB( <i>accountName, errorno, datas</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+客户端请求服务器创建账号后由dbmgr返回的回调。<br><br>
+
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。<br>
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+
+<tr valign=top><td><span class="function_parameter_name"><i>accountName</i></span></td><td><span class="function_parameter_description">
+string，客户端提交的账号名称。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>errorno</i></span></td><td><span class="function_parameter_description">
+integer，错误码，如果非KBEngine.SERVER_SUCCESS则表示登陆失败。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>datas</i></span></td><td><span class="function_parameter_description">
+bytes，可能是任何数据，例如：第三方平台返回的数据或者由dbmgr以及interfaces中处理登陆时返回的数据。
+</span></td></tr>
+
+</table>
+</p>
+
 
 
 
