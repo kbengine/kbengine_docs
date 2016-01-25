@@ -147,6 +147,38 @@
 		</UL>
 	</UL>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="bots">
+		<param name="Local" value="bots\index.html">
+		</OBJECT>
+	<UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="Introduction">
+			<param name="Local" value="bots\index.html">
+			</OBJECT>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="modules">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="KBEngine">
+				<param name="Local" value="bots\Modules\KBEngine.html">
+				</OBJECT>
+		</UL>
+		<LI> <OBJECT type="text/sitemap">
+			<param name="Name" value="classes">
+			</OBJECT>
+		<UL>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="PyClientApp">
+				<param name="Local" value="bots\Classes\PyClientApp.html">
+				</OBJECT>
+			<LI> <OBJECT type="text/sitemap">
+				<param name="Name" value="Entity">
+				<param name="Local" value="bots\Classes\Entity.html">
+				</OBJECT>
+		</UL>
+	</UL>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="interfaces">
 		<param name="Local" value="interfaces\index.html">
 		</OBJECT>

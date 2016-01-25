@@ -1,0 +1,178 @@
+<html>
+<head>
+<title>PyClientApp - KBEngine bots 文档</title>
+<link href="../../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td align=left style="background:#708090"> <font size=15 color=#ffffff> KBEngine </font></td></tr>
+</table> <hr>
+<h1>PyClientApp类</h1>
+
+<p style="text-align: center;"><span class="module_h1">[<a href="../Modules/KBEngine.html" class="module_h1">KBEngine模块</a>]</span></p><p>PyClientApp是<a href="../Modules/KBEngine.html">KBEngine</a>模块的一部分，由C++底层模拟一个客户端时创建的客户端对象，脚本层不可直接创建。 </p>
+
+<h2><a href="#" onClick="obj=document.getElementById( 'functions' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">成员函数</a></h2>
+<table id="functions" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr><td>
+<span class="function_list">def <a href="#getSpaceData" class="function_list" >getSpaceData</a>( key ):</span>
+</td></tr>
+
+</table>
+
+<h2><a href="#" onClick="obj=document.getElementById( 'callbacks' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">回调函数</a></h2>
+<table id="callbacks" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr><td>
+<span class="function_list">def <a href="#onDestroy" class="function_list" >onDestroy</a>( self ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#onEnterWorld" class="function_list" >onEnterWorld</a>( self ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#onLeaveWorld" class="function_list" >onLeaveWorld</a>( self ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#onEnterSpace" class="function_list" >onEnterSpace</a>( self ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#onLeaveSpace" class="function_list" >onLeaveSpace</a>( self ):</span>
+</td></tr>
+</table>
+
+<h2><a href="#" onClick="obj=document.getElementById( 'attributes' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">属性</a></h2>
+<table id="attributes" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+
+<tr valign=top><td><a href="#id" class="attribute_list" >id</a></td><td>&nbsp; 只读 Integer
+</td></tr>
+
+<tr valign=top><td><a href="#entities" class="attribute_list" >entities</a></td><td>&nbsp; <a href="Entities.html">Entities</a>
+
+</table>
+
+<hr>
+<a name="detailed_description"></a><h2>详细描述</h2>
+类<a href=../../keywords.html#entity>Entity</a>的实例代表着在client上的游戏对象。
+<br><br>
+
+<br><br>
+一个<a href=../../keywords.html#entity>Entity</a>可以通过<a href=../../keywords.html#Mailbox>MAILBOX</a>访问在base和cell应用程序上的等价的实体。这需要
+一组远程调用的函数（在实体的.def文件里指定）。
+
+<hr>
+<h2>成员函数文档</h2>
+
+<a name="getSpaceData"></a><p class="function_definition">
+<span class="function_definition">def getSpaceData( <i>key </i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+获取指定key的space数据。
+<br>
+space数据由用户在服务端通过<a href=../../cellapp/Modules/KBEngine.html#setSpaceData>setSpaceData</a>设置。
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>key</i></span></td><td><span class="function_parameter_description">
+string，一个字符串关键字。
+</span></td></tr>
+</table>
+</p>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+string，指定key的字符串数据。
+</td></tr>
+</table>
+</p>
+
+
+
+
+<hr>
+<h2>回调函数文档</h2>
+
+
+<a name="onDestroy"></a><p class="function_definition">
+<span class="function_definition">def onDestroy( <i>self</i> ):</span>
+</p>
+
+<div class="function_description">实体被销毁时调用。
+</div>
+
+
+<a name="onEnterWorld"></a><p class="function_definition">
+<span class="function_definition">def onEnterWorld( <i>self</i> ):</span>
+</p>
+
+<div class="function_description">如果实体非客户端控制实体，则表明实体进入了服务端上客户端控制的实体的AOI范围，此时客户端可以看见这个实体了。<br>
+如果实体是客户端控制的实体则表明该实体已经在服务端创建了cell并进入了space。
+</div>
+
+
+
+<a name="onLeaveWorld"></a><p class="function_definition">
+<span class="function_definition">def onLeaveWorld( <i>self</i> ):</span>
+</p>
+
+<div class="function_description">如果实体非客户端控制实体，则表明实体离开了服务端上客户端控制的实体的AOI范围，此时客户端看不见这个实体了。<br>
+如果实体是客户端控制的实体则表明该实体已经在服务端销毁了cell并离开了space。
+</div>
+
+
+
+<a name="onEnterSpace"></a><p class="function_definition">
+<span class="function_definition">def onEnterSpace( <i>self</i> ):</span>
+</p>
+
+<div class="function_description">客户端控制的实体进入了一个新的space。
+</div>
+
+
+
+<a name="onLeaveSpace"></a><p class="function_definition">
+<span class="function_definition">def onLeaveSpace( <i>self</i> ):</span>
+</p>
+
+<div class="function_description">客户端控制的实体离开了当前的space。
+</div>
+
+
+
+<hr>
+<h2>属性文档</h2>
+
+<a name="entities"></a><p class="attribute_definition">
+<span class="attribute_definition">entities</span>
+</p>
+
+<div class="attribute_description">
+<b>说明：</b><br><br>
+entities是一个字典对象，包含当前进程上所有的实体。<br>
+</div>
+
+<p>
+<span class="attribute_type">类型：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td><a href="Entities.html">Entities</a>
+</td></tr>
+</table>
+</p>
+
+
+
+<hr>
+<p class="copyrightFooter">版权归KBEngine所有。</p>
+</body>
+</html>

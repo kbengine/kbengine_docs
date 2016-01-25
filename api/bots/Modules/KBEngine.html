@@ -1,0 +1,403 @@
+<html>
+<head>
+<title>KBEngine - KBEngine bots 文档</title>
+<link href="../../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td align=left style="background:#708090"> <font size=15 color=#ffffff> KBEngine </font></td></tr>
+</table> <hr>
+<h1>KBEngine模块</h1>
+<a href="KBEngine.html">KBEngine</a>模块提供了逻辑脚本层访问<a href="../Classes/Entity.html">实体</a>的部分, 以及当前进程其他客户端的数据等等。
+<h2><a href="#" onClick="obj=document.getElementById( 'classes' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">类</a></h2>
+<table id="classes" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr><td>
+<span class="class_list"><a href="../Classes/Entity.html" class="class_list" >Entity</a></span>
+</td></tr>
+
+<tr><td>
+<span class="class_list"><a href="../Classes/PyClientApp.html" class="class_list" >PyClientApp</a></span>
+</td></tr>
+
+</table>
+
+<h2><a href="#" onClick="obj=document.getElementById( 'functions' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">成员函数</a></h2>
+<table id="functions" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr><td>
+<span class="function_list">def <a href="#addBots" class="function_list" >addBots</a>( reqCreateAndLoginTotalCount, reqCreateAndLoginTickCount=0, reqCreateAndLoginTickTime=0 ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#addTimer" class="function_list" >addTimer</a>( initialOffset, repeatOffset=0, callbackObj ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#delTimer" class="function_list" >delTimer</a>( id ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#genUUID64" class="function_list" >genUUID64</a>(  ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#getWatcher" class="function_list" >getWatcher</a>( path ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#getWatcherDir" class="function_list" >getWatcherDir</a>( path ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#scriptLogType" class="function_list" >scriptLogType</a>( logType ):</span>
+</td></tr>
+
+
+</table>
+
+<h2><a href="#" onClick="obj=document.getElementById( 'callbacks' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">回调函数</a></h2>
+<table id="callbacks" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+<span class="function_list">def <a href="#onInit" class="function_list" >onInit</a>( isReload ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#onFinish" class="function_list" >onFinish</a>( ):</span>
+</td></tr>
+</table>
+
+<h2><a href="#" onClick="obj=document.getElementById( 'attributes' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">属性</a></h2>
+<table id="attributes" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><a href="#bots" class="attribute_list" >bots</a></td><td>&nbsp; <a href="../Classes/PyClientApp.html">bots</a>
+
+<tr valign=top><td><a href="#component" class="attribute_list" >component</a></td><td>&nbsp; 只读 <a href="STRING.html">string</a></td></tr>
+
+</td></tr>
+
+</table>
+
+<hr>
+<h2>成员函数文档</h2>
+
+<a name="addBots"></a><p class="function_definition">
+<span class="function_definition">def addBots( <i>reqCreateAndLoginTotalCount, reqCreateAndLoginTickCount=0, reqCreateAndLoginTickTime=0</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+向服务端添加机器人。
+<br><br>
+例子:
+
+<pre><pre># 这里是使用addBots的一个例子
+        import <a href="../Modules/KBEngine.html">KBEngine</a>
+&nbsp;
+        # 一次性向服务器添加5个机器人（瞬时完成）
+        KBEngine.addBots( 5 )
+&nbsp;
+        # 一共向服务器添加1000个机器人，每次添加5个，每次添加所用时间(s)
+        KBEngine.addBots( 1000, 5, 10 )
+</pre>
+</pre>
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>reqCreateAndLoginTotalCount</i></span></td><td><span class="function_parameter_description">
+integer，向服务器添加的机器人总数。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>reqCreateAndLoginTickCount</i></span></td><td><span class="function_parameter_description">
+integer，每次向服务器添加的机器人数量。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>reqCreateAndLoginTickTime</i></span></td><td><span class="function_parameter_description">
+integer，每次添加所用时间(秒)。
+</span></td></tr>
+
+</table>
+</p>
+
+
+
+
+<a name="addTimer"></a><p class="function_definition">
+<span class="function_definition">def addTimer( <i>initialOffset, repeatOffset=0, callbackObj</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+注册一个定时器，定时器由回调函数callbackObj触发，回调函数将在"initialOffset"秒后被执行第1次，而后将每间隔"repeatOffset"秒执行1次。
+<br><br>
+例子:
+
+<pre><pre># 这里是使用addTimer的一个例子
+        import <a href="../Modules/KBEngine.html">KBEngine</a>
+&nbsp;
+        # 增加一个定时器，5秒后执行第1次，而后每1秒执行1次，用户参数是9
+        KBEngine.addTimer( 5, 1, onTimer_Callbackfun )
+&nbsp;
+        # 增加一个定时器，1秒后执行，用户参数缺省是0
+        KBEngine.addTimer( 1, onTimer_Callbackfun )
+&nbsp;
+    def onTimer_Callbackfun( id ):
+        print "onTimer_Callbackfun called: id %i" % ( id )
+        # if 这是不断重复的定时器，当不再需要该定时器的时候，调用下面函数移除:
+        #     KBEngine.delTimer( id )</pre>
+</pre>
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>initialOffset</i></span></td><td><span class="function_parameter_description">
+float，指定定时器从注册到第一次回调的时间间隔（秒）。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>repeatOffset</i></span></td><td><span class="function_parameter_description">
+float，指定第一次回调执行后每次执行的时间间隔（秒）。必须用函数<a href="#delTimer">delTimer</a>移除定时器，否则它会一直重复下去。值小于等于0将被忽略。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>callbackObj</i></span></td><td><span class="function_parameter_description">
+function，指定的回调函数对象。
+</span></td></tr>
+
+</table>
+</p>
+
+<p>
+<span class="function_return">返回:</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>integer，该函数返回timer的内部id，这个id可用于<a href="#delTimer">delTimer</a>移除定时器。
+</td></tr>
+</table>
+</p>
+
+
+
+<a name="delTimer"></a><p class="function_definition">
+<span class="function_definition">def delTimer( <i>id</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+函数delTimer用于移除一个注册的定时器，移除后的定时器不再执行。只执行1次的定时器在执行回调后自动移除，不必要使用delTimer移除。
+如果delTimer函数使用一个无效的id（例如已经移除），将会产生错误。
+<br><br>
+到KBEngine.addTimer</a>参考定时器的一个使用例子。
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>id</i></span></td><td><span class="function_parameter_description">
+integer，它指定要移除的定时器id。
+</span></td></tr>
+
+</table>
+</p>
+
+
+
+<a name="genUUID64"></a><p class="function_definition">
+<span class="function_definition">def genUUID64( <i></i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+该函数生成一个64位的唯一ID。<br>
+注意：这个函数依赖于Cellapps服务进程启动参数gus，请正确设置启动参数保持唯一性。<br>
+另外如果gus超过65535则该函数只能在当前进程上保持唯一性。
+<br>
+<br>
+用途：<br>
+多个服务进程上产生唯一物品ID并且在合服时不会产生冲突。<br>
+多个服务进程上产生一个房间ID，不需要进行唯一性校验。<br>
+</div>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+返回一个64位的integer。
+</td></tr>
+</table>
+</p>
+
+
+
+<a name="getWatcher"></a><p class="function_definition">
+<span class="function_definition">def getWatcher( <i>path</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+从KBEngine调试系统中获取一个监视变量的值。
+<br>
+<br>
+例子：在baseapp1的Python命令行输入:<br>
+>>>KBEngine.getWatcher("/root/stats/runningTime")
+<br>
+12673648533
+<br>
+<br>
+>>>KBEngine.getWatcher("/root/scripts/players")
+<br>
+32133
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>path</i></span></td><td><span class="function_parameter_description">
+string，该变量的绝对路径包括变量名(可以在GUIConsole的watcher页查看)。
+</span></td></tr>
+
+</table>
+</p>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+该变量的值。
+</td></tr>
+</table>
+</p>
+
+
+
+<a name="getWatcherDir"></a><p class="function_definition">
+<span class="function_definition">def getWatcherDir( <i>path</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+从KBEngine调试系统中获取一个监视目录下的元素列表(目录、变量名)。
+<br>
+<br>
+例子：在baseapp1的Python命令行输入:<br>
+>>>KBEngine.getWatcher("/root")
+<br>
+('stats', 'objectPools', 'network', 'syspaths', 'ThreadPool', 'cprofiles', 'scripts', 'numProxices', 'componentID', 'componentType', 'uid', 'numClients', 'globalOrder', 'username', 'load', 'gametime', 'entitiesSize', 'groupOrder')
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>path</i></span></td><td><span class="function_parameter_description">
+string，该变量的绝对路径(可以在GUIConsole的watcher页查看)。
+</span></td></tr>
+
+</table>
+</p>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+监视目录下的元素列表(目录、变量名)。
+</td></tr>
+</table>
+</p>
+
+
+
+<a name="scriptLogType"></a><p class="function_definition">
+<span class="function_definition">def scriptLogType( <i>logType</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+设置当前Python.print输出的信息类型(参考: KBEngine.LOG_TYPE_*)。
+</div>
+
+
+
+<hr>
+<h2>回调函数文档</h2>
+</table>
+</p>
+
+<a name="onInit"></a><p class="function_definition">
+<span class="function_definition">def onInit( <i>isReload</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+当引擎启动后初始化完所有的脚本后这个接口被调用。
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>isReload</i></span></td><td><span class="function_parameter_description">
+bool，是否是被重写加载脚本后触发的。
+</span></td></tr>
+
+</table>
+</p>
+
+
+
+<a name="onFinish"></a><p class="function_definition">
+<span class="function_definition">def onFinish( <i></i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+进程关闭会回调此函数。
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
+</div>
+
+</table>
+</p>
+
+
+<hr>
+<h2>属性文档</h2>
+
+<a name="bots"></a><p class="attribute_definition">
+<span class="attribute_definition">bots</span>
+</p>
+
+<div class="attribute_description">
+<b>说明：</b><br><br>
+bots是一个字典对象，包含当前进程上所有的客户端对象。<br>
+</div>
+
+<p>
+<span class="attribute_type">类型：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td><a href="../Classes/PyClientApp.html">PyBots</a>
+</td></tr>
+</table>
+</p>
+
+
+<a name="component"></a><p class="attribute_definition">
+<span class="attribute_definition">component</span>
+</p>
+
+<div class="attribute_description">
+<b>说明：</b><br><br>
+这是正运行在当前脚本环境的组件。（至今为止）可能值有'cell', 'base', 'client', 'database', 'bot' 和 'editor'。
+</div>
+
+
+
+
+<hr>
+<p class="copyrightFooter">版权归KBEngine所有。</p>
+</body>
+</html>

@@ -6,6 +6,10 @@
 </HEAD><BODY>
 <UL>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="addBots">
+		<param name="Local" value="bots\Modules\KBEngine.html#addBots">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="onAutoLoadEntityCreate">
 		<param name="Name" value="KBEngine - KBEngine base ÎÄµµ">
 		<param name="Local" value="baseapp\Modules\KBEngine.html#onAutoLoadEntityCreate">
