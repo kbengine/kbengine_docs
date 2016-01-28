@@ -24,6 +24,11 @@
 		<param name="Local" value="bots\Classes\Entity.html#clientapp">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="volatileInfo">
+		<param name="Name" value="Entity - KBEngine cell ÎÄµµ">
+		<param name="Local" value="cellapp\Classes\Entity.html#volatileInfo">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="canNavigate">
 		<param name="Name" value="Entity - KBEngine cell ÎÄµµ">
 		<param name="Local" value="cellapp\Classes\Entity.html#canNavigate">
