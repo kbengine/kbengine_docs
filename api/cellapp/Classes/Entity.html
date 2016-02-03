@@ -87,7 +87,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#navigate" class="function_list" >navigate</a>( self, destination, velocity, distance, maxMoveDistance, faceMovement, layer, userData ):</span>
+<span class="function_list">def <a href="#navigate" class="function_list" >navigate</a>( self, destination, velocity, distance, maxMoveDistance, maxSearchDistance, faceMovement, layer, userData ):</span>
 </td></tr>
 
 <tr><td>
@@ -861,7 +861,7 @@ int，新创建的控制器ID。
 
 
 <a name="navigate"></a><p class="function_definition">
-<span class="function_definition">def navigate( <i>self, destination, velocity, distance, maxMoveDistance, faceMovement, layer, userData</i> ):</span>
+<span class="function_definition">def navigate( <i>self, destination, velocity, distance, maxMoveDistance, maxSearchDistance, faceMovement, layer, userData</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -896,7 +896,7 @@ int，新创建的控制器ID。
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>destination</i></span></td><td><span class="function_parameter_description">
-Vector3，<a href=../../keywords.html#entity>Entity</a>移向的目标点
+Vector3，<a href=../../keywords.html#entity>Entity</a>移向的目标点。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>velocity</i></span></td><td><span class="function_parameter_description">
@@ -908,7 +908,11 @@ float，距离目标小于该值停止移动，如果该值为0则移动到目标位置。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>maxMoveDistance</i></span></td><td><span class="function_parameter_description">
-float，最大的移动距离
+float，最大的移动距离。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>maxSearchDistance</i></span></td><td><span class="function_parameter_description">
+float，从导航数据中最大搜索距离。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>faceMovement</i></span></td><td><span class="function_parameter_description">
@@ -920,7 +924,7 @@ int8，使用某个层的navmesh来寻路。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>userData</i></span></td><td><span class="function_parameter_description">
-object，传给通知函数的数据
+object，传给通知函数的数据。
 </span></td></tr>
 
 </table>
