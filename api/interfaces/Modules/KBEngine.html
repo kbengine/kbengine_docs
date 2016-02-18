@@ -19,11 +19,11 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#accountLoginResponse" class="function_list" >accountLoginResponse</a>( commitName, realAccountName, extraDatas, errorCode ):</span>
+<span class="function_list">def <a href="#accountLoginResponse" class="function_list" >accountLoginResponse</a>( commitName, realAccountName, extraDatas, errorCode, processedByThirdparty ):</span>
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#createAccountResponse" class="function_list" >createAccountResponse</a>( commitName, realAccountName, extraDatas, errorCode ):</span>
+<span class="function_list">def <a href="#createAccountResponse" class="function_list" >createAccountResponse</a>( commitName, realAccountName, extraDatas, errorCode, processedByThirdparty ):</span>
 </td></tr>
 
 <tr><td>
@@ -121,7 +121,7 @@ function£¬Ö¸¶¨µÄ»Øµ÷º¯Êı¶ÔÏó¡£
 
 
 <a name="accountLoginResponse"></a><p class="function_definition">
-<span class="function_definition">def accountLoginResponse( <i>commitName, realAccountName, extraDatas, errorCode</i> ):</span>
+<span class="function_definition">def accountLoginResponse( <i>commitName, realAccountName, extraDatas, errorCode, processedByThirdparty</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -149,13 +149,17 @@ bytes£¬¿Í»§¶ËÇëÇóÊ±Ëù¸½´øµÄÊı¾İ£¬¿É½«Êı¾İ×ª·¢µÚÈı·½Æ½Ì¨£¬ÔÚ´ËÌá¹©¶ÔÆä½øĞĞĞŞ¸ÄµÄ»
 integer£¬´íÎóÂë¡£Èç¹ûĞèÒªÖĞ¶ÏÓÃ»§µÄĞĞÎª¿ÉÔÚ´ËÉèÖÃ´íÎóÂë£¬´íÎóÂë¿É²Î¿¼£¨KBEngine.SERVER_ERROR_*£¬ ÃèÊöÔÚkbengine/kbe/res/server/server_errors.xml£©£¬·ñÔòÌá½»KBEngine.SERVER_SUCCESS´ú±íÔÊĞí´Ë´¦µÇÂ½¡£
 </span></td></tr>
 
+<tr valign=top><td><span class="function_parameter_name"><i>processedByThirdparty</i></span></td><td><span class="function_parameter_description">
+bool£¬ÊÇ·ñÓÉµÚÈı·½Æ½Ì¨´¦Àí£¨µ×²ã»áÒÀ¾İ¸Ã²ÎÊı¾ö¶¨±¾µØÊÇ·ñĞèÒªÑéÖ¤ÃÜÂëµÈ£©¡£
+</span></td></tr>
+
 </table>
 </p>
 
 
 
 <a name="createAccountResponse"></a><p class="function_definition">
-<span class="function_definition">def createAccountResponse( <i>commitName, realAccountName, extraDatas, errorCode</i> ):</span>
+<span class="function_definition">def createAccountResponse( <i>commitName, realAccountName, extraDatas, errorCode, processedByThirdparty</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -183,6 +187,9 @@ bytes£¬¿Í»§¶ËÇëÇóÊ±Ëù¸½´øµÄÊı¾İ£¬¿É½«Êı¾İ×ª·¢µÚÈı·½Æ½Ì¨£¬ÔÚ´ËÌá¹©¶ÔÆä½øĞĞĞŞ¸ÄµÄ»
 integer£¬´íÎóÂë¡£Èç¹ûĞèÒªÖĞ¶ÏÓÃ»§µÄĞĞÎª¿ÉÔÚ´ËÉèÖÃ´íÎóÂë£¬´íÎóÂë¿É²Î¿¼£¨KBEngine.SERVER_ERROR_*£¬ ÃèÊöÔÚkbengine/kbe/res/server/server_errors.xml£©£¬·ñÔòÌá½»KBEngine.SERVER_SUCCESS´ú±íÔÊĞí´Ë´¦µÇÂ½¡£
 </span></td></tr>
 
+<tr valign=top><td><span class="function_parameter_name"><i>processedByThirdparty</i></span></td><td><span class="function_parameter_description">
+bool£¬ÊÇ·ñÓÉµÚÈı·½Æ½Ì¨´¦Àí£¨µ×²ã»áÒÀ¾İ¸Ã²ÎÊı¾ö¶¨±¾µØÊÇ·ñĞèÒªÑéÖ¤ÃÜÂëµÈ£©¡£
+</span></td></tr>
 </table>
 </p>
 
