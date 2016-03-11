@@ -30,11 +30,11 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#addTimer" class="function_list" >addTimer</a>( initialOffset, repeatOffset=0, callbackObj ):</span>
+<span class="function_list">def <a href="#callback" class="function_list" >callback</a>( initialOffset, callbackObj ):</span>
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#delTimer" class="function_list" >delTimer</a>( id ):</span>
+<span class="function_list">def <a href="#cancelCallback" class="function_list" >cancelCallback</a>( id ):</span>
 </td></tr>
 
 <tr><td>
@@ -125,29 +125,25 @@ integer，每次添加所用时间(秒)。
 
 
 
-<a name="addTimer"></a><p class="function_definition">
-<span class="function_definition">def addTimer( <i>initialOffset, repeatOffset=0, callbackObj</i> ):</span>
+<a name="callback"></a><p class="function_definition">
+<span class="function_definition">def callback( <i>initialOffset, callbackObj</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-注册一个定时器，定时器由回调函数callbackObj触发，回调函数将在"initialOffset"秒后被执行第1次，而后将每间隔"repeatOffset"秒执行1次。
+注册一个回调，回调函数callbackObj触发，回调函数将在"initialOffset"秒后被执行。
 <br><br>
 例子:
 
-<pre><pre># 这里是使用addTimer的一个例子
+<pre><pre># 这里是使用callback的一个例子
         import <a href="../Modules/KBEngine.html">KBEngine</a>
 &nbsp;
-        # 增加一个定时器，5秒后执行第1次，而后每1秒执行1次，用户参数是9
-        KBEngine.addTimer( 5, 1, onTimer_Callbackfun )
+        # 增加一个定时器，1秒后执行
+        KBEngine.callback( 1, onCallbackfun )
 &nbsp;
-        # 增加一个定时器，1秒后执行，用户参数缺省是0
-        KBEngine.addTimer( 1, onTimer_Callbackfun )
-&nbsp;
-    def onTimer_Callbackfun( id ):
-        print "onTimer_Callbackfun called: id %i" % ( id )
-        # if 这是不断重复的定时器，当不再需要该定时器的时候，调用下面函数移除:
-        #     KBEngine.delTimer( id )</pre>
+    def onCallbackfun( ):
+        print "onCallbackfun called“
+	</pre>
 </pre>
 </div>
 
@@ -156,11 +152,7 @@ integer，每次添加所用时间(秒)。
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>initialOffset</i></span></td><td><span class="function_parameter_description">
-float，指定定时器从注册到第一次回调的时间间隔（秒）。
-</span></td></tr>
-
-<tr valign=top><td><span class="function_parameter_name"><i>repeatOffset</i></span></td><td><span class="function_parameter_description">
-float，指定第一次回调执行后每次执行的时间间隔（秒）。必须用函数<a href="#delTimer">delTimer</a>移除定时器，否则它会一直重复下去。值小于等于0将被忽略。
+float，指定回调从注册到回调的时间间隔（秒）。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>callbackObj</i></span></td><td><span class="function_parameter_description">
@@ -173,23 +165,23 @@ function，指定的回调函数对象。
 <p>
 <span class="function_return">返回:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>integer，该函数返回timer的内部id，这个id可用于<a href="#delTimer">delTimer</a>移除定时器。
+<tr><td>integer，该函数返回callback的内部id，这个id可用于<a href="#cancelCallback">cancelCallback</a>移除回调。
 </td></tr>
 </table>
 </p>
 
 
 
-<a name="delTimer"></a><p class="function_definition">
-<span class="function_definition">def delTimer( <i>id</i> ):</span>
+<a name="cancelCallback"></a><p class="function_definition">
+<span class="function_definition">def cancelCallback( <i>id</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-函数delTimer用于移除一个注册的定时器，移除后的定时器不再执行。只执行1次的定时器在执行回调后自动移除，不必要使用delTimer移除。
-如果delTimer函数使用一个无效的id（例如已经移除），将会产生错误。
+函数cancelCallback用于移除一个注册但还未触发的回调，移除后的回调不再执行。
+如果cancelCallback函数使用一个无效的id（例如已经移除），将会产生错误。
 <br><br>
-到KBEngine.addTimer</a>参考定时器的一个使用例子。
+到KBEngine.callback</a>参考回调的一个使用例子。
 </div>
 
 <p>
@@ -197,7 +189,7 @@ function，指定的回调函数对象。
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>id</i></span></td><td><span class="function_parameter_description">
-integer，它指定要移除的定时器id。
+integer，它指定要移除的回调id。
 </span></td></tr>
 
 </table>

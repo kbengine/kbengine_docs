@@ -34,6 +34,14 @@
 		<param name="Local" value="cellapp\Classes\Entity.html#canNavigate">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="callback">
+		<param name="Local" value="bots\Modules\KBEngine.html#callback">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="cancelCallback">
+		<param name="Local" value="bots\Modules\KBEngine.html#cancelCallback">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="debugTracing">
 		<param name="Name" value="KBEngine - KBEngine cell ÎÄµµ">
 		<param name="Local" value="cellapp\Modules\KBEngine.html#debugTracing">
