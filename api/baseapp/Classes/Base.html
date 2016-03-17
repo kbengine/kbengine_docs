@@ -23,7 +23,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#createInNewSpace" class="function_list" >createInNewSpace</a>( self ):</span>
+<span class="function_list">def <a href="#createInNewSpace" class="function_list" >createInNewSpace</a>( self, cellappIndex ):</span>
 </td></tr>
 
 <tr><td>
@@ -227,7 +227,7 @@ integer，指定底层回调"<a href="#onTimer">onTimer</a>"时的userArg参数值。
 </p>
 
 <a name="createInNewSpace"></a><p class="function_definition">
-<span class="function_definition">def createInNewSpace( <i>self</i> ):</span>
+<span class="function_definition">def createInNewSpace( <i>self, cellappIndex</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -237,6 +237,21 @@ integer，指定底层回调"<a href="#onTimer">onTimer</a>"时的userArg参数值。
 用于创建cell实体的信息被存储在该实体的属性cellData里。这个属性是一个字典，对应实体的.def文件里的默认值同时还包括用于表示<br>
 实体位置和方向(roll, pitch, yaw)的"position", "direction" 和 "spaceID"。
 </div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>cellappIndex</i></span></td><td><span class="function_parameter_description">
+integer，为None或者0则由引擎负载均衡进行动态选择，如果大于0则在指定的cellapp中创建space。<br>
+例子：假如预期会开启4个cellapp，那么cellappIndex需要指定时索引可以是1、2、3、4，<br>
+如果实际运行的cellapp不足4个，例如只有3个，那么cellappIndex输入4时由于数量溢出4代表1，如果输入5则代表2。
+
+</span></td></tr>
+
+</table>
+</p>
+
 
 <a name="delTimer"></a><p class="function_definition">
 <span class="function_definition">def delTimer( <i>self, id</i> ):</span>
