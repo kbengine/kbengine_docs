@@ -1317,7 +1317,7 @@ float，给定触发器y轴高度，必须大于等于0。<br>
 <span class="function_definition">def onTeleport( <i>self</i> ):</span>
 </p>
 
-<div class="function_description">如果这个函数在脚本中有实现，在Base.teleport调用成功之后该回调被调用。<br>
+<div class="function_description">如果这个函数在脚本中有实现，在通过Base.teleport调用发生的实体传送中，实体(Real entity)被传送之前的时刻此方法会被调用。<br>
 请注意，在cell上调用实体的teleport并不会回调此接口，如果你需要这个功能请在<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#teleport>teleport</a>之后调用此回调。
 </div>
 
