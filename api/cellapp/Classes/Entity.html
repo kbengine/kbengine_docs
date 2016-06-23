@@ -132,6 +132,9 @@
 <span class="function_list">def <a href="#onLeaveTrap" class="function_list" >onLeaveTrap</a>( self, entity, rangeXZ, rangeY, controllerID, userArg ):</span>
 </td></tr>
 
+<tr><td>
+<span class="function_list">def <a href="#onLoseControlledBy" class="function_list" >onLoseControlledBy</a>( self, id ):</span>
+</td></tr>
 
 <tr><td>
 <span class="function_list">def <a href="#onLoseWitness" class="function_list" >onLoseWitness</a>( self ):</span>
@@ -193,10 +196,13 @@
 <tr valign=top><td><a href="#allClients" class="attribute_list" >allClients</a></td><td>&nbsp; 只读 PyClient
 </td></tr>
 
-<tr valign=top><td><a href="#base" class="attribute_list" >base</a></td><td>&nbsp; 只读 <a href=../../keywords.html#Mailbox>MAILBOX</a>
+<tr valign=top><td><a href="#base" class="attribute_list" >base</a></td><td>&nbsp; 只读 <a href=../../keywords.html#Mailbox>BaseEntityMailBox </a>
 </td></tr>
 
-<tr valign=top><td><a href="#client" class="attribute_list" >client</a></td><td>&nbsp; 只读 <a href=../../keywords.html#Mailbox>MAILBOX</a>
+<tr valign=top><td><a href="#client" class="attribute_list" >client</a></td><td>&nbsp; 只读 <a href=../../keywords.html#Mailbox>ClientEntityMailbox</a>
+</td></tr>
+
+<tr valign=top><td><a href="#controlledBy" class="attribute_list" >controlledBy</a></td><td>&nbsp; <a href=../../keywords.html#Mailbox>BaseEntityMailBox</a>
 </td></tr>
 
 <tr valign=top><td><a href="#direction" class="attribute_list" >direction</a></td><td>&nbsp; Tuple of 3 floats as (roll, pitch, yaw)
@@ -211,7 +217,7 @@
 <tr valign=top><td><a href="#isDestroyed" class="attribute_list" >isDestroyed</a></td><td>&nbsp; 只读 bool
 </td></tr>
 
-<tr valign=top><td><a href="#isWitnessed" class="attribute_list" >isWitnessed</a></td><td>&nbsp; </td></tr>
+<tr valign=top><td><a href="#isWitnessed" class="attribute_list" >isWitnessed</a></td><td>&nbsp; 只读 bool</td></tr>
 
 <tr valign=top><td><a href="#layer" class="attribute_list" >layer</a></td><td>&nbsp; int8
 </td></tr>
@@ -1199,6 +1205,25 @@ float，给定触发器y轴高度，必须大于等于0。<br>
 
 
 
+<a name="onLoseControlledBy"></a><p class="function_definition">
+<span class="function_definition">def onLoseControlledBy( <i>self, id</i> ):</span>
+</p>
+
+<div class="function_description">如果这个函数在脚本中有实现，当<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#controlledBy >controlledBy </a>所关联的实体丢失时改回调方法被调用。<br>
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>id</i></span></td><td><span class="function_parameter_description">&nbsp;controlledBy实体的ID。
+</span></td></tr>
+
+</table>
+</p>
+
+
+
 <a name="onLoseWitness"></a><p class="function_definition">
 <span class="function_definition">def onLoseWitness( <i>self</i> ):</span>
 </p>
@@ -1483,6 +1508,33 @@ avatar.allClients.attack(monsterID，skillID, damage)<br><br>
 <span class="attribute_type">类型：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>只读的，<a href=../../keywords.html#Mailbox>MAILBOX</a>
+</td></tr>
+</table>
+</p>
+
+
+
+<a name="controlledBy"></a><p class="attribute_definition">
+<span class="attribute_definition">controlledBy</span>
+</p>
+
+<div class="attribute_description">该属性如果设置为某个客户端所关联的服务端实体的BaseEntityMailBox，那么该实体由对应的客户端来控制移动，如果该属性为None则实体由服务端移动。
+当客户端登陆后调用giveClientTo到该实体时，该属性会自动的设置为自己的BaseEntityMailBox。
+<br>
+脚本可以灵活的控制该实体由服务端控制移动或是由客户端（自己的客户端或是其他客户端）控制移动。
+</div>
+
+<p>
+<span class="attribute_links"><b>其他参考：</b></span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#onLoseControlledBy">onLoseControlledBy</a></td></tr>
+</table>
+</p>
+
+<p>
+<span class="attribute_type">类型：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td><a href=../../keywords.html#Mailbox>BaseEntityMailBox </a>
 </td></tr>
 </table>
 </p>
