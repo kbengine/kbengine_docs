@@ -112,6 +112,8 @@ def parseClasses(data, substate):
     global pythonstr
     global isModuleAPI
     
+    pythonstr += "\n"
+    pythonstr += isModuleAPI + "\t" + "这是一个子类，请参考具体类描述！"
     substate = 2
 
     return substate
@@ -208,7 +210,7 @@ def parseDocs(f):
                 
                 if pythonstr[-1] == "\n":
                     pythonstr = pythonstr[0 : len(pythonstr) - 1]
-
+                    
                 if len(isModuleAPI) > 0:
                     pythonstr += "( self ):\n"
                 else:
