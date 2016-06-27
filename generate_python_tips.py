@@ -108,6 +108,14 @@ def parseAttributes(data, substate):
 
     return substate
 
+def parseClasses(data, substate):
+    global pythonstr
+    global isModuleAPI
+    
+    substate = 2
+
+    return substate
+
 def writeTipsPy(processName, moduleName, datas):
     dirstr = "tips\\" + processName + "\\"
 
@@ -136,6 +144,10 @@ def parseDocs(f):
     # 主状态2：分析属性
         # 子状态1：分析主描述
         # 子状态2：分析结束
+    # 主状态3：分析子类
+        # 子状态1：分析主描述
+        # 子状态2：分析结束
+
     state = 0
     substate = 0
 
@@ -176,7 +188,8 @@ def parseDocs(f):
                     
                 state = 1
                 pythonstr += "\n\t" + isModuleAPI + "\"\"\""
-            if r"""<span class="attribute_definition">""" in data:
+                
+            elif r"""<span class="attribute_definition">""" in data:
                 pythonstr = isModuleAPI + "@property\n"
                 pythonstr += modifyDatas(isModuleAPI + "def ", data)
                 
@@ -189,9 +202,27 @@ def parseDocs(f):
                     pythonstr += "():\n"
                 pythonstr += "\n\t" + isModuleAPI + "\"\"\""
                 state = 2
+            elif r"""<span class="class_list">""" in data:
+                pythonstr = isModuleAPI + "@property\n"
+                pythonstr += modifyDatas(isModuleAPI + "def ", data)
+                
+                if pythonstr[-1] == "\n":
+                    pythonstr = pythonstr[0 : len(pythonstr) - 1]
+
+                if len(isModuleAPI) > 0:
+                    pythonstr += "( self ):\n"
+                else:
+                    pythonstr += "():\n"
+                pythonstr += "\n\t" + isModuleAPI + "\"\"\""
+                state = 3
         elif state == 1:
             substate = parseFunctions(data, substate)
             if substate == 4:
+                substate = 0
+                state = 0
+        elif state == 3:
+            substate = parseClasses(data, substate)
+            if substate == 2:
                 substate = 0
                 state = 0
         else:
