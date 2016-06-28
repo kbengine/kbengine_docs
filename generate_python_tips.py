@@ -24,10 +24,6 @@ def findDocsFiles():
 	return files
 
 def modifyDatas(prefix, data):
-	if "def" in data:
-		data = data.replace(r"""=0""", "").replace("&nbsp;", " ")
-		data = data.replace("=\"\"", "").replace("=-1", "")
-
 	data = data.replace("&nbsp;", " ").replace("\r", "")
 	#data = data.rstrip()
 
