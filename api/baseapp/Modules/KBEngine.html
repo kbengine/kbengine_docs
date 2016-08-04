@@ -51,11 +51,19 @@
 </td></tr>
 
 <tr><td>
+<span class="function_list">def <a href="#createBaseRemotely" class="function_list" >createBaseRemotely</a>( entityType, baseMB, *params, callback ):</span>
+</td></tr>
+
+<tr><td>
 <span class="function_list">def <a href="#createBaseFromDBID" class="function_list" >createBaseFromDBID</a>( entityType, dbID, callback, dbInterfaceName ):</span>
 </td></tr>
 
 <tr><td>
 <span class="function_list">def <a href="#createBaseAnywhereFromDBID" class="function_list" >createBaseAnywhereFromDBID</a>( entityType, dbID, callback, dbInterfaceName ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#createBaseRemotelyFromDB" class="function_list" >createBaseRemotelyFromDB</a>( entityType, dbID, baseMB, callback, dbInterfaceName ):</span>
 </td></tr>
 
 <tr><td>
@@ -402,7 +410,7 @@ datas£ºbytes£¬¸½´øÊı¾İ£¬ÓÉ¿ª·¢Õß×Ô¼º½âÎöºÍ¶¨Òå<br>
 Õâ¸ö·½·¨Ó¦×÷Îª<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#createBaseLocally>createBaseLocally</a>µÄÊ×Ñ¡£¬
 ÕâÑù·şÎñ¶Ë»áÁé»îµØÑ¡ÔñÒ»¸öºÏÊÊµÄ<a href="../index.html">Baseapp</a>À´´´½¨ÊµÌå¡£
 <br><br>
-º¯Êı²ÎÊıĞèÒª´´½¨µÄÊµÌåµÄÀàĞÍ£¬»¹ÓĞÒ»¸öPython×Öµä×÷Îª²ÎÊıÀ´³õÊ¼»¯ÊµÌåµÄÖµ¡£
+º¯Êı²ÎÊıĞèÒªÌá¹©´´½¨µÄÊµÌåµÄÀàĞÍ£¬»¹ÓĞÒ»¸öPython×Öµä×÷Îª²ÎÊıÀ´³õÊ¼»¯ÊµÌåµÄÖµ¡£
 <br><br>
 Õâ¸öPython×Öµä²»ĞèÒªÓÃ»§Ìá¹©ËùÓĞµÄÊôĞÔ£¬Ã»ÓĞÌá¹©µÄÊôĞÔÄ¬ÈÏÎªÊµÌå¶¨ÒåÎÄ¼ş".def"Ìá¹©µÄÄ¬ÈÏÖµ¡£
 <br><br>
@@ -448,10 +456,79 @@ callbackÊÇÒ»¸ö¿ÉÑ¡µÄ»Øµ÷º¯Êı£¬µ±ÊµÌåÍê³É´´½¨Ê±±»µ÷ÓÃ¡£»Øµ÷º¯Êı´øÓĞÒ»¸ö²ÎÊı£¬µ±³É
 <span class="function_return">·µ»Ø£º</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-<a href="../Classes/Base.html">Base</a>ÊµÌåµÄ<a href=../../keywords.html#Mailbox>mailbox</a>¡£
+Í¨¹ı»Øµ÷·µ»Ø<a href="../Classes/Base.html">Base</a>ÊµÌåµÄ<a href=../../keywords.html#Mailbox>mailbox</a>¡£
 </td></tr>
 </table>
 </p>
+
+
+
+<a name="createBaseRemotely"></a><p class="function_definition">
+<span class="function_definition">def createBaseRemotely( <i>entityType, baseMB, params, callback</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>¹¦ÄÜËµÃ÷£º</b><br><br>
+Í¨¹ıbaseMB²ÎÊıÔÚÒ»¸öÖ¸¶¨µÄbaseappÉÏ´´½¨Ò»¸öĞÂµÄ<a href="../Classes/Base.html">Base</a>ÊµÌå¡£
+<br><br>
+Ó¦¸Ã½«<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#createBaseLocally>createBaseAnywhere</a>·½·¨×÷ÎªÊ×Ñ¡¡£
+<br><br>
+º¯Êı²ÎÊıĞèÒªÌá¹©´´½¨µÄÊµÌåµÄÀàĞÍ£¬»¹ÓĞÒ»¸öPython×Öµä×÷Îª²ÎÊıÀ´³õÊ¼»¯ÊµÌåµÄÖµ¡£
+<br><br>
+Õâ¸öPython×Öµä²»ĞèÒªÓÃ»§Ìá¹©ËùÓĞµÄÊôĞÔ£¬Ã»ÓĞÌá¹©µÄÊôĞÔÄ¬ÈÏÎªÊµÌå¶¨ÒåÎÄ¼ş".def"Ìá¹©µÄÄ¬ÈÏÖµ¡£
+<br><br>
+Àı×Ó£º<br>
+<pre>
+params = {
+	"name" : "kbe", # base, BASE_AND_CLIENT
+	"HP" : 100,	# cell, ALL_CLIENT, in cellData
+	"tmp" : "tmp"	# baseEntity.tmp
+}
+
+def onCreateBaseCallback(entity)
+	print(entity)
+
+createBaseRemotely("Avatar", baseMailbox, params, onCreateBaseCallback)
+</pre>
+
+</div>
+
+<p>
+<span class="function_parameter">²ÎÊı£º</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>entityType</i></span></td><td><span class="function_parameter_description">
+string£¬Ö¸¶¨Òª´´½¨µÄ<a href="../Classes/Base.html">Base</a>ÊµÌåµÄÀàĞÍ¡£ÓĞĞ§µÄÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>ÁĞ³ö¡£
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>baseMB</i></span></td><td><span class="function_parameter_description">
+BaseMailbox£¬ÕâÊÇÒ»¸ö<a href="../Classes/Base.html">Base</a>µÄMailbox¡£ÊµÌå½«±»´´½¨ÔÚ¸ÃBase¶ÔÓ¦µÄBaseapp½ø³ÌÉÏ¡£
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>params</i></span></td><td><span class="function_parameter_description">
+¿ÉÑ¡²ÎÊı, Ò»¸öPython×Öµä¶ÔÏó¡£
+Èç¹ûÒ»¸öÖ¸¶¨µÄ¼üÊÇÒ»¸ö<a href="../Classes/Base.html">Base</a>ÊôĞÔ£¬ËûµÄÖµ»áÓÃÀ´³õÊ¼»¯Õâ¸ö<a href="../Classes/Base.html">Base</a>ÊµÌåµÄÊôĞÔ¡£
+Èç¹ûÕâ¸ö¼üÊÇÒ»¸ö<a href="Cell.html">Cell</a>ÊôĞÔ£¬Ëü»á±»Ìí¼Óµ½<a href="../Classes/Base.html">Base</a>ÊµÌåµÄ'<a href=../Classes/Base.html#cellData>cellData</a>'ÊôĞÔ£¬Õâ¸ö'<a href=../Classes/Base.html#cellData>cellData</a>'ÊôĞÔÊÇÒ»¸öPython×Öµä£¬
+È»ºóÔÚºóÃæ»áÓÃÀ´³õÊ¼»¯cellÊµÌåµÄÊôĞÔ¡£
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
+callbackÊÇÒ»¸ö¿ÉÑ¡µÄ»Øµ÷º¯Êı£¬µ±ÊµÌåÍê³É´´½¨Ê±±»µ÷ÓÃ¡£»Øµ÷º¯Êı´øÓĞÒ»¸ö²ÎÊı£¬µ±³É¹¦µÄÊ±ºòÊÇ<a href="../Classes/Base.html">Base</a>ÊµÌåµÄ<a href=../../keywords.html#Mailbox>mailbox</a>£¬Ê§°ÜÊ±ÊÇNone¡£
+</span></td></tr>
+
+</table>
+</p>
+
+<p>
+<span class="function_return">·µ»Ø£º</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+Í¨¹ı»Øµ÷·µ»Ø<a href="../Classes/Base.html">Base</a>ÊµÌåµÄ<a href=../../keywords.html#Mailbox>mailbox</a>¡£
+</td></tr>
+</table>
+</p>
+
+
 
 <a name="createBaseFromDBID"></a><p class="function_definition">
 <span class="function_definition">def createBaseFromDBID( <i>entityType, dbID, callback, dbInterfaceName</i> ):</span>
@@ -535,10 +612,62 @@ string£¬¿ÉÑ¡²ÎÊı£¬Ö¸¶¨ÓÉÄ³¸öÊı¾İ¿â½Ó¿ÚÀ´Íê³É, Ä¬ÈÏÊ¹ÓÃ"default"½Ó¿Ú¡£Êı¾İ¿â½Ó¿ÚÓ
 <span class="function_return">·µ»Ø£º</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-<a href="../Classes/Base.html">Base</a>ÊµÌåµÄ<a href=../../keywords.html#Mailbox>mailbox</a>¡£
+Í¨¹ı»Øµ÷·µ»Ø<a href="../Classes/Base.html">Base</a>ÊµÌåµÄ<a href=../../keywords.html#Mailbox>mailbox</a>¡£
 </td></tr>
 </table>
 </p>
+
+
+<a name="createBaseRemotelyFromDB"></a><p class="function_definition">
+<span class="function_definition">def createBaseRemotelyFromDB( <i>entityType, dbID, baseMB, callback, dbInterfaceName</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>¹¦ÄÜËµÃ÷£º</b><br><br>
+´ÓÊı¾İ¿âÀï¼ÓÔØÊı¾İ²¢Í¨¹ıbaseMB²ÎÊıÔÚÒ»¸öÖ¸¶¨µÄbaseappÉÏ´´½¨Ò»¸ö<a href="../Classes/Base.html">Base</a>ÊµÌå¡£
+<br><br>
+Èç¹û¸ÃÊµÌåÒÑ¾­´ÓÊı¾İ¿â¼ì³ö£¬ÄÇÃ´½«·µ»ØÕâ¸ö´æÔÚµÄ<a href="../Classes/Base.html">Base</a>ÊµÌåµÄÒıÓÃ¡£
+</div>
+
+<p>
+<span class="function_parameter">²ÎÊı£º</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>entityType</i></span></td><td><span class="function_parameter_description">
+string£¬Ö¸¶¨Òª´´½¨µÄBaseÊµÌåµÄÀàĞÍ¡£ÓĞĞ§µÄÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>ÁĞ³ö¡£
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>dbID</i></span></td><td><span class="function_parameter_description">
+ÕâÊÇÒ»¸öÖ¸¶¨Òª´´½¨µÄÊµÌåµÄÊı¾İ¿âID¡£Õâ¸öÊµÌåµÄÊı¾İ¿âID´æ´¢ÔÚ¸ÃÊµÌåµÄ<a href=../Classes/Base.html#databaseID>databaseID</a>ÊôĞÔ¡£
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>baseMB</i></span></td><td><span class="function_parameter_description">
+BaseMailbox£¬ÕâÊÇÒ»¸ö<a href="../Classes/Base.html">Base</a>µÄMailbox¡£ÊµÌå½«±»´´½¨ÔÚ¸ÃBase¶ÔÓ¦µÄBaseapp½ø³ÌÉÏ¡£
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
+ÕâÊÇÒ»¸ö¿ÉÑ¡µÄ»Øµ÷º¯Êı£¬µ±²Ù×÷Íê³ÉµÄÊ±ºòËü»á±»µ÷ÓÃ¡£»Øµ÷º¯Êı´øÓĞ3¸ö²ÎÊı£ºbaseRef£¬databaseIDºÍwasActive¡£
+Èç¹û²Ù×÷³É¹¦£¬baseRef»áÊÇÒ»¸ö<a href=../../keywords.html#Mailbox>mailbox</a>»òÕßÊÇĞÂ´´½¨µÄ<a href="../Classes/Base.html">Base</a>ÊµÌåµÄÖ±½ÓÒıÓÃ£¬databaseID»áÊÇÊµÌåµÄÊı¾İ¿âID£¬ÎŞÂÛ¸ÃÊµÌåÊÇ·ñÒÑ¾­¼¤»î<br>
+wasActive¶¼»áÓĞËùÖ¸Ê¾£¬Èç¹ûwasActiveÊÇTrueÔòbaseRefÊÇÒÑ¾­´æÔÚµÄÊµÌåµÄÒıÓÃ(ÒÑ¾­´ÓÊı¾İ¿â¼ì³ö)¡£Èç¹û²Ù×÷Ê§°Ü£¬baseRef»áÊÇNone£¬databaseID»áÊÇ0£¬<br>
+wasActive»áÊÇFalse¡£Ê§°Ü×î³£¼ûµÄÔ­ÒòÊÇÊµÌåÔÚÊı¾İ¿âÀï²»´æÔÚ£¬µ«Å¼¶ûÒ²»á³öÏÖÆäËü´íÎó±ÈÈçËµ³¬Ê±»òÕßÊÇ·ÖÅäIDÊ§°Ü¡£
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>dbInterfaceName</i></span></td><td><span class="function_parameter_description">
+string£¬¿ÉÑ¡²ÎÊı£¬Ö¸¶¨ÓÉÄ³¸öÊı¾İ¿â½Ó¿ÚÀ´Íê³É, Ä¬ÈÏÊ¹ÓÃ"default"½Ó¿Ú¡£Êı¾İ¿â½Ó¿ÚÓÉkbengine_defs.xml->dbmgr->databaseInterfacesÖĞ¶¨Òå¡£
+</span></td></tr>
+
+</table>
+</p>
+
+<p>
+<span class="function_return">·µ»Ø£º</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+Í¨¹ı»Øµ÷·µ»Ø<a href="../Classes/Base.html">Base</a>ÊµÌåµÄ<a href=../../keywords.html#Mailbox>mailbox</a>¡£
+</td></tr>
+</table>
+</p>
+
 
 
 <a name="createBaseLocally"></a><p class="function_definition">
@@ -548,7 +677,7 @@ string£¬¿ÉÑ¡²ÎÊı£¬Ö¸¶¨ÓÉÄ³¸öÊı¾İ¿â½Ó¿ÚÀ´Íê³É, Ä¬ÈÏÊ¹ÓÃ"default"½Ó¿Ú¡£Êı¾İ¿â½Ó¿ÚÓ
 <div class="function_description">
 <b>¹¦ÄÜËµÃ÷£º</b><br><br>
 ´´½¨Ò»¸öĞÂµÄ<a href="../Classes/Base.html">Base</a>ÊµÌå¡£<br>
-º¯Êı²ÎÊıĞèÒª´´½¨µÄÊµÌåµÄÀàĞÍ£¬»¹ÓĞÒ»¸öPython×Öµä×÷Îª²ÎÊıÀ´³õÊ¼»¯ÊµÌåµÄÖµ¡£
+º¯Êı²ÎÊıĞèÒªÌá¹©´´½¨µÄÊµÌåµÄÀàĞÍ£¬»¹ÓĞÒ»¸öPython×Öµä×÷Îª²ÎÊıÀ´³õÊ¼»¯ÊµÌåµÄÖµ¡£
 <br><br>
 Õâ¸öPython×Öµä²»ĞèÒªÓÃ»§Ìá¹©ËùÓĞµÄÊôĞÔ£¬Ã»ÓĞÌá¹©µÄÊôĞÔÄ¬ÈÏÎªÊµÌå¶¨ÒåÎÄ¼ş".def"Ìá¹©µÄÄ¬ÈÏÖµ¡£
 <br><br>

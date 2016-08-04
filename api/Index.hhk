@@ -34,6 +34,16 @@
 		<param name="Local" value="cellapp\Classes\Entity.html#canNavigate">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="createBaseRemotelyFromDB">
+		<param name="Name" value="KBEngine - KBEngine base ÎÄµµ">
+		<param name="Local" value="baseapp\Modules\KBEngine.html#createBaseRemotelyFromDB">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="createBaseRemotely">
+		<param name="Name" value="KBEngine - KBEngine base ÎÄµµ">
+		<param name="Local" value="baseapp\Modules\KBEngine.html#createBaseRemotely">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="controlledBy">
 		<param name="Name" value="Entity - KBEngine cell ÎÄµµ">
 		<param name="Local" value="cellapp\Classes\Entity.html#controlledBy">
