@@ -111,6 +111,21 @@
 		<param name="Local" value="bots\Classes\Entity.html#onEnterSpace">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onLeaveSpace">
+		<param name="Local" value="bots\Classes\Entity.html#onLeaveSpace">
+		<param name="Local" value="client\Classes\Entity.html#onLeaveSpace">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onEnterWorld">
+		<param name="Local" value="client\Classes\Entity.html#onEnterWorld">
+		<param name="Local" value="bots\Classes\Entity.html#onEnterWorld">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="onLeaveWorld">
+		<param name="Local" value="bots\Classes\Entity.html#onLeaveWorld">
+		<param name="Local" value="client\Classes\Entity.html#onLeaveWorld">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="getAppFlags">
 		<param name="Name" value="KBEngine - KBEngine base 文档">
 		<param name="Local" value="baseapp\Modules\KBEngine.html#getAppFlags">
@@ -174,6 +189,7 @@
 		<param name="Name" value="cancelController">
 		<param name="Name" value="Entity - KBEngine cell 文档">
 		<param name="Local" value="cellapp\Classes\Entity.html#cancelController">
+		<param name="Local" value="bots\Classes\Entity.html#cancelController">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="debugAOI">
@@ -211,6 +227,7 @@
 		<param name="Name" value="moveToPoint">
 		<param name="Name" value="Entity - KBEngine cell 文档">
 		<param name="Local" value="cellapp\Classes\Entity.html#moveToPoint">
+		<param name="Local" value="bots\Classes\Entity.html#moveToPoint">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="navigate">
@@ -343,6 +360,7 @@
 		<param name="Local" value="cellapp\Classes\Entity.html#base">
 		<param name="Name" value="KBEngine - Keywords">
 		<param name="Local" value="keywords.html#base">
+		<param name="Local" value="bots\Classes\Entity.html#base">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="client">
@@ -360,6 +378,8 @@
 		<param name="Name" value="direction">
 		<param name="Name" value="Entity - KBEngine cell 文档">
 		<param name="Local" value="cellapp\Classes\Entity.html#direction">
+		<param name="Local" value="bots\Classes\Entity.html#direction">
+		<param name="Local" value="client\Classes\Entity.html#direction">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="hasWitness">
@@ -395,6 +415,8 @@
 		<param name="Name" value="position">
 		<param name="Name" value="Entity - KBEngine cell 文档">
 		<param name="Local" value="cellapp\Classes\Entity.html#position">
+		<param name="Local" value="client\Classes\Entity.html#position">
+		<param name="Local" value="bots\Classes\Entity.html#position">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="roll">
@@ -544,6 +566,7 @@
 		<param name="Local" value="baseapp\Classes\Base.html#cell">
 		<param name="Name" value="KBEngine - Keywords">
 		<param name="Local" value="keywords.html#cell">
+		<param name="Local" value="bots\Classes\Entity.html#cell">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="cellData">
@@ -556,6 +579,12 @@
 		<param name="Local" value="baseapp\Classes\Base.html#className">
 		<param name="Name" value="Entity - KBEngine cell 文档">
 		<param name="Local" value="cellapp\Classes\Entity.html#className">
+		<param name="Local" value="client\Classes\Entity.html#className">
+		<param name="Local" value="bots\Classes\Entity.html#className">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="inWorld">
+		<param name="Local" value="client\Classes\Entity.html#inWorld">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="client">
@@ -575,6 +604,8 @@
 		<param name="Local" value="baseapp\Classes\Base.html#id">
 		<param name="Name" value="Entity - KBEngine cell 文档">
 		<param name="Local" value="cellapp\Classes\Entity.html#id">
+		<param name="Local" value="bots\Classes\Entity.html#id">
+		<param name="Local" value="client\Classes\Entity.html#id">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="isDestroyed">
@@ -642,6 +673,8 @@
 		<param name="Name" value="spaceID">
 		<param name="Name" value="Entity - KBEngine cell 文档">
 		<param name="Local" value="cellapp\Classes\Entity.html#spaceID">
+		<param name="Local" value="client\Classes\Entity.html#spaceID">
+		<param name="Local" value="bots\Classes\Entity.html#spaceID">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="getClientType">
@@ -820,6 +853,7 @@
 		<param name="Local" value="baseapp\Modules\KBEngine.html#scriptLogType">
 		<param name="Name" value="KBEngine - KBEngine cell 文档">
 		<param name="Local" value="cellapp\Modules\KBEngine.html#scriptLogType">
+		<param name="Local" value="bots\Modules\KBEngine.html#scriptLogType">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="setSpaceData">
@@ -1005,6 +1039,7 @@
 		<param name="Local" value="baseapp\Modules\KBEngine.html#genUUID64">
 		<param name="Name" value="KBEngine - KBEngine cell 文档">
 		<param name="Local" value="cellapp\Modules\KBEngine.html#genUUID64">
+		<param name="Local" value="bots\Modules\KBEngine.html#genUUID64">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="deleteBaseByDBID">
