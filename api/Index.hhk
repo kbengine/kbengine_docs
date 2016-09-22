@@ -6,6 +6,11 @@
 </HEAD><BODY>
 <UL>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="accelerate">
+		<param name="Name" value="Entity - KBEngine cell ÎÄµµ">
+		<param name="Local" value="cellapp\Classes\Entity.html#accelerate">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="addBots">
 		<param name="Local" value="bots\Modules\KBEngine.html#addBots">
 		</OBJECT>

@@ -15,6 +15,10 @@
 <table id="functions" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr><td>
+<span class="function_list">def <a href="#accelerate" class="function_list" >accelerate</a>( self, accelerateType, acceleration ):</span>
+</td></tr>
+
+<tr><td>
 <span class="function_list">def <a href="#addYawRotator" class="function_list" >addYawRotator</a>( self, targetYaw, velocity, userArg ):</span>
 </td></tr>
 
@@ -270,6 +274,51 @@ cellApp上新的<a href=../../keywords.html#entity>Entity</a>可以使用<a href="KBEng
 
 <hr>
 <h2>成员函数文档</h2>
+
+<a name="accelerate"></a><p class="function_definition">
+<span class="function_definition">def accelerate( <i>self, accelerateType, acceleration</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+加速实体当前运动。
+</div>
+
+<p>
+<span class="function_links"><b>可影响的运动包括：</b></span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#moveToEntity">moveToEntity</a><br></td></tr>
+<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#moveToPoint">moveToPoint</a><br></td></tr>
+<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#navigate">navigate</a><br></td></tr>
+<tr><td><a href=../../keywords.html#entity>Entity</a>.<a href="Entity.html#addYawRotator">addYawRotator</a><br></td></tr>
+</table>
+</p>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>accelerateType</i></span></td><td><span class="function_parameter_description">
+string，影响的运动类型，如：Movement、Turn。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>velocity</i></span></td><td><span class="function_parameter_description">
+float，每秒的加速度，如果传入的是负值则表示减速度。<br>
+</span></td></tr>
+
+</table>
+</p>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+影响后的实体当前速度。
+</td></tr>
+</table>
+</p>
+
+
 
 <a name="addYawRotator"></a><p class="function_definition">
 <span class="function_definition">def addYawRotator( <i>self, targetYaw, velocity, userArg</i> ):</span>
