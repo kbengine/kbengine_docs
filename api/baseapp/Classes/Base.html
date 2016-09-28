@@ -103,6 +103,9 @@
 <tr valign=top><td><a href="#databaseID" class="attribute_list" >databaseID</a></td><td>&nbsp; 只读 <a href="int64.html">int64</a>
 </td></tr>
 
+<tr valign=top><td><a href="#databaseInterfaceName" class="attribute_list" >databaseInterfaceName</a></td><td>&nbsp; 只读 <a href="STRING.html">string</a>
+</td></tr>
+
 <tr valign=top><td><a href="#id" class="attribute_list" >id</a></td><td>&nbsp; 只读 <a href="int32.html">int32</a>
 </td></tr>
 
@@ -572,6 +575,24 @@ databaseID是实体的永久ID(数据库id)。这个id是uint64类型且大于0，如果是0则表示该实
 </td></tr>
 </table>
 </p>
+
+<a name="databaseInterfaceName"></a><p class="attribute_definition">
+<span class="attribute_definition">databaseInterfaceName</span>
+</p>
+
+<div class="attribute_description">
+<b>说明：</b><br><br>
+databaseInterfaceName是实体持久化所在的数据库接口名称，该接口名称在kbengine_defs->dbmgr中配置。实体必须持久化过（databaseID>0）该属性才可用，否则返回空字符串。
+</div>
+
+<p>
+<span class="attribute_type">类型：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>只读 string
+</td></tr>
+</table>
+</p>
+
 
 <a name="id"></a><p class="attribute_definition">
 <span class="attribute_definition">id</span>
