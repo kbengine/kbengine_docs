@@ -46,7 +46,12 @@
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="createBaseRemotelyFromDB">
 		<param name="Name" value="KBEngine - KBEngine base ÎÄµµ">
-		<param name="Local" value="baseapp\Modules\KBEngine.html#createBaseRemotelyFromDB">
+		<param name="Local" value="baseapp\Modules\KBEngine.html#createBaseRemotelyFromDBID">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="createBaseRemotelyFromDBID">
+		<param name="Name" value="KBEngine - KBEngine base ÎÄµµ">
+		<param name="Local" value="baseapp\Modules\KBEngine.html#createBaseRemotelyFromDBID">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="createBaseRemotely">
