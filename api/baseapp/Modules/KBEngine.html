@@ -378,7 +378,7 @@ bytes，附带数据，由开发者自己解析和定义。
 
 <tr valign=top><td><span class="function_parameter_name"><i>pycallback</i></span></td><td><span class="function_parameter_description">
 计费回调。<br>
-计费回调原型:<br>
+计费回调原型: (当在interfaces中调用KBEngine.chargeResponse后，如果某个订单设置过回调则该回调被调用)<br>
 def on**ChargeCB(self, orderID, dbID, success, datas):<br>
 ordersID：string，订单ID<br>
 dbID：uint64，通常为entity的<a href=../Classes/Base.html#databaseID>databaseID</a><br>
@@ -1672,7 +1672,7 @@ bool，是否是被重写加载脚本后触发的。
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-当一个订单丢失或者不明订单被处理会收到此回调通知。
+当在interfaces中调用KBEngine.chargeResponse后，如果该订单丢失或者是不明interfaces未被记录的订单会收到此回调通知。
 <br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
 </div>
 
