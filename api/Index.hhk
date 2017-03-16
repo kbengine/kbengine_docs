@@ -402,6 +402,11 @@
 		<param name="Local" value="cellapp\Classes\Entity.html#hasWitness">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="disconnect">
+		<param name="Name" value="Proxy - KBEngine base ÎÄµµ">
+		<param name="Local" value="baseapp\Classes\Proxy.html#disconnect">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="isOnGround">
 		<param name="Name" value="Entity - KBEngine cell ÎÄµµ">
 		<param name="Local" value="cellapp\Classes\Entity.html#isOnGround">
