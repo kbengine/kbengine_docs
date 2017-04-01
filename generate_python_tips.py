@@ -204,6 +204,11 @@ def parseDocs(f):
 				substate = 0
 				state = 0
 
+	if len(pythonstr) > 0:
+		pythonstr += "\n\t" + isModuleAPI + "\"\"\"\n\t" + isModuleAPI + "pass" +"\n\n"
+		pythonstr = pythonstr.replace("版权归KBEngine所有。", "")
+		moduleDocs += pythonstr
+
 	writeTipsPy(processName, "KBEngine", moduleDocs)
 
 def generatePythonTips():
