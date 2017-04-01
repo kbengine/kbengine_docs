@@ -25,6 +25,7 @@ def findDocsFiles():
 
 def modifyDatas(prefix, data):
 	data = data.replace("&nbsp;", " ").replace("\r", "")
+	data = data.replace("&lt;", "〈").replace("&gt;", "〉")
 	#data = data.rstrip()
 
 	data.replace(r"""<br>""", "\n")
@@ -144,6 +145,7 @@ def parseDocs(f):
 	global isModuleAPI
 
 	moduleDocs = ""
+	pythonstr = ""
 	isModuleAPI = "Modules" in f
 	processName = f.split("\\")[1]
 	moduleName = os.path.basename(f).split(".")[0]
