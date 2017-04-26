@@ -55,6 +55,14 @@
 </td></tr>
 
 <tr><td>
+<span class="function_list">def <a href="#deregisterReadFileDescriptor" class="function_list" >deregisterReadFileDescriptor</a>( fileDescriptor ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#deregisterWriteFileDescriptor" class="function_list" >deregisterWriteFileDescriptor</a>( fileDescriptor ):</span>
+</td></tr>
+
+<tr><td>
 <span class="function_list">def <a href="#executeRawDatabaseCommand" class="function_list" >executeRawDatabaseCommand</a>( command, callback, threadID, dbInterfaceName ):</span>
 </td></tr>
 
@@ -108,6 +116,14 @@
 
 <tr><td>
 <span class="function_list">def <a href="#publish" class="function_list" >publish</a>(  ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#registerReadFileDescriptor" class="function_list" >registerReadFileDescriptor</a>( fileDescriptor, callback ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#registerWriteFileDescriptor" class="function_list" >registerWriteFileDescriptor</a>( fileDescriptor, callback ):</span>
 </td></tr>
 
 <tr><td>
@@ -448,6 +464,56 @@ string，一个字符串关键字。
 
 <tr valign=top><td><span class="function_parameter_name"><i>path</i></span></td><td><span class="function_parameter_description">
 要删除的变量的路径。
+</span></td></tr>
+
+</table>
+</p>
+
+
+
+<a name="deregisterReadFileDescriptor"></a><p class="function_definition">
+<span class="function_definition">def deregisterReadFileDescriptor( <i>fileDescriptor</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+注销已经通过<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#registerReadFileDescriptor>registerReadFileDescriptor</a>注册的回调。
+<br>
+<br>
+例子:<br>
+<a href=http://www.kbengine.org/assets/other/py/Poller.py>http://www.kbengine.org/assets/other/py/Poller.py</a>
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>fileDescriptor</i></span></td><td><span class="function_parameter_description">
+socket描述符/文件描述符。
+</span></td></tr>
+
+</table>
+</p>
+
+<a name="deregisterWriteFileDescriptor"></a><p class="function_definition">
+<span class="function_definition">def deregisterWriteFileDescriptor( <i>fileDescriptor</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+注销已经通过<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#registerWriteFileDescriptor>registerWriteFileDescriptor</a>注册的回调。
+<br>
+<br>
+例子:<br>
+<a href=http://www.kbengine.org/assets/other/py/Poller.py>http://www.kbengine.org/assets/other/py/Poller.py</a>
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>fileDescriptor</i></span></td><td><span class="function_parameter_description">
+socket描述符/文件描述符。
 </span></td></tr>
 
 </table>
@@ -932,7 +998,6 @@ int8，0：debug，1：release，其它可自定义。
 
 
 
-
 <a name="raycast"></a><p class="function_definition">
 <span class="function_definition">def raycast( <i>spaceID, layer, src, dst</i> ):</span>
 </p>
@@ -975,6 +1040,64 @@ int8，几何层。一个space可以同时加载多个navmesh数据，不同的navmesh在不同的layer中
 </table>
 </p>
 
+
+
+<a name="registerReadFileDescriptor"></a><p class="function_definition">
+<span class="function_definition">def registerReadFileDescriptor( <i>fileDescriptor, callback</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+注册一个回调函数，这个回调函数当文件描述符可读时被调用。
+<br>
+<br>
+例子:<br>
+<a href=http://www.kbengine.org/assets/other/py/Poller.py>http://www.kbengine.org/assets/other/py/Poller.py</a>
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>fileDescriptor</i></span></td><td><span class="function_parameter_description">
+socket描述符/文件描述符。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
+一个回调函数，socket描述符/文件描述符作为它的唯一参数。
+</span></td></tr>
+
+</table>
+</p>
+
+<a name="registerWriteFileDescriptor"></a><p class="function_definition">
+<span class="function_definition">
+def registerWriteFileDescriptor( <i>fileDescriptor, callback</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+注册一个回调函数，这个回调函数当socket描述符/文件描述符可写时被调用。
+<br>
+<br>
+例子:<br>
+<a href=http://www.kbengine.org/assets/other/py/Poller.py>http://www.kbengine.org/assets/other/py/Poller.py</a>
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>fileDescriptor</i></span></td><td><span class="function_parameter_description">
+socket描述符/文件描述符。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
+一个回调函数，socket描述符/文件描述符作为它的唯一参数。
+</span></td></tr>
+
+</table>
+</p>
 
 
 

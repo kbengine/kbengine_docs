@@ -903,6 +903,8 @@
 		<param name="Name" value="registerWriteFileDescriptor">
 		<param name="Name" value="KBEngine - KBEngine base 文档">
 		<param name="Local" value="baseapp\Modules\KBEngine.html#registerWriteFileDescriptor">
+		<param name="Name" value="KBEngine - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Modules\KBEngine.html#registerWriteFileDescriptor">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="onBaseAppReady">
@@ -1070,16 +1072,22 @@
 		<param name="Name" value="deregisterWriteFileDescriptor">
 		<param name="Name" value="KBEngine - KBEngine base 文档">
 		<param name="Local" value="baseapp\Modules\KBEngine.html#deregisterWriteFileDescriptor">
+		<param name="Name" value="KBEngine - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Modules\KBEngine.html#deregisterWriteFileDescriptor">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="deregisterReadFileDescriptor">
 		<param name="Name" value="KBEngine - KBEngine base 文档">
 		<param name="Local" value="baseapp\Modules\KBEngine.html#deregisterReadFileDescriptor">
+		<param name="Name" value="KBEngine - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Modules\KBEngine.html#deregisterReadFileDescriptor">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="registerReadFileDescriptor">
 		<param name="Name" value="KBEngine - KBEngine base 文档">
 		<param name="Local" value="baseapp\Modules\KBEngine.html#registerReadFileDescriptor">
+		<param name="Name" value="KBEngine - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Modules\KBEngine.html#registerReadFileDescriptor">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="createBaseFromDBID">
