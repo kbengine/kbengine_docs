@@ -190,7 +190,7 @@ bytes，日志数据。
 <b>功能说明：</b><br><br>
 如果这个函数在脚本中有实现，当进程准备退出时，该回调函数被调用。<br><br>
 
-可以在收到回调时进行脚本层的数据清理工作，以保证程序的安全退出。<br>
+可以通过该回调控制进程退出的时机。<br>
 <br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
 </div>
 

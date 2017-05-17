@@ -224,6 +224,10 @@
 </td></tr>
 
 <tr><td>
+<span class="function_list">def <a href="#onReadyForShutDown" class="function_list" >onReadyForShutDown</a>( ):</span>
+</td></tr>
+
+<tr><td>
 <span class="function_list">def <a href="#onAutoLoadEntityCreate" class="function_list" >onAutoLoadEntityCreate</a>( entityType, dbID ):</span>
 </td></tr>
 
@@ -1733,6 +1737,28 @@ bool，是否为第一个启动的<a href="../index.html">Baseapp</a>。
 </table>
 </p>
 
+
+
+<a name="onReadyForShutDown"></a><p class="function_definition">
+<span class="function_definition">def onReadyForShutDown( <i></i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+如果这个函数在脚本中有实现，当进程准备退出时，该回调函数被调用。<br><br>
+
+可以通过该回调控制进程退出的时机。<br>
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
+</div>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+bool，如果返回True，则允许进入进程退出流程，返回其它值则进程会过一段时间后再次询问。
+</td></tr>
+</table>
+</p>
 
 
 

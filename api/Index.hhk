@@ -1273,6 +1273,10 @@
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="onReadyForShutDown">
 		<param name="Local" value="logger\Modules\KBEngine.html#onReadyForShutDown">
+		<param name="Name" value="KBEngine - KBEngine base ÎÄµµ">
+		<param name="Local" value="baseapp\Modules\KBEngine.html#onReadyForShutDown">
+		<param name="Name" value="KBEngine - KBEngine baseapp ÎÄµµ">
+		<param name="Local" value="dbmgr\Modules\KBEngine.html#onReadyForShutDown">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="onLoginAppReady">
