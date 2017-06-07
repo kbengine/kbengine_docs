@@ -1833,7 +1833,9 @@ avatar.otherClients.attack(monsterID，skillID, damage)<br><br>
 
 <div class="attribute_description">这个属性指定<a href=../../keywords.html#entity>Entity</a>的易变类数据同步到客户端的策略。<br>
 易变类数据包括实体的坐标position和实体的朝向direction，易变类数据由于极易改变的特性，引擎底层使用了一套优化的方案将其同步到客户端。<br>
-这个属性是四个float的序列（position，yaw，pitch，roll）代表距离值，当一个实体靠近当前实体达到距离则服务端向其同步相关数据。<br>
+这个属性是四个float（position，yaw，pitch，roll）代表距离值，当一个实体靠近当前实体达到距离则服务端向其同步相关数据。如果距离值大于AOI半径则代表总是同步。<br><br>
+还有一个特殊的bool属性optimized，它的作用是控制服务器同步时是否进行优化，目前主要的优化是Y轴。<br>
+如果为true，在一些行为(如：navigate)导致服务器能确定实体在地面时，服务器不同步实体的Y轴坐标，当同步大量实体时能节省大量带宽，默认为true。<br>
 <br><br>
 用户也可以在.def制定不同实体的同步策略：<br>
 
@@ -1841,7 +1843,9 @@ avatar.otherClients.attack(monsterID，skillID, damage)<br><br>
     &lt;position/&gt;           &lt;!-- 总是同步 --&gt;
     &lt;yaw/&gt;                &lt;!-- 总是同步 --&gt;
     &lt;pitch&gt;20&lt;/pitch&gt;     &lt;!-- 相距20米或以内同步     --&gt;
+    &lt;optimized&gt; true &lt;/optimized&gt;   
 &lt;/Volatile&gt;               &lt;!-- roll未指明则总是同步  --&gt;
+
 </pre>
 </div>
 
