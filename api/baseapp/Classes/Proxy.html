@@ -142,7 +142,7 @@ CLIENT_TYPE_END					= 8		// end<br/>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数返回客户端登录时所附带的数据。<br>
+这个函数返回客户端登录时和注册时所附带的数据。<br>
 此数据可用于运营系统扩展，如果连接了第三方账号服务，此数据会经过interfaces进程发往第三方服务系统。
 </div>
 
@@ -150,7 +150,8 @@ CLIENT_TYPE_END					= 8		// end<br/>
 <span class="function_return">返回:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-bytes, 字节流数据。
+tuple, 固定为2个元素的tuple(登陆数据bytes，注册数据bytes)，第一个元素为登陆时客户端调用登陆时传入的datas参数，
+第二个元素为注册时客户端调用注册所传入的datas参数。由于可以存储任意二进制数据，因此他们都是以bytes类型存在。
 </td></tr>
 </table>
 </p>
