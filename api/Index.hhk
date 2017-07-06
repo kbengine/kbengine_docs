@@ -1322,8 +1322,8 @@
 		<param name="Local" value="loginapp\Modules\KBEngine.html#onLoginAppShutDown">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="onReuqestLogin">
-		<param name="Local" value="loginapp\Modules\KBEngine.html#onReuqestLogin">
+		<param name="Name" value="onRequestLogin">
+		<param name="Local" value="loginapp\Modules\KBEngine.html#onRequestLogin">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="onLoginCallbackFromDB">
