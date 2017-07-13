@@ -445,6 +445,9 @@
 		<param name="Name" value="isOnGround">
 		<param name="Name" value="Entity - KBEngine cell ÎÄµµ">
 		<param name="Local" value="cellapp\Classes\Entity.html#isOnGround">
+		<param name="Name" value="KBEngine - Base Types">
+		<param name="Local" value="bots\Classes\Entity.html#isOnGround">
+		<param name="Local" value="client\Classes\Entity.html#isOnGround">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="isWitnessed">
