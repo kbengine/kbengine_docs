@@ -307,7 +307,7 @@
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="onEnterTrap">
 		<param name="Name" value="Entity - KBEngine cell ÎÄµµ">
-		<param name="Local" value="cellapp\Classes\Entity.html">
+		<param name="Local" value="cellapp\Classes\Entity.html#onEnterTrap">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="onEnteredAoI">
