@@ -147,7 +147,7 @@ integer，它指定要移除的定时器id。
 <div class="function_description">
 <b>功能说明：</b><br><br>
 当前进程已经准备好的时候回调此函数。
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)中。
 </div>
 
 
@@ -159,7 +159,7 @@ integer，它指定要移除的定时器id。
 <div class="function_description">
 <b>功能说明：</b><br><br>
 进程关闭会回调此函数。
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)中。
 </div>
 
 
@@ -174,7 +174,7 @@ integer，它指定要移除的定时器id。
 
 此处可以对用户登陆做一些管理控制，例如：<br>
 利用该接口可以在此截断用户的登陆，将请求记录下来进行排队并返回一个错误码告诉客户端排队状态，客户端通过不断登陆从此处获得状态。<br>
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。<br>
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)中。<br>
 </div>
 
 <p>
@@ -218,7 +218,7 @@ Tuple，返回值分别为（错误码，真实账号名，密码，客户端类别，客户端提交的数据datas
 <div class="function_description">
 <b>功能说明：</b><br><br>
 当前进程已经准备好的时候回调此函数。
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)中。
 </div>
 
 
@@ -230,7 +230,7 @@ Tuple，返回值分别为（错误码，真实账号名，密码，客户端类别，客户端提交的数据datas
 <div class="function_description">
 <b>功能说明：</b><br><br>
 进程关闭会回调此函数。
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)中。
 </div>
 
 
@@ -243,7 +243,7 @@ Tuple，返回值分别为（错误码，真实账号名，密码，客户端类别，客户端提交的数据datas
 <b>功能说明：</b><br><br>
 客户端请求服务器登陆账号后由dbmgr返回的回调。<br><br>
 
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。<br>
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)中。<br>
 </div>
 
 <p>
@@ -279,7 +279,7 @@ bytes，可能是任何数据，例如：第三方平台返回的数据或者由dbmgr以及interfaces中处理
 <b>功能说明：</b><br><br>
 客户端请求服务器创建账号时回调。<br><br>
 
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。<br>
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)中。<br>
 </div>
 
 <p>
@@ -321,7 +321,7 @@ Tuple，返回值分别为（错误码，真实账号名，密码，客户端提交的数据datas），如果没有
 <b>功能说明：</b><br><br>
 客户端请求服务器创建账号后由dbmgr返回的回调。<br><br>
 
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。<br>
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)中。<br>
 </div>
 
 <p>

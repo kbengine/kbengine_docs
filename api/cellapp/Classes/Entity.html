@@ -409,7 +409,7 @@ float，给定触发器xz轴区域的大小，必须大于等于0。
 
 <tr valign=top><td><span class="function_parameter_name"><i>rangeY</i></span></td><td><span class="function_parameter_description">
 float，给定触发器y轴高度，必须大于等于0。<br>
-需要注意的是，这个参数要生效必须开放<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->cellapp->coordinate_system->rangemgr_y
+需要注意的是，这个参数要生效必须开放<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->cellapp->coordinate_system->rangemgr_y
 <br>
 开放y轴管理会带来一些消耗，因为一些游戏大量的实体都在同一y轴高度或者在差不多水平线高度，此时碰撞变得非常密集。<br>
 3D太空类游戏或者小房间类实体较少的游戏比较适合开放此选项。
@@ -1136,13 +1136,13 @@ cell实体的数据同时备份在base实体，确保遇到灾难恢复数据时数据是最新的。
 <tr valign=top><td><span class="function_parameter_name"><i>shouldAutoLoad</i></span></td><td><span class="function_parameter_description">
 这个可选参数指定这个实体在服务启动的时候是否需要从数据库加载。<br>
 注意：服务器启动时自动加载实体，底层默认将会调用createBaseAnywhereFromDBID将实体创建到一个负载最小的baseapp上，整个过程将会在第一个启动的baseapp调用onBaseAppReady之前完成。<br>
-<br>脚本层可以在个性化脚本(kbengine_defs.xml->baseapp->entryScriptFile定义)中重新实现实体的创建方法，例如：<br>
+<br>脚本层可以在个性化脚本(kbengine_defaults.xml->baseapp->entryScriptFile定义)中重新实现实体的创建方法，例如：<br>
 def onAutoLoadEntityCreate(entityType, dbid): <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KBEngine.createBaseFromDBID(entityType, dbid)<br>
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>dbInterfaceName</i></span></td><td><span class="function_parameter_description">
-string，可选参数，指定由某个数据库接口来完成, 默认使用"default"接口。数据库接口由kbengine_defs.xml->dbmgr->databaseInterfaces中定义。
+string，可选参数，指定由某个数据库接口来完成, 默认使用"default"接口。数据库接口由kbengine_defaults.xml->dbmgr->databaseInterfaces中定义。
 </span></td></tr>
 
 </table>
@@ -1183,7 +1183,7 @@ float，给定触发器xz轴区域的大小，必须大于等于0。
 
 <tr valign=top><td><span class="function_parameter_name"><i>rangeY</i></span></td><td><span class="function_parameter_description">
 float，给定触发器y轴高度，必须大于等于0。<br>
-需要注意的是，这个参数要生效必须开放<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->cellapp->coordinate_system->rangemgr_y
+需要注意的是，这个参数要生效必须开放<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->cellapp->coordinate_system->rangemgr_y
 <br>
 开放y轴管理会带来一些消耗，因为一些游戏大量的实体都在同一y轴高度或者在差不多水平线高度，此时碰撞变得非常密集。<br>
 3D太空类游戏或者小房间类实体较少的游戏比较适合开放此选项。
@@ -1245,7 +1245,7 @@ float，给定触发器xz轴区域的大小，必须大于等于0。
 
 <tr valign=top><td><span class="function_parameter_name"><i>rangeY</i></span></td><td><span class="function_parameter_description">
 float，给定触发器y轴高度，必须大于等于0。<br>
-需要注意的是，这个参数要生效必须开放<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->cellapp->coordinate_system->rangemgr_y
+需要注意的是，这个参数要生效必须开放<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->cellapp->coordinate_system->rangemgr_y
 <br>
 开放y轴管理会带来一些消耗，因为一些游戏大量的实体都在同一y轴高度或者在差不多水平线高度，此时碰撞变得非常密集。<br>
 3D太空类游戏或者小房间类实体较少的游戏比较适合开放此选项。

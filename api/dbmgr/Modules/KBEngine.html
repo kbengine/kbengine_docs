@@ -140,7 +140,7 @@ integer，它指定要移除的定时器id。
 <div class="function_description">
 <b>功能说明：</b><br><br>
 当前进程已经准备好的时候回调此函数。
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)中。
 </div>
 
 
@@ -152,7 +152,7 @@ integer，它指定要移除的定时器id。
 <div class="function_description">
 <b>功能说明：</b><br><br>
 进程关闭会回调此函数。
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)中。
 </div>
 
 
@@ -166,7 +166,7 @@ integer，它指定要移除的定时器id。
 如果这个函数在脚本中有实现，当进程准备退出时，该回调函数被调用。<br><br>
 
 可以通过该回调控制进程退出的时机。<br>
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)中。
 </div>
 
 <p>
@@ -187,9 +187,9 @@ bool，如果返回True，则允许进入进程退出流程，返回其它值则进程会过一段时间后再次询
 <div class="function_description">
 <b>功能说明：</b><br><br>
 这个回调实现返回某个账号对应的数据库接口，选定接口后dbmgr针对这个账号的相关操作都由对应的数据库接口完成。<br><br>
-数据库接口在<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->dbmgr->databaseInterfaces定义。<br>
+数据库接口在<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->dbmgr->databaseInterfaces定义。<br>
 利用该接口可以根据accountName来决定账号应该存储在哪个数据库。<br>
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。<br>
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)中。<br>
 </div>
 
 <p>
@@ -207,7 +207,7 @@ string，账号的名称。
 <span class="function_return">返回：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-string，数据库接口名（数据库接口在<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->dbmgr->databaseInterfaces定义）。
+string，数据库接口名（数据库接口在<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->dbmgr->databaseInterfaces定义）。
 </td></tr>
 </table>
 </p>

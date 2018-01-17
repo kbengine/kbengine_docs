@@ -590,9 +590,9 @@
 		<param name="Local" value="keywords.html#entities.xml">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="kbengine_defs.xml">
+		<param name="Name" value="kbengine_defaults.xml">
 		<param name="Name" value="KBEngine - Keywords">
-		<param name="Local" value="keywords.html#kbengine_defs.xml">
+		<param name="Local" value="keywords.html#kbengine_defaults.xml">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="kbengine.xml">

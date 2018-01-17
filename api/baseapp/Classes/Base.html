@@ -360,13 +360,13 @@ integer，它指定要移除的定时器id。
 <tr valign=top><td><span class="function_parameter_name"><i>shouldAutoLoad</i></span></td><td><span class="function_parameter_description">
 这个可选参数指定这个实体在服务启动的时候是否需要从数据库加载。<br>
 注意：服务器启动时自动加载实体，底层默认将会调用createBaseAnywhereFromDBID将实体创建到一个负载最小的baseapp上，整个过程将会在第一个启动的baseapp调用onBaseAppReady之前完成。<br>
-<br>脚本层可以在个性化脚本(kbengine_defs.xml->baseapp->entryScriptFile定义)中重新实现实体的创建方法，例如：<br>
+<br>脚本层可以在个性化脚本(kbengine_defaults.xml->baseapp->entryScriptFile定义)中重新实现实体的创建方法，例如：<br>
 def onAutoLoadEntityCreate(entityType, dbid): <br>
     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KBEngine.createBaseFromDBID(entityType, dbid)<br>
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>dbInterfaceName</i></span></td><td><span class="function_parameter_description">
-string，可选参数，指定由某个数据库接口来完成, 默认使用"default"接口。数据库接口由kbengine_defs.xml->dbmgr->databaseInterfaces中定义。
+string，可选参数，指定由某个数据库接口来完成, 默认使用"default"接口。数据库接口由kbengine_defaults.xml->dbmgr->databaseInterfaces中定义。
 </span></td></tr>
 
 </table>
@@ -582,7 +582,7 @@ databaseID是实体的永久ID(数据库id)。这个id是uint64类型且大于0，如果是0则表示该实
 
 <div class="attribute_description">
 <b>说明：</b><br><br>
-databaseInterfaceName是实体持久化所在的数据库接口名称，该接口名称在kbengine_defs->dbmgr中配置。实体必须持久化过（databaseID>0）该属性才可用，否则返回空字符串。
+databaseInterfaceName是实体持久化所在的数据库接口名称，该接口名称在kbengine_defaults->dbmgr中配置。实体必须持久化过（databaseID>0）该属性才可用，否则返回空字符串。
 </div>
 
 <p>

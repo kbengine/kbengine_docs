@@ -254,7 +254,7 @@ integer，它指定要移除的定时器id。
 <div class="function_description">
 <b>功能说明：</b><br><br>
 当前进程已经准备好的时候回调此函数。
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)中。
 </div>
 
 
@@ -266,7 +266,7 @@ integer，它指定要移除的定时器id。
 <div class="function_description">
 <b>功能说明：</b><br><br>
 进程关闭会回调此函数。
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)中。
 </div>
 
 
@@ -281,7 +281,7 @@ integer，它指定要移除的定时器id。
 
 可在此函数内数据进行检查和修改，将最终结果通过KBEngine.createAccountResponse提交给引擎。
 <br>
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。<br>
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)中。<br>
 </div>
 
 <p>
@@ -313,7 +313,7 @@ bytes，客户端请求时所附带的数据，可将数据转发第三方平台。
 当客户端请求服务器登陆账号时，该回调被调用。<br><br>
 可在此函数内数据进行检查和修改，将最终结果通过KBEngine.accountLoginResponse提交给引擎。
 <br>
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。<br>
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)中。<br>
 </div>
 
 <p>
@@ -345,7 +345,7 @@ bytes，客户端请求时所附带的数据，可将数据转发第三方平台。
 当请求计费时（通常是baseapp上调用了KBEngine.charge），该回调被调用。<br><br>
 可在此函数内数据进行检查和修改，将最终结果通过KBEngine.chargeResponse提交给引擎。
 <br>
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defs.xml>kbengine_defs.xml</a>->entryScriptFile)中。<br>
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)中。<br>
 </div>
 
 <p>
