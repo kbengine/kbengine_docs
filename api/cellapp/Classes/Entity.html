@@ -43,7 +43,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#debugAOI" class="function_list" >debugAOI</a>( self ):</span>
+<span class="function_list">def <a href="#debugView" class="function_list" >debugView</a>( self ):</span>
 </td></tr>
 
 <tr><td>
@@ -59,7 +59,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#entitiesInAOI" class="function_list" >entitiesInAOI</a>( self ):</span>
+<span class="function_list">def <a href="#entitiesInView" class="function_list" >entitiesInView</a>( self ):</span>
 </td></tr>
 
 <tr><td>
@@ -79,11 +79,11 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#getAoiRadius" class="function_list" >getAoiRadius</a>( self ):</span>
+<span class="function_list">def <a href="#getViewRadius" class="function_list" >getViewRadius</a>( self ):</span>
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#getAoiHystArea" class="function_list" >getAoiHystArea</a>( self ):</span>
+<span class="function_list">def <a href="#getViewHystArea" class="function_list" >getViewHystArea</a>( self ):</span>
 </td></tr>
 
 <tr><td>
@@ -99,7 +99,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#setAoiRadius" class="function_list" >setAoiRadius</a>( self, radius, hyst=5 ):</span>
+<span class="function_list">def <a href="#setViewRadius" class="function_list" >setViewRadius</a>( self, radius, hyst=5 ):</span>
 </td></tr>
 
 <tr><td>
@@ -124,7 +124,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#onEnteredAoI" class="function_list" >onEnteredAoI</a>( self, entity ):</span>
+<span class="function_list">def <a href="#onEnteredView" class="function_list" >onEnteredView</a>( self, entity ):</span>
 </td></tr>
 
 
@@ -269,11 +269,11 @@
 控制器是非python对象，可以适用在cell实体上随着时间的过去来改变它们的位置数据，它们通过成员函数如"trackEntity"和"turnToYaw"来
 添加到<a href=../../keywords.html#entity>Entity</a>，可以通过"cancelController"移除。
 <br><br>
-感兴趣的范围，或"AOI"对于所有属于客户端的<a href="KBEngine.html">KBEngine</a>实体来说是一个重要的概念。
-一个实体的AOI是围绕这个实体的客户端（如果它有）所能感知的区域。这用于选择发给客户端的数据量。AOI的实际
+感兴趣的范围，或"View"对于所有属于客户端的<a href="KBEngine.html">KBEngine</a>实体来说是一个重要的概念。
+一个实体的View是围绕这个实体的客户端（如果它有）所能感知的区域。这用于选择发给客户端的数据量。View的实际
 形状由x轴和z轴上的距离范围定义，还有一个类似形状向外延伸的滞后区域。一个<a href=../../keywords.html#entity>Entity</a>进入
-另一个<a href=../../keywords.html#entity>Entity</a>的AOI，但不会离开它直到它离开滞后区域。一个<a href=../../keywords.html#entity>Entity</a>可以
-通过"setAoiRadius"修改它的AOI大小。
+另一个<a href=../../keywords.html#entity>Entity</a>的View，但不会离开它直到它离开滞后区域。一个<a href=../../keywords.html#entity>Entity</a>可以
+通过"setViewRadius"修改它的View大小。
 可以通过"entitiesInRange"找到一个具体距离之内的所有实体，通过"addProximity"设置一个陷阱捕获进入陷阱的所有实体。
 <br><br>
 cellApp上新的<a href=../../keywords.html#entity>Entity</a>可以使用<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#createEntity>createEntity</a>
@@ -524,7 +524,7 @@ controllerID是要取消的控制器的索引，它是一个整型。一个专用的控制器类型的字符串也
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-通过这个方法可以访问自己客户端（当前实体必须绑定了客户端）中某个实体的方法，只有在AOI范围内的实体才会同步到客户端。它只能在一个<a href=../../keywords.html#real>real</a>实体上被调用。
+通过这个方法可以访问自己客户端（当前实体必须绑定了客户端）中某个实体的方法，只有在View范围内的实体才会同步到客户端。它只能在一个<a href=../../keywords.html#real>real</a>实体上被调用。
 </div>
 
 <p>
@@ -560,30 +560,30 @@ controllerID是要取消的控制器的索引，它是一个整型。一个专用的控制器类型的字符串也
 
 
 
-<a name="debugAOI"></a><p class="function_definition">
-<span class="function_definition">def debugAOI( <i>self</i> ):</span>
+<a name="debugView"></a><p class="function_definition">
+<span class="function_definition">def debugView( <i>self</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-debugAOI输出<a href=../../keywords.html#entity>Entity</a>的AOI的详细信息到cell的调试日志。
-一份AOI系统工作的描述可以在<a href=../../keywords.html#entity>Entity</a>类文档中找到。
+debugView输出<a href=../../keywords.html#entity>Entity</a>的View的详细信息到cell的调试日志。
+一份View系统工作的描述可以在<a href=../../keywords.html#entity>Entity</a>类文档中找到。
 <br><br>
 一份样品信息如下：
 
-<pre>  INFO cellapp [0x00001a1c] [2014-11-04 00:28:41,409] - Avatar::debugAOI: 100 size=4, Seen=4, Pending=0, aoiRadius=50.000, aoiHyst=5.000
-  INFO cellapp [0x00001a1c] [2014-11-04 00:28:41,409] - Avatar::debugAOI: 100 Avatar(102), position(771.586.211.002.776.55), dist=0
-  INFO cellapp [0x00001a1c] [2014-11-04 00:28:41,409] - Avatar::debugAOI: 100 Monster(1028), position(820.834.211.635.768.749), dist=49.8659
-  INFO cellapp [0x00001a1c] [2014-11-04 00:28:41,409] - Avatar::debugAOI: 100 NPC(1025), position(784.024.210.95.782.273), dist=13.6915
-  INFO cellapp [0x00001a1c] [2014-11-04 00:28:41,409] - Avatar::debugAOI: 100 Avatar(106), position(771.586.211.002.776.55), dist=0
+<pre>  INFO cellapp [0x00001a1c] [2014-11-04 00:28:41,409] - Avatar::debugView: 100 size=4, Seen=4, Pending=0, ViewRadius=50.000, ViewHyst=5.000
+  INFO cellapp [0x00001a1c] [2014-11-04 00:28:41,409] - Avatar::debugView: 100 Avatar(102), position(771.586.211.002.776.55), dist=0
+  INFO cellapp [0x00001a1c] [2014-11-04 00:28:41,409] - Avatar::debugView: 100 Monster(1028), position(820.834.211.635.768.749), dist=49.8659
+  INFO cellapp [0x00001a1c] [2014-11-04 00:28:41,409] - Avatar::debugView: 100 NPC(1025), position(784.024.210.95.782.273), dist=13.6915
+  INFO cellapp [0x00001a1c] [2014-11-04 00:28:41,409] - Avatar::debugView: 100 Avatar(106), position(771.586.211.002.776.55), dist=0
 </pre>
 信息的第一行告诉我们：
 <ul>
 <li>实体#1000的数据</li>
-<li>有4个实体在它的AOI区域并且已经同步给客户端。</li>
-<li>有0个实体在它的AOI区域，正在等待同步到客户端。</li>
-<li>AOI的半径是 50.000</li>
-<li>AOI的滞后区域向外延伸了5.000</li>
+<li>有4个实体在它的View区域并且已经同步给客户端。</li>
+<li>有0个实体在它的View区域，正在等待同步到客户端。</li>
+<li>View的半径是 50.000</li>
+<li>View的滞后区域向外延伸了5.000</li>
 </ul>
 </div>
 
@@ -627,13 +627,13 @@ integer，它指定要移除的定时器id。
 销毁这个实体所在的<a href=../../keywords.html#cn_Space>空间</a>。
 </div>
 
-<a name="entitiesInAOI"></a><p class="function_definition">
-<span class="function_definition">def entitiesInAOI( <i>self</i> ):</span>
+<a name="entitiesInView"></a><p class="function_definition">
+<span class="function_definition">def entitiesInView( <i>self</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-获得这个实体的<a href=../../keywords.html#AOI>AOI</a>范围内的实体列表。
+获得这个实体的<a href=../../keywords.html#View>View</a>范围内的实体列表。
 
 <a name="entitiesInRange"></a><p class="function_definition">
 <span class="function_definition">def entitiesInRange( <i>self, range, entityType=None, position=None</i> ):</span>
@@ -642,7 +642,7 @@ integer，它指定要移除的定时器id。
 <div class="function_description">
 <b>功能说明：</b><br><br>
 在给定的距离内搜索<a href="Entity.html">实体</a>。这是一个球形的搜索，3个轴的距离
-都要测量。这可以找到在这个<a href="Entity.html">实体</a>的<a href=../../keywords.html#AOI>AOI</a>范围之外的实体，但不能找到其他<a href=../../keywords.html#cell>cell</a>的实体。<br><br>
+都要测量。这可以找到在这个<a href="Entity.html">实体</a>的<a href=../../keywords.html#View>View</a>范围之外的实体，但不能找到其他<a href=../../keywords.html#cell>cell</a>的实体。<br><br>
 例子：
 
 <pre>  self.entitiesInRange( 100, 'Creature', (100, 0, 100) )
@@ -839,44 +839,44 @@ int，新创建的控制器ID。
 
 
 
-<a name="getAoiRadius"></a><p class="function_definition">
-<span class="function_definition">def getAoiRadius( <i>self</i> ):</span>
+<a name="getViewRadius"></a><p class="function_definition">
+<span class="function_definition">def getViewRadius( <i>self</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数返回这个<a href=../../keywords.html#entity>Entity</a>当前的Aoi半径值。
+这个函数返回这个<a href=../../keywords.html#entity>Entity</a>当前的View半径值。
 <br><br>
 数据可以通过
-<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#setAoiRadius>setAoiRadius</a>( radius, hyst )设置。
+<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#setViewRadius>setViewRadius</a>( radius, hyst )设置。
 </div>
 
 <p>
 <span class="function_return">返回：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>float， Aoi半径。
+<tr><td>float， View半径。
 </td></tr>
 </table>
 </p>
 
 
 
-<a name="getAoiHystArea"></a><p class="function_definition">
-<span class="function_definition">def getAoiHystArea( <i>self</i> ):</span>
+<a name="getViewHystArea"></a><p class="function_definition">
+<span class="function_definition">def getViewHystArea( <i>self</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-这个函数返回这个<a href=../../keywords.html#entity>Entity</a>的Aoi当前滞后区域值。
+这个函数返回这个<a href=../../keywords.html#entity>Entity</a>的View当前滞后区域值。
 <br><br>
 数据可以通过
-<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#setAoiRadius>setAoiRadius</a>( radius, hyst )设置。
+<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#setViewRadius>setViewRadius</a>( radius, hyst )设置。
 </div>
 
 <p>
 <span class="function_return">返回：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>float， Aoi当前滞后区域值。
+<tr><td>float， View当前滞后区域值。
 </td></tr>
 </table>
 </p>
@@ -1039,21 +1039,21 @@ int8，使用某个层的navmesh来查找路径列表。
 
 
 
-<a name="setAoiRadius"></a><p class="function_definition">
-<span class="function_definition">def setAoiRadius( <i>self, radius, hyst=5</i> ):</span>
+<a name="setViewRadius"></a><p class="function_definition">
+<span class="function_definition">def setViewRadius( <i>self, radius, hyst=5</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-指定<a href=../../keywords.html#entity>Entity</a>的<a href=../../keywords.html#AOI>感兴趣的区域</a>大小。
+指定<a href=../../keywords.html#entity>Entity</a>的<a href=../../keywords.html#View>感兴趣的区域</a>大小。
 <br><br>
 这个函数只能用于有<a href=../../keywords.html#Witness>Witness</a>关联的实体。
 <br><br>
 注意：
-你可以通过设置<a href=../../keywords.html#kbengine.xml>kbengine.xml</a>配置选项'cellapp/defaultAoIRadius'来设置默认的AOI半径。
+你可以通过设置<a href=../../keywords.html#kbengine.xml>kbengine.xml</a>配置选项'cellapp/defaultViewRadius'来设置默认的View半径。
 <br><br>
 数据可以通过
-<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#getAoiRadius>getAoiRadius</a>( )与<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#getAoiHystArea>getAoiHystArea</a>( )获得。
+<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#getViewRadius>getViewRadius</a>( )与<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#getViewHystArea>getViewHystArea</a>( )获得。
 </div>
 
 <p>
@@ -1061,12 +1061,12 @@ int8，使用某个层的navmesh来查找路径列表。
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>radius</i></span></td><td><span class="function_parameter_description">
-float，radius指定AOI区域的半径
+float，radius指定View区域的半径
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>hyst</i></span></td><td><span class="function_parameter_description">
-float，指定超过AOI区域的滞后区域的大小。合理的设定滞后区域将能够降低AOI碰撞的敏感度从而提高CPU执行效率。<br>
-一个实体进入另一个实体的AOI必须跨越AOI半径区域，但实体离开AOI区域则需要移出AOI半径区域包括滞后区域。
+float，指定超过View区域的滞后区域的大小。合理的设定滞后区域将能够降低View碰撞的敏感度从而提高CPU执行效率。<br>
+一个实体进入另一个实体的View必须跨越View半径区域，但实体离开View区域则需要移出View半径区域包括滞后区域。
 </span></td></tr>
 
 </table>
@@ -1198,18 +1198,18 @@ float，给定触发器y轴高度，必须大于等于0。<br>
 </table>
 </p>
 
-<a name="onEnteredAoI"></a><p class="function_definition">
-<span class="function_definition">def onEnteredAoI( <i>self, entity</i> ):</span>
+<a name="onEnteredView"></a><p class="function_definition">
+<span class="function_definition">def onEnteredView( <i>self, entity</i> ):</span>
 </p>
 
-<div class="function_description">如果这个函数在脚本中有实现，当一个实体进入了当前实体的<a href=../../keywords.html#AOI>AOI</a>范围，该回调被触发。
+<div class="function_description">如果这个函数在脚本中有实现，当一个实体进入了当前实体的<a href=../../keywords.html#View>View</a>范围，该回调被触发。
 </div>
 
 <p>
 <span class="function_parameter">参数：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><span class="function_parameter_name"><i>entity</i></span></td><td><span class="function_parameter_description">&nbsp;进入AOI范围的实体。
+<tr valign=top><td><span class="function_parameter_name"><i>entity</i></span></td><td><span class="function_parameter_description">&nbsp;进入View范围的实体。
 </span></td></tr>
 
 </table>
@@ -1480,7 +1480,7 @@ float，给定触发器y轴高度，必须大于等于0。<br>
 <span class="function_definition">def onWitnessed( <i>self, isWitnessed</i> ):</span>
 </p>
 
-<div class="function_description">如果这个函数在脚本中有实现，如果当前实体进入了另一个绑定了Witness的实体的AOI范围（也可以理解为一个实体被观察者观察到了），则该实体的回调函数被调用。<br>
+<div class="function_description">如果这个函数在脚本中有实现，如果当前实体进入了另一个绑定了Witness的实体的View范围（也可以理解为一个实体被观察者观察到了），则该实体的回调函数被调用。<br>
 可以利用这个函数在实体被观察时激活实体的AI，实体停止被观察时可以停止AI的执行，这样可以降低服务端的计算量从而提升效率。
 </div>
 
@@ -1511,9 +1511,9 @@ float，给定触发器y轴高度，必须大于等于0。<br>
 <span class="attribute_definition">allClients</span>
 </p>
 
-<div class="attribute_description">通过这个属性调用实体的客户端远程方法，引擎会将这个消息广播给实体AOI范围内所有的其他绑定了客户端的实体(包括自己的客户端，绑定了客户端的实体通常为玩家)。<br><br>
+<div class="attribute_description">通过这个属性调用实体的客户端远程方法，引擎会将这个消息广播给实体View范围内所有的其他绑定了客户端的实体(包括自己的客户端，绑定了客户端的实体通常为玩家)。<br><br>
 例子：<br>
-avatar的AOI范围内有玩家A和玩家B以及怪物C。<br>
+avatar的View范围内有玩家A和玩家B以及怪物C。<br>
 avatar.allClients.attack(monsterID，skillID, damage)<br><br>
 此时，玩家自己和玩家A还有玩家B的客户端都会调用到该实体attack方法，在他们的客户端可以调用指定技能的攻击动作做表现。
 </div>
@@ -1644,7 +1644,7 @@ self.direction.z = 1.0
 <span class="attribute_definition">hasWitness</span>
 </p>
 
-<div class="attribute_description">这个只读属性如果为True，表示实体已经绑定了一个<a href=../../keywords.html#Witness>Witness</a>，绑定了Witness的实体则客户端可以通过实体获得实体AOI范围内的信息。否则为False。
+<div class="attribute_description">这个只读属性如果为True，表示实体已经绑定了一个<a href=../../keywords.html#Witness>Witness</a>，绑定了Witness的实体则客户端可以通过实体获得实体View范围内的信息。否则为False。
 </div>
 
 <p>
@@ -1707,7 +1707,7 @@ self.direction.z = 1.0
 <span class="attribute_definition">isWitnessed</span>
 </p>
 
-<div class="attribute_description">如果当前实体进入了另一个绑定了Witness的实体的AOI范围（也可以理解为一个实体被观察者观察到了, 这个属性值为True，否则为False。
+<div class="attribute_description">如果当前实体进入了另一个绑定了Witness的实体的View范围（也可以理解为一个实体被观察者观察到了, 这个属性值为True，否则为False。
 <br><br>
 参考：<br>
 <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#onWitnessed>onWitnessed</a>
@@ -1747,9 +1747,9 @@ self.direction.z = 1.0
 <span class="attribute_definition">otherClients</span>
 </p>
 
-<div class="attribute_description">通过这个属性调用实体的客户端远程方法，引擎会将这个消息广播给实体AOI范围内所有的其他绑定了客户端的实体(不包括自己的客户端，绑定了客户端的实体通常为玩家)。<br><br>
+<div class="attribute_description">通过这个属性调用实体的客户端远程方法，引擎会将这个消息广播给实体View范围内所有的其他绑定了客户端的实体(不包括自己的客户端，绑定了客户端的实体通常为玩家)。<br><br>
 例子：<br>
-avatar的AOI范围内有玩家A和玩家B以及怪物C。<br>
+avatar的View范围内有玩家A和玩家B以及怪物C。<br>
 avatar.otherClients.attack(monsterID，skillID, damage)<br><br>
 此时，玩家A与玩家B的客户端都会调用到该实体attack方法，在他们的客户端可以调用指定技能的攻击动作做表现。
 </div>
@@ -1863,7 +1863,7 @@ avatar.otherClients.attack(monsterID，skillID, damage)<br><br>
 
 <div class="attribute_description">这个属性指定<a href=../../keywords.html#entity>Entity</a>的易变类数据同步到客户端的策略。<br>
 易变类数据包括实体的坐标position和实体的朝向direction，易变类数据由于极易改变的特性，引擎底层使用了一套优化的方案将其同步到客户端。<br>
-这个属性是四个float（position，yaw，pitch，roll）代表距离值，当一个实体靠近当前实体达到距离则服务端向其同步相关数据。如果距离值大于AOI半径则代表总是同步。<br><br>
+这个属性是四个float（position，yaw，pitch，roll）代表距离值，当一个实体靠近当前实体达到距离则服务端向其同步相关数据。如果距离值大于View半径则代表总是同步。<br><br>
 还有一个特殊的bool属性optimized，它的作用是控制服务器同步时是否进行优化，目前主要的优化是Y轴。<br>
 如果为true，在一些行为(如：navigate)导致服务器能确定实体在地面时，服务器不同步实体的Y轴坐标，当同步大量实体时能节省大量带宽，默认为true。<br>
 <br><br>

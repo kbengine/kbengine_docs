@@ -252,9 +252,9 @@
 		<param name="Local" value="bots\Classes\Entity.html#cancelController">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="debugAOI">
+		<param name="Name" value="debugView">
 		<param name="Name" value="Entity - KBEngine cell 文档">
-		<param name="Local" value="cellapp\Classes\Entity.html#debugAOI">
+		<param name="Local" value="cellapp\Classes\Entity.html#debugView">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="delTimer">
@@ -264,9 +264,9 @@
 		<param name="Local" value="cellapp\Classes\Entity.html#delTimer">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="entitiesInAOI">
+		<param name="Name" value="entitiesInView">
 		<param name="Name" value="Entity - KBEngine cell 文档">
-		<param name="Local" value="cellapp\Classes\Entity.html#entitiesInAOI">
+		<param name="Local" value="cellapp\Classes\Entity.html#entitiesInView">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="entitiesInRange">
@@ -295,19 +295,19 @@
 		<param name="Local" value="cellapp\Classes\Entity.html#navigate">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="setAoiRadius">
+		<param name="Name" value="setViewRadius">
 		<param name="Name" value="Entity - KBEngine cell 文档">
-		<param name="Local" value="cellapp\Classes\Entity.html#setAoiRadius">
+		<param name="Local" value="cellapp\Classes\Entity.html#setViewRadius">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="getAoiRadius">
+		<param name="Name" value="getViewRadius">
 		<param name="Name" value="Entity - KBEngine cell 文档">
-		<param name="Local" value="cellapp\Classes\Entity.html#getAoiRadius">
+		<param name="Local" value="cellapp\Classes\Entity.html#getViewRadius">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="getAoiHystArea">
+		<param name="Name" value="getViewHystArea">
 		<param name="Name" value="Entity - KBEngine cell 文档">
-		<param name="Local" value="cellapp\Classes\Entity.html#getAoiHystArea">
+		<param name="Local" value="cellapp\Classes\Entity.html#getViewHystArea">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="teleport">
@@ -320,9 +320,9 @@
 		<param name="Local" value="cellapp\Classes\Entity.html#onEnterTrap">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="onEnteredAoI">
+		<param name="Name" value="onEnteredView">
 		<param name="Name" value="Entity - KBEngine cell 文档">
-		<param name="Local" value="cellapp\Classes\Entity.html#onEnteredAoI">
+		<param name="Local" value="cellapp\Classes\Entity.html#onEnteredView">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="onEnteredCell">
@@ -607,9 +607,9 @@
 		<param name="Local" value="keywords.html#entity">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="AOI">
+		<param name="Name" value="View">
 		<param name="Name" value="KBEngine - Keywords">
-		<param name="Local" value="keywords.html#AOI">
+		<param name="Local" value="keywords.html#View">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Witness">

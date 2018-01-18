@@ -193,7 +193,7 @@ controllerID是要取消的控制器的索引，它是一个整型。一个专用的控制器类型的字符串也
 <span class="function_definition">def onEnterWorld( <i>self</i> ):</span>
 </p>
 
-<div class="function_description">如果实体非客户端控制实体，则表明实体进入了服务端上客户端控制的实体的AOI范围，此时客户端可以看见这个实体了。<br>
+<div class="function_description">如果实体非客户端控制实体，则表明实体进入了服务端上客户端控制的实体的View范围，此时客户端可以看见这个实体了。<br>
 如果实体是客户端控制的实体则表明该实体已经在服务端创建了cell并进入了space。
 </div>
 
@@ -203,7 +203,7 @@ controllerID是要取消的控制器的索引，它是一个整型。一个专用的控制器类型的字符串也
 <span class="function_definition">def onLeaveWorld( <i>self</i> ):</span>
 </p>
 
-<div class="function_description">如果实体非客户端控制实体，则表明实体离开了服务端上客户端控制的实体的AOI范围，此时客户端看不见这个实体了。<br>
+<div class="function_description">如果实体非客户端控制实体，则表明实体离开了服务端上客户端控制的实体的View范围，此时客户端看不见这个实体了。<br>
 如果实体是客户端控制的实体则表明该实体已经在服务端销毁了cell并离开了space。
 </div>
 
