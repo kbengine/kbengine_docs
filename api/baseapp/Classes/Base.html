@@ -23,7 +23,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#createInNewSpace" class="function_list" >createInNewSpace</a>( self, cellappIndex ):</span>
+<span class="function_list">def <a href="#createCellEntityInNewSpace" class="function_list" >createCellEntityInNewSpace</a>( self, cellappIndex ):</span>
 </td></tr>
 
 <tr><td>
@@ -229,13 +229,13 @@ integer，指定底层回调"<a href="#onTimer">onTimer</a>"时的userArg参数值。
 </table>
 </p>
 
-<a name="createInNewSpace"></a><p class="function_definition">
-<span class="function_definition">def createInNewSpace( <i>self, cellappIndex</i> ):</span>
+<a name="createCellEntityInNewSpace"></a><p class="function_definition">
+<span class="function_definition">def createCellEntityInNewSpace( <i>self, cellappIndex</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
-在一个空间的<a href=../../keywords.html#cell>cell</a>上创建一个关联的实体，它请求通过cellappmgr来完成。
+在cellapp上创建一个空间(space)并且将该实体的<a href=../../keywords.html#cell>cell</a>创建到这个新的空间中，它请求通过cellappmgr来完成。
 <br><br>
 用于创建cell实体的信息被存储在该实体的属性cellData里。这个属性是一个字典，对应实体的.def文件里的默认值同时还包括用于表示<br>
 实体位置和方向(roll, pitch, yaw)的"position", "direction" 和 "spaceID"。

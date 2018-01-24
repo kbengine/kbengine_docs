@@ -64,9 +64,9 @@
 		<param name="Local" value="baseapp\Classes\Proxy.html#clientAddr">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="entitiesEnabled">
+		<param name="Name" value="clientEnabled">
 		<param name="Name" value="Proxy - KBEngine base ÎÄµµ">
-		<param name="Local" value="baseapp\Classes\Proxy.html#entitiesEnabled">
+		<param name="Local" value="baseapp\Classes\Proxy.html#clientEnabled">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="hasClient">
@@ -775,9 +775,9 @@
 		<param name="Local" value="baseapp\Classes\Proxy.html#onClientGetCell">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="onEntitiesEnabled">
+		<param name="Name" value="onClientEnabled">
 		<param name="Name" value="Proxy - KBEngine base ÎÄµµ">
-		<param name="Local" value="baseapp\Classes\Proxy.html#onEntitiesEnabled">
+		<param name="Local" value="baseapp\Classes\Proxy.html#onClientEnabled">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="onGiveClientToFailure">
@@ -812,9 +812,9 @@
 		<param name="Local" value="baseapp\Classes\Base.html#createCellEntity">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="createInNewSpace">
+		<param name="Name" value="createCellEntityInNewSpace">
 		<param name="Name" value="Base - KBEngine base ÎÄµµ">
-		<param name="Local" value="baseapp\Classes\Base.html#createInNewSpace">
+		<param name="Local" value="baseapp\Classes\Base.html#createCellEntityInNewSpace">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="delWatcher">
