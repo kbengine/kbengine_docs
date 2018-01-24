@@ -565,9 +565,9 @@
 		<param name="Local" value="keywords.html#real">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Mailbox">
+		<param name="Name" value="EntityCall">
 		<param name="Name" value="KBEngine - Keywords">
-		<param name="Local" value="keywords.html#Mailbox">
+		<param name="Local" value="keywords.html#EntityCall">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="KBE_ROOT">

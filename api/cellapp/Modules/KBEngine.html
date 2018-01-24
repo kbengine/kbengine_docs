@@ -415,10 +415,10 @@ int32，要放置实体的空间的ID。
 <div class="function_description">
 <b>功能说明：</b><br><br>
 输出当前KBEngine追踪的Python扩展对象计数器。<br>
-扩展对象包括：固定字典、固定数组、Entity、Mailbox...<br>
+扩展对象包括：固定字典、固定数组、Entity、EntityCall...<br>
 在服务端正常关闭时如果计数器不为零，此时说明泄露已存在，日志将会输出错误信息。<br><br>
 ERROR cellapp [0x0000cd64] [2014-11-12 00:38:07,300] - PyGC::debugTracing(): FixedArray : leaked(128)<br>
-ERROR cellapp [0x0000cd64] [2014-11-12 00:38:07,300] - PyGC::debugTracing(): EntityMailbox : leaked(8)
+ERROR cellapp [0x0000cd64] [2014-11-12 00:38:07,300] - PyGC::debugTracing(): EntityCall : leaked(8)
 </div>
 
 

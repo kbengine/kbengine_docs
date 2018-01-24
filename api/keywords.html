@@ -13,23 +13,23 @@
 <h1>关键词释义</h1>
 <br></br>
 
-<a name="Mailbox"></a><p class="function_definition">
-<span class="function_definition">Mailbox:</span>
+<a name="EntityCall"></a><p class="function_definition">
+<span class="function_definition">EntityCall:</span>
 </p>
 
 <div class="function_description">
 <br><br>
 脚本层与实体远程交互的常规手段(其他参考：<a href=cellapp/classes/Entity.html#allClients>allClients</a>、<a href=cellapp/classes/Entity.html#otherClients>otherClients</a>、<a href=cellapp/classes/Entity.html#clientEntity>clientEntity</a>)。<br>
-Mailbox对象在C++底层实现非常简单，它只包含了实体的ID、目的地的地址、实体类型、Mailbox类型。当用户请求一次远程交互时，底层首先能够通过实体类型找到实体定义的描述，<br>
+EntityCall对象在C++底层实现非常简单，它只包含了实体的ID、目的地的地址、实体类型、EntityCall类型。当用户请求一次远程交互时，底层首先能够通过实体类型找到实体定义的描述，<br>
 通过实体定义的描述对用户输入的数据进行检查，如果检查合法那么底层将数据打包并发往目的地，目的地进程根据协议进行解包最终调用到脚本层。<br><br>
 
-注意: Mailbox只能调用其对应def文件中声明过的方法，不能访问实体的属性以及其他任何信息。
+注意: EntityCall只能调用其对应def文件中声明过的方法，不能访问实体的属性以及其他任何信息。
 
 <br><br>
 一个实体最多可以包含三个部分：<br>
-client： 当实体包括客户端部分时(通常为玩家)，在服务端可以访问实体的client(Mailbox)属性。<br>
-base：当实体的一部分创建在Baseapp时，在非当前Baseapp中可以访问实体的base(Mailbox)属性。<br>
-cell：当实体的一部分创建在Cellapp时，在非当前Cellapp中可以访问实体的cell(Mailbox)属性。<br>
+client： 当实体包括客户端部分时(通常为玩家)，在服务端可以访问实体的client(EntityCall)属性。<br>
+base：当实体的一部分创建在Baseapp时，在非当前Baseapp中可以访问实体的base(EntityCall)属性。<br>
+cell：当实体的一部分创建在Cellapp时，在非当前Cellapp中可以访问实体的cell(EntityCall)属性。<br>
 <br>
 举例:<br><br>
 Avatar.def中定义client远程方法:
@@ -49,7 +49,7 @@ client\Avatar.py
 </pre>
 <br><br>
 在GUIConsole工具的Debug页输入框中输入(请先在左边列表中勾选要调试的进程)：<br>
-首先在服务端Baseapp的日志找到玩家实体(Avatar)的ID, 然后通过实体ID获得玩家实体(Avatar)或者Mailbox:<br>
+首先在服务端Baseapp的日志找到玩家实体(Avatar)的ID, 然后通过实体ID获得玩家实体(Avatar)或者EntityCall:<br>
 >>> KBEngine.entities[玩家ID].client.hello()<br>
 <br>
 此时客户端log文件中将输出"hello", 一次远程调用过程完成。
@@ -204,7 +204,7 @@ View与空间相关，每个View都能够设定独立的大小范围。<br>
 <div class="function_description">
 <br><br>
 cell在文档中存在二个不同的意思。<br>
-通常如果描述的是<a href=baseapp/classes/Base.html#cell>Base.cell</a>属性， 此时实际是在描述实体的<a href=#Mailbox>CellMailbox</a>。<br>
+通常如果描述的是<a href=baseapp/classes/Base.html#cell>Base.cell</a>属性， 此时实际是在描述实体的<a href=#EntityCall>CellEntityCall</a>。<br>
 
 如果是在cellapp上有关cell的描述通常是在描述一个<a href=#cn_Space>空间</a>的一部分，一个空间在<a href=cellapp/index.html>cellapp</a>进行负载平衡时有可能被分割成N份，每一份称之为一个cell，每个cell由不同进程维护。<br>
 </div>
@@ -216,7 +216,7 @@ cell在文档中存在二个不同的意思。<br>
 
 <div class="function_description">
 <br><br>
-通常是指<a href=baseapp/index.html>baseapp</a>上的Base实体或者是一个指向Base实体的<a href=#Mailbox>BaseMailbox</a>, 例如：<a href=cellapp/classes/Entity.html#base>Entity.base</a>。<br>
+通常是指<a href=baseapp/index.html>baseapp</a>上的Base实体或者是一个指向Base实体的<a href=#EntityCall>BaseEntityCall</a>, 例如：<a href=cellapp/classes/Entity.html#base>Entity.base</a>。<br>
 </div>
 
 
@@ -227,7 +227,7 @@ cell在文档中存在二个不同的意思。<br>
 
 <div class="function_description">
 <br><br>
-通常是指客户端或者是一个指向客户端实体的<a href=#Mailbox>Mailbox</a>, 例如：<a href=baseapp/classes/Base.html#client>Base.client</a>。<br>
+通常是指客户端或者是一个指向客户端实体的<a href=#EntityCall>EntityCall</a>, 例如：<a href=baseapp/classes/Base.html#client>Base.client</a>。<br>
 </div>
 
 

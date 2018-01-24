@@ -208,13 +208,13 @@
 <tr valign=top><td><a href="#allClients" class="attribute_list" >allClients</a></td><td>&nbsp; 只读 PyClient
 </td></tr>
 
-<tr valign=top><td><a href="#base" class="attribute_list" >base</a></td><td>&nbsp; 只读 <a href=../../keywords.html#Mailbox>BaseEntityMailBox </a>
+<tr valign=top><td><a href="#base" class="attribute_list" >base</a></td><td>&nbsp; 只读 <a href=../../keywords.html#EntityCall>BaseEntityCall </a>
 </td></tr>
 
-<tr valign=top><td><a href="#client" class="attribute_list" >client</a></td><td>&nbsp; 只读 <a href=../../keywords.html#Mailbox>ClientEntityMailbox</a>
+<tr valign=top><td><a href="#client" class="attribute_list" >client</a></td><td>&nbsp; 只读 <a href=../../keywords.html#EntityCall>ClientEntityCall</a>
 </td></tr>
 
-<tr valign=top><td><a href="#controlledBy" class="attribute_list" >controlledBy</a></td><td>&nbsp; <a href=../../keywords.html#Mailbox>BaseEntityMailBox</a>
+<tr valign=top><td><a href="#controlledBy" class="attribute_list" >controlledBy</a></td><td>&nbsp; <a href=../../keywords.html#EntityCall>BaseEntityCall</a>
 </td></tr>
 
 <tr valign=top><td><a href="#className" class="attribute_list" >className</a></td><td>&nbsp; 只读 <a href="STRING.html">string</a>
@@ -280,7 +280,7 @@ cellApp上新的<a href=../../keywords.html#entity>Entity</a>可以使用<a href="KBEng
 创建。一个实体还可以通过baseApp远程调用<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#createCellEntity>createCellEntity</a>函数
 来创建。
 <br><br>
-一个<a href=../../keywords.html#entity>Entity</a>可以通过<a href=../../keywords.html#Mailbox>MAILBOX</a>访问在base和client应用程序上的等价的实体。这需要
+一个<a href=../../keywords.html#entity>Entity</a>可以通过<a href=../../keywords.html#EntityCall>ENTITYCALL</a>访问在base和client应用程序上的等价的实体。这需要
 一组远程调用的函数（在实体的.def文件里指定）。
 
 <hr>
@@ -1088,7 +1088,7 @@ None
 <div class="function_description">
 <b>功能说明：</b><br><br>
 瞬间移动一个<a href=../../keywords.html#entity>Entity</a>到一个指定的空间。这个函数允许指定实体移动后的位置与朝向。<br>
-如果需要在不同<a href=../../keywords.html#cn_Space>空间</a>跳转（ 通常用于不同场景或者房间跳转 ），可以传一个<a href=../../keywords.html#Mailbox>CellMailbox</a>给这个函数（ 这个mailbox所对应的实体必须在目的<a href=../../keywords.html#cn_Space>空间</a>中 ）。
+如果需要在不同<a href=../../keywords.html#cn_Space>空间</a>跳转（ 通常用于不同场景或者房间跳转 ），可以传一个<a href=../../keywords.html#EntityCall>CellEntityCall</a>给这个函数（ 这个entityCall所对应的实体必须在目的<a href=../../keywords.html#cn_Space>空间</a>中 ）。
 <br><br>
 这个函数只能在<a href=../../keywords.html#real>real</a>的实体上被调用。
 </div>
@@ -1098,7 +1098,7 @@ None
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>nearbyMBRef</i></span></td><td><span class="function_parameter_description">
-一个决定<a href=../../keywords.html#entity>Entity</a>跳往哪个<a href=../../keywords.html#cSpace>Space</a>的<a href=../../keywords.html#Mailbox>CellMailbox</a>（ 这个mailbox所对应的实体必须在目的<a href=../../keywords.html#cSpace>Space</a>中 ），它被认为是传送目的地。
+一个决定<a href=../../keywords.html#entity>Entity</a>跳往哪个<a href=../../keywords.html#cSpace>Space</a>的<a href=../../keywords.html#EntityCall>CellEntityCall</a>（ 这个entityCall所对应的实体必须在目的<a href=../../keywords.html#cSpace>Space</a>中 ），它被认为是传送目的地。
 这个可以设为None，在这种情形下它会在当前的cell完成瞬移。
 </span></td></tr>
 
@@ -1531,7 +1531,7 @@ avatar.allClients.attack(monsterID，skillID, damage)<br><br>
 <span class="attribute_definition">base</span>
 </p>
 
-<div class="attribute_description">base是用于联系<a href=../../baseapp/classes/Base.html>Base</a>实体的mailbox。这个属性是只读的，且如果这个实体没有关联的<a href=../../baseapp/classes/Base.html>Base</a>实体时属性是None。
+<div class="attribute_description">base是用于联系<a href=../../baseapp/classes/Base.html>Base</a>实体的entityCall。这个属性是只读的，且如果这个实体没有关联的<a href=../../baseapp/classes/Base.html>Base</a>实体时属性是None。
 </div>
 
 <p>
@@ -1544,7 +1544,7 @@ avatar.allClients.attack(monsterID，skillID, damage)<br><br>
 <p>
 <span class="attribute_type">类型：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>只读的，<a href=../../keywords.html#Mailbox>MAILBOX</a>
+<tr><td>只读的，<a href=../../keywords.html#EntityCall>ENTITYCALL</a>
 </td></tr>
 </table>
 </p>
@@ -1570,7 +1570,7 @@ avatar.allClients.attack(monsterID，skillID, damage)<br><br>
 <span class="attribute_definition">client</span>
 </p>
 
-<div class="attribute_description">client是用于联系客户端的mailbox。这个属性是只读的，且如果这个实体没有关联的客户端时属性是None。
+<div class="attribute_description">client是用于联系客户端的entityCall。这个属性是只读的，且如果这个实体没有关联的客户端时属性是None。
 </div>
 
 <p>
@@ -1583,7 +1583,7 @@ avatar.allClients.attack(monsterID，skillID, damage)<br><br>
 <p>
 <span class="attribute_type">类型：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>只读的，<a href=../../keywords.html#Mailbox>MAILBOX</a>
+<tr><td>只读的，<a href=../../keywords.html#EntityCall>ENTITYCALL</a>
 </td></tr>
 </table>
 </p>
@@ -1594,8 +1594,8 @@ avatar.allClients.attack(monsterID，skillID, damage)<br><br>
 <span class="attribute_definition">controlledBy</span>
 </p>
 
-<div class="attribute_description">该属性如果设置为某个客户端所关联的服务端实体的BaseEntityMailBox，那么该实体由对应的客户端来控制移动，如果该属性为None则实体由服务端移动。
-当客户端登陆后调用giveClientTo到该实体时，该属性会自动的设置为自己的BaseEntityMailBox。
+<div class="attribute_description">该属性如果设置为某个客户端所关联的服务端实体的BaseEntityCall，那么该实体由对应的客户端来控制移动，如果该属性为None则实体由服务端移动。
+当客户端登陆后调用giveClientTo到该实体时，该属性会自动的设置为自己的BaseEntityCall。
 <br>
 脚本可以灵活的控制该实体由服务端控制移动或是由客户端（自己的客户端或是其他客户端）控制移动。
 </div>
@@ -1610,7 +1610,7 @@ avatar.allClients.attack(monsterID，skillID, damage)<br><br>
 <p>
 <span class="attribute_type">类型：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href=../../keywords.html#Mailbox>BaseEntityMailBox </a>
+<tr><td><a href=../../keywords.html#EntityCall>BaseEntityCall </a>
 </td></tr>
 </table>
 </p>
