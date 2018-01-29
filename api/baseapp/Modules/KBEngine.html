@@ -8,13 +8,13 @@
 <tr><td align=left style="background:#708090"> <font size=15 color=#ffffff> KBEngine </font></td></tr>
 </table> <hr>
 <h1>KBEngineÄ£¿é</h1>
-<a href="KBEngine.html">KBEngine</a>Ä£¿éÌá¹©ÁËPython½Å±¾·ÃÎÊ<a href="../Classes/Base.html">ÊµÌå</a>µÄ²¿·Ö£¬ÌØ±ğÊÇËüÌá¹©ÁË¶¨Ê±Æ÷µÄ×¢²áÓëÒÆ³ı£¬
-ÒÔ¼°<a href="../Classes/Base.html">ÊµÌå</a>µÄ´´½¨¡£
+<a href="KBEngine.html">KBEngine</a>Ä£¿éÌá¹©ÁËPython½Å±¾·ÃÎÊ<a href="../Classes/Entity.html">ÊµÌå</a>µÄ²¿·Ö£¬ÌØ±ğÊÇËüÌá¹©ÁË¶¨Ê±Æ÷µÄ×¢²áÓëÒÆ³ı£¬
+ÒÔ¼°<a href="../Classes/Entity.html">ÊµÌå</a>µÄ´´½¨¡£
 <h2><a href="#" onClick="obj=document.getElementById( 'classes' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">Àà</a></h2>
 <table id="classes" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr><td>
-<span class="class_list"><a href="../Classes/Base.html" class="class_list" >Base</a></span>
+<span class="class_list"><a href="../Classes/Entity.html" class="class_list" >Entity</a></span>
 </td></tr>
 
 <tr><td>
@@ -43,35 +43,31 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#createBase" class="function_list" >createBase</a>(  ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#createBaseAnywhere" class="function_list" >createBaseAnywhere</a>( entityType, *params, callback ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#createBaseRemotely" class="function_list" >createBaseRemotely</a>( entityType, baseMB, *params, callback ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#createBaseFromDBID" class="function_list" >createBaseFromDBID</a>( entityType, dbID, callback, dbInterfaceName ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#createBaseAnywhereFromDBID" class="function_list" >createBaseAnywhereFromDBID</a>( entityType, dbID, callback, dbInterfaceName ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#createBaseRemotelyFromDBID" class="function_list" >createBaseRemotelyFromDBID</a>( entityType, dbID, baseMB, callback, dbInterfaceName ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#createBaseLocally" class="function_list" >createBaseLocally</a>( entityType, *params ):</span>
-</td></tr>
-
-<tr><td>
 <span class="function_list">def <a href="#createEntity" class="function_list" >createEntity</a>(  ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#createEntityAnywhere" class="function_list" >createEntityAnywhere</a>( entityType, *params, callback ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#createEntityRemotely" class="function_list" >createEntityRemotely</a>( entityType, baseMB, *params, callback ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#createEntityFromDBID" class="function_list" >createEntityFromDBID</a>( entityType, dbID, callback, dbInterfaceName ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#createEntityAnywhereFromDBID" class="function_list" >createEntityAnywhereFromDBID</a>( entityType, dbID, callback, dbInterfaceName ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#createEntityRemotelyFromDBID" class="function_list" >createEntityRemotelyFromDBID</a>( entityType, dbID, baseMB, callback, dbInterfaceName ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#createEntityLocally" class="function_list" >createEntityLocally</a>( entityType, *params ):</span>
 </td></tr>
 
 <tr><td>
@@ -83,7 +79,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#deleteBaseByDBID" class="function_list" >deleteBaseByDBID</a>( entityType, dbID, callback, dbInterfaceName ):</span>
+<span class="function_list">def <a href="#deleteEntityByDBID" class="function_list" >deleteEntityByDBID</a>( entityType, dbID, callback, dbInterfaceName ):</span>
 </td></tr>
 
 <tr><td>
@@ -131,7 +127,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#lookUpBaseByDBID" class="function_list" >lookUpBaseByDBID</a>( entityType, dbID, callback, dbInterfaceName ):</span>
+<span class="function_list">def <a href="#lookUpEntityByDBID" class="function_list" >lookUpEntityByDBID</a>( entityType, dbID, callback, dbInterfaceName ):</span>
 </td></tr>
 
 <tr><td>
@@ -373,7 +369,7 @@ string£¬¶©µ¥ID¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>dbID</i></span></td><td><span class="function_parameter_description">
-uint64£¬ÊµÌåµÄ<a href=../Classes/Base.html#databaseID>databaseID</a>¡£
+uint64£¬ÊµÌåµÄ<a href=../Classes/Entity.html#databaseID>databaseID</a>¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>byteDatas</i></span></td><td><span class="function_parameter_description">
@@ -385,7 +381,7 @@ bytes£¬¸½´øÊı¾İ£¬ÓÉ¿ª·¢Õß×Ô¼º½âÎöºÍ¶¨Òå¡£
 ¼Æ·Ñ»Øµ÷Ô­ĞÍ: (µ±ÔÚinterfacesÖĞµ÷ÓÃKBEngine.chargeResponseºó£¬Èç¹ûÄ³¸ö¶©µ¥ÉèÖÃ¹ı»Øµ÷Ôò¸Ã»Øµ÷±»µ÷ÓÃ)<br>
 def on**ChargeCB(self, orderID, dbID, success, datas):<br>
 ordersID£ºstring£¬¶©µ¥ID<br>
-dbID£ºuint64£¬Í¨³£ÎªentityµÄ<a href=../Classes/Base.html#databaseID>databaseID</a><br>
+dbID£ºuint64£¬Í¨³£ÎªentityµÄ<a href=../Classes/Entity.html#databaseID>databaseID</a><br>
 success£ºbool£¬ÊÇ·ñ³É¹¦<br>
 datas£ºbytes£¬¸½´øÊı¾İ£¬ÓÉ¿ª·¢Õß×Ô¼º½âÎöºÍ¶¨Òå<br>
 </span></td></tr>
@@ -393,25 +389,25 @@ datas£ºbytes£¬¸½´øÊı¾İ£¬ÓÉ¿ª·¢Õß×Ô¼º½âÎöºÍ¶¨Òå<br>
 </table>
 </p>
 
-<a name="createBase"></a><p class="function_definition">
-<span class="function_definition">def createBase( <i></i> ):</span>
+<a name="createEntity"></a><p class="function_definition">
+<span class="function_definition">def createEntity( <i></i> ):</span>
 </p>
 
 <div class="function_description">
 <b>¹¦ÄÜËµÃ÷£º</b><br><br>
-<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#createBaseLocally>createBaseLocally</a>µÄ±ğÃû.
+<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#createEntityLocally>createEntityLocally</a>µÄ±ğÃû.
 </div>
 
-<a name="createBaseAnywhere"></a><p class="function_definition">
-<span class="function_definition">def createBaseAnywhere( <i>entityType, params, callback</i> ):</span>
+<a name="createEntityAnywhere"></a><p class="function_definition">
+<span class="function_definition">def createEntityAnywhere( <i>entityType, params, callback</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>¹¦ÄÜËµÃ÷£º</b><br><br>
-´´½¨Ò»¸öĞÂµÄ<a href="../Classes/Base.html">Base</a>ÊµÌå£¬
-·şÎñ¶Ë¿ÉÄÜÑ¡ÔñÈÎºÎµÄ<a href="../index.html">Baseapp</a>À´´´½¨<a href="../Classes/Base.html">Base</a>ÊµÌå¡£
+´´½¨Ò»¸öĞÂµÄ<a href="../Classes/Entity.html">Entity</a>ÊµÌå£¬
+·şÎñ¶Ë¿ÉÄÜÑ¡ÔñÈÎºÎµÄ<a href="../index.html">Baseapp</a>À´´´½¨<a href="../Classes/Entity.html">Entity</a>ÊµÌå¡£
 <br><br>
-Õâ¸ö·½·¨Ó¦×÷Îª<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#createBaseLocally>createBaseLocally</a>µÄÊ×Ñ¡£¬
+Õâ¸ö·½·¨Ó¦×÷Îª<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#createEntityLocally>createEntityLocally</a>µÄÊ×Ñ¡£¬
 ÕâÑù·şÎñ¶Ë»áÁé»îµØÑ¡ÔñÒ»¸öºÏÊÊµÄ<a href="../index.html">Baseapp</a>À´´´½¨ÊµÌå¡£
 <br><br>
 º¯Êı²ÎÊıĞèÒªÌá¹©´´½¨µÄÊµÌåµÄÀàĞÍ£¬»¹ÓĞÒ»¸öPython×Öµä×÷Îª²ÎÊıÀ´³õÊ¼»¯ÊµÌåµÄÖµ¡£
@@ -426,10 +422,10 @@ params = {
 	"tmp" : "tmp"	# baseEntity.tmp
 }
 
-def onCreateBaseCallback(entity)
+def onCreateEntityCallback(entity)
 	print(entity)
 
-createBaseAnywhere("Avatar", params, onCreateBaseCallback)
+createEntityAnywhere("Avatar", params, onCreateEntityCallback)
 </pre>
 
 </div>
@@ -439,18 +435,18 @@ createBaseAnywhere("Avatar", params, onCreateBaseCallback)
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>entityType</i></span></td><td><span class="function_parameter_description">
-string£¬Ö¸¶¨Òª´´½¨µÄ<a href="../Classes/Base.html">Base</a>ÊµÌåµÄÀàĞÍ¡£ÓĞĞ§µÄÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>ÁĞ³ö¡£
+string£¬Ö¸¶¨Òª´´½¨µÄ<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄÀàĞÍ¡£ÓĞĞ§µÄÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>ÁĞ³ö¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>params</i></span></td><td><span class="function_parameter_description">
 ¿ÉÑ¡²ÎÊı, Ò»¸öPython×Öµä¶ÔÏó¡£
-Èç¹ûÒ»¸öÖ¸¶¨µÄ¼üÊÇÒ»¸ö<a href="../Classes/Base.html">Base</a>ÊôĞÔ£¬ËûµÄÖµ»áÓÃÀ´³õÊ¼»¯Õâ¸ö<a href="../Classes/Base.html">Base</a>ÊµÌåµÄÊôĞÔ¡£
-Èç¹ûÕâ¸ö¼üÊÇÒ»¸ö<a href="Cell.html">Cell</a>ÊôĞÔ£¬Ëü»á±»Ìí¼Óµ½<a href="../Classes/Base.html">Base</a>ÊµÌåµÄ'<a href=../Classes/Base.html#cellData>cellData</a>'ÊôĞÔ£¬Õâ¸ö'<a href=../Classes/Base.html#cellData>cellData</a>'ÊôĞÔÊÇÒ»¸öPython×Öµä£¬
+Èç¹ûÒ»¸öÖ¸¶¨µÄ¼üÊÇÒ»¸ö<a href="../Classes/Entity.html">Entity</a>ÊôĞÔ£¬ËûµÄÖµ»áÓÃÀ´³õÊ¼»¯Õâ¸ö<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄÊôĞÔ¡£
+Èç¹ûÕâ¸ö¼üÊÇÒ»¸ö<a href="Cell.html">Cell</a>ÊôĞÔ£¬Ëü»á±»Ìí¼Óµ½<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄ'<a href=../Classes/Entity.html#cellData>cellData</a>'ÊôĞÔ£¬Õâ¸ö'<a href=../Classes/Entity.html#cellData>cellData</a>'ÊôĞÔÊÇÒ»¸öPython×Öµä£¬
 È»ºóÔÚºóÃæ»áÓÃÀ´³õÊ¼»¯cellÊµÌåµÄÊôĞÔ¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
-callbackÊÇÒ»¸ö¿ÉÑ¡µÄ»Øµ÷º¯Êı£¬µ±ÊµÌåÍê³É´´½¨Ê±±»µ÷ÓÃ¡£»Øµ÷º¯Êı´øÓĞÒ»¸ö²ÎÊı£¬µ±³É¹¦µÄÊ±ºòÊÇ<a href="../Classes/Base.html">Base</a>ÊµÌåµÄ<a href=../../keywords.html#EntityCall>entityCall</a>£¬Ê§°ÜÊ±ÊÇNone¡£
+callbackÊÇÒ»¸ö¿ÉÑ¡µÄ»Øµ÷º¯Êı£¬µ±ÊµÌåÍê³É´´½¨Ê±±»µ÷ÓÃ¡£»Øµ÷º¯Êı´øÓĞÒ»¸ö²ÎÊı£¬µ±³É¹¦µÄÊ±ºòÊÇ<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄ<a href=../../keywords.html#EntityCall>entityCall</a>£¬Ê§°ÜÊ±ÊÇNone¡£
 </span></td></tr>
 
 </table>
@@ -460,22 +456,22 @@ callbackÊÇÒ»¸ö¿ÉÑ¡µÄ»Øµ÷º¯Êı£¬µ±ÊµÌåÍê³É´´½¨Ê±±»µ÷ÓÃ¡£»Øµ÷º¯Êı´øÓĞÒ»¸ö²ÎÊı£¬µ±³É
 <span class="function_return">·µ»Ø£º</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-Í¨¹ı»Øµ÷·µ»Ø<a href="../Classes/Base.html">Base</a>ÊµÌåµÄ<a href=../../keywords.html#EntityCall>entityCall</a>¡£
+Í¨¹ı»Øµ÷·µ»Ø<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄ<a href=../../keywords.html#EntityCall>entityCall</a>¡£
 </td></tr>
 </table>
 </p>
 
 
 
-<a name="createBaseRemotely"></a><p class="function_definition">
-<span class="function_definition">def createBaseRemotely( <i>entityType, baseMB, params, callback</i> ):</span>
+<a name="createEntityRemotely"></a><p class="function_definition">
+<span class="function_definition">def createEntityRemotely( <i>entityType, baseMB, params, callback</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>¹¦ÄÜËµÃ÷£º</b><br><br>
-Í¨¹ıbaseMB²ÎÊıÔÚÒ»¸öÖ¸¶¨µÄbaseappÉÏ´´½¨Ò»¸öĞÂµÄ<a href="../Classes/Base.html">Base</a>ÊµÌå¡£
+Í¨¹ıbaseMB²ÎÊıÔÚÒ»¸öÖ¸¶¨µÄbaseappÉÏ´´½¨Ò»¸öĞÂµÄ<a href="../Classes/Entity.html">Entity</a>ÊµÌå¡£
 <br><br>
-Ó¦¸Ã½«<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#createBaseLocally>createBaseAnywhere</a>·½·¨×÷ÎªÊ×Ñ¡¡£
+Ó¦¸Ã½«<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#createEntityLocally>createEntityAnywhere</a>·½·¨×÷ÎªÊ×Ñ¡¡£
 <br><br>
 º¯Êı²ÎÊıĞèÒªÌá¹©´´½¨µÄÊµÌåµÄÀàĞÍ£¬»¹ÓĞÒ»¸öPython×Öµä×÷Îª²ÎÊıÀ´³õÊ¼»¯ÊµÌåµÄÖµ¡£
 <br><br>
@@ -489,10 +485,10 @@ params = {
 	"tmp" : "tmp"	# baseEntity.tmp
 }
 
-def onCreateBaseCallback(entity)
+def onCreateEntityCallback(entity)
 	print(entity)
 
-createBaseRemotely("Avatar", baseEntityCall, params, onCreateBaseCallback)
+createEntityRemotely("Avatar", baseEntityCall, params, onCreateEntityCallback)
 </pre>
 
 </div>
@@ -502,22 +498,22 @@ createBaseRemotely("Avatar", baseEntityCall, params, onCreateBaseCallback)
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>entityType</i></span></td><td><span class="function_parameter_description">
-string£¬Ö¸¶¨Òª´´½¨µÄ<a href="../Classes/Base.html">Base</a>ÊµÌåµÄÀàĞÍ¡£ÓĞĞ§µÄÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>ÁĞ³ö¡£
+string£¬Ö¸¶¨Òª´´½¨µÄ<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄÀàĞÍ¡£ÓĞĞ§µÄÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>ÁĞ³ö¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>baseMB</i></span></td><td><span class="function_parameter_description">
-BaseEntityCall£¬ÕâÊÇÒ»¸ö<a href="../Classes/Base.html">Base</a>µÄEntityCall¡£ÊµÌå½«±»´´½¨ÔÚ¸ÃBase¶ÔÓ¦µÄBaseapp½ø³ÌÉÏ¡£
+BaseEntityCall£¬ÕâÊÇÒ»¸ö<a href="../Classes/Entity.html">Entity</a>µÄEntityCall¡£ÊµÌå½«±»´´½¨ÔÚ¸ÃEntity¶ÔÓ¦µÄBaseapp½ø³ÌÉÏ¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>params</i></span></td><td><span class="function_parameter_description">
 ¿ÉÑ¡²ÎÊı, Ò»¸öPython×Öµä¶ÔÏó¡£
-Èç¹ûÒ»¸öÖ¸¶¨µÄ¼üÊÇÒ»¸ö<a href="../Classes/Base.html">Base</a>ÊôĞÔ£¬ËûµÄÖµ»áÓÃÀ´³õÊ¼»¯Õâ¸ö<a href="../Classes/Base.html">Base</a>ÊµÌåµÄÊôĞÔ¡£
-Èç¹ûÕâ¸ö¼üÊÇÒ»¸ö<a href="Cell.html">Cell</a>ÊôĞÔ£¬Ëü»á±»Ìí¼Óµ½<a href="../Classes/Base.html">Base</a>ÊµÌåµÄ'<a href=../Classes/Base.html#cellData>cellData</a>'ÊôĞÔ£¬Õâ¸ö'<a href=../Classes/Base.html#cellData>cellData</a>'ÊôĞÔÊÇÒ»¸öPython×Öµä£¬
+Èç¹ûÒ»¸öÖ¸¶¨µÄ¼üÊÇÒ»¸ö<a href="../Classes/Entity.html">Entity</a>ÊôĞÔ£¬ËûµÄÖµ»áÓÃÀ´³õÊ¼»¯Õâ¸ö<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄÊôĞÔ¡£
+Èç¹ûÕâ¸ö¼üÊÇÒ»¸ö<a href="Cell.html">Cell</a>ÊôĞÔ£¬Ëü»á±»Ìí¼Óµ½<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄ'<a href=../Classes/Entity.html#cellData>cellData</a>'ÊôĞÔ£¬Õâ¸ö'<a href=../Classes/Entity.html#cellData>cellData</a>'ÊôĞÔÊÇÒ»¸öPython×Öµä£¬
 È»ºóÔÚºóÃæ»áÓÃÀ´³õÊ¼»¯cellÊµÌåµÄÊôĞÔ¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
-callbackÊÇÒ»¸ö¿ÉÑ¡µÄ»Øµ÷º¯Êı£¬µ±ÊµÌåÍê³É´´½¨Ê±±»µ÷ÓÃ¡£»Øµ÷º¯Êı´øÓĞÒ»¸ö²ÎÊı£¬µ±³É¹¦µÄÊ±ºòÊÇ<a href="../Classes/Base.html">Base</a>ÊµÌåµÄ<a href=../../keywords.html#EntityCall>entityCall</a>£¬Ê§°ÜÊ±ÊÇNone¡£
+callbackÊÇÒ»¸ö¿ÉÑ¡µÄ»Øµ÷º¯Êı£¬µ±ÊµÌåÍê³É´´½¨Ê±±»µ÷ÓÃ¡£»Øµ÷º¯Êı´øÓĞÒ»¸ö²ÎÊı£¬µ±³É¹¦µÄÊ±ºòÊÇ<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄ<a href=../../keywords.html#EntityCall>entityCall</a>£¬Ê§°ÜÊ±ÊÇNone¡£
 </span></td></tr>
 
 </table>
@@ -527,22 +523,22 @@ callbackÊÇÒ»¸ö¿ÉÑ¡µÄ»Øµ÷º¯Êı£¬µ±ÊµÌåÍê³É´´½¨Ê±±»µ÷ÓÃ¡£»Øµ÷º¯Êı´øÓĞÒ»¸ö²ÎÊı£¬µ±³É
 <span class="function_return">·µ»Ø£º</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-Í¨¹ı»Øµ÷·µ»Ø<a href="../Classes/Base.html">Base</a>ÊµÌåµÄ<a href=../../keywords.html#EntityCall>entityCall</a>¡£
+Í¨¹ı»Øµ÷·µ»Ø<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄ<a href=../../keywords.html#EntityCall>entityCall</a>¡£
 </td></tr>
 </table>
 </p>
 
 
 
-<a name="createBaseFromDBID"></a><p class="function_definition">
-<span class="function_definition">def createBaseFromDBID( <i>entityType, dbID, callback, dbInterfaceName</i> ):</span>
+<a name="createEntityFromDBID"></a><p class="function_definition">
+<span class="function_definition">def createEntityFromDBID( <i>entityType, dbID, callback, dbInterfaceName</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>¹¦ÄÜËµÃ÷£º</b><br><br>
-´ÓÊı¾İ¿âÀï¼ÓÔØÊı¾İ´´½¨Ò»¸ö<a href="../Classes/Base.html">Base</a>ÊµÌå¡£
-Õâ¸öĞÂµÄ<a href="../Classes/Base.html">Base</a>ÊµÌå»áÔÚµ÷ÓÃÕâ¸öº¯ÊıµÄ<a href="../index.html">Baseapp</a>ÉÏ´´½¨¡£
-Èç¹û¸ÃÊµÌåÒÑ¾­´ÓÊı¾İ¿â¼ì³ö£¬ÄÇÃ´½«·µ»ØÕâ¸ö´æÔÚµÄ<a href="../Classes/Base.html">Base</a>ÊµÌåµÄÒıÓÃ¡£
+´ÓÊı¾İ¿âÀï¼ÓÔØÊı¾İ´´½¨Ò»¸ö<a href="../Classes/Entity.html">Entity</a>ÊµÌå¡£
+Õâ¸öĞÂµÄ<a href="../Classes/Entity.html">Entity</a>ÊµÌå»áÔÚµ÷ÓÃÕâ¸öº¯ÊıµÄ<a href="../index.html">Baseapp</a>ÉÏ´´½¨¡£
+Èç¹û¸ÃÊµÌåÒÑ¾­´ÓÊı¾İ¿â¼ì³ö£¬ÄÇÃ´½«·µ»ØÕâ¸ö´æÔÚµÄ<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄÒıÓÃ¡£
 </div>
 
 <p>
@@ -550,16 +546,16 @@ callbackÊÇÒ»¸ö¿ÉÑ¡µÄ»Øµ÷º¯Êı£¬µ±ÊµÌåÍê³É´´½¨Ê±±»µ÷ÓÃ¡£»Øµ÷º¯Êı´øÓĞÒ»¸ö²ÎÊı£¬µ±³É
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>entityType</i></span></td><td><span class="function_parameter_description">
-string£¬Ö¸¶¨Òª¼ÓÔØµÄ<a href="../Classes/Base.html">Base</a>ÊµÌåÀàĞÍ¡£ÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>ÁĞ³ö¡£
+string£¬Ö¸¶¨Òª¼ÓÔØµÄ<a href="../Classes/Entity.html">Entity</a>ÊµÌåÀàĞÍ¡£ÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>ÁĞ³ö¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>dbID</i></span></td><td><span class="function_parameter_description">
-Ö¸¶¨Òª´´½¨µÄÊµÌåµÄÊı¾İ¿âID¡£Õâ¸öÊµÌåµÄÊı¾İ¿âID´æ´¢ÔÚ¸ÃÊµÌåµÄ<a href=../Classes/Base.html#databaseID>databaseID</a>ÊôĞÔ¡£
+Ö¸¶¨Òª´´½¨µÄÊµÌåµÄÊı¾İ¿âID¡£Õâ¸öÊµÌåµÄÊı¾İ¿âID´æ´¢ÔÚ¸ÃÊµÌåµÄ<a href=../Classes/Entity.html#databaseID>databaseID</a>ÊôĞÔ¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
 ÕâÊÇÒ»¸ö¿ÉÑ¡µÄ»Øµ÷º¯Êı£¬µ±²Ù×÷Íê³ÉµÄÊ±ºòËü»á±»µ÷ÓÃ¡£»Øµ÷º¯Êı´øÓĞ3¸ö²ÎÊı£ºbaseRef£¬databaseIDºÍwasActive¡£
-Èç¹û²Ù×÷³É¹¦£¬baseRef»áÊÇÒ»¸ö<a href=../../keywords.html#EntityCall>entityCall</a>»òÕßÊÇĞÂ´´½¨µÄ<a href="../Classes/Base.html">Base</a>ÊµÌåµÄÖ±½ÓÒıÓÃ£¬databaseID»áÊÇÊµÌåµÄÊı¾İ¿âID£¬ÎŞÂÛ¸ÃÊµÌåÊÇ·ñÒÑ¾­¼¤»î<br>
+Èç¹û²Ù×÷³É¹¦£¬baseRef»áÊÇÒ»¸ö<a href=../../keywords.html#EntityCall>entityCall</a>»òÕßÊÇĞÂ´´½¨µÄ<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄÖ±½ÓÒıÓÃ£¬databaseID»áÊÇÊµÌåµÄÊı¾İ¿âID£¬ÎŞÂÛ¸ÃÊµÌåÊÇ·ñÒÑ¾­¼¤»î<br>
 wasActive¶¼»áÓĞËùÖ¸Ê¾£¬Èç¹ûwasActiveÊÇTrueÔòbaseRefÊÇÒÑ¾­´æÔÚµÄÊµÌåµÄÒıÓÃ(ÒÑ¾­´ÓÊı¾İ¿â¼ì³ö)¡£Èç¹û²Ù×÷Ê§°ÜÕâÈı¸ö²ÎÊıµÄÖµ£¬baseRef½«»áÊÇNone£¬databaseID½«»áÊÇ0£¬wasActive½«»áÊÇFalse¡£<br>
 Ê§°Ü×î³£¼ûµÄÔ­ÒòÊÇÊµÌåÔÚÊı¾İ¿âÀï²»´æÔÚ£¬µ«Å¼¶ûÒ²»á³öÏÖÆäËü´íÎó±ÈÈçËµ³¬Ê±»òÕßÊÇ·ÖÅäIDÊ§°Ü¡£
 </span></td></tr>
@@ -572,18 +568,18 @@ string£¬¿ÉÑ¡²ÎÊı£¬Ö¸¶¨ÓÉÄ³¸öÊı¾İ¿â½Ó¿ÚÀ´Íê³É, Ä¬ÈÏÊ¹ÓÃ"default"½Ó¿Ú¡£Êı¾İ¿â½Ó¿ÚÓ
 </p>
 
 
-<a name="createBaseAnywhereFromDBID"></a><p class="function_definition">
-<span class="function_definition">def createBaseAnywhereFromDBID( <i>entityType, dbID, callback, dbInterfaceName</i> ):</span>
+<a name="createEntityAnywhereFromDBID"></a><p class="function_definition">
+<span class="function_definition">def createEntityAnywhereFromDBID( <i>entityType, dbID, callback, dbInterfaceName</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>¹¦ÄÜËµÃ÷£º</b><br><br>
-´ÓÊı¾İ¿âÀï¼ÓÔØÊı¾İ´´½¨Ò»¸ö<a href="../Classes/Base.html">Base</a>ÊµÌå¡£
-·şÎñ¶Ë¿ÉÄÜÑ¡ÔñÈÎºÎµÄ<a href="../index.html">Baseapp</a>À´´´½¨<a href="../Classes/Base.html">Base</a>ÊµÌå¡£
+´ÓÊı¾İ¿âÀï¼ÓÔØÊı¾İ´´½¨Ò»¸ö<a href="../Classes/Entity.html">Entity</a>ÊµÌå¡£
+·şÎñ¶Ë¿ÉÄÜÑ¡ÔñÈÎºÎµÄ<a href="../index.html">Baseapp</a>À´´´½¨<a href="../Classes/Entity.html">Entity</a>ÊµÌå¡£
 <br><br>
 Ê¹ÓÃÕâ¸öº¯Êı½«ÓĞÖúÓÚBaseApps¸ºÔØÆ½ºâ¡£
 <br><br>
-Èç¹û¸ÃÊµÌåÒÑ¾­´ÓÊı¾İ¿â¼ì³ö£¬ÄÇÃ´½«·µ»ØÕâ¸ö´æÔÚµÄ<a href="../Classes/Base.html">Base</a>ÊµÌåµÄÒıÓÃ¡£
+Èç¹û¸ÃÊµÌåÒÑ¾­´ÓÊı¾İ¿â¼ì³ö£¬ÄÇÃ´½«·µ»ØÕâ¸ö´æÔÚµÄ<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄÒıÓÃ¡£
 </div>
 
 <p>
@@ -591,16 +587,16 @@ string£¬¿ÉÑ¡²ÎÊı£¬Ö¸¶¨ÓÉÄ³¸öÊı¾İ¿â½Ó¿ÚÀ´Íê³É, Ä¬ÈÏÊ¹ÓÃ"default"½Ó¿Ú¡£Êı¾İ¿â½Ó¿ÚÓ
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>entityType</i></span></td><td><span class="function_parameter_description">
-string£¬Ö¸¶¨Òª´´½¨µÄBaseÊµÌåµÄÀàĞÍ¡£ÓĞĞ§µÄÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>ÁĞ³ö¡£
+string£¬Ö¸¶¨Òª´´½¨µÄEntityÊµÌåµÄÀàĞÍ¡£ÓĞĞ§µÄÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>ÁĞ³ö¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>dbID</i></span></td><td><span class="function_parameter_description">
-ÕâÊÇÒ»¸öÖ¸¶¨Òª´´½¨µÄÊµÌåµÄÊı¾İ¿âID¡£Õâ¸öÊµÌåµÄÊı¾İ¿âID´æ´¢ÔÚ¸ÃÊµÌåµÄ<a href=../Classes/Base.html#databaseID>databaseID</a>ÊôĞÔ¡£
+ÕâÊÇÒ»¸öÖ¸¶¨Òª´´½¨µÄÊµÌåµÄÊı¾İ¿âID¡£Õâ¸öÊµÌåµÄÊı¾İ¿âID´æ´¢ÔÚ¸ÃÊµÌåµÄ<a href=../Classes/Entity.html#databaseID>databaseID</a>ÊôĞÔ¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
 ÕâÊÇÒ»¸ö¿ÉÑ¡µÄ»Øµ÷º¯Êı£¬µ±²Ù×÷Íê³ÉµÄÊ±ºòËü»á±»µ÷ÓÃ¡£»Øµ÷º¯Êı´øÓĞ3¸ö²ÎÊı£ºbaseRef£¬databaseIDºÍwasActive¡£
-Èç¹û²Ù×÷³É¹¦£¬baseRef»áÊÇÒ»¸ö<a href=../../keywords.html#EntityCall>entityCall</a>»òÕßÊÇĞÂ´´½¨µÄ<a href="../Classes/Base.html">Base</a>ÊµÌåµÄÖ±½ÓÒıÓÃ£¬databaseID»áÊÇÊµÌåµÄÊı¾İ¿âID£¬ÎŞÂÛ¸ÃÊµÌåÊÇ·ñÒÑ¾­¼¤»î<br>
+Èç¹û²Ù×÷³É¹¦£¬baseRef»áÊÇÒ»¸ö<a href=../../keywords.html#EntityCall>entityCall</a>»òÕßÊÇĞÂ´´½¨µÄ<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄÖ±½ÓÒıÓÃ£¬databaseID»áÊÇÊµÌåµÄÊı¾İ¿âID£¬ÎŞÂÛ¸ÃÊµÌåÊÇ·ñÒÑ¾­¼¤»î<br>
 wasActive¶¼»áÓĞËùÖ¸Ê¾£¬Èç¹ûwasActiveÊÇTrueÔòbaseRefÊÇÒÑ¾­´æÔÚµÄÊµÌåµÄÒıÓÃ(ÒÑ¾­´ÓÊı¾İ¿â¼ì³ö)¡£Èç¹û²Ù×÷Ê§°ÜÕâÈı¸ö²ÎÊıµÄÖµ£¬baseRef½«»áÊÇNone£¬databaseID½«»áÊÇ0£¬wasActive½«»áÊÇFalse¡£<br>
 Ê§°Ü×î³£¼ûµÄÔ­ÒòÊÇÊµÌåÔÚÊı¾İ¿âÀï²»´æÔÚ£¬µ«Å¼¶ûÒ²»á³öÏÖÆäËü´íÎó±ÈÈçËµ³¬Ê±»òÕßÊÇ·ÖÅäIDÊ§°Ü¡£
 </span></td></tr>
@@ -616,21 +612,21 @@ string£¬¿ÉÑ¡²ÎÊı£¬Ö¸¶¨ÓÉÄ³¸öÊı¾İ¿â½Ó¿ÚÀ´Íê³É, Ä¬ÈÏÊ¹ÓÃ"default"½Ó¿Ú¡£Êı¾İ¿â½Ó¿ÚÓ
 <span class="function_return">·µ»Ø£º</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-Í¨¹ı»Øµ÷·µ»Ø<a href="../Classes/Base.html">Base</a>ÊµÌåµÄ<a href=../../keywords.html#EntityCall>entityCall</a>¡£
+Í¨¹ı»Øµ÷·µ»Ø<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄ<a href=../../keywords.html#EntityCall>entityCall</a>¡£
 </td></tr>
 </table>
 </p>
 
 
-<a name="createBaseRemotelyFromDBID"></a><p class="function_definition">
-<span class="function_definition">def createBaseRemotelyFromDBID( <i>entityType, dbID, baseMB, callback, dbInterfaceName</i> ):</span>
+<a name="createEntityRemotelyFromDBID"></a><p class="function_definition">
+<span class="function_definition">def createEntityRemotelyFromDBID( <i>entityType, dbID, baseMB, callback, dbInterfaceName</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>¹¦ÄÜËµÃ÷£º</b><br><br>
-´ÓÊı¾İ¿âÀï¼ÓÔØÊı¾İ²¢Í¨¹ıbaseMB²ÎÊıÔÚÒ»¸öÖ¸¶¨µÄbaseappÉÏ´´½¨Ò»¸ö<a href="../Classes/Base.html">Base</a>ÊµÌå¡£
+´ÓÊı¾İ¿âÀï¼ÓÔØÊı¾İ²¢Í¨¹ıbaseMB²ÎÊıÔÚÒ»¸öÖ¸¶¨µÄbaseappÉÏ´´½¨Ò»¸ö<a href="../Classes/Entity.html">Entity</a>ÊµÌå¡£
 <br><br>
-Èç¹û¸ÃÊµÌåÒÑ¾­´ÓÊı¾İ¿â¼ì³ö£¬ÄÇÃ´½«·µ»ØÕâ¸ö´æÔÚµÄ<a href="../Classes/Base.html">Base</a>ÊµÌåµÄÒıÓÃ¡£
+Èç¹û¸ÃÊµÌåÒÑ¾­´ÓÊı¾İ¿â¼ì³ö£¬ÄÇÃ´½«·µ»ØÕâ¸ö´æÔÚµÄ<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄÒıÓÃ¡£
 </div>
 
 <p>
@@ -638,20 +634,20 @@ string£¬¿ÉÑ¡²ÎÊı£¬Ö¸¶¨ÓÉÄ³¸öÊı¾İ¿â½Ó¿ÚÀ´Íê³É, Ä¬ÈÏÊ¹ÓÃ"default"½Ó¿Ú¡£Êı¾İ¿â½Ó¿ÚÓ
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>entityType</i></span></td><td><span class="function_parameter_description">
-string£¬Ö¸¶¨Òª´´½¨µÄBaseÊµÌåµÄÀàĞÍ¡£ÓĞĞ§µÄÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>ÁĞ³ö¡£
+string£¬Ö¸¶¨Òª´´½¨µÄEntityÊµÌåµÄÀàĞÍ¡£ÓĞĞ§µÄÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>ÁĞ³ö¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>dbID</i></span></td><td><span class="function_parameter_description">
-ÕâÊÇÒ»¸öÖ¸¶¨Òª´´½¨µÄÊµÌåµÄÊı¾İ¿âID¡£Õâ¸öÊµÌåµÄÊı¾İ¿âID´æ´¢ÔÚ¸ÃÊµÌåµÄ<a href=../Classes/Base.html#databaseID>databaseID</a>ÊôĞÔ¡£
+ÕâÊÇÒ»¸öÖ¸¶¨Òª´´½¨µÄÊµÌåµÄÊı¾İ¿âID¡£Õâ¸öÊµÌåµÄÊı¾İ¿âID´æ´¢ÔÚ¸ÃÊµÌåµÄ<a href=../Classes/Entity.html#databaseID>databaseID</a>ÊôĞÔ¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>baseMB</i></span></td><td><span class="function_parameter_description">
-BaseEntityCall£¬ÕâÊÇÒ»¸ö<a href="../Classes/Base.html">Base</a>µÄEntityCall¡£ÊµÌå½«±»´´½¨ÔÚ¸ÃBase¶ÔÓ¦µÄBaseapp½ø³ÌÉÏ¡£
+BaseEntityCall£¬ÕâÊÇÒ»¸ö<a href="../Classes/Entity.html">Entity</a>µÄEntityCall¡£ÊµÌå½«±»´´½¨ÔÚ¸ÃEntity¶ÔÓ¦µÄBaseapp½ø³ÌÉÏ¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
 ÕâÊÇÒ»¸ö¿ÉÑ¡µÄ»Øµ÷º¯Êı£¬µ±²Ù×÷Íê³ÉµÄÊ±ºòËü»á±»µ÷ÓÃ¡£»Øµ÷º¯Êı´øÓĞ3¸ö²ÎÊı£ºbaseRef£¬databaseIDºÍwasActive¡£
-Èç¹û²Ù×÷³É¹¦£¬baseRef»áÊÇÒ»¸ö<a href=../../keywords.html#EntityCall>entityCall</a>»òÕßÊÇĞÂ´´½¨µÄ<a href="../Classes/Base.html">Base</a>ÊµÌåµÄÖ±½ÓÒıÓÃ£¬databaseID»áÊÇÊµÌåµÄÊı¾İ¿âID£¬ÎŞÂÛ¸ÃÊµÌåÊÇ·ñÒÑ¾­¼¤»î<br>
+Èç¹û²Ù×÷³É¹¦£¬baseRef»áÊÇÒ»¸ö<a href=../../keywords.html#EntityCall>entityCall</a>»òÕßÊÇĞÂ´´½¨µÄ<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄÖ±½ÓÒıÓÃ£¬databaseID»áÊÇÊµÌåµÄÊı¾İ¿âID£¬ÎŞÂÛ¸ÃÊµÌåÊÇ·ñÒÑ¾­¼¤»î<br>
 wasActive¶¼»áÓĞËùÖ¸Ê¾£¬Èç¹ûwasActiveÊÇTrueÔòbaseRefÊÇÒÑ¾­´æÔÚµÄÊµÌåµÄÒıÓÃ(ÒÑ¾­´ÓÊı¾İ¿â¼ì³ö)¡£Èç¹û²Ù×÷Ê§°ÜÕâÈı¸ö²ÎÊıµÄÖµ£¬baseRef½«»áÊÇNone£¬databaseID½«»áÊÇ0£¬wasActive½«»áÊÇFalse¡£<br>
 Ê§°Ü×î³£¼ûµÄÔ­ÒòÊÇÊµÌåÔÚÊı¾İ¿âÀï²»´æÔÚ£¬µ«Å¼¶ûÒ²»á³öÏÖÆäËü´íÎó±ÈÈçËµ³¬Ê±»òÕßÊÇ·ÖÅäIDÊ§°Ü¡£
 </span></td></tr>
@@ -667,25 +663,25 @@ string£¬¿ÉÑ¡²ÎÊı£¬Ö¸¶¨ÓÉÄ³¸öÊı¾İ¿â½Ó¿ÚÀ´Íê³É, Ä¬ÈÏÊ¹ÓÃ"default"½Ó¿Ú¡£Êı¾İ¿â½Ó¿ÚÓ
 <span class="function_return">·µ»Ø£º</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-Í¨¹ı»Øµ÷·µ»Ø<a href="../Classes/Base.html">Base</a>ÊµÌåµÄ<a href=../../keywords.html#EntityCall>entityCall</a>¡£
+Í¨¹ı»Øµ÷·µ»Ø<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄ<a href=../../keywords.html#EntityCall>entityCall</a>¡£
 </td></tr>
 </table>
 </p>
 
 
 
-<a name="createBaseLocally"></a><p class="function_definition">
-<span class="function_definition">def createBaseLocally( <i>entityType, params</i> ):</span>
+<a name="createEntityLocally"></a><p class="function_definition">
+<span class="function_definition">def createEntityLocally( <i>entityType, params</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>¹¦ÄÜËµÃ÷£º</b><br><br>
-´´½¨Ò»¸öĞÂµÄ<a href="../Classes/Base.html">Base</a>ÊµÌå¡£<br>
+´´½¨Ò»¸öĞÂµÄ<a href="../Classes/Entity.html">Entity</a>ÊµÌå¡£<br>
 º¯Êı²ÎÊıĞèÒªÌá¹©´´½¨µÄÊµÌåµÄÀàĞÍ£¬»¹ÓĞÒ»¸öPython×Öµä×÷Îª²ÎÊıÀ´³õÊ¼»¯ÊµÌåµÄÖµ¡£
 <br><br>
 Õâ¸öPython×Öµä²»ĞèÒªÓÃ»§Ìá¹©ËùÓĞµÄÊôĞÔ£¬Ã»ÓĞÌá¹©µÄÊôĞÔÄ¬ÈÏÎªÊµÌå¶¨ÒåÎÄ¼ş".def"Ìá¹©µÄÄ¬ÈÏÖµ¡£
 <br><br>
-<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#createBaseAnywhere>createBaseAnywhere</a>Ó¦¸Ã×÷ÎªÕâ¸ö·½·¨µÄÊ×Ñ¡£¬ÒòÎª·şÎñ¶Ë¿ÉÒÔÁé»îµØ
+<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#createEntityAnywhere>createEntityAnywhere</a>Ó¦¸Ã×÷ÎªÕâ¸ö·½·¨µÄÊ×Ñ¡£¬ÒòÎª·şÎñ¶Ë¿ÉÒÔÁé»îµØ
 ÔÚºÏÊÊµÄ<a href="../index.html">Baseapp</a>ÉÏ´´½¨ÊµÌå¡£
 <br><br>
 Àı×Ó£º<br>
@@ -696,7 +692,7 @@ params = {
 	"tmp" : "tmp"	# baseEntity.tmp
 }
 
-baseEntity = createBaseLocally("Avatar", params)
+baseEntity = createEntityLocally("Avatar", params)
 </pre>
 </div>
 
@@ -705,13 +701,13 @@ baseEntity = createBaseLocally("Avatar", params)
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>entityType</i></span></td><td><span class="function_parameter_description">
-string£¬Ö¸¶¨Òª´´½¨µÄBaseÊµÌåµÄÀàĞÍ¡£ÓĞĞ§µÄÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>ÁĞ³ö¡£
+string£¬Ö¸¶¨Òª´´½¨µÄEntityÊµÌåµÄÀàĞÍ¡£ÓĞĞ§µÄÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>ÁĞ³ö¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>params</i></span></td><td><span class="function_parameter_description">
 ¿ÉÑ¡²ÎÊı, Ò»¸öPython×Öµä¶ÔÏó¡£
-Èç¹ûÒ»¸öÖ¸¶¨µÄ¼üÊÇÒ»¸ö<a href="../Classes/Base.html">Base</a>ÊôĞÔ£¬ËûµÄÖµ»áÓÃÀ´³õÊ¼»¯Õâ¸ö<a href="../Classes/Base.html">Base</a>ÊµÌåµÄÊôĞÔ¡£
-Èç¹ûÕâ¸ö¼üÊÇÒ»¸ö<a href="Cell.html">Cell</a>ÊôĞÔ£¬Ëü»á±»Ìí¼Óµ½<a href="../Classes/Base.html">Base</a>ÊµÌåµÄ'<a href=../Classes/Base.html#cellData>cellData</a>'ÊôĞÔ£¬Õâ¸ö'<a href=../Classes/Base.html#cellData>cellData</a>'ÊôĞÔÊÇÒ»¸öPython×Öµä£¬
+Èç¹ûÒ»¸öÖ¸¶¨µÄ¼üÊÇÒ»¸ö<a href="../Classes/Entity.html">Entity</a>ÊôĞÔ£¬ËûµÄÖµ»áÓÃÀ´³õÊ¼»¯Õâ¸ö<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄÊôĞÔ¡£
+Èç¹ûÕâ¸ö¼üÊÇÒ»¸ö<a href="Cell.html">Cell</a>ÊôĞÔ£¬Ëü»á±»Ìí¼Óµ½<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄ'<a href=../Classes/Entity.html#cellData>cellData</a>'ÊôĞÔ£¬Õâ¸ö'<a href=../Classes/Entity.html#cellData>cellData</a>'ÊôĞÔÊÇÒ»¸öPython×Öµä£¬
 È»ºóÔÚºóÃæ»áÓÃÀ´³õÊ¼»¯cellÊµÌåµÄÊôĞÔ¡£
 </span></td></tr>
 
@@ -721,19 +717,11 @@ string£¬Ö¸¶¨Òª´´½¨µÄBaseÊµÌåµÄÀàĞÍ¡£ÓĞĞ§µÄÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.
 <p>
 <span class="function_return">·µ»Ø£º</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>ĞÂ´´½¨µÄBaseÊµÌå£¨²Î¿¼<a href="../Classes/Base.html">Base</a>£©
+<tr><td>ĞÂ´´½¨µÄEntityÊµÌå£¨²Î¿¼<a href="../Classes/Entity.html">Entity</a>£©
 </td></tr>
 </table>
 </p>
 
-<a name="createEntity"></a><p class="function_definition">
-<span class="function_definition">def createEntity( <i></i> ):</span>
-</p>
-
-<div class="function_description">
-<b>¹¦ÄÜËµÃ÷£º</b><br><br>
-<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#createBaseLocally>createBaseLocally</a>µÄ±ğÃû.
-</div>
 
 
 
@@ -784,15 +772,15 @@ ERROR cellapp [0x0000cd64] [2014-11-12 00:38:07,300] - PyGC::debugTracing(): Ent
 </p>
 
 
-<a name="deleteBaseByDBID"></a><p class="function_definition">
-<span class="function_definition">def deleteBaseByDBID( <i>entityType, dbID, callback, dbInterfaceName</i> ):</span>
+<a name="deleteEntityByDBID"></a><p class="function_definition">
+<span class="function_definition">def deleteEntityByDBID( <i>entityType, dbID, callback, dbInterfaceName</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>¹¦ÄÜËµÃ÷£º</b><br><br>
 ´ÓÊı¾İ¿âÉ¾³ıÖ¸¶¨µÄÊµÌå£¨°üÀ¨ÊôĞÔËù²úÉúµÄ×Ó±íÊı¾İ£©£¬Èç¹ûÊµÌåÃ»ÓĞ´ÓÊı¾İ¿â¼ì³öÔòÉ¾³ı³É¹¦£¬
 Èç¹ûÊµÌåÒÑ¾­´ÓÊı¾İ¿â¼ì³öÄÇÃ´<a href="KBEngine.html">KBEngine</a>·şÎñÏµÍ³½«»áÉ¾³ıÊ§°Ü£¬²¢ÇÒ´Ó»Øµ÷ÖĞ·µ»Ø
-<a href="../Classes/Base.html">Base</a>ÊµÌåµÄ<a href=../../keywords.html#EntityCall>entityCall</a>¡£
+<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄ<a href=../../keywords.html#EntityCall>entityCall</a>¡£
 </div>
 
 <p>
@@ -800,15 +788,15 @@ ERROR cellapp [0x0000cd64] [2014-11-12 00:38:07,300] - PyGC::debugTracing(): Ent
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>entityType</i></span></td><td><span class="function_parameter_description">
-string£¬Ö¸¶¨ÒªÉ¾³ıµÄBaseÊµÌåµÄÀàĞÍ¡£ÓĞĞ§µÄÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>ÁĞ³ö¡£
+string£¬Ö¸¶¨ÒªÉ¾³ıµÄEntityÊµÌåµÄÀàĞÍ¡£ÓĞĞ§µÄÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>ÁĞ³ö¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>dbID</i></span></td><td><span class="function_parameter_description">
-Ö¸¶¨ÒªÉ¾³ıµÄÊµÌåµÄÊı¾İ¿âID¡£Õâ¸öÊµÌåµÄÊı¾İ¿âID´æ´¢ÔÚ¸ÃÊµÌåµÄ<a href=../Classes/Base.html#databaseID>databaseID</a>ÊôĞÔ¡£
+Ö¸¶¨ÒªÉ¾³ıµÄÊµÌåµÄÊı¾İ¿âID¡£Õâ¸öÊµÌåµÄÊı¾İ¿âID´æ´¢ÔÚ¸ÃÊµÌåµÄ<a href=../Classes/Entity.html#databaseID>databaseID</a>ÊôĞÔ¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
-callbackÊÇÒ»¸ö¿ÉÑ¡µÄ»Øµ÷º¯Êı£¬Ö»ÓĞÒ»¸ö²ÎÊı£¬µ±ÊµÌåÃ»ÓĞ´ÓÊı¾İ¿â¼ì³öÊ±½«»á³É¹¦É¾³ıÊı¾İ£¬²ÎÊıÊÇTrue¡£Èç¹ûÊµÌåÒÑ¾­´ÓÊı¾İ¿â¼ì³öÄÇÃ´²ÎÊıÊÇ<a href="../Classes/Base.html">Base</a>ÊµÌåµÄ<a href=../../keywords.html#EntityCall>entityCall</a>¡£
+callbackÊÇÒ»¸ö¿ÉÑ¡µÄ»Øµ÷º¯Êı£¬Ö»ÓĞÒ»¸ö²ÎÊı£¬µ±ÊµÌåÃ»ÓĞ´ÓÊı¾İ¿â¼ì³öÊ±½«»á³É¹¦É¾³ıÊı¾İ£¬²ÎÊıÊÇTrue¡£Èç¹ûÊµÌåÒÑ¾­´ÓÊı¾İ¿â¼ì³öÄÇÃ´²ÎÊıÊÇ<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄ<a href=../../keywords.html#EntityCall>entityCall</a>¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>dbInterfaceName</i></span></td><td><span class="function_parameter_description">
@@ -1200,14 +1188,14 @@ Tuple, ×ÊÔ´ÁĞ±í¡£
 
 
 
-<a name="lookUpBaseByDBID"></a><p class="function_definition">
-<span class="function_definition">def lookUpBaseByDBID( <i>entityType, dbID, callback, dbInterfaceName</i> ):</span>
+<a name="lookUpEntityByDBID"></a><p class="function_definition">
+<span class="function_definition">def lookUpEntityByDBID( <i>entityType, dbID, callback, dbInterfaceName</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>¹¦ÄÜËµÃ÷£º</b><br><br>
 ²éÑ¯Ò»¸öÊµÌåÊÇ·ñ´ÓÊı¾İ¿â¼ì³ö£¬
-Èç¹ûÊµÌåÒÑ¾­´ÓÊı¾İ¿â¼ì³öÄÇÃ´<a href="KBEngine.html">KBEngine</a>·şÎñÏµÍ³½«´Ó»Øµ÷ÖĞ·µ»Ø<a href="../Classes/Base.html">Base</a>ÊµÌåµÄ<a href=../../keywords.html#EntityCall>entityCall</a>¡£
+Èç¹ûÊµÌåÒÑ¾­´ÓÊı¾İ¿â¼ì³öÄÇÃ´<a href="KBEngine.html">KBEngine</a>·şÎñÏµÍ³½«´Ó»Øµ÷ÖĞ·µ»Ø<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄ<a href=../../keywords.html#EntityCall>entityCall</a>¡£
 </div>
 
 <p>
@@ -1215,15 +1203,15 @@ Tuple, ×ÊÔ´ÁĞ±í¡£
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>entityType</i></span></td><td><span class="function_parameter_description">
-string£¬Ö¸¶¨Òª²éÑ¯µÄBaseÊµÌåµÄÀàĞÍ¡£ÓĞĞ§µÄÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>ÁĞ³ö¡£
+string£¬Ö¸¶¨Òª²éÑ¯µÄEntityÊµÌåµÄÀàĞÍ¡£ÓĞĞ§µÄÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>ÁĞ³ö¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>dbID</i></span></td><td><span class="function_parameter_description">
-Ö¸¶¨Òª²éÑ¯µÄ<a href="../Classes/Base.html">Base</a>ÊµÌåµÄÊı¾İ¿âID¡£Õâ¸öÊµÌåµÄÊı¾İ¿âID´æ´¢ÔÚ¸ÃÊµÌåµÄ<a href=../Classes/Base.html#databaseID>databaseID</a>ÊôĞÔ¡£
+Ö¸¶¨Òª²éÑ¯µÄ<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄÊı¾İ¿âID¡£Õâ¸öÊµÌåµÄÊı¾İ¿âID´æ´¢ÔÚ¸ÃÊµÌåµÄ<a href=../Classes/Entity.html#databaseID>databaseID</a>ÊôĞÔ¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
-callbackÖ»ÓĞÒ»¸ö²ÎÊı£¬µ±ÊµÌåÃ»ÓĞ´ÓÊı¾İ¿â¼ì³öÊ±½«»á·µ»ØTrue¡£Èç¹ûÊµÌåÒÑ¾­´ÓÊı¾İ¿â¼ì³öÄÇÃ´½«·µ»Ø<a href="../Classes/Base.html">Base</a>ÊµÌåµÄ<a href=../../keywords.html#EntityCall>entityCall</a>, ÆäËûÈÎºÎÇé¿ö·µ»ØFalse¡£
+callbackÖ»ÓĞÒ»¸ö²ÎÊı£¬µ±ÊµÌåÃ»ÓĞ´ÓÊı¾İ¿â¼ì³öÊ±½«»á·µ»ØTrue¡£Èç¹ûÊµÌåÒÑ¾­´ÓÊı¾İ¿â¼ì³öÄÇÃ´½«·µ»Ø<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄ<a href=../../keywords.html#EntityCall>entityCall</a>, ÆäËûÈÎºÎÇé¿ö·µ»ØFalse¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>dbInterfaceName</i></span></td><td><span class="function_parameter_description">
@@ -1705,7 +1693,7 @@ string£¬¶©µ¥ID¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>dbID</i></span></td><td><span class="function_parameter_description">
-uint64£¬ÊµÌåµÄÊı¾İ¿âID, ²Î¼û: <a href=../Classes/Base.html#databaseID>Base.databaseID</a>¡£
+uint64£¬ÊµÌåµÄÊı¾İ¿âID, ²Î¼û: <a href=../Classes/Entity.html#databaseID>Entity.databaseID</a>¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>success</i></span></td><td><span class="function_parameter_description">
@@ -1780,8 +1768,8 @@ bool£¬Èç¹û·µ»ØTrue£¬ÔòÔÊĞí½øÈë½ø³ÌÍË³öÁ÷³Ì£¬·µ»ØÆäËüÖµÔò½ø³Ì»á¹ıÒ»¶ÎÊ±¼äºóÔÙ´ÎÑ¯
 
 <div class="function_description">
 <b>¹¦ÄÜËµÃ÷£º</b><br><br>
-×Ô¶¯¼ÓÔØµÄÊµÌå´´½¨Ê±µÄ»Øµ÷£¬Èç¹û½Å±¾²ãÊµÏÖ´Ë»Øµ÷£¬ÄÇÃ´ÊµÌåÓÉ½Å±¾²ã´´½¨£¬·ñÔòÒıÇæÄ¬ÈÏÊ¹ÓÃcreateBaseAnywhereFromDBIDÀ´´´½¨ÊµÌå¡£<br><br>
-Õâ¸ö»Øµ÷±»µ÷ÓÃÊÇÓÉÓÚ<a href=../Classes/Base.html#writeToDB>Base.writeToDB</a>Ê±ÉèÖÃÁËÊµÌå×Ô¶¯¼ÓÔØ¡£
+×Ô¶¯¼ÓÔØµÄÊµÌå´´½¨Ê±µÄ»Øµ÷£¬Èç¹û½Å±¾²ãÊµÏÖ´Ë»Øµ÷£¬ÄÇÃ´ÊµÌåÓÉ½Å±¾²ã´´½¨£¬·ñÔòÒıÇæÄ¬ÈÏÊ¹ÓÃcreateEntityAnywhereFromDBIDÀ´´´½¨ÊµÌå¡£<br><br>
+Õâ¸ö»Øµ÷±»µ÷ÓÃÊÇÓÉÓÚ<a href=../Classes/Entity.html#writeToDB>Entity.writeToDB</a>Ê±ÉèÖÃÁËÊµÌå×Ô¶¯¼ÓÔØ¡£
 <br>×¢£º¸Ã»Øµ÷ÓÅÏÈÓÚonBaseAppReadyÖ´ĞĞ£¬¿ÉÔÚonBaseAppReadyÊ±¼ì²éÊÇ·ñÒÑ¼ÓÔØÊµÌå¡£
 </div>
 
@@ -1790,11 +1778,11 @@ bool£¬Èç¹û·µ»ØTrue£¬ÔòÔÊĞí½øÈë½ø³ÌÍË³öÁ÷³Ì£¬·µ»ØÆäËüÖµÔò½ø³Ì»á¹ıÒ»¶ÎÊ±¼äºóÔÙ´ÎÑ¯
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>entityType</i></span></td><td><span class="function_parameter_description">
-string£¬Ö¸¶¨Òª²éÑ¯µÄBaseÊµÌåµÄÀàĞÍ¡£ÓĞĞ§µÄÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>ÁĞ³ö¡£
+string£¬Ö¸¶¨Òª²éÑ¯µÄEntityÊµÌåµÄÀàĞÍ¡£ÓĞĞ§µÄÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>ÁĞ³ö¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>dbID</i></span></td><td><span class="function_parameter_description">
-Ö¸¶¨Òª²éÑ¯µÄ<a href="../Classes/Base.html">Base</a>ÊµÌåµÄÊı¾İ¿âID¡£Õâ¸öÊµÌåµÄÊı¾İ¿âID´æ´¢ÔÚ¸ÃÊµÌåµÄ<a href=../Classes/Base.html#databaseID>databaseID</a>ÊôĞÔ¡£
+Ö¸¶¨Òª²éÑ¯µÄ<a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄÊı¾İ¿âID¡£Õâ¸öÊµÌåµÄÊı¾İ¿âID´æ´¢ÔÚ¸ÃÊµÌåµÄ<a href=../Classes/Entity.html#databaseID>databaseID</a>ÊôĞÔ¡£
 </span></td></tr>
 
 
@@ -1834,7 +1822,7 @@ string£¬Ö¸¶¨Òª²éÑ¯µÄBaseÊµÌåµÄÀàĞÍ¡£ÓĞĞ§µÄÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.
 <div class="attribute_description">
 <b>ËµÃ÷£º</b><br><br>
 Õâ¸ö³£Á¿ÓÉ<a href="../Classes/Proxy.html">Proxy</a>.<a href=../Classes/Proxy.html#onLogOnAttempt>onLogOnAttempt</a>·µ»Ø£¬µ±Ç°ÇëÇóclient½«»áµÈ´ıÖ±µ½<a href="../Classes/Proxy.html">ProxyÊµÌå</a>ÍêÈ«Ïú»Ù£¬µ×²ãÔÙÍê³ÉºóĞø°ó¶¨¹ı³Ì¡£
-ÔÚÕâ·µ»ØÖ®Ç°<a href="../Classes/Proxy.html">Proxy</a>.<a href=../Classes/Base.html#destroy>destroy</a>»òÕß<a href="../Classes/Proxy.html">Proxy</a>.<a href=../Classes/Base.html#destroyCellEntity>destroyCellEntity</a>
+ÔÚÕâ·µ»ØÖ®Ç°<a href="../Classes/Proxy.html">Proxy</a>.<a href=../Classes/Entity.html#destroy>destroy</a>»òÕß<a href="../Classes/Proxy.html">Proxy</a>.<a href=../Classes/Entity.html#destroyCellEntity>destroyCellEntity</a>
 Ó¦¸Ã±»µ÷ÓÃ¡£
 </div>
 
@@ -1894,7 +1882,7 @@ string£¬Ö¸¶¨Òª²éÑ¯µÄBaseÊµÌåµÄÀàĞÍ¡£ÓĞĞ§µÄÊµÌåÀàĞÍÔÚ<res><a href=../../keywords.
 
 <div class="attribute_description">
 <b>ËµÃ÷£º</b><br><br>
-Õâ¸ö³£Á¿ÓÃÓÚ<a href="../Classes/Base.html#shouldAutoBackup">Base.shouldAutoBackup</a>ºÍ<a href="../Classes/Base.html#shouldAutoArchive">Base.shouldAutoArchive</a>ÊôĞÔ¡£Õâ¸öÖµÒâÖ¸ÔÚÏÂÒ»´ÎÈÏÎª¿ÉÒÔµÄÊ±ºò×Ô¶¯±¸·İ¸ÃÊµÌå£¬È»ºóÕâ¸öÊôĞÔ×Ô¶¯ÉèÎªFalse£¨0£©¡£
+Õâ¸ö³£Á¿ÓÃÓÚ<a href="../Classes/Entity.html#shouldAutoBackup">Entity.shouldAutoBackup</a>ºÍ<a href="../Classes/Entity.html#shouldAutoArchive">Entity.shouldAutoArchive</a>ÊôĞÔ¡£Õâ¸öÖµÒâÖ¸ÔÚÏÂÒ»´ÎÈÏÎª¿ÉÒÔµÄÊ±ºò×Ô¶¯±¸·İ¸ÃÊµÌå£¬È»ºóÕâ¸öÊôĞÔ×Ô¶¯ÉèÎªFalse£¨0£©¡£
 </div>
 
 <a name="component"></a><p class="attribute_definition">

@@ -1135,10 +1135,10 @@ cellÊµÌåµÄÊı¾İÍ¬Ê±±¸·İÔÚbaseÊµÌå£¬È·±£Óöµ½ÔÖÄÑ»Ö¸´Êı¾İÊ±Êı¾İÊÇ×îĞÂµÄ¡£
 
 <tr valign=top><td><span class="function_parameter_name"><i>shouldAutoLoad</i></span></td><td><span class="function_parameter_description">
 Õâ¸ö¿ÉÑ¡²ÎÊıÖ¸¶¨Õâ¸öÊµÌåÔÚ·şÎñÆô¶¯µÄÊ±ºòÊÇ·ñĞèÒª´ÓÊı¾İ¿â¼ÓÔØ¡£<br>
-×¢Òâ£º·şÎñÆ÷Æô¶¯Ê±×Ô¶¯¼ÓÔØÊµÌå£¬µ×²ãÄ¬ÈÏ½«»áµ÷ÓÃcreateBaseAnywhereFromDBID½«ÊµÌå´´½¨µ½Ò»¸ö¸ºÔØ×îĞ¡µÄbaseappÉÏ£¬Õû¸ö¹ı³Ì½«»áÔÚµÚÒ»¸öÆô¶¯µÄbaseappµ÷ÓÃonBaseAppReadyÖ®Ç°Íê³É¡£<br>
+×¢Òâ£º·şÎñÆ÷Æô¶¯Ê±×Ô¶¯¼ÓÔØÊµÌå£¬µ×²ãÄ¬ÈÏ½«»áµ÷ÓÃcreateEntityAnywhereFromDBID½«ÊµÌå´´½¨µ½Ò»¸ö¸ºÔØ×îĞ¡µÄbaseappÉÏ£¬Õû¸ö¹ı³Ì½«»áÔÚµÚÒ»¸öÆô¶¯µÄbaseappµ÷ÓÃonBaseAppReadyÖ®Ç°Íê³É¡£<br>
 <br>½Å±¾²ã¿ÉÒÔÔÚ¸öĞÔ»¯½Å±¾(kbengine_defaults.xml->baseapp->entryScriptFile¶¨Òå)ÖĞÖØĞÂÊµÏÖÊµÌåµÄ´´½¨·½·¨£¬ÀıÈç£º<br>
 def onAutoLoadEntityCreate(entityType, dbid): <br>
-    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KBEngine.createBaseFromDBID(entityType, dbid)<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;KBEngine.createEntityFromDBID(entityType, dbid)<br>
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>dbInterfaceName</i></span></td><td><span class="function_parameter_description">
@@ -1159,7 +1159,7 @@ string£¬¿ÉÑ¡²ÎÊı£¬Ö¸¶¨ÓÉÄ³¸öÊı¾İ¿â½Ó¿ÚÀ´Íê³É, Ä¬ÈÏÊ¹ÓÃ"default"½Ó¿Ú¡£Êı¾İ¿â½Ó¿ÚÓ
 <span class="function_definition">def onDestroy( <i>self</i> ):</span>
 </p>
 
-<div class="function_description">Èç¹ûÕâ¸öº¯ÊıÔÚ½Å±¾ÖĞÓĞÊµÏÖ£¬Õâ¸öº¯ÊıÔÚµ÷ÓÃ<a href="Base.html">Base</a>.<a href=Base.html#destroy>destroy</a>()ºó£¬ÔÚÊµ¼ÊÏú»ÙÖ®Ç°±»µ÷ÓÃ¡£
+<div class="function_description">Èç¹ûÕâ¸öº¯ÊıÔÚ½Å±¾ÖĞÓĞÊµÏÖ£¬Õâ¸öº¯ÊıÔÚµ÷ÓÃ<a href="Entity.html">Entity</a>.<a href=Entity.html#destroy>destroy</a>()ºó£¬ÔÚÊµ¼ÊÏú»ÙÖ®Ç°±»µ÷ÓÃ¡£
 Õâ¸öº¯ÊıÃ»ÓĞ²ÎÊı¡£
 </div>
 
@@ -1399,7 +1399,7 @@ float£¬¸ø¶¨´¥·¢Æ÷yÖá¸ß¶È£¬±ØĞë´óÓÚµÈÓÚ0¡£<br>
 <span class="function_definition">def onTeleport( <i>self</i> ):</span>
 </p>
 
-<div class="function_description">Èç¹ûÕâ¸öº¯ÊıÔÚ½Å±¾ÖĞÓĞÊµÏÖ£¬ÔÚÍ¨¹ıBase.teleportµ÷ÓÃ·¢ÉúµÄÊµÌå´«ËÍÖĞ£¬ÊµÌå(Real entity)±»´«ËÍÖ®Ç°µÄÊ±¿Ì´Ë·½·¨»á±»µ÷ÓÃ¡£<br>
+<div class="function_description">Èç¹ûÕâ¸öº¯ÊıÔÚ½Å±¾ÖĞÓĞÊµÏÖ£¬ÔÚÍ¨¹ıbaseappµÄEntity.teleportµ÷ÓÃ·¢ÉúµÄÊµÌå´«ËÍÖĞ£¬ÊµÌå(Real entity)±»´«ËÍÖ®Ç°µÄÊ±¿Ì´Ë·½·¨»á±»µ÷ÓÃ¡£<br>
 Çë×¢Òâ£¬ÔÚcellÉÏµ÷ÓÃÊµÌåµÄteleport²¢²»»á»Øµ÷´Ë½Ó¿Ú£¬Èç¹ûÄãĞèÒªÕâ¸ö¹¦ÄÜÇëÔÚ<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#teleport>teleport</a>Ö®ºóµ÷ÓÃ´Ë»Øµ÷¡£
 </div>
 
@@ -1531,7 +1531,7 @@ avatar.allClients.attack(monsterID£¬skillID, damage)<br><br>
 <span class="attribute_definition">base</span>
 </p>
 
-<div class="attribute_description">baseÊÇÓÃÓÚÁªÏµ<a href=../../baseapp/classes/Base.html>Base</a>ÊµÌåµÄentityCall¡£Õâ¸öÊôĞÔÊÇÖ»¶ÁµÄ£¬ÇÒÈç¹ûÕâ¸öÊµÌåÃ»ÓĞ¹ØÁªµÄ<a href=../../baseapp/classes/Base.html>Base</a>ÊµÌåÊ±ÊôĞÔÊÇNone¡£
+<div class="attribute_description">baseÊÇÓÃÓÚÁªÏµ<a href=../../baseapp/classes/Entity.html>Entity</a>ÊµÌåµÄentityCall¡£Õâ¸öÊôĞÔÊÇÖ»¶ÁµÄ£¬ÇÒÈç¹ûÕâ¸öÊµÌåÃ»ÓĞ¹ØÁªµÄ<a href=../../baseapp/classes/Entity.html>Entity</a>ÊµÌåÊ±ÊôĞÔÊÇNone¡£
 </div>
 
 <p>

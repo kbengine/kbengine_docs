@@ -85,8 +85,8 @@
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="databaseInterfaceName">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#databaseInterfaceName">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#databaseInterfaceName">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="createBaseRemotelyFromDB">
@@ -240,8 +240,8 @@
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="addTimer">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#addTimer">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#addTimer">
 		<param name="Name" value="Entity - KBEngine cell 文档">
 		<param name="Local" value="cellapp\Classes\Entity.html#addTimer">
 		</OBJECT>
@@ -258,8 +258,8 @@
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="delTimer">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#delTimer">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#delTimer">
 		<param name="Name" value="Entity - KBEngine cell 文档">
 		<param name="Local" value="cellapp\Classes\Entity.html#delTimer">
 		</OBJECT>
@@ -503,54 +503,54 @@
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="destroy">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#destroy">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#destroy">
 		<param name="Name" value="Entity - KBEngine cell 文档">
 		<param name="Local" value="cellapp\Classes\Entity.html#destroy">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="destroyCellEntity">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#destroyCellEntity">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#destroyCellEntity">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="teleport">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#teleport">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#teleport">
 		<param name="Name" value="Entity - KBEngine cell 文档">
 		<param name="Local" value="cellapp\Classes\Entity.html#teleport">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="writeToDB">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#writeToDB">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#writeToDB">
 		<param name="Name" value="Entity - KBEngine cell 文档">
 		<param name="Local" value="cellapp\Classes\Entity.html#writeToDB">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="onGetCell">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#onGetCell">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#onGetCell">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="onLoseCell">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#onLoseCell">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#onLoseCell">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="onPreArchive">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#onPreArchive">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#onPreArchive">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="onRestore">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#onRestore">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#onRestore">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="onTimer">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#onTimer">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#onTimer">
 		<param name="Name" value="Entity - KBEngine cell 文档">
 		<param name="Local" value="cellapp\Classes\Entity.html#onTimer">
 		</OBJECT>
@@ -623,28 +623,28 @@
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="onWriteToDB">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#onWriteToDB">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#onWriteToDB">
 		<param name="Name" value="Entity - KBEngine cell 文档">
 		<param name="Local" value="cellapp\Classes\Entity.html#onWriteToDB">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="cell">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#cell">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#cell">
 		<param name="Name" value="KBEngine - Keywords">
 		<param name="Local" value="keywords.html#cell">
 		<param name="Local" value="bots\Classes\Entity.html#cell">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="cellData">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#cellData">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#cellData">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="className">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#className">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#className">
 		<param name="Name" value="Entity - KBEngine cell 文档">
 		<param name="Local" value="cellapp\Classes\Entity.html#className">
 		<param name="Local" value="client\Classes\Entity.html#className">
@@ -656,20 +656,20 @@
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="client">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#client">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#client">
 		<param name="Name" value="KBEngine - Keywords">
 		<param name="Local" value="keywords.html#client">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="databaseID">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#databaseID">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#databaseID">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="id">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#id">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#id">
 		<param name="Name" value="Entity - KBEngine cell 文档">
 		<param name="Local" value="cellapp\Classes\Entity.html#id">
 		<param name="Local" value="bots\Classes\Entity.html#id">
@@ -677,20 +677,20 @@
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="isDestroyed">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#isDestroyed">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#isDestroyed">
 		<param name="Name" value="Entity - KBEngine cell 文档">
 		<param name="Local" value="cellapp\Classes\Entity.html#isDestroyed">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="shouldAutoArchive">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#shouldAutoArchive">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#shouldAutoArchive">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="shouldAutoBackup">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#shouldAutoBackup">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#shouldAutoBackup">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="spaceID">
@@ -796,25 +796,25 @@
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="onCreateCellFailure">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="onDestroy">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#onDestroy">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#onDestroy">
 		<param name="Name" value="Entity - KBEngine cell 文档">
 		<param name="Local" value="cellapp\Classes\Entity.html#onDestroy">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="createCellEntity">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#createCellEntity">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#createCellEntity">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="createCellEntityInNewSpace">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html#createCellEntityInNewSpace">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html#createCellEntityInNewSpace">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="delWatcher">
@@ -1202,8 +1202,8 @@
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="base">
-		<param name="Name" value="Base - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Base.html">
+		<param name="Name" value="Entity - KBEngine base 文档">
+		<param name="Local" value="baseapp\Classes\Entity.html">
 		<param name="Name" value="KBEngine - Base Types">
 		<param name="Local" value="basetypes.html">
 		</OBJECT>
