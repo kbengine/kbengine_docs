@@ -99,8 +99,8 @@
 			</OBJECT>
 		<UL>
 			<LI> <OBJECT type="text/sitemap">
-				<param name="Name" value="Base">
-				<param name="Local" value="baseapp\Classes\Base.html">
+				<param name="Name" value="Entity">
+				<param name="Local" value="baseapp\Classes\Entity.html">
 				</OBJECT>
 			<LI> <OBJECT type="text/sitemap">
 				<param name="Name" value="Proxy">

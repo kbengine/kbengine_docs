@@ -11,7 +11,7 @@ Title=KBEngine API
 
 
 [FILES]
-baseapp\Classes\Base.html
+baseapp\Classes\Entity.html
 baseapp\Classes\Proxy.html
 baseapp\Modules\KBEngine.html
 cellapp\Classes\Entity.html
