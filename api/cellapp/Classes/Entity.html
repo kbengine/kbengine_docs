@@ -173,14 +173,6 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#onTeleportFailure" class="function_list" >onTeleportFailure</a>( self ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#onTeleportSuccess" class="function_list" >onTeleportSuccess</a>( self, nearbyEntity ):</span>
-</td></tr>
-
-<tr><td>
 <span class="function_list">def <a href="#onTimer" class="function_list" >onTimer</a>( self, timerHandle, userData ):</span>
 </td></tr>
 
@@ -1403,33 +1395,6 @@ float，给定触发器y轴高度，必须大于等于0。<br>
 请注意，在cell上调用实体的teleport并不会回调此接口，如果你需要这个功能请在<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#teleport>teleport</a>之后调用此回调。
 </div>
 
-
-
-<a name="onTeleportFailure"></a><p class="function_definition">
-<span class="function_definition">def onTeleportFailure( <i>self</i> ):</span>
-</p>
-
-<div class="function_description">如果这个函数在脚本中有实现，当用户调用<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#teleport>teleport</a>失败时该回调被调用。
-</div>
-
-
-<a name="onTeleportSuccess"></a><p class="function_definition">
-<span class="function_definition">def onTeleportSuccess( <i>self, nearbyEntity</i> ):</span>
-</p>
-
-<div class="function_description">如果这个函数在脚本中有实现，当用户调用<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#teleport>teleport</a>成功时该回调被调用。
-</div>
-
-<p>
-<span class="function_parameter">参数：</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-
-<tr valign=top><td><span class="function_parameter_name"><i>nearbyEntity</i></span></td><td><span class="function_parameter_description">&nbsp;这个参数由用户调用
-	<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#teleport>teleport</a>时给出。这是一个real实体。
-<br><br>
-
-</table>
-</p>
 
 <a name="onTimer"></a><p class="function_definition">
 <span class="function_definition">def onTimer( <i>self, timerHandle, userData</i> ):</span>
