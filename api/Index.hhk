@@ -398,11 +398,13 @@
 		<param name="Name" value="onTeleportFailure">
 		<param name="Name" value="Entity - KBEngine cell ÎÄµµ">
 		<param name="Local" value="baseapp\Classes\Entity.html#onTeleportFailure">
+		<param name="Local" value="cellapp\Classes\Entity.html#onTeleportFailure">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="onTeleportSuccess">
 		<param name="Name" value="Entity - KBEngine cell ÎÄµµ">
 		<param name="Local" value="baseapp\Classes\Entity.html#onTeleportSuccess">
+		<param name="Local" value="cellapp\Classes\Entity.html#onTeleportSuccess">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="onWitnessed">
