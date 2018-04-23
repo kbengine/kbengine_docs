@@ -938,9 +938,9 @@
 		<param name="Local" value="cellapp\Modules\KBEngine.html#time">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="lookUpBaseByDBID">
+		<param name="Name" value="lookUpEntityByDBID">
 		<param name="Name" value="KBEngine - KBEngine base ÎÄµµ">
-		<param name="Local" value="baseapp\Modules\KBEngine.html#lookUpBaseByDBID">
+		<param name="Local" value="baseapp\Modules\KBEngine.html#lookUpEntityByDBID">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="quantumPassedPercent">
@@ -1114,9 +1114,9 @@
 		<param name="Local" value="bots\Modules\KBEngine.html#genUUID64">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="deleteBaseByDBID">
+		<param name="Name" value="deleteEntityByDBID">
 		<param name="Name" value="KBEngine - KBEngine base ÎÄµµ">
-		<param name="Local" value="baseapp\Modules\KBEngine.html#deleteBaseByDBID">
+		<param name="Local" value="baseapp\Modules\KBEngine.html#deleteEntityByDBID">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="deregisterWriteFileDescriptor">
