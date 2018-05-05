@@ -71,7 +71,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#moveToEntity" class="function_list" >moveToEntity</a>( self, destEntityID, velocity, distance, userData, faceMovement, moveVertically ):</span>
+<span class="function_list">def <a href="#moveToEntity" class="function_list" >moveToEntity</a>( self, destEntityID, velocity, distance, userData, faceMovement, moveVertically， offsetPos ):</span>
 </td></tr>
 
 <tr><td>
@@ -703,7 +703,7 @@ integer，它指定要移除的定时器id。
 </p>
 
 <a name="moveToEntity"></a><p class="function_definition">
-<span class="function_definition">def moveToEntity( <i>self, destEntityID, velocity, distance, userData, faceMovement, moveVertically</i> ):</span>
+<span class="function_definition">def moveToEntity( <i>self, destEntityID, velocity, distance, userData, faceMovement, moveVertically, offsetPos</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -755,6 +755,10 @@ bool，可选参数，如果实体面向移动方向则为true。如果是其它机制则为false。
 
 <tr valign=top><td><span class="function_parameter_name"><i>moveVertically</i></span></td><td><span class="function_parameter_description">
 bool，可选参数，设为True指移动为直线移动，设为False指贴着地面直线移动。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>offsetPos</i></span></td><td><span class="function_parameter_description">
+Vector3，可选参数，设置一定的偏移值，例如使移动目标位置位于实体的左侧。
 </span></td></tr>
 
 </table>

@@ -72,7 +72,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#moveToEntity" class="function_list" >moveToEntity</a>( self, destEntityID, velocity, distance, userData, faceMovement, moveVertically ):</span>
+<span class="function_list">def <a href="#moveToEntity" class="function_list" >moveToEntity</a>( self, destEntityID, velocity, distance, userData, faceMovement, moveVertically, offsetPos ):</span>
 </td></tr>
 
 <tr><td>
@@ -777,7 +777,7 @@ This function is rarely used but is useful for debugging.
 </p>
 
 <a name="moveToEntity"></a><p class="function_definition">
-<span class="function_definition">def moveToEntity( <i>self, destEntityID, velocity, distance, userData, faceMovement, moveVertically</i> ):</span>
+<span class="function_definition">def moveToEntity( <i>self, destEntityID, velocity, distance, userData, faceMovement, moveVertically, offsetPos</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -837,6 +837,10 @@ If it is other mechanism, it is False.
 <tr valign=top><td><span class="function_parameter_name"><i>moveVertically</i></span></td><td><span class="function_parameter_description">
 bool, optional parameter, set to True to move in a straight line, set to 
 False means to move in a straight line parallel to the ground.
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>offsetPos</i></span></td><td><span class="function_parameter_description">
+Vector3ï¼Œoptional parameter, Set a certain offset value, such as moving the target position to the left of the entity.
 </span></td></tr>
 
 </table>
@@ -1722,7 +1726,7 @@ the player)<br>
 <br>
 Example:<br>
 Avatar has player A, player B, and monster C in the View range.<br>
-avatar.allClients.attack(monsterID£¬skillID, damage)<br><br>
+avatar.allClients.attack(monsterIDï¿½ï¿½skillID, damage)<br><br>
 At this point, the player himself, player A's, and player B's clients will 
 all call the entity's attack method, and their client can invoke the 
 specified skill's attack action to perform.
