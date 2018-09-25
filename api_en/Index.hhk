@@ -834,6 +834,8 @@
 		<param name="Local" value="cellapp/Modules/KBEngine.html#executeRawDatabaseCommand">
 		<param name="Name" value="KBEngine - KBEngine base ÎÄµµ">
 		<param name="Local" value="baseapp/Modules/KBEngine.html#executeRawDatabaseCommand">
+		<param name="Name" value="KBEngine - Base Types">
+		<param name="Local" value="interfaces\Modules\KBEngine.html#executeRawDatabaseCommand">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="getResFullPath">
