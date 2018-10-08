@@ -23,6 +23,10 @@ control the dbmgr process to handle entity login queries and data access.
 <span class="function_list">def <a href="#delTimer" class="function_list" >delTimer</a>( id ):</span>
 </td></tr>
 
+<tr><td>
+<span class="function_list">def <a href="#executeRawDatabaseCommand" class="function_list" >executeRawDatabaseCommand</a>( command, callback, threadID, dbInterfaceName ):</span>
+</td></tr>
+
 </table>
 
 <h2><a href="#" onClick="obj=document.getElementById( 'callbacks' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">Callbacks</a></h2>
@@ -140,6 +144,86 @@ integer, specifies the timer id to remove.
 </table>
 </p>
 
+
+
+<a name="executeRawDatabaseCommand"></a><p class="function_definition">
+<span class="function_definition">def executeRawDatabaseCommand( <i>command, callback, threadID, dbInterfaceName</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>Function description:</b><br><br>
+This script function executes a database command on the database, which 
+is directly parsed by the relevant database.
+<br><br>
+Please note that using this function to modify entity data may not be 
+effective because if the entity has been checked out, the modified data 
+will still be archived by the entity and cause overwriting.<br>
+This function is strongly not recommended for reading or modifying entity data.
+</div>
+
+<p>
+<span class="function_parameter">parameters:</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>command</i></span></td><td><span class="function_parameter_description">
+This database command will be different for different database configuration 
+scenarios. For a MySQL database it is an SQL query.
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td>
+<td><p class="function_parameter_description">
+Optional parameter, callback object (for example, a function) called 
+back with the command execution result. <br>
+This callback has 4 parameters: result set, number of rows affected, 
+auto value, error message.<br>
+Example:<br>
+def sqlcallback(result, rows, insertid, error):
+&nbsp;&nbsp;&nbsp;&nbsp;print(result, rows, insertid, error)
+<br><br>
+
+As the above example shows, the result parameter corresponds to the 
+"result set", and the result set parameter is a row List. Each line is a 
+list of strings containing field values. If the command execution does not 
+return a result set (for example, a DELETE command), or the command 
+execution encounters an error, the result set is None.
+<br><br>
+
+The rows parameter is the "number of rows affected", which is an integer 
+indicating the number of rows affected by the command execution. This 
+parameter is only relevant for commands that do not return results 
+(such as DELETE).<br>
+This parameter is None if there is a result set return or if there is an 
+error in the command execution.
+<br><br>
+
+The insertid is a long value, similar to an entity's databaseID. When 
+successfully inserting data int a table with an auto long type field, it 
+returns the data at the time of insertion. <br>
+More information can be found in mysql's mysql_insert_id() method. In 
+addition, this parameter is only meaningful when the database type is 
+mysql.
+<br><br>
+
+Error corresponds to the "error message", when the command execution 
+encounters an error, this parameter is a string describing the error. 
+This parameter is None when the command execution has not occurred.
+</p></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>threadID</i></span></td><td><span class="function_parameter_description">
+int32, optional parameter, specifies a thread to process this command. 
+Users can use this parameter to control the execution order of certain 
+commands (dbmgr is multi-threaded). The default is not specified. If threadId 
+is the ID of an entity, it will be added to the entity's archive queue 
+and written by the thread one by one.
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>dbInterfaceName</i></span></td><td><span class="function_parameter_description">
+string, optional parameter, specifies a database interface. By default it 
+uses the "default" interface. Database interfaces are defined by kbengine_defaults.xml->dbmgr->databaseInterfaces.
+</span></td></tr>
+
+</table>
+</p>
 
 
 
