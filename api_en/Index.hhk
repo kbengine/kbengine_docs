@@ -64,6 +64,10 @@
 		<param name="Local" value="baseapp/Classes/Proxy.html#clientAddr">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="urlopen">
+		<param name="Local" value="interfaces\Modules\KBEngine.html#urlopen">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="clientEnabled">
 		<param name="Name" value="Proxy - KBEngine base ÎÄµµ">
 		<param name="Local" value="baseapp/Classes/Proxy.html#clientEnabled">

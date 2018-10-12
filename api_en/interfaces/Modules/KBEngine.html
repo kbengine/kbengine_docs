@@ -39,6 +39,10 @@ handles access of third-party platforms for the KBEngine server.
 <span class="function_list">def <a href="#executeRawDatabaseCommand" class="function_list" >executeRawDatabaseCommand</a>( command, callback, threadID, dbInterfaceName ):</span>
 </td></tr>
 
+<tr><td>
+<span class="function_list">def <a href="#urlopen" class="function_list" >urlopen</a>( url, callback, postData, headers ):</span>
+</td></tr>
+
 </table>
 
 <h2><a href="#" onClick="obj=document.getElementById( 'callbacks' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">Callbacks</a></h2>
@@ -356,6 +360,57 @@ and written by the thread one by one.
 <tr valign=top><td><span class="function_parameter_name"><i>dbInterfaceName</i></span></td><td><span class="function_parameter_description">
 string, optional parameter, specifies a database interface. By default it 
 uses the "default" interface. Database interfaces are defined by kbengine_defaults.xml->dbmgr->databaseInterfaces.
+</span></td></tr>
+
+</table>
+</p>
+
+
+
+<a name="urlopen"></a><p class="function_definition">
+<span class="function_definition">def urlopen( <i>url, callback, postData, headers</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>Function description:</b><br><br>
+This script function is providing an external HTTP/HTTPS asynchronous request.
+</div>
+
+<p>
+<span class="function_parameter">parameters:</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>url</i></span></td><td><span class="function_parameter_description">
+A valid HTTP/HTTPS URL.
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td>
+<td><p class="function_parameter_description">
+Optional parameter with a callback object (for example, a function) that requests execution results. This callback takes five parameters: the HTTP request return code (eg: 200), 
+the returned content, the returned HTTP protocol header, whether it succeeded, and the requested URL.
+<br>
+Example:<br>
+def 
+onHttpCallback(httpcode, data, headers, success, url):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(httpcode, data, headers, success, url)  <br>
+<br>
+As the above example shows:
+<br><p class="function_parameter_description"></p>httpcode:The parameter corresponds to the &quot;HTTP request return code&quot;, and is an integer value.
+<p class="function_parameter_description"></p>data:The parameter is &ldquo; returned content & rdquo;, it is a string.
+</p>
+<p class="function_parameter_description">headers:The parameter is the HTTP protocol header returned by the server, such as:"Content-Type": "application/x-www-form-urlencoded"。
+<p class="function_parameter_description">success:Whether the execution is successful or not, when the request execution has an error, it is False, and the error information can be further judged by httpcode.
+</p>
+<p class="function_parameter_description"></p>url:Is the URL used by the request.
+</p>
+</td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>postData</i></span></td><td><span class="function_parameter_description">
+The default is GET mode request server. If you need POST mode, please provide the content that needs POST. The engine will automatically request the server using POST.
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>headers</i></span></td><td><span class="function_parameter_description">
+HTTP header used when requesting, such as："Content-Type": "application/x-www-form-urlencoded"。
 </span></td></tr>
 
 </table>
