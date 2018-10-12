@@ -395,10 +395,10 @@ onHttpCallback(httpcode, data, headers, success, url):<br>
 &nbsp;&nbsp;&nbsp;&nbsp;print(httpcode, data, headers, success, url)  <br>
 <br>
 As the above example shows:
-<br><p class="function_parameter_description"></p>httpcode:The parameter corresponds to the &quot;HTTP request return code&quot;, and is an integer value.
+<br><p class="function_parameter_description"></p>httpcode:The parameter corresponds to the &quot;HTTP request return code&quot;, is an integer.
 <p class="function_parameter_description"></p>data:The parameter is &ldquo; returned content & rdquo;, it is a string.
 </p>
-<p class="function_parameter_description">headers:The parameter is the HTTP protocol header returned by the server, such as:"Content-Type": "application/x-www-form-urlencoded"。
+<p class="function_parameter_description">headers:The parameter is the HTTP protocol header returned by the server, such as:{"Content-Type": "application/x-www-form-urlencoded"}，is an dict.
 <p class="function_parameter_description">success:Whether the execution is successful or not, when the request execution has an error, it is False, and the error information can be further judged by httpcode.
 </p>
 <p class="function_parameter_description"></p>url:Is the URL used by the request.
@@ -406,11 +406,11 @@ As the above example shows:
 </td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>postData</i></span></td><td><span class="function_parameter_description">
-The default is GET mode request server. If you need POST mode, please provide the content that needs POST. The engine will automatically request the server using POST.
+The default is GET mode request server. If you need POST mode, please provide the content that needs POST. The engine will automatically request the server using POST, is an bytes.
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>headers</i></span></td><td><span class="function_parameter_description">
-HTTP header used when requesting, such as："Content-Type": "application/x-www-form-urlencoded"。
+HTTP header used when requesting, such as：{"Content-Type": "application/x-www-form-urlencoded"}，is an dict.
 </span></td></tr>
 
 </table>

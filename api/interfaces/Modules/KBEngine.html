@@ -323,7 +323,7 @@ string£¬¿ÉÑ¡²ÎÊı£¬Ö¸¶¨ÓÉÄ³¸öÊı¾İ¿â½Ó¿ÚÀ´Íê³É, Ä¬ÈÏÊ¹ÓÃ"default"½Ó¿Ú¡£Êı¾İ¿â½Ó¿ÚÓ
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>url</i></span></td><td><span class="function_parameter_description">
-ÓĞĞ§µÄHTTP/HTTPSÍøÖ·¡£
+ÓĞĞ§µÄHTTP/HTTPSÍøÖ·£¬×Ö·û´®ÀàĞÍ¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td>
@@ -339,7 +339,7 @@ onHttpCallback(httpcode, data, headers, success, url):<br>
 <br><p class="function_parameter_description"></p>httpcode:²ÎÊı¶ÔÓ¦µÄ¾ÍÊÇ&ldquo;HTTPÇëÇó·µ»ØÂë&rdquo;£¬Õâ¸ö½á¹û¼¯ºÏ²ÎÊıÊÇÒ»¸öÕûĞÎÖµ¡£
 <p class="function_parameter_description"></p>data:²ÎÊıÔòÊÇ&ldquo;·µ»ØµÄÄÚÈİ&rdquo;£¬ËüÊÇÒ»¸ö×Ö·û´®¡£
 </p>
-<p class="function_parameter_description">headers:²ÎÊıÊÇ&ldquo;·şÎñÆ÷·µ»ØµÄHTTPĞ­ÒéÍ·&rdquo;£¬Èç£º"Content-Type": "application/x-www-form-urlencoded"¡£
+<p class="function_parameter_description">headers:²ÎÊıÊÇ&ldquo;·şÎñÆ÷·µ»ØµÄHTTPĞ­ÒéÍ·&rdquo;£¬Èç£º{"Content-Type": "application/x-www-form-urlencoded"}£¬ËüÊÇÒ»¸ö×Öµä¡£
 <p class="function_parameter_description"></p>success:Ôò¶ÔÓ¦ÁË&ldquo;Ö´ĞĞÊÇ·ñ³É¹¦&rdquo;£¬µ±ÇëÇóÖ´ĞĞÓĞ´íÎóÊ±£¬ÎªFalse£¬¿ÉÒÔÍ¨¹ıhttpcode½øÒ»²½ÅĞ¶Ï´íÎóĞÅÏ¢¡£
 </p>
 <p class="function_parameter_description">url:ÊÇ&ldquo;ÇëÇóËùÓÃµÄÍøÖ·¡£
@@ -347,11 +347,11 @@ onHttpCallback(httpcode, data, headers, success, url):<br>
 </td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>postData</i></span></td><td><span class="function_parameter_description">
-Ä¬ÈÏÊÇGET·½Ê½ÇëÇó·şÎñÆ÷£¬Èç¹ûĞèÒªPOST·½Ê½ÇëÌá¹©ĞèÒªPOSTµÄÄÚÈİ£¬ÒıÇæ½«×Ô¶¯Ê¹ÓÃPOST·½Ê½ÇëÇó·şÎñÆ÷¡£
+Ä¬ÈÏÊÇGET·½Ê½ÇëÇó·şÎñÆ÷£¬Èç¹ûĞèÒªPOST·½Ê½ÇëÌá¹©ĞèÒªPOSTµÄÄÚÈİ£¬ÒıÇæ½«×Ô¶¯Ê¹ÓÃPOST·½Ê½ÇëÇó·şÎñÆ÷£¬ËüÊÇÒ»¸öbytes¡£
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>headers</i></span></td><td><span class="function_parameter_description">
-ÇëÇóÊ±Ê¹ÓÃµÄHTTPÍ·£¬Èç£º"Content-Type": "application/x-www-form-urlencoded"¡£
+ÇëÇóÊ±Ê¹ÓÃµÄHTTPÍ·£¬Èç£º{"Content-Type": "application/x-www-form-urlencoded"}£¬ËüÊÇÒ»¸ö×Öµä¡£
 </span></td></tr>
 
 </table>
