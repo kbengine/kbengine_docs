@@ -22,6 +22,10 @@
 <span class="function_list">def <a href="#delTimer" class="function_list" >delTimer</a>( id ):</span>
 </td></tr>
 
+<tr><td>
+<span class="function_list">def <a href="#urlopen" class="function_list" >urlopen</a>( url, callback, postData, headers ):</span>
+</td></tr>
+
 </table>
 
 <h2><a href="#" onClick="obj=document.getElementById( 'callbacks' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">回调函数</a></h2>
@@ -127,6 +131,55 @@ integer，它指定要移除的定时器id。
 </table>
 </p>
 
+
+
+<a name="urlopen"></a><p class="function_definition">
+<span class="function_definition">def urlopen( <i>url, callback, postData, headers</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+这个脚本函数在提供对外HTTP/HTTPS异步请求。
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>url</i></span></td><td><span class="function_parameter_description">
+有效的HTTP/HTTPS网址，字符串类型。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td>
+<td><p class="function_parameter_description">
+可选参数，带有请求执行结果的回调对象（比如说是一个函数）。这个回调带有5个参数：HTTP请求返回码（如：200)，返回的内容，返回的HTTP协议头，是否成功，请求的网址。
+<br>
+声明样例：<br>
+def 
+onHttpCallback(httpcode, data, headers, success, url):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(httpcode, data, headers, success, url)  <br>
+<br>
+如同上面的例子所示:
+<br><p class="function_parameter_description"></p>httpcode:参数对应的就是&ldquo;HTTP请求返回码&rdquo;，这个结果集合参数是一个整形值。
+<p class="function_parameter_description"></p>data:参数则是&ldquo;返回的内容&rdquo;，它是一个字符串。
+</p>
+<p class="function_parameter_description">headers:参数是&ldquo;服务器返回的HTTP协议头&rdquo;，如：{"Content-Type": "application/x-www-form-urlencoded"}，它是一个字典。
+<p class="function_parameter_description"></p>success:则对应了&ldquo;执行是否成功&rdquo;，当请求执行有错误时，为False，可以通过httpcode进一步判断错误信息。
+</p>
+<p class="function_parameter_description">url:是&ldquo;请求所用的网址。
+</p>
+</td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>postData</i></span></td><td><span class="function_parameter_description">
+可选参数，默认是GET方式请求服务器，如果需要POST方式请提供需要POST的内容，引擎将自动使用POST方式请求服务器，它是一个bytes。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>headers</i></span></td><td><span class="function_parameter_description">
+可选参数，请求时使用的HTTP头，如：{"Content-Type": "application/x-www-form-urlencoded"}，它是一个字典。
+</span></td></tr>
+
+</table>
+</p>
 
 
 

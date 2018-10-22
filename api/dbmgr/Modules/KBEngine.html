@@ -26,6 +26,10 @@
 <span class="function_list">def <a href="#executeRawDatabaseCommand" class="function_list" >executeRawDatabaseCommand</a>( command, callback, threadID, dbInterfaceName ):</span>
 </td></tr>
 
+<tr><td>
+<span class="function_list">def <a href="#urlopen" class="function_list" >urlopen</a>( url, callback, postData, headers ):</span>
+</td></tr>
+
 </table>
 
 <h2><a href="#" onClick="obj=document.getElementById( 'callbacks' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">»Øµ÷º¯Êı</a></h2>
@@ -184,6 +188,56 @@ int32£¬¿ÉÑ¡²ÎÊı£¬Ö¸¶¨Ò»¸öÏß³ÌÀ´´¦Àí±¾ÌõÃüÁî¡£ÓÃ»§¿ÉÒÔÍ¨¹ıÕâ¸ö²ÎÊı¿ØÖÆÄ³Ò»ÀàÃüÁîµ
 
 <tr valign=top><td><span class="function_parameter_name"><i>dbInterfaceName</i></span></td><td><span class="function_parameter_description">
 string£¬¿ÉÑ¡²ÎÊı£¬Ö¸¶¨ÓÉÄ³¸öÊı¾İ¿â½Ó¿ÚÀ´Íê³É, Ä¬ÈÏÊ¹ÓÃ"default"½Ó¿Ú¡£Êı¾İ¿â½Ó¿ÚÓÉkbengine_defaults.xml->dbmgr->databaseInterfacesÖĞ¶¨Òå¡£
+</span></td></tr>
+
+</table>
+</p>
+
+
+
+<a name="urlopen"></a><p class="function_definition">
+<span class="function_definition">def urlopen( <i>url, callback, postData, headers</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>¹¦ÄÜËµÃ÷£º</b><br><br>
+Õâ¸ö½Å±¾º¯ÊıÔÚÌá¹©¶ÔÍâHTTP/HTTPSÒì²½ÇëÇó¡£
+</div>
+
+<p>
+<span class="function_parameter">²ÎÊı£º</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>url</i></span></td><td><span class="function_parameter_description">
+ÓĞĞ§µÄHTTP/HTTPSÍøÖ·£¬×Ö·û´®ÀàĞÍ¡£
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td>
+<td><p class="function_parameter_description">
+¿ÉÑ¡²ÎÊı£¬´øÓĞÇëÇóÖ´ĞĞ½á¹ûµÄ»Øµ÷¶ÔÏó£¨±ÈÈçËµÊÇÒ»¸öº¯Êı£©¡£Õâ¸ö»Øµ÷´øÓĞ5¸ö²ÎÊı£ºHTTPÇëÇó·µ»ØÂë£¨Èç£º200)£¬·µ»ØµÄÄÚÈİ£¬·µ»ØµÄHTTPĞ­ÒéÍ·£¬ÊÇ·ñ³É¹¦£¬ÇëÇóµÄÍøÖ·¡£
+<br>
+ÉùÃ÷ÑùÀı£º<br>
+def 
+onHttpCallback(httpcode, data, headers, success, url):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(httpcode, data, headers, success, url)  <br>
+<br>
+ÈçÍ¬ÉÏÃæµÄÀı×ÓËùÊ¾:
+<br><p class="function_parameter_description"></p>httpcode:²ÎÊı¶ÔÓ¦µÄ¾ÍÊÇ&ldquo;HTTPÇëÇó·µ»ØÂë&rdquo;£¬Õâ¸ö½á¹û¼¯ºÏ²ÎÊıÊÇÒ»¸öÕûĞÎÖµ¡£
+<p class="function_parameter_description"></p>data:²ÎÊıÔòÊÇ&ldquo;·µ»ØµÄÄÚÈİ&rdquo;£¬ËüÊÇÒ»¸ö×Ö·û´®¡£
+</p>
+<p class="function_parameter_description">headers:²ÎÊıÊÇ&ldquo;·şÎñÆ÷·µ»ØµÄHTTPĞ­ÒéÍ·&rdquo;£¬Èç£º{"Content-Type": "application/x-www-form-urlencoded"}£¬ËüÊÇÒ»¸ö×Öµä¡£
+<p class="function_parameter_description"></p>success:Ôò¶ÔÓ¦ÁË&ldquo;Ö´ĞĞÊÇ·ñ³É¹¦&rdquo;£¬µ±ÇëÇóÖ´ĞĞÓĞ´íÎóÊ±£¬ÎªFalse£¬¿ÉÒÔÍ¨¹ıhttpcode½øÒ»²½ÅĞ¶Ï´íÎóĞÅÏ¢¡£
+</p>
+<p class="function_parameter_description">url:ÊÇ&ldquo;ÇëÇóËùÓÃµÄÍøÖ·¡£
+</p>
+</td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>postData</i></span></td><td><span class="function_parameter_description">
+¿ÉÑ¡²ÎÊı£¬Ä¬ÈÏÊÇGET·½Ê½ÇëÇó·şÎñÆ÷£¬Èç¹ûĞèÒªPOST·½Ê½ÇëÌá¹©ĞèÒªPOSTµÄÄÚÈİ£¬ÒıÇæ½«×Ô¶¯Ê¹ÓÃPOST·½Ê½ÇëÇó·şÎñÆ÷£¬ËüÊÇÒ»¸öbytes¡£
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>headers</i></span></td><td><span class="function_parameter_description">
+¿ÉÑ¡²ÎÊı£¬ÇëÇóÊ±Ê¹ÓÃµÄHTTPÍ·£¬Èç£º{"Content-Type": "application/x-www-form-urlencoded"}£¬ËüÊÇÒ»¸ö×Öµä¡£
 </span></td></tr>
 
 </table>

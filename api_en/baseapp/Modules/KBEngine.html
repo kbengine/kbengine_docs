@@ -172,6 +172,10 @@ of <a href="../Classes/Entity.html">entities</a>.
 <span class="function_list">def <a href="#time" class="function_list" >time</a>(  ):</span>
 </td></tr>
 
+<tr><td>
+<span class="function_list">def <a href="#urlopen" class="function_list" >urlopen</a>( url, callback, postData, headers ):</span>
+</td></tr>
+
 </table>
 
 <h2><a href="#" onClick="obj=document.getElementById( 'callbacks' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">Callback functions</a></h2>
@@ -554,7 +558,7 @@ the attributes of the cell entity.
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
 An optional callback function that is called when the entity is created. 
-The callback takes one argument, on success it is an <a href="../Classes/Entity.html">Entity</a>ÊµÌåµÄ<a href=../../keywords.html#EntityCall>entityCall</a>, 
+The callback takes one argument, on success it is an <a href="../Classes/Entity.html">Entity</a>Êµï¿½ï¿½ï¿½<a href=../../keywords.html#EntityCall>entityCall</a>, 
 on failure it is None.
 </span></td></tr>
 
@@ -899,7 +903,7 @@ listed in <res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a
 
 <tr valign=top><td><span class="function_parameter_name"><i>dbID</i></span></td><td><span class="function_parameter_description">
 Specifies the database ID of the entity to delete. The database ID of the 
-entity is stored in the entity's databaseID attribute.<a href=../Classes/Entity.html#databaseID>databaseID</a>ÊôÐÔ¡£
+entity is stored in the entity's databaseID attribute.<a href=../Classes/Entity.html#databaseID>databaseID</a>ï¿½ï¿½ï¿½Ô¡ï¿½
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
@@ -1646,6 +1650,59 @@ the configuration file <a href=../../keywords.html#kbengine.xml>kbengine.xml</a>
 </td></tr>
 </table>
 </p>
+
+
+<a name="urlopen"></a><p class="function_definition">
+<span class="function_definition">def urlopen( <i>url, callback, postData, headers</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>Function description:</b><br><br>
+This script function is providing an external HTTP/HTTPS asynchronous request.
+</div>
+
+<p>
+<span class="function_parameter">parameters:</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>url</i></span></td><td><span class="function_parameter_description">
+A valid HTTP/HTTPS URL.
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td>
+<td><p class="function_parameter_description">
+Optional parameter with a callback object (for example, a function) that requests execution results. This callback takes five parameters: the HTTP request return code (eg: 200), 
+the returned content, the returned HTTP protocol header, whether it succeeded, and the requested URL.
+<br>
+Example:<br>
+def 
+onHttpCallback(httpcode, data, headers, success, url):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(httpcode, data, headers, success, url)  <br>
+<br>
+As the above example shows:
+<br><p class="function_parameter_description"></p>httpcode:The parameter corresponds to the &quot;HTTP request return code&quot;, is an integer.
+<p class="function_parameter_description"></p>data:The parameter is &ldquo; returned content & rdquo;, it is a string.
+</p>
+<p class="function_parameter_description">headers:The parameter is the HTTP protocol header returned by the server, such as:{"Content-Type": "application/x-www-form-urlencoded"}, is an dict.
+<p class="function_parameter_description">success:Whether the execution is successful or not, when the request execution has an error, it is False, and the error information can be further judged by httpcode.
+</p>
+<p class="function_parameter_description"></p>url:Is the URL used by the request.
+</p>
+</td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>postData</i></span></td><td><span class="function_parameter_description">
+Optional parameter, the default is GET mode request server. If you need POST mode, please provide the content that needs POST. The engine will automatically request the server using POST, is an bytes.
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>headers</i></span></td><td><span class="function_parameter_description">
+Optional parameter, HTTP header used when requesting, such asï¼š{"Content-Type": "application/x-www-form-urlencoded"}, is an dict.
+</span></td></tr>
+
+</table>
+</p>
+
+	
+
 
 <hr>
 <h2>Callback functions documentation</h2>
