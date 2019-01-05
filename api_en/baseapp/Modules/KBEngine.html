@@ -137,7 +137,7 @@ of <a href="../Classes/Entity.html">entities</a>.
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#open" class="function_list" >open</a>( res, mode ):</span>
+<span class="function_list">def <a href="#open" class="function_list" >open</a>( res, mode, encoding ):</span>
 </td></tr>
 
 <tr><td>
@@ -1418,7 +1418,7 @@ string, the absolute path of the resource.
 
 
 <a name="open"></a><p class="function_definition">
-<span class="function_definition">def open( <i>res, mode</i> ):</span>
+<span class="function_definition">def open( <i>res, mode, encoding</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -1436,7 +1436,8 @@ string, the relative path of the resource.
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>mode</i></span></td><td><span class="function_parameter_description">
-string, file operation mode:<br>
+string, optional parameter, the default is 'r', file operation mode:<br>
+r Open in only read mode,<br>
 w Open in write mode,<br>
 a Open in append mode (Start from EOF, create new file if necessary) <br>
 r+ Open <br>
@@ -1448,6 +1449,10 @@ ab Opens in binary append mode (see a) <br>
 rb+ Opens in binary read and write mode (see r+) <br>
 wb+ Opens in binary read and write mode (see w+ ) <br>
 ab+ opens in binary read/write mode (see a+) <br>
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>encoding</i></span></td><td><span class="function_parameter_description">
+string, optional parameter, the name of the encoding used to decode or encode the file, the default encoding is platform dependent.
 </span></td></tr>
 
 </table>
