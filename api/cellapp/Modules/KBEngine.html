@@ -950,7 +950,7 @@ string, 资源的绝对路径。
 
 
 <a name="open"></a><p class="function_definition">
-<span class="function_definition">def open( <i>res, mode</i> ):</span>
+<span class="function_definition">def open( <i>res, mode, encoding</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -968,7 +968,8 @@ string，资源的相对路径。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>mode</i></span></td><td><span class="function_parameter_description">
-string，文件操作模式：<br>
+string，可选参数，默认值是'r'，文件操作模式：<br>
+r     以只读方式打开，<br>
 w     以写方式打开，<br>
 a     以追加模式打开 (从 EOF 开始, 必要时创建新文件)<br>
 r+     以读写模式打开<br>
@@ -980,6 +981,10 @@ ab     以二进制追加模式打开 (参见 a )<br>
 rb+    以二进制读写模式打开 (参见 r+ )<br>
 wb+    以二进制读写模式打开 (参见 w+ )<br>
 ab+    以二进制读写模式打开 (参见 a+ )<br>
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>encoding</i></span></td><td><span class="function_parameter_description">
+string，可选参数，用于解码或编码文件的编码的名称，默认编码与平台相关。
 </span></td></tr>
 
 </table>
