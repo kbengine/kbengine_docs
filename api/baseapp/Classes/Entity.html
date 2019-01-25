@@ -19,7 +19,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#createCellEntity" class="function_list" >createCellEntity</a>( self, cellEntityMB ):</span>
+<span class="function_list">def <a href="#createCellEntity" class="function_list" >createCellEntity</a>( self, cellEntityCall ):</span>
 </td></tr>
 
 <tr><td>
@@ -39,7 +39,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#teleport" class="function_list" >teleport</a>( self, baseEntityMB ):</span>
+<span class="function_list">def <a href="#teleport" class="function_list" >teleport</a>( self, baseEntityCall ):</span>
 </td></tr>
 
 <tr><td>
@@ -202,7 +202,7 @@ integer，指定底层回调"<a href="#onTimer">onTimer</a>"时的userArg参数值。
 </p>
 
 <a name="createCellEntity"></a><p class="function_definition">
-<span class="function_definition">def createCellEntity( <i>self, cellEntityMB</i> ):</span>
+<span class="function_definition">def createCellEntity( <i>self, cellEntityCall</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -217,7 +217,7 @@ integer，指定底层回调"<a href="#onTimer">onTimer</a>"时的userArg参数值。
 <span class="function_parameter">参数：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><span class="function_parameter_name"><i>cellEntityMB</i></span></td><td><span class="function_parameter_description">
+<tr valign=top><td><span class="function_parameter_name"><i>cellEntityCall</i></span></td><td><span class="function_parameter_description">
 一个可选的<a href=../../keywords.html#EntityCall>CellEntityCall</a>参数，
 指定哪个空间里创建这个cell实体的。
 <br><br>
@@ -324,7 +324,7 @@ integer，它指定要移除的定时器id。
 </div>
 
 <a name="teleport"></a><p class="function_definition">
-<span class="function_definition">def teleport( <i>self, baseEntityMB</i> ):</span>
+<span class="function_definition">def teleport( <i>self, baseEntityCall</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -338,8 +338,8 @@ integer，它指定要移除的定时器id。
 <span class="function_parameter">参数：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><span class="function_parameter_name"><i>baseEntityMB</i></span></td><td><span class="function_parameter_description">
-实体应该移到的指定实体所在的空间，baseEntityMB即指定实体的<a href=../../keywords.html#EntityCall>EntityCall</a>。当成功的时候，与此参数相关联的cell实体会被传入到Entity.onTeleportSuccess函数。
+<tr valign=top><td><span class="function_parameter_name"><i>baseEntityCall</i></span></td><td><span class="function_parameter_description">
+实体应该移到的指定实体所在的空间，baseEntityCall即指定实体的<a href=../../keywords.html#EntityCall>EntityCall</a>。当成功的时候，与此参数相关联的cell实体会被传入到Entity.onTeleportSuccess函数。
 </span></td></tr>
 
 </table>
