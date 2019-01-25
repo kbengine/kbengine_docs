@@ -20,7 +20,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#createCellEntity" class="function_list" >createCellEntity</a>( self, cellEntityMB ):</span>
+<span class="function_list">def <a href="#createCellEntity" class="function_list" >createCellEntity</a>( self, cellEntityCall ):</span>
 </td></tr>
 
 <tr><td>
@@ -40,7 +40,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#teleport" class="function_list" >teleport</a>( self, baseEntityMB ):</span>
+<span class="function_list">def <a href="#teleport" class="function_list" >teleport</a>( self, baseEntityCall ):</span>
 </td></tr>
 
 <tr><td>
@@ -218,7 +218,7 @@ remove the timer using <a href="#delTimer">delTimer</a>.
 </p>
 
 <a name="createCellEntity"></a><p class="function_definition">
-<span class="function_definition">def createCellEntity( <i>self, cellEntityMB</i> ):</span>
+<span class="function_definition">def createCellEntity( <i>self, cellEntityCall</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -236,7 +236,7 @@ the entity's position and orientation (roll, pitch, yaw).
 <span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><span class="function_parameter_name"><i>cellEntityMB</i></span></td><td><span class="function_parameter_description">
+<tr valign=top><td><span class="function_parameter_name"><i>cellEntityCall</i></span></td><td><span class="function_parameter_description">
 <a href=../../keywords.html#EntityCall>CellEntityCall</a> parameter 
 that specifies which space to create this cell entity in.
 <br><br>
@@ -373,7 +373,7 @@ cell entity.
 </div>
 
 <a name="teleport"></a><p class="function_definition">
-<span class="function_definition">def teleport( <i>self, baseEntityMB</i> ):</span>
+<span class="function_definition">def teleport( <i>self, baseEntityCall</i> ):</span>
 </p>
 
 <div class="function_description">
@@ -389,7 +389,7 @@ can be used to move the entity to a suitable location in the new space.
 <span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><span class="function_parameter_name"><i>baseEntityMB</i></span></td><td><span class="function_parameter_description">
+<tr valign=top><td><span class="function_parameter_name"><i>baseEntityCall</i></span></td><td><span class="function_parameter_description">
 The <a href=../../keywords.html#EntityCall>EntityCall</a> of the entity 
 that is in the space this entity will be teleported. When successful, the 
 cell entity associated with this parameter is passed to the Entity.onTeleportSuccess 
