@@ -1,6 +1,7 @@
 <html>
 
 <head>
+<meta charset="UTF-8">
 <title>KBEngine - Keywords</title>
 <link href="style.css" rel="stylesheet" type="text/css">
 </head>
@@ -10,7 +11,7 @@
 <tr><td align=left style="background:#708090"> <font size=15 color=#ffffff> KBEngine </font></td></tr>
 </table> <hr>
 
-<h1>¹Ø¼ü´ÊÊÍÒå</h1>
+<h1>å…³é”®è¯é‡Šä¹‰</h1>
 <br></br>
 
 <a name="EntityCall"></a><p class="function_definition">
@@ -19,20 +20,20 @@
 
 <div class="function_description">
 <br><br>
-½Å±¾²ãÓëÊµÌåÔ¶³Ì½»»¥µÄ³£¹æÊÖ¶Î(ÆäËû²Î¿¼£º<a href=cellapp/classes/Entity.html#allClients>allClients</a>¡¢<a href=cellapp/classes/Entity.html#otherClients>otherClients</a>¡¢<a href=cellapp/classes/Entity.html#clientEntity>clientEntity</a>)¡£<br>
-EntityCall¶ÔÏóÔÚC++µ×²ãÊµÏÖ·Ç³£¼òµ¥£¬ËüÖ»°üº¬ÁËÊµÌåµÄID¡¢Ä¿µÄµØµÄµØÖ·¡¢ÊµÌåÀàÐÍ¡¢EntityCallÀàÐÍ¡£µ±ÓÃ»§ÇëÇóÒ»´ÎÔ¶³Ì½»»¥Ê±£¬µ×²ãÊ×ÏÈÄÜ¹»Í¨¹ýÊµÌåÀàÐÍÕÒµ½ÊµÌå¶¨ÒåµÄÃèÊö£¬<br>
-Í¨¹ýÊµÌå¶¨ÒåµÄÃèÊö¶ÔÓÃ»§ÊäÈëµÄÊý¾Ý½øÐÐ¼ì²é£¬Èç¹û¼ì²éºÏ·¨ÄÇÃ´µ×²ã½«Êý¾Ý´ò°ü²¢·¢ÍùÄ¿µÄµØ£¬Ä¿µÄµØ½ø³Ì¸ù¾ÝÐ­Òé½øÐÐ½â°ü×îÖÕµ÷ÓÃµ½½Å±¾²ã¡£<br><br>
+è„šæœ¬å±‚ä¸Žå®žä½“è¿œç¨‹äº¤äº’çš„å¸¸è§„æ‰‹æ®µ(å…¶ä»–å‚è€ƒï¼š<a href=cellapp/classes/Entity.html#allClients>allClients</a>ã€<a href=cellapp/classes/Entity.html#otherClients>otherClients</a>ã€<a href=cellapp/classes/Entity.html#clientEntity>clientEntity</a>)ã€‚<br>
+EntityCallå¯¹è±¡åœ¨C++åº•å±‚å®žçŽ°éžå¸¸ç®€å•ï¼Œå®ƒåªåŒ…å«äº†å®žä½“çš„IDã€ç›®çš„åœ°çš„åœ°å€ã€å®žä½“ç±»åž‹ã€EntityCallç±»åž‹ã€‚å½“ç”¨æˆ·è¯·æ±‚ä¸€æ¬¡è¿œç¨‹äº¤äº’æ—¶ï¼Œåº•å±‚é¦–å…ˆèƒ½å¤Ÿé€šè¿‡å®žä½“ç±»åž‹æ‰¾åˆ°å®žä½“å®šä¹‰çš„æè¿°ï¼Œ<br>
+é€šè¿‡å®žä½“å®šä¹‰çš„æè¿°å¯¹ç”¨æˆ·è¾“å…¥çš„æ•°æ®è¿›è¡Œæ£€æŸ¥ï¼Œå¦‚æžœæ£€æŸ¥åˆæ³•é‚£ä¹ˆåº•å±‚å°†æ•°æ®æ‰“åŒ…å¹¶å‘å¾€ç›®çš„åœ°ï¼Œç›®çš„åœ°è¿›ç¨‹æ ¹æ®åè®®è¿›è¡Œè§£åŒ…æœ€ç»ˆè°ƒç”¨åˆ°è„šæœ¬å±‚ã€‚<br><br>
 
-×¢Òâ: EntityCallÖ»ÄÜµ÷ÓÃÆä¶ÔÓ¦defÎÄ¼þÖÐÉùÃ÷¹ýµÄ·½·¨£¬²»ÄÜ·ÃÎÊÊµÌåµÄÊôÐÔÒÔ¼°ÆäËûÈÎºÎÐÅÏ¢¡£
+æ³¨æ„: EntityCallåªèƒ½è°ƒç”¨å…¶å¯¹åº”defæ–‡ä»¶ä¸­å£°æ˜Žè¿‡çš„æ–¹æ³•ï¼Œä¸èƒ½è®¿é—®å®žä½“çš„å±žæ€§ä»¥åŠå…¶ä»–ä»»ä½•ä¿¡æ¯ã€‚
 
 <br><br>
-Ò»¸öÊµÌå×î¶à¿ÉÒÔ°üº¬Èý¸ö²¿·Ö£º<br>
-client£º µ±ÊµÌå°üÀ¨¿Í»§¶Ë²¿·ÖÊ±(Í¨³£ÎªÍæ¼Ò)£¬ÔÚ·þÎñ¶Ë¿ÉÒÔ·ÃÎÊÊµÌåµÄclient(EntityCall)ÊôÐÔ¡£<br>
-base£ºµ±ÊµÌåµÄÒ»²¿·Ö´´½¨ÔÚBaseappÊ±£¬ÔÚ·Çµ±Ç°BaseappÖÐ¿ÉÒÔ·ÃÎÊÊµÌåµÄbase(EntityCall)ÊôÐÔ¡£<br>
-cell£ºµ±ÊµÌåµÄÒ»²¿·Ö´´½¨ÔÚCellappÊ±£¬ÔÚ·Çµ±Ç°CellappÖÐ¿ÉÒÔ·ÃÎÊÊµÌåµÄcell(EntityCall)ÊôÐÔ¡£<br>
+ä¸€ä¸ªå®žä½“æœ€å¤šå¯ä»¥åŒ…å«ä¸‰ä¸ªéƒ¨åˆ†ï¼š<br>
+clientï¼š å½“å®žä½“åŒ…æ‹¬å®¢æˆ·ç«¯éƒ¨åˆ†æ—¶(é€šå¸¸ä¸ºçŽ©å®¶)ï¼Œåœ¨æœåŠ¡ç«¯å¯ä»¥è®¿é—®å®žä½“çš„client(EntityCall)å±žæ€§ã€‚<br>
+baseï¼šå½“å®žä½“çš„ä¸€éƒ¨åˆ†åˆ›å»ºåœ¨Baseappæ—¶ï¼Œåœ¨éžå½“å‰Baseappä¸­å¯ä»¥è®¿é—®å®žä½“çš„base(EntityCall)å±žæ€§ã€‚<br>
+cellï¼šå½“å®žä½“çš„ä¸€éƒ¨åˆ†åˆ›å»ºåœ¨Cellappæ—¶ï¼Œåœ¨éžå½“å‰Cellappä¸­å¯ä»¥è®¿é—®å®žä½“çš„cell(EntityCall)å±žæ€§ã€‚<br>
 <br>
-¾ÙÀý:<br><br>
-Avatar.defÖÐ¶¨ÒåclientÔ¶³Ì·½·¨:
+ä¸¾ä¾‹:<br><br>
+Avatar.defä¸­å®šä¹‰clientè¿œç¨‹æ–¹æ³•:
 <pre>
 	&lt;ClientMethods&gt;
 		&lt;hello&gt;
@@ -48,11 +49,11 @@ client\Avatar.py
 			print("hello")
 </pre>
 <br><br>
-ÔÚGUIConsole¹¤¾ßµÄDebugÒ³ÊäÈë¿òÖÐÊäÈë(ÇëÏÈÔÚ×ó±ßÁÐ±íÖÐ¹´Ñ¡Òªµ÷ÊÔµÄ½ø³Ì)£º<br>
-Ê×ÏÈÔÚ·þÎñ¶ËBaseappµÄÈÕÖ¾ÕÒµ½Íæ¼ÒÊµÌå(Avatar)µÄID, È»ºóÍ¨¹ýÊµÌåID»ñµÃÍæ¼ÒÊµÌå(Avatar)»òÕßEntityCall:<br>
->>> KBEngine.entities[Íæ¼ÒID].client.hello()<br>
+åœ¨GUIConsoleå·¥å…·çš„Debugé¡µè¾“å…¥æ¡†ä¸­è¾“å…¥(è¯·å…ˆåœ¨å·¦è¾¹åˆ—è¡¨ä¸­å‹¾é€‰è¦è°ƒè¯•çš„è¿›ç¨‹)ï¼š<br>
+é¦–å…ˆåœ¨æœåŠ¡ç«¯Baseappçš„æ—¥å¿—æ‰¾åˆ°çŽ©å®¶å®žä½“(Avatar)çš„ID, ç„¶åŽé€šè¿‡å®žä½“IDèŽ·å¾—çŽ©å®¶å®žä½“(Avatar)æˆ–è€…EntityCall:<br>
+>>> KBEngine.entities[çŽ©å®¶ID].client.hello()<br>
 <br>
-´ËÊ±¿Í»§¶ËlogÎÄ¼þÖÐ½«Êä³ö"hello", Ò»´ÎÔ¶³Ìµ÷ÓÃ¹ý³ÌÍê³É¡£
+æ­¤æ—¶å®¢æˆ·ç«¯logæ–‡ä»¶ä¸­å°†è¾“å‡º"hello", ä¸€æ¬¡è¿œç¨‹è°ƒç”¨è¿‡ç¨‹å®Œæˆã€‚
 </div>
 
 
@@ -63,7 +64,7 @@ client\Avatar.py
 
 <div class="function_description">
 <br><br>
-ÕâÊÇÒ»¸öKBEngineµÄ»·¾³±äÁ¿£¬ÃèÊöµÄÊÇKBEngineËùÔÚµÄ¸ùÄ¿Â¼¡£
+è¿™æ˜¯ä¸€ä¸ªKBEngineçš„çŽ¯å¢ƒå˜é‡ï¼Œæè¿°çš„æ˜¯KBEngineæ‰€åœ¨çš„æ ¹ç›®å½•ã€‚
 </div>
 
 
@@ -74,7 +75,7 @@ client\Avatar.py
 
 <div class="function_description">
 <br><br>
-ÕâÊÇÒ»¸öKBEngineµÄ»·¾³±äÁ¿£¬ÃèÊöµÄÊÇKBEngineÒýÇæÄÜ¹»¶ÁÈ¡µ½µÄ×ÊÔ´Ä¿Â¼¡£
+è¿™æ˜¯ä¸€ä¸ªKBEngineçš„çŽ¯å¢ƒå˜é‡ï¼Œæè¿°çš„æ˜¯KBEngineå¼•æ“Žèƒ½å¤Ÿè¯»å–åˆ°çš„èµ„æºç›®å½•ã€‚
 </div>
 
 
@@ -85,7 +86,7 @@ client\Avatar.py
 
 <div class="function_description">
 <br><br>
-ÕâÊÇÒ»¸öKBEngineµÄ»·¾³±äÁ¿£¬ÃèÊöµÄÊÇKBEngineÒýÇæ¿ÉÖ´ÐÐÎÄ¼þËùÔÚµÄÄ¿Â¼¡£
+è¿™æ˜¯ä¸€ä¸ªKBEngineçš„çŽ¯å¢ƒå˜é‡ï¼Œæè¿°çš„æ˜¯KBEngineå¼•æ“Žå¯æ‰§è¡Œæ–‡ä»¶æ‰€åœ¨çš„ç›®å½•ã€‚
 </div>
 
 
@@ -96,7 +97,7 @@ client\Avatar.py
 
 <div class="function_description">
 <br><br>
-·þÎñ¶ËËùÓÐÓÐÐ§µÄÊµÌåÀàÐÍ±ØÐëÔÚ´Ë½øÐÐ×¢²á£¬ÒýÇæ³õÊ¼»¯Ê±»á¸ù¾Ý´Ë´¦ÒÀ´Î¼ÓÔØÊµÌåµÄÃèÊöÐÅÏ¢¡£
+æœåŠ¡ç«¯æ‰€æœ‰æœ‰æ•ˆçš„å®žä½“ç±»åž‹å¿…é¡»åœ¨æ­¤è¿›è¡Œæ³¨å†Œï¼Œå¼•æ“Žåˆå§‹åŒ–æ—¶ä¼šæ ¹æ®æ­¤å¤„ä¾æ¬¡åŠ è½½å®žä½“çš„æè¿°ä¿¡æ¯ã€‚
 </div>
 
 
@@ -107,11 +108,11 @@ client\Avatar.py
 
 <div class="function_description">
 <br><br>
-·þÎñ¶ËÄ¬ÈÏÅäÖÃ£¬ÔÚ´ËÓÃ»§¿ÉÒÔÐÞ¸Ä<a href=cellapp/index.html>cellapp</a>¡¢<a href=baseapp/index.html>baseapp</a>¡¢loginappµÈËùÓÐµÄ×é¼þÅäÖÃ¡£
+æœåŠ¡ç«¯é»˜è®¤é…ç½®ï¼Œåœ¨æ­¤ç”¨æˆ·å¯ä»¥ä¿®æ”¹<a href=cellapp/index.html>cellapp</a>ã€<a href=baseapp/index.html>baseapp</a>ã€loginappç­‰æ‰€æœ‰çš„ç»„ä»¶é…ç½®ã€‚
 <br>
-×¢Òâ£ºÄã¿ÉÄÜ¾­³£ÐèÒª¶ÔÒýÇæ½øÐÐÉý¼¶£¬Ö±½ÓÐÞ¸Ä´Ë´¦¿ÉÄÜÔÚÉý¼¶Ê±²úÉú³åÍ»£¬ÁíÍâÒ²²»ÊÊºÏ¶à¸öÏîÄ¿·ÅÔÚÍ¬Ò»KBEngine»·¾³µÄÇé¿ö¡£
+æ³¨æ„ï¼šä½ å¯èƒ½ç»å¸¸éœ€è¦å¯¹å¼•æ“Žè¿›è¡Œå‡çº§ï¼Œç›´æŽ¥ä¿®æ”¹æ­¤å¤„å¯èƒ½åœ¨å‡çº§æ—¶äº§ç”Ÿå†²çªï¼Œå¦å¤–ä¹Ÿä¸é€‚åˆå¤šä¸ªé¡¹ç›®æ”¾åœ¨åŒä¸€KBEngineçŽ¯å¢ƒçš„æƒ…å†µã€‚
 <br>
-½¨ÒéÔÚ<a href=#kbengine.xml>kbengine.xml</a>ÖÐ½øÐÐÖØÔØÐÞ¸Ä£¬ÄãÖ»ÐèÒª¶ÔÏëÐÞ¸ÄµÄ²¿·Ö°´ÕÕ¸ñÊ½ÔÚxmlÖÐÖØÐ´¾Í¿ÉÒÔÁË¡£
+å»ºè®®åœ¨<a href=#kbengine.xml>kbengine.xml</a>ä¸­è¿›è¡Œé‡è½½ä¿®æ”¹ï¼Œä½ åªéœ€è¦å¯¹æƒ³ä¿®æ”¹çš„éƒ¨åˆ†æŒ‰ç…§æ ¼å¼åœ¨xmlä¸­é‡å†™å°±å¯ä»¥äº†ã€‚
 </div>
 
 
@@ -122,20 +123,20 @@ client\Avatar.py
 
 <div class="function_description">
 <br><br>
-·þÎñ¶ËÅäÖÃ£¬ÔÚ´ËÓÃ»§¿ÉÒÔÐÞ¸Ä<a href=cellapp/index.html>cellapp</a>¡¢<a href=baseapp/index.html>baseapp</a>¡¢loginappµÈËùÓÐµÄ×é¼þÅäÖÃ¡£<br><br>
-ÏêÏ¸Çë²Î¿¼<a href=#kbengine_defaults.xml>kbengine_defaults.xml</a>
+æœåŠ¡ç«¯é…ç½®ï¼Œåœ¨æ­¤ç”¨æˆ·å¯ä»¥ä¿®æ”¹<a href=cellapp/index.html>cellapp</a>ã€<a href=baseapp/index.html>baseapp</a>ã€loginappç­‰æ‰€æœ‰çš„ç»„ä»¶é…ç½®ã€‚<br><br>
+è¯¦ç»†è¯·å‚è€ƒ<a href=#kbengine_defaults.xml>kbengine_defaults.xml</a>
 </div>
 
 
 
 <a name="cn_entity"></a><p class="function_definition">
-<span class="function_definition">ÊµÌå</span>
+<span class="function_definition">å®žä½“</span>
 </p>
 
 <div class="function_description">
 <br><br>
-ÊµÌå±»¶¨ÒåÎª·þÎñ¶Ë×î»ù±¾µÄ¶ÔÏó£¬ÀàËÆPythonµÄ»ù´¡¶ÔÏóobject¡£<br>
-Ê²Ã´Ê±ºòÐèÒª¶¨ÒåÊµÌå? Çë²Î¼û<a href=http://www.kbengine.org/docs/programming/entitydef.html>http://www.kbengine.org/docs/programming/entitydef.html</a>
+å®žä½“è¢«å®šä¹‰ä¸ºæœåŠ¡ç«¯æœ€åŸºæœ¬çš„å¯¹è±¡ï¼Œç±»ä¼¼Pythonçš„åŸºç¡€å¯¹è±¡objectã€‚<br>
+ä»€ä¹ˆæ—¶å€™éœ€è¦å®šä¹‰å®žä½“? è¯·å‚è§<a href=http://www.kbengine.org/docs/programming/entitydef.html>http://www.kbengine.org/docs/programming/entitydef.html</a>
 </div>
 
 <a name="entity"></a><p class="function_definition">
@@ -144,7 +145,7 @@ client\Avatar.py
 
 <div class="function_description">
 <br><br>
-²Î¼û: <a href=#cn_entity>ÊµÌå</a>
+å‚è§: <a href=#cn_entity>å®žä½“</a>
 </div>
 
 
@@ -155,10 +156,10 @@ client\Avatar.py
 
 <div class="function_description">
 <br><br>
-Ã¿Ò»¸öÁ¬½Óµ½·þÎñÆ÷µÄ¿Í»§¶ËÊµÌå¶¼½«ÓµÓÐÒ»¸öView£¬ViewÀàËÆÒ»ÖÖÊÓÍ¼£¬ÈÃ¿Í»§¶ËÄÜ¹»¶Ô×ÔÉíViewÄÚµÄÊÂ¼þ´«´ï¸ø¿Í»§¶Ë¡£<br>
-ViewÓë¿Õ¼äÏà¹Ø£¬Ã¿¸öView¶¼ÄÜ¹»Éè¶¨¶ÀÁ¢µÄ´óÐ¡·¶Î§¡£<br>
-×¢Òâ£ºÕâÀïÃèÊöµÄ¿Õ¼äÊÇÒ»ÖÖ³éÏóµÄ¸ÅÄî£¬²»Ò»¶¨ÐèÒªºÍÎïÀí¿Õ¼ä¸ÅÄî°ó¶¨£¨MMORPG³ýÍâ£©£¬¶ÔÓÚÒ»¸ö¿¨ÅÆÓÎÏ·µÄºËÐÄÍæ·¨£¬Ò²¿ÉÒÔÈÏÎªÒ»¸ö·¿¼äÄÚµÄÍæ¼ÒÔÚÒ»¸öÂß¼­¿Õ¼äÖÐ¡£<br>
-ÊÂ¼þ°üÀ¨: ÊµÌåÒÆ¶¯¡¢¿Í»§¶Ë¹ã²¥ÀàÐÍµÄÊôÐÔ¸Ä±ä¡¢ËÀÍöÏú»ÙµÈµÈ¡£
+æ¯ä¸€ä¸ªè¿žæŽ¥åˆ°æœåŠ¡å™¨çš„å®¢æˆ·ç«¯å®žä½“éƒ½å°†æ‹¥æœ‰ä¸€ä¸ªViewï¼ŒViewç±»ä¼¼ä¸€ç§è§†å›¾ï¼Œè®©å®¢æˆ·ç«¯èƒ½å¤Ÿå¯¹è‡ªèº«Viewå†…çš„äº‹ä»¶ä¼ è¾¾ç»™å®¢æˆ·ç«¯ã€‚<br>
+Viewä¸Žç©ºé—´ç›¸å…³ï¼Œæ¯ä¸ªViewéƒ½èƒ½å¤Ÿè®¾å®šç‹¬ç«‹çš„å¤§å°èŒƒå›´ã€‚<br>
+æ³¨æ„ï¼šè¿™é‡Œæè¿°çš„ç©ºé—´æ˜¯ä¸€ç§æŠ½è±¡çš„æ¦‚å¿µï¼Œä¸ä¸€å®šéœ€è¦å’Œç‰©ç†ç©ºé—´æ¦‚å¿µç»‘å®šï¼ˆMMORPGé™¤å¤–ï¼‰ï¼Œå¯¹äºŽä¸€ä¸ªå¡ç‰Œæ¸¸æˆçš„æ ¸å¿ƒçŽ©æ³•ï¼Œä¹Ÿå¯ä»¥è®¤ä¸ºä¸€ä¸ªæˆ¿é—´å†…çš„çŽ©å®¶åœ¨ä¸€ä¸ªé€»è¾‘ç©ºé—´ä¸­ã€‚<br>
+äº‹ä»¶åŒ…æ‹¬: å®žä½“ç§»åŠ¨ã€å®¢æˆ·ç«¯å¹¿æ’­ç±»åž‹çš„å±žæ€§æ”¹å˜ã€æ­»äº¡é”€æ¯ç­‰ç­‰ã€‚
 </div>
 
 
@@ -169,10 +170,10 @@ ViewÓë¿Õ¼äÏà¹Ø£¬Ã¿¸öView¶¼ÄÜ¹»Éè¶¨¶ÀÁ¢µÄ´óÐ¡·¶Î§¡£<br>
 
 <div class="function_description">
 <br><br>
-Ä¿»÷Õß¡£<br>
-Ö»ÓÐ°ó¶¨ÁËWitnessµÄ<a href=#cell>cell</a>ÊµÌåView²ÅÄÜ²úÉú×÷ÓÃ£¬»»¾ä»°À´Ëµwitness¾ÍÊÇ¿Í»§¶ËµÄÒ»¸ö<a href=#cell>cell</a>´úÀí£¬cellapp½«ViewÄÚµÄÐÅÏ¢²»¶ÏµÄÍ¨¹ýWitnessÍ¬²½¸ø¿Í»§¶Ë¡£<br>
-·þÎñ¶ËÒ»¸öNPC±»Ä¿»÷ÕßÄ¿»÷Ê±»áµ÷ÓÃÊµÌåµÄonWitness»Øµ÷£¬·þÎñ¶Ë¿ÉÒÔÒÀÀµÓÚ´ËÌØÐÔ½µµÍCPUµÄÏûºÄ£¬µ±Ò»¸öÊµÌå<br>
-Ã»ÓÐ±»Ä¿»÷Ê±£¬ÓÃ»§¿ÉÒÔÍ£Ö¹ËüµÄÈÎºÎÐÐÎª¡£<br>
+ç›®å‡»è€…ã€‚<br>
+åªæœ‰ç»‘å®šäº†Witnessçš„<a href=#cell>cell</a>å®žä½“Viewæ‰èƒ½äº§ç”Ÿä½œç”¨ï¼Œæ¢å¥è¯æ¥è¯´witnesså°±æ˜¯å®¢æˆ·ç«¯çš„ä¸€ä¸ª<a href=#cell>cell</a>ä»£ç†ï¼Œcellappå°†Viewå†…çš„ä¿¡æ¯ä¸æ–­çš„é€šè¿‡WitnessåŒæ­¥ç»™å®¢æˆ·ç«¯ã€‚<br>
+æœåŠ¡ç«¯ä¸€ä¸ªNPCè¢«ç›®å‡»è€…ç›®å‡»æ—¶ä¼šè°ƒç”¨å®žä½“çš„onWitnesså›žè°ƒï¼ŒæœåŠ¡ç«¯å¯ä»¥ä¾èµ–äºŽæ­¤ç‰¹æ€§é™ä½ŽCPUçš„æ¶ˆè€—ï¼Œå½“ä¸€ä¸ªå®žä½“<br>
+æ²¡æœ‰è¢«ç›®å‡»æ—¶ï¼Œç”¨æˆ·å¯ä»¥åœæ­¢å®ƒçš„ä»»ä½•è¡Œä¸ºã€‚<br>
 </div>
 
 
@@ -182,18 +183,18 @@ ViewÓë¿Õ¼äÏà¹Ø£¬Ã¿¸öView¶¼ÄÜ¹»Éè¶¨¶ÀÁ¢µÄ´óÐ¡·¶Î§¡£<br>
 
 <div class="function_description">
 <br><br>
-¿Õ¼ä£¬KBEngineÔÚcellappÉÏ·ÖÅäÒ»¸ö¿Õ¼ä£¬Õâ¸ö¿Õ¼äÓëÆäËû¿Õ¼ä¸ôÀë£¬View¡¢ÏÝÚå¡¢ÊµÌåÅö×²µÈµÈÖ»ÔÚµ±Ç°¿Õ¼äÏà»¥Ó°Ïì¡£<br>
-¿Õ¼ä¾ßÌåÊÇÊ²Ã´ÓÉÓÃ»§À´¶¨Òå£¬Ëü¿ÉÒÔÊÇÒ»¸ö³¡¾°¡¢¸±±¾¡¢·¿¼ä...
+ç©ºé—´ï¼ŒKBEngineåœ¨cellappä¸Šåˆ†é…ä¸€ä¸ªç©ºé—´ï¼Œè¿™ä¸ªç©ºé—´ä¸Žå…¶ä»–ç©ºé—´éš”ç¦»ï¼ŒViewã€é™·é˜±ã€å®žä½“ç¢°æ’žç­‰ç­‰åªåœ¨å½“å‰ç©ºé—´ç›¸äº’å½±å“ã€‚<br>
+ç©ºé—´å…·ä½“æ˜¯ä»€ä¹ˆç”±ç”¨æˆ·æ¥å®šä¹‰ï¼Œå®ƒå¯ä»¥æ˜¯ä¸€ä¸ªåœºæ™¯ã€å‰¯æœ¬ã€æˆ¿é—´...
 </div>
 
 
 <a name="cn_Space"></a><p class="function_definition">
-<span class="function_definition">¿Õ¼ä</span>
+<span class="function_definition">ç©ºé—´</span>
 </p>
 
 <div class="function_description">
 <br><br>
-²Î¼û: <a href=#Space>Space</a>
+å‚è§: <a href=#Space>Space</a>
 </div>
 
 
@@ -203,10 +204,10 @@ ViewÓë¿Õ¼äÏà¹Ø£¬Ã¿¸öView¶¼ÄÜ¹»Éè¶¨¶ÀÁ¢µÄ´óÐ¡·¶Î§¡£<br>
 
 <div class="function_description">
 <br><br>
-cellÔÚÎÄµµÖÐ´æÔÚ¶þ¸ö²»Í¬µÄÒâË¼¡£<br>
-Í¨³£Èç¹ûÃèÊöµÄÊÇ<a href=baseapp/classes/Entity.html#cell>Entity.cell</a>ÊôÐÔ£¬ ´ËÊ±Êµ¼ÊÊÇÔÚÃèÊöÊµÌåµÄ<a href=#EntityCall>CellEntityCall</a>¡£<br>
+cellåœ¨æ–‡æ¡£ä¸­å­˜åœ¨äºŒä¸ªä¸åŒçš„æ„æ€ã€‚<br>
+é€šå¸¸å¦‚æžœæè¿°çš„æ˜¯<a href=baseapp/classes/Entity.html#cell>Entity.cell</a>å±žæ€§ï¼Œ æ­¤æ—¶å®žé™…æ˜¯åœ¨æè¿°å®žä½“çš„<a href=#EntityCall>CellEntityCall</a>ã€‚<br>
 
-Èç¹ûÊÇÔÚcellappÉÏÓÐ¹ØcellµÄÃèÊöÍ¨³£ÊÇÔÚÃèÊöÒ»¸ö<a href=#cn_Space>¿Õ¼ä</a>µÄÒ»²¿·Ö£¬Ò»¸ö¿Õ¼äÔÚ<a href=cellapp/index.html>cellapp</a>½øÐÐ¸ºÔØÆ½ºâÊ±ÓÐ¿ÉÄÜ±»·Ö¸î³ÉN·Ý£¬Ã¿Ò»·Ý³ÆÖ®ÎªÒ»¸öcell£¬Ã¿¸öcellÓÉ²»Í¬½ø³ÌÎ¬»¤¡£<br>
+å¦‚æžœæ˜¯åœ¨cellappä¸Šæœ‰å…³cellçš„æè¿°é€šå¸¸æ˜¯åœ¨æè¿°ä¸€ä¸ª<a href=#cn_Space>ç©ºé—´</a>çš„ä¸€éƒ¨åˆ†ï¼Œä¸€ä¸ªç©ºé—´åœ¨<a href=cellapp/index.html>cellapp</a>è¿›è¡Œè´Ÿè½½å¹³è¡¡æ—¶æœ‰å¯èƒ½è¢«åˆ†å‰²æˆNä»½ï¼Œæ¯ä¸€ä»½ç§°ä¹‹ä¸ºä¸€ä¸ªcellï¼Œæ¯ä¸ªcellç”±ä¸åŒè¿›ç¨‹ç»´æŠ¤ã€‚<br>
 </div>
 
 
@@ -216,7 +217,7 @@ cellÔÚÎÄµµÖÐ´æÔÚ¶þ¸ö²»Í¬µÄÒâË¼¡£<br>
 
 <div class="function_description">
 <br><br>
-Í¨³£ÊÇÖ¸<a href=baseapp/index.html>baseapp</a>ÉÏµÄBaseÊµÌå»òÕßÊÇÒ»¸öÖ¸ÏòBaseÊµÌåµÄ<a href=#EntityCall>BaseEntityCall</a>, ÀýÈç£º<a href=cellapp/classes/Entity.html#base>Entity.base</a>¡£<br>
+é€šå¸¸æ˜¯æŒ‡<a href=baseapp/index.html>baseapp</a>ä¸Šçš„Baseå®žä½“æˆ–è€…æ˜¯ä¸€ä¸ªæŒ‡å‘Baseå®žä½“çš„<a href=#EntityCall>BaseEntityCall</a>, ä¾‹å¦‚ï¼š<a href=cellapp/classes/Entity.html#base>Entity.base</a>ã€‚<br>
 </div>
 
 
@@ -227,7 +228,7 @@ cellÔÚÎÄµµÖÐ´æÔÚ¶þ¸ö²»Í¬µÄÒâË¼¡£<br>
 
 <div class="function_description">
 <br><br>
-Í¨³£ÊÇÖ¸¿Í»§¶Ë»òÕßÊÇÒ»¸öÖ¸Ïò¿Í»§¶ËÊµÌåµÄ<a href=#EntityCall>EntityCall</a>, ÀýÈç£º<a href=baseapp/classes/Entity.html#client>Entity.client</a>¡£<br>
+é€šå¸¸æ˜¯æŒ‡å®¢æˆ·ç«¯æˆ–è€…æ˜¯ä¸€ä¸ªæŒ‡å‘å®¢æˆ·ç«¯å®žä½“çš„<a href=#EntityCall>EntityCall</a>, ä¾‹å¦‚ï¼š<a href=baseapp/classes/Entity.html#client>Entity.client</a>ã€‚<br>
 </div>
 
 
@@ -238,8 +239,8 @@ cellÔÚÎÄµµÖÐ´æÔÚ¶þ¸ö²»Í¬µÄÒâË¼¡£<br>
 
 <div class="function_description">
 <br><br>
-Cellapp½ø³ÌÖ÷Òª¸ºÔðÓëÎ»ÖÃÓÐ¹ØÀàÓÎÏ·Âß¼­¡¢View¡¢AI¡¢³¡¾°·¿¼äµÈµÈ¡£<br>
-²Î¼û: <a href=cellapp/index.html>cellapp</a>
+Cellappè¿›ç¨‹ä¸»è¦è´Ÿè´£ä¸Žä½ç½®æœ‰å…³ç±»æ¸¸æˆé€»è¾‘ã€Viewã€AIã€åœºæ™¯æˆ¿é—´ç­‰ç­‰ã€‚<br>
+å‚è§: <a href=cellapp/index.html>cellapp</a>
 </div>
 
 
@@ -249,8 +250,8 @@ Cellapp½ø³ÌÖ÷Òª¸ºÔðÓëÎ»ÖÃÓÐ¹ØÀàÓÎÏ·Âß¼­¡¢View¡¢AI¡¢³¡¾°·¿¼äµÈµÈ¡£<br>
 
 <div class="function_description">
 <br><br>
-Baseapp½ø³ÌÖ÷Òª¸ºÔðÓë¿Í»§¶ËÍ¨Ñ¶¡¢ÓëÎ»ÖÃÎÞ¹ØÀàÓÎÏ·Âß¼­(¹«»á¹ÜÀíÆ÷¡¢ÁÄÌìÏµÍ³¡¢ÓÎÏ·´óÌü¡¢ÅÅÐÐ°ñµÈµÈ)¡¢´æµµÓë±¸·ÝµÈµÈ¡£<br>
-²Î¼û: <a href=baseapp/index.html>baseapp</a>
+Baseappè¿›ç¨‹ä¸»è¦è´Ÿè´£ä¸Žå®¢æˆ·ç«¯é€šè®¯ã€ä¸Žä½ç½®æ— å…³ç±»æ¸¸æˆé€»è¾‘(å…¬ä¼šç®¡ç†å™¨ã€èŠå¤©ç³»ç»Ÿã€æ¸¸æˆå¤§åŽ…ã€æŽ’è¡Œæ¦œç­‰ç­‰)ã€å­˜æ¡£ä¸Žå¤‡ä»½ç­‰ç­‰ã€‚<br>
+å‚è§: <a href=baseapp/index.html>baseapp</a>
 </div>
 
 
@@ -261,7 +262,7 @@ Baseapp½ø³ÌÖ÷Òª¸ºÔðÓë¿Í»§¶ËÍ¨Ñ¶¡¢ÓëÎ»ÖÃÎÞ¹ØÀàÓÎÏ·Âß¼­(¹«»á¹ÜÀíÆ÷¡¢ÁÄÌìÏµÍ³¡¢ÓÎÏ·
 
 <div class="function_description">
 <br><br>
-Ö¸µÄÊÇÒ»¸öcellÉÏµÄÊµÌå£¬Õâ¸öÊµÌåÊÇÕæÊµ´æÔÚÓÚµ±ÆÚcellÉÏµÄ£¨ÓÐÒ»ÖÖÊµÌåÖ»ÊÇÁíÒ»¸öcell¹ã²¥¹ýÀ´µÄÓ°Ïñ£¬²Î¼û£º<a href=#ghost>ghost</a>£©¡£<br>
+æŒ‡çš„æ˜¯ä¸€ä¸ªcellä¸Šçš„å®žä½“ï¼Œè¿™ä¸ªå®žä½“æ˜¯çœŸå®žå­˜åœ¨äºŽå½“æœŸcellä¸Šçš„ï¼ˆæœ‰ä¸€ç§å®žä½“åªæ˜¯å¦ä¸€ä¸ªcellå¹¿æ’­è¿‡æ¥çš„å½±åƒï¼Œå‚è§ï¼š<a href=#ghost>ghost</a>ï¼‰ã€‚<br>
 </div>
 
 
@@ -272,11 +273,11 @@ Baseapp½ø³ÌÖ÷Òª¸ºÔðÓë¿Í»§¶ËÍ¨Ñ¶¡¢ÓëÎ»ÖÃÎÞ¹ØÀàÓÎÏ·Âß¼­(¹«»á¹ÜÀíÆ÷¡¢ÁÄÌìÏµÍ³¡¢ÓÎÏ·
 
 <div class="function_description">
 <br><br>
-ÕâÖÖÊµÌåÆäÊµÊÇÓÉÓÚcellapp¶¯Ì¬¸ºÔØ¾ùºâ»úÖÆ½«Ò»¸öÍêÕûµÄspace·Ö¸î³ÉN·Ý²¢½»¸ø²»Í¬µÄ½ø³ÌÖÐµÄcell¹²Í¬Î¬»¤´Ó¶ø²úÉúµÄÒ»ÖÖ±ß½çÇøÓ°ÏñÊµÌå¡£<br>
-ÓÉÓÚspace±»·Ö¸î³É¶à¸öÇøÓò£¬ËùÒÔspace´æÔÚ±ß½ç¡£ÒªÈÃ¿Í»§¶ËÎÞ·¨¸ÐÖªµ½±ß½çµÄ´æÔÚÎÒÃÇ½«Ã¿¸öcell±ß½çÇøÓòÒ»¶¨·¶Î§ÄÚµÄÊµÌåÍ¬²½Ò»·Ýµ½ÁíÒ»¸ö±ßÁÚµÄcellÉÏ£¬<br>
-ÕâÑù¾Í²»»áÔÚ±ß½çÇøÓòÊ±ÎÞ·¨ºÍÁíÒ»¸ö±ß½çÇøµÄÊµÌå½øÐÐ½»»¥ÁË¡£¶øÕâÖÖÊµÌåÖ»ÓÐ²¿·ÖÊý¾Ý±»Í¬²½¹ýÀ´(CELL_PUBLICµÈcell¹ã²¥ÀàÐÍµÄÊôÐÔ)¡£<br>
+è¿™ç§å®žä½“å…¶å®žæ˜¯ç”±äºŽcellappåŠ¨æ€è´Ÿè½½å‡è¡¡æœºåˆ¶å°†ä¸€ä¸ªå®Œæ•´çš„spaceåˆ†å‰²æˆNä»½å¹¶äº¤ç»™ä¸åŒçš„è¿›ç¨‹ä¸­çš„cellå…±åŒç»´æŠ¤ä»Žè€Œäº§ç”Ÿçš„ä¸€ç§è¾¹ç•ŒåŒºå½±åƒå®žä½“ã€‚<br>
+ç”±äºŽspaceè¢«åˆ†å‰²æˆå¤šä¸ªåŒºåŸŸï¼Œæ‰€ä»¥spaceå­˜åœ¨è¾¹ç•Œã€‚è¦è®©å®¢æˆ·ç«¯æ— æ³•æ„ŸçŸ¥åˆ°è¾¹ç•Œçš„å­˜åœ¨æˆ‘ä»¬å°†æ¯ä¸ªcellè¾¹ç•ŒåŒºåŸŸä¸€å®šèŒƒå›´å†…çš„å®žä½“åŒæ­¥ä¸€ä»½åˆ°å¦ä¸€ä¸ªè¾¹é‚»çš„cellä¸Šï¼Œ<br>
+è¿™æ ·å°±ä¸ä¼šåœ¨è¾¹ç•ŒåŒºåŸŸæ—¶æ— æ³•å’Œå¦ä¸€ä¸ªè¾¹ç•ŒåŒºçš„å®žä½“è¿›è¡Œäº¤äº’äº†ã€‚è€Œè¿™ç§å®žä½“åªæœ‰éƒ¨åˆ†æ•°æ®è¢«åŒæ­¥è¿‡æ¥(CELL_PUBLICç­‰cellå¹¿æ’­ç±»åž‹çš„å±žæ€§)ã€‚<br>
 <br>
-·ÇghostÊµÌåÎÒÃÇ³ÆÎª<a href=#real>real</a>ÊµÌå¡£
+éžghostå®žä½“æˆ‘ä»¬ç§°ä¸º<a href=#real>real</a>å®žä½“ã€‚
 </div>
 
 
@@ -287,9 +288,9 @@ Baseapp½ø³ÌÖ÷Òª¸ºÔðÓë¿Í»§¶ËÍ¨Ñ¶¡¢ÓëÎ»ÖÃÎÞ¹ØÀàÓÎÏ·Âß¼­(¹«»á¹ÜÀíÆ÷¡¢ÁÄÌìÏµÍ³¡¢ÓÎÏ·
 
 <div class="function_description">
 <br><br>
-ÃèÊöºÍ¹ÜÀí3D¿ÕégµÄÏòÁ¿¡£<br>
-ÆäÖÐÓÐx£¬y£¬zÈý¸öÊôÐÔ´ú±í²»Í¬µÄÖáÏò¡£<br><br>
-½Å±¾ÖÐÊ¹ÓÃµÄÀý×Ó£º
+æè¿°å’Œç®¡ç†3Dç©ºé–“çš„å‘é‡ã€‚<br>
+å…¶ä¸­æœ‰xï¼Œyï¼Œzä¸‰ä¸ªå±žæ€§ä»£è¡¨ä¸åŒçš„è½´å‘ã€‚<br><br>
+è„šæœ¬ä¸­ä½¿ç”¨çš„ä¾‹å­ï¼š
 import Math
 v = Math.Vector3()
 </div>
@@ -303,6 +304,6 @@ v = Math.Vector3()
 <hr></hr>
 
 <hr>
-<p class="copyrightFooter">°æÈ¨¹éKBEngineËùÓÐ¡£</p>
+<p class="copyrightFooter">ç‰ˆæƒå½’KBEngineæ‰€æœ‰ã€‚</p>
 </body>
 </html>
