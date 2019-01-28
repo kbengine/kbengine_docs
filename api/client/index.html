@@ -1,21 +1,21 @@
 <html>
 <head>
-<title>KBEngine - KBEngine client �ĵ�</title>
+<title>KBEngine - KBEngine client 文档</title>
 <link href="../style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
 <tr><td align=left style="background:#708090"> <font size=15 color=#ffffff> KBEngine </font></td></tr>
 </table> <hr>
-<h1>client���</h1>
-KBEngine��һ����Դ����Ϸ��������棬�����������Ŀͻ��˲��֣��������ṩ���������˿��ٶԽӵĿͻ��˲�����֡��ͻ��˲�������������˵�ͨѶ��ע���˺š���¼�ӿڡ�Entity������ȵȡ�
-�����ͻ��˱��ֲ�֮��ͨ��һ�ֻ��ƽ��н��������ֲ��ò�������ݽ��б���(���磺Ѫ���仯��ʵ�����View)�������ñ��ֲ��������иı�(���磺��ɫλ���볯��)��
+<h1>client插件</h1>
+KBEngine是一个开源的游戏服务端引擎，不包含完整的客户端部分，但我们提供了能与服务端快速对接的客户端插件部分。客户端插件包含了与服务端的通讯、注册账号、登录接口、Entity基础类等等。
+插件与客户端表现层之间通过一种机制进行交互，表现层获得插件的数据进行表现(例如：血量变化，实体进入View)，插件获得表现层的输入进行改变(例如：角色位置与朝向)。
 
 <br>
 <br>
-KBEngine�ڲ�ͬ��ǰ�˼�����ʵ���˲�ͬ�Ŀͻ��˲������ÿ�ֲ������ѭ��API�ĵ����г��ķ��������ԣ����ݸ��ĵ���ͬ�Ŀͻ��˲����ӵ����һ��ʵ�ֱ�׼��
+KBEngine在不同的前端技术下实现了不同的客户端插件，但每种插件都遵循本API文档中列出的方法与属性，根据该文档不同的客户端插件都拥有了一个实现标准。
 
 <hr>
-<p class="copyrightFooter">��Ȩ��KBEngine���С�</p>
+<p class="copyrightFooter">版权归KBEngine所有。</p>
 </body>
 </html>
