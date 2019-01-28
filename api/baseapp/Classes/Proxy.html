@@ -1,19 +1,20 @@
 <html>
 <head>
-<title>Proxy - KBEngine base �ĵ�</title>
+<meta charset="UTF-8">
+<title>Proxy - KBEngine base 文档</title>
 <link href="../../style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
 <tr><td align=left style="background:#708090"> <font size=15 color=#ffffff> KBEngine </font></td></tr>
 </table> <hr>
-<h1>Proxy��</h1>
-<p style="text-align: center;"><span class="module_h1">[<a href="../Modules/KBEngine.html" class="module_h1">KBEngineģ��</a>]</span></p><p>Proxy��<a href="../Modules/KBEngine.html">KBEngine</a>ģ���һ���֡� <a href="#detailed_description">����...</a></p><p></p><pre>import KBEngine</pre>
-<h2>����</h2>
+<h1>Proxy类</h1>
+<p style="text-align: center;"><span class="module_h1">[<a href="../Modules/KBEngine.html" class="module_h1">KBEngine模块</a>]</span></p><p>Proxy是<a href="../Modules/KBEngine.html">KBEngine</a>模块的一部分。 <a href="#detailed_description">更多...</a></p><p></p><pre>import KBEngine</pre>
+<h2>父类</h2>
 <a href="Entity.html">Entity</a>
 <br>
 
-<h2><a href="#" onClick="obj=document.getElementById( 'functions' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">��Ա����</a></h2>
+<h2><a href="#" onClick="obj=document.getElementById( 'functions' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">成员函数</a></h2>
 <table id="functions" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr><td>
@@ -42,7 +43,7 @@
 
 </table>
 
-<h2><a href="#" onClick="obj=document.getElementById( 'callbacks' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">�ص�����</a></h2>
+<h2><a href="#" onClick="obj=document.getElementById( 'callbacks' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">回调函数</a></h2>
 <table id="callbacks" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr><td>
@@ -71,39 +72,39 @@
 
 </table>
 
-<h2><a href="#" onClick="obj=document.getElementById( 'attributes' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">����</a></h2>
+<h2><a href="#" onClick="obj=document.getElementById( 'attributes' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">属性</a></h2>
 <table id="attributes" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><a href="#__ACCOUNT_NAME__" class="attribute_list" >__ACCOUNT_NAME__</a></td><td>&nbsp; ֻ�� <a href="STRING.html">string</a></td></tr>
+<tr valign=top><td><a href="#__ACCOUNT_NAME__" class="attribute_list" >__ACCOUNT_NAME__</a></td><td>&nbsp; 只读 <a href="STRING.html">string</a></td></tr>
 
-<tr valign=top><td><a href="#__ACCOUNT_PASSWORD__" class="attribute_list" >__ACCOUNT_PASSWORD__</a></td><td>&nbsp; ֻ�� <a href="STRING.html">string</a></td></tr>
+<tr valign=top><td><a href="#__ACCOUNT_PASSWORD__" class="attribute_list" >__ACCOUNT_PASSWORD__</a></td><td>&nbsp; 只读 <a href="STRING.html">string</a></td></tr>
 
-<tr valign=top><td><a href="#clientAddr" class="attribute_list" >clientAddr</a></td><td>&nbsp; ֻ�� </td></tr>
+<tr valign=top><td><a href="#clientAddr" class="attribute_list" >clientAddr</a></td><td>&nbsp; 只读 </td></tr>
 
-<tr valign=top><td><a href="#clientEnabled" class="attribute_list" >clientEnabled</a></td><td>&nbsp; ֻ�� <a href="BOOL.html">bool</a></td></tr>
+<tr valign=top><td><a href="#clientEnabled" class="attribute_list" >clientEnabled</a></td><td>&nbsp; 只读 <a href="BOOL.html">bool</a></td></tr>
 
-<tr valign=top><td><a href="#hasClient" class="attribute_list" >hasClient</a></td><td>&nbsp; ֻ�� <a href="BOOL.html">bool</a></td></tr>
+<tr valign=top><td><a href="#hasClient" class="attribute_list" >hasClient</a></td><td>&nbsp; 只读 <a href="BOOL.html">bool</a></td></tr>
 
-<tr valign=top><td><a href="#roundTripTime" class="attribute_list" >roundTripTime</a></td><td>&nbsp; ֻ��</td></tr>
+<tr valign=top><td><a href="#roundTripTime" class="attribute_list" >roundTripTime</a></td><td>&nbsp; 只读</td></tr>
 
-<tr valign=top><td><a href="#timeSinceHeardFromClient" class="attribute_list" >timeSinceHeardFromClient</a></td><td>&nbsp; ֻ��</td></tr>
+<tr valign=top><td><a href="#timeSinceHeardFromClient" class="attribute_list" >timeSinceHeardFromClient</a></td><td>&nbsp; 只读</td></tr>
 
 </table>
 
 <hr>
-<a name="detailed_description"></a><h2>��ϸ����</h2>
-<a href="Proxy.html">Proxy</a>��<a href="Entity.html">Entity</a>��һ���������ͣ����̳���Entity������һ�������Ŀͻ��ˡ�������˵��
-������һ�������ͻ��˵�ʵ�壬�ٿ����з������ͻ��˵ĸ��¡������ڽű�ֱ�Ӵ���<a href="Proxy.html">Proxy</a>�����
+<a name="detailed_description"></a><h2>详细描述</h2>
+<a href="Proxy.html">Proxy</a>是<a href="Entity.html">Entity</a>的一个特殊类型，它继承自Entity，它有一个关联的客户端。本身来说，
+它就是一个代理客户端的实体，操控所有服务端向客户端的更新。不能在脚本直接创建<a href="Proxy.html">Proxy</a>类对象。
 
 <hr>
-<h2>��Ա�����ĵ�</h2>
+<h2>成员函数文档</h2>
 
 <a name="disconnect"></a><p class="function_definition">
 <span class="function_definition">def disconnect( <i>self</i> ):</span>
 </p>
 
 <div class="function_description">
-�Ͽ��ͻ������ӡ�
+断开客户端连接。
 </div>
 
 
@@ -113,20 +114,20 @@
 </p>
 
 <div class="function_description">
-<b>����˵����</b><br><br>
-����������ؿͻ������͡�
+<b>功能说明：</b><br><br>
+这个函数返回客户端类型。
 </div>
 
 <p>
-<span class="function_return">����:</span>
+<span class="function_return">返回:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
 UNKNOWN_CLIENT_COMPONENT_TYPE	= 0,<br/>
-CLIENT_TYPE_MOBILE				= 1,	// �ֻ���<br/>
-CLIENT_TYPE_WIN					= 2,	// pc�� һ�㶼��exe�ͻ���<br/>
+CLIENT_TYPE_MOBILE				= 1,	// 手机类<br/>
+CLIENT_TYPE_WIN					= 2,	// pc， 一般都是exe客户端<br/>
 CLIENT_TYPE_LINUX				= 3		// Linux Application program<br/>
 CLIENT_TYPE_MAC					= 4		// Mac Application program<br/>
-CLIENT_TYPE_BROWSER				= 5,	// webӦ�ã� html5��flash<br/>
+CLIENT_TYPE_BROWSER				= 5,	// web应用， html5，flash<br/>
 CLIENT_TYPE_BOTS				= 6,	// bots<br/>
 CLIENT_TYPE_MINI				= 7,	// Mini-Client<br/>
 CLIENT_TYPE_END					= 8		// end<br/>
@@ -141,17 +142,17 @@ CLIENT_TYPE_END					= 8		// end<br/>
 </p>
 
 <div class="function_description">
-<b>����˵����</b><br><br>
-����������ؿͻ��˵�¼ʱ��ע��ʱ�����������ݡ�<br>
-�����ݿ�������Ӫϵͳ��չ����������˵������˺ŷ��񣬴����ݻᾭ��interfaces���̷�������������ϵͳ��
+<b>功能说明：</b><br><br>
+这个函数返回客户端登录时和注册时所附带的数据。<br>
+此数据可用于运营系统扩展，如果连接了第三方账号服务，此数据会经过interfaces进程发往第三方服务系统。
 </div>
 
 <p>
-<span class="function_return">����:</span>
+<span class="function_return">返回:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-tuple, �̶�Ϊ2��Ԫ�ص�tuple(��½����bytes��ע������bytes)����һ��Ԫ��Ϊ��½ʱ�ͻ��˵��õ�½ʱ�����datas������
-�ڶ���Ԫ��Ϊע��ʱ�ͻ��˵���ע���������datas���������ڿ��Դ洢������������ݣ�������Ƕ�����bytes���ʹ��ڡ�
+tuple, 固定为2个元素的tuple(登陆数据bytes，注册数据bytes)，第一个元素为登陆时客户端调用登陆时传入的datas参数，
+第二个元素为注册时客户端调用注册所传入的datas参数。由于可以存储任意二进制数据，因此他们都是以bytes类型存在。
 </td></tr>
 </table>
 </p>
@@ -163,23 +164,23 @@ tuple, �̶�Ϊ2��Ԫ�ص�tuple(��½����bytes��ע������bytes)����һ��Ԫ��Ϊ��½ʱ�ͻ
 </p>
 
 <div class="function_description">
-<b>����˵����</b><br><br>
-���ͻ��˵Ŀ�����ת������һ��Proxy����ǰ��Proxy������һ���ͻ��˶�Ŀ��Proxy�����û�й����ͻ��ˣ����򽫻���ʾ����
+<b>功能说明：</b><br><br>
+将客户端的控制器转交给另一个Proxy，当前的Proxy必须有一个客户端而目标Proxy则必须没有关联客户端，否则将会提示错误。
 </div>
 
 <p>
-<span class="function_links"><b>�ο���</b></span>
+<span class="function_links"><b>参看：</b></span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td><a href="Proxy.html">Proxy</a>.<a href="Proxy.html#onGiveClientToFailure">onGiveClientToFailure</a><br></td></tr>
 </table>
 </p>
 
 <p>
-<span class="function_parameter">������</span>
+<span class="function_parameter">参数：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>proxy</i></span></td><td><span class="function_parameter_description">
-����Ȩ��ת�������ʵ�塣
+控制权将转交给这个实体。
 </span></td></tr>
 
 </table>
@@ -190,41 +191,41 @@ tuple, �̶�Ϊ2��Ԫ�ص�tuple(��½����bytes��ע������bytes)����һ��Ԫ��Ϊ��½ʱ�ͻ
 </p>
 
 <div class="function_description">
-<b>����˵����</b><br><br>
-�������������<a href="Proxy.html#streamStringToClient">streamStringToClient()</a>����һ����Դ�ļ����͸��ͻ��ˡ����͹����ڲ�ͬ���߳��ϲ�������˲���Σ�����̡߳�
+<b>功能说明：</b><br><br>
+这个函数类似于<a href="Proxy.html#streamStringToClient">streamStringToClient()</a>，将一个资源文件发送给客户端。发送过程在不同的线程上操作，因此不会危及主线程。
 </div>
 
 <p>
-<span class="function_links"><b>�ο���</b></span>
+<span class="function_links"><b>参看：</b></span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td><a href="Proxy.html">Proxy</a>.<a href="Proxy.html#onStreamComplete">onStreamComplete</a><br></td></tr>
 </table>
 </p>
 
 <p>
-<span class="function_parameter">������</span>
+<span class="function_parameter">参数：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>resourceName</i></span></td><td><span class="function_parameter_description">
-Ҫ���͵���Դ���ƣ�����·����
+要发送的资源名称，包含路径。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>desc</i></span></td><td><span class="function_parameter_description">
-һ����ѡ���ַ��������͸��ͻ��˵���Դ������
+一个可选的字符串，发送给客户端的资源描述。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>id</i></span></td><td><span class="function_parameter_description">
-һ��16λ��id������ֵ��ȫȡ���ڵ����ߡ��������-1ϵͳ�����ڶ�������ѡ��һ��û�����õ�id�������ڿͻ��˸������id����Դ�жϡ�
+一个16位的id，它的值完全取决于调用者。如果传入-1系统将会在队列里面选择一个没有在用的id。可以在客户端根据这个id做资源判断。
 </span></td></tr>
 
 </table>
 </p>
 
 <p>
-<span class="function_return">���أ�</span>
+<span class="function_return">返回：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-��������ع�����id��
+与这个下载关联的id。
 </td></tr>
 </table>
 </p>
@@ -234,70 +235,70 @@ tuple, �̶�Ϊ2��Ԫ�ص�tuple(��½����bytes��ע������bytes)����һ��Ԫ��Ϊ��½ʱ�ͻ
 </p>
 
 <div class="function_description">
-<b>����˵����</b><br><br>
-����һЩ���ݵ���ǰʵ��󶨵Ŀͻ��ˡ�����ͻ��˶˿������ݱ������
-���ͻ����ٴΰ󶨵�ʵ���ʱ��ſɵ������������16λ��id��ȫȡ���ڵ����ߡ�
+<b>功能说明：</b><br><br>
+发送一些数据到当前实体绑定的客户端。如果客户端端口则数据被清除，
+当客户端再次绑定到实体的时候才可调用这个函数。16位的id完全取决于调用者。
 <br>
-���������û��ָ�����ID��ϵͳ�����һ��δ�ù���id�������ڿͻ��˸������id����Դ�жϡ�
+如果调用者没有指定这个ID则系统会分配一个未用过的id。可以在客户端根据这个id做资源判断。
 <br><br>
-�������Proxy���������ж���ص�������onStreamComplete�����������ݳɹ����͸��ͻ���ʱ������ʧ��ʱ���������ص�������
+你可以在Proxy的派生类中定义回调函数（onStreamComplete），所有数据成功发送给客户端时或下载失败时会调用这个回调函数。
 <br><br>
-�ο���<a href="Proxy.html">Proxy</a>.<a href=Proxy.html#onStreamComplete>onStreamComplete</a>��ͻ���ʵ��<a href=../../client/classes/Entity.html>Entity</a>.<a href=../../client/classes/Entity.html#onStreamDataStarted>onStreamDataStarted</a>��
-<a href=../../client/classes/Entity.html>Entity</a>.<a href=../../client/classes/Entity.html#onStreamDataRecv>onStreamDataRecv</a>����<a href=../../client/classes/Entity.html>Entity</a>.<a href=../../client/classes/Entity.html#onStreamDataCompleted>onStreamDataCompleted</a>��
+参看：<a href="Proxy.html">Proxy</a>.<a href=Proxy.html#onStreamComplete>onStreamComplete</a>与客户端实体<a href=../../client/classes/Entity.html>Entity</a>.<a href=../../client/classes/Entity.html#onStreamDataStarted>onStreamDataStarted</a>和
+<a href=../../client/classes/Entity.html>Entity</a>.<a href=../../client/classes/Entity.html#onStreamDataRecv>onStreamDataRecv</a>还有<a href=../../client/classes/Entity.html>Entity</a>.<a href=../../client/classes/Entity.html#onStreamDataCompleted>onStreamDataCompleted</a>。
 </div>
 
 <p>
-<span class="function_parameter">������</span>
+<span class="function_parameter">参数：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>data</i></span></td><td><span class="function_parameter_description">
-Ҫ���͵��ַ�����
+要发送的字符串。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>desc</i></span></td><td><span class="function_parameter_description">
-һ����ѡ���ַ��������͸��ͻ��˵�������
+一个可选的字符串，发送给客户端的描述。
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>id</i></span></td><td><span class="function_parameter_description">
-һ��16λ��id������ֵ��ȫȡ���ڵ����ߡ��������-1ϵͳ�����ڶ�������ѡ��һ��û�����õ�id��
+一个16位的id，它的值完全取决于调用者。如果传入-1系统将会在队列里面选择一个没有在用的id。
 </span></td></tr>
 
 </table>
 </p>
 
 <p>
-<span class="function_return">���أ�</span>
+<span class="function_return">返回：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-��������ع�����id��
+与这个下载关联的id。
 </td></tr>
 </table>
 </p>
 
 <hr>
-<h2>�ص������ĵ�</h2>
+<h2>回调函数文档</h2>
 
 
 <a name="onClientDeath"></a><p class="function_definition">
 <span class="function_definition">def onClientDeath( <i>self</i> ):</span>
 </p>
 
-<div class="function_description">����ڽű���ʵ���˴˻ص�������������ڿͻ��˶Ͽ�����ʱ�����á� �������û�в�����
+<div class="function_description">如果在脚本中实现了此回调，这个方法将在客户端断开连接时被调用。 这个方法没有参数。
 </div>
 
 <a name="onClientGetCell"></a><p class="function_definition">
 <span class="function_definition">def onClientGetCell( <i>self</i> ):</span>
 </p>
 
-<div class="function_description">����ڽű���ʵ���˴˻ص������ͻ����ܹ�����ʵ���<a href=../../keywords.html#cell>cell</a>����ʱ���ûص������á�
+<div class="function_description">如果在脚本中实现了此回调，当客户端能够调用实体的<a href=../../keywords.html#cell>cell</a>属性时，该回调被调用。
 </div>
 
 <a name="onClientEnabled"></a><p class="function_definition">
 <span class="function_definition">def onClientEnabled( <i>self</i> ):</span>
 </p>
 
-<div class="function_description">����ڽű���ʵ���˴˻ص�����ʵ�����ʱ�� ���ֳ�ʼ����ϲ��ҿ�����ͻ���ͨѶ ���ûص������á� �������û�в�����<br>
-ע�⣺giveClientTo������Ȩ�����˸�ʵ��ʱҲ�ᵼ�¸ûص������á�
+<div class="function_description">如果在脚本中实现了此回调，当实体可用时（ 各种初始化完毕并且可以与客户端通讯 ）该回调被调用。 这个方法没有参数。<br>
+注意：giveClientTo将控制权赋给了该实体时也会导致该回调被调用。
 </div>
 
 <a name="onGiveClientToFailure"></a><p class="function_definition">
@@ -305,7 +306,7 @@ tuple, �̶�Ϊ2��Ԫ�ص�tuple(��½����bytes��ע������bytes)����һ��Ԫ��Ϊ��½ʱ�ͻ
 </p>
 
 <div class="function_description">
-����ڽű���ʵ���˴˻ص�����ʵ�����<a href=#onStreamComplete>giveClientTo</a>ʧ��ʱ���ûص������á��������û�в�����
+如果在脚本中实现了此回调，当实体调用<a href=#onStreamComplete>giveClientTo</a>失败时，该回调被调用。这个方法没有参数。
 </div>
 
 
@@ -313,27 +314,27 @@ tuple, �̶�Ϊ2��Ԫ�ص�tuple(��½����bytes��ע������bytes)����һ��Ԫ��Ϊ��½ʱ�ͻ
 <span class="function_definition">def onLogOnAttempt( <i>self, ip, port, password</i> ):</span>
 </p>
 
-<div class="function_description">����ڽű���ʵ���˴˻ص�����������ڿͻ��˳���ʹ�õ�ǰ�˺�ʵ����е�¼ʱ�����ص���<br>
-�������ͨ����ʵ��������ڴ��д�����Ч״̬�������Ե��������û�Aʹ�ô��˺ŵ�¼�ˣ��û�Bʹ��ͬһ�˺Ž��е�¼����ʱ�ص�������
+<div class="function_description">如果在脚本中实现了此回调，这个函数在客户端尝试使用当前账号实体进行登录时触发回调。<br>
+这种情况通常是实体存在于内存中处于有效状态，最明显的例子是用户A使用此账号登录了，用户B使用同一账号进行登录，此时回调触发。
 <br><br>
-����ص��������Է������³���ֵ��<br> 
-<a href="../Modules/KBEngine.html">KBEngine</a>.<a href=KBEngine.html#LOG_ON_ACCEPT>LOG_ON_ACCEPT</a>�������µĿͻ�����ʵ����а󶨣����ʵ���Ѿ�����һ���ͻ��ˣ�֮ǰ�Ŀͻ��˽����߳���<br>
-<a href="../Modules/KBEngine.html">KBEngine</a>.<a href=KBEngine.html#LOG_ON_REJECT>LOG_ON_REJECT</a>���ܾ��µĿͻ�����ʵ��󶨡� 
-<br><a href="../Modules/KBEngine.html">KBEngine</a>.<a href=KBEngine.html#LOG_ON_WAIT_FOR_DESTROY>LOG_ON_WAIT_FOR_DESTROY</a>���ȴ�ʵ�����ٺ��ٽ��пͻ��˰󶨡�
+这个回调函数可以返回如下常量值：<br> 
+<a href="../Modules/KBEngine.html">KBEngine</a>.<a href=KBEngine.html#LOG_ON_ACCEPT>LOG_ON_ACCEPT</a>：允许新的客户端与实体进行绑定，如果实体已经绑定了一个客户端，之前的客户端将被踢出。<br>
+<a href="../Modules/KBEngine.html">KBEngine</a>.<a href=KBEngine.html#LOG_ON_REJECT>LOG_ON_REJECT</a>：拒绝新的客户端与实体绑定。 
+<br><a href="../Modules/KBEngine.html">KBEngine</a>.<a href=KBEngine.html#LOG_ON_WAIT_FOR_DESTROY>LOG_ON_WAIT_FOR_DESTROY</a>：等待实体销毁后再进行客户端绑定。
 <br><br>
 </div>
 
 <p>
-<span class="function_parameter">������</span>
+<span class="function_parameter">参数：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><span class="function_parameter_name"><i>ip</i></span></td><td><span class="function_parameter_description">&nbsp;���Ե�¼�Ŀͻ���IP��ַ��
+<tr valign=top><td><span class="function_parameter_name"><i>ip</i></span></td><td><span class="function_parameter_description">&nbsp;尝试登录的客户端IP地址。
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>port</i></span></td><td><span class="function_parameter_description">&nbsp;���Ե�¼�Ŀͻ������ӵĶ˿ڡ�
+<tr valign=top><td><span class="function_parameter_name"><i>port</i></span></td><td><span class="function_parameter_description">&nbsp;尝试登录的客户端连接的端口。
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>password</i></span></td><td><span class="function_parameter_description">&nbsp;�û���¼ʱʹ�õ�MD5���롣
+<tr valign=top><td><span class="function_parameter_name"><i>password</i></span></td><td><span class="function_parameter_description">&nbsp;用户登录时使用的MD5密码。
 </span></td></tr>
 
 </table>
@@ -343,34 +344,34 @@ tuple, �̶�Ϊ2��Ԫ�ص�tuple(��½����bytes��ע������bytes)����һ��Ԫ��Ϊ��½ʱ�ͻ
 <span class="function_definition">def onStreamComplete( <i>self, id, success</i> ):</span>
 </p>
 
-<div class="function_description">����ڽű���ʵ���˴˻ص������û�ʹ��<a href="Proxy.html">Proxy</a>.<a href=Proxy.html#streamStringToClient>streamStringToClient</a>()��<a href="Proxy.html">Proxy</a>.<a href=Proxy.html#streamFileToClient>streamFileToClient</a>()���ʱ���ûص������á�
+<div class="function_description">如果在脚本中实现了此回调，当用户使用<a href="Proxy.html">Proxy</a>.<a href=Proxy.html#streamStringToClient>streamStringToClient</a>()或<a href="Proxy.html">Proxy</a>.<a href=Proxy.html#streamFileToClient>streamFileToClient</a>()完成时，该回调被调用。
 
 
 </div>
 
 <p>
-<span class="function_parameter">������</span>
+<span class="function_parameter">参数：</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr valign=top><td><span class="function_parameter_name"><i>id</i></span></td><td><span class="function_parameter_description">&nbsp;�����ع�����id��
+<tr valign=top><td><span class="function_parameter_name"><i>id</i></span></td><td><span class="function_parameter_description">&nbsp;与下载关联的id。
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>success</i></span></td><td><span class="function_parameter_description">&nbsp;�ɹ����
+<tr valign=top><td><span class="function_parameter_name"><i>success</i></span></td><td><span class="function_parameter_description">&nbsp;成功与否。
 </span></td></tr>
 
 </table>
 </p>
 
 <hr>
-<h2>�����ĵ�</h2>
+<h2>属性文档</h2>
 
 <a name="__ACCOUNT_NAME__"></a><p class="attribute_definition">
 <span class="attribute_definition">__ACCOUNT_NAME__</span>
 </p>
 
 <div class="attribute_description">
-<b>˵����</b><br><br>
-���proxy���ʺ�����Է���__ACCOUNT_NAME__�õ��ʺ�����
+<b>说明：</b><br><br>
+如果proxy是帐号则可以访问__ACCOUNT_NAME__得到帐号名。
 </div>
 
 <a name="__ACCOUNT_PASSWORD__"></a><p class="attribute_definition">
@@ -378,46 +379,46 @@ tuple, �̶�Ϊ2��Ԫ�ص�tuple(��½����bytes��ע������bytes)����һ��Ԫ��Ϊ��½ʱ�ͻ
 </p>
 
 <div class="attribute_description">
-<b>˵����</b><br><br>
-���proxy���ʺ�����Է���__ACCOUNT_PASSWORD__�õ��ʺ�MD5���롣
+<b>说明：</b><br><br>
+如果proxy是帐号则可以访问__ACCOUNT_PASSWORD__得到帐号MD5密码。
 </div>
 
 <a name="clientAddr"></a><p class="attribute_definition">
 <span class="attribute_definition">clientAddr</span>
 </p>
 
-<div class="attribute_description">����һ��tuple���󣬰����˿ͻ��˵�ip��˿ڡ�
+<div class="attribute_description">这是一个tuple对象，包含了客户端的ip与端口。
 </div>
 
 <a name="clientEnabled"></a><p class="attribute_definition">
 <span class="attribute_definition">clientEnabled</span>
 </p>
 
-<div class="attribute_description">ʵ���Ƿ��Ѿ����á���ʵ�����֮ǰ�ű�������ͻ��˽���ͨѶ��
+<div class="attribute_description">实体是否已经可用。在实体可用之前脚本不能与客户端进行通讯。
 </div>
 
 <a name="hasClient"></a><p class="attribute_definition">
 <span class="attribute_definition">hasClient</span>
 </p>
 
-<div class="attribute_description">Proxy�Ƿ����һ���ͻ������ӡ�
+<div class="attribute_description">Proxy是否绑定了一个客户端连接。
 </div>
 
 <a name="roundTripTime"></a><p class="attribute_definition">
 <span class="attribute_definition">roundTripTime</span>
 </p>
 
-<div class="attribute_description">��һ��ʱ���ڷ����������Proxy�󶨵Ŀͻ���ͨѶƽ������ʱ�䡣�������ֻ��Linux����Ч��
+<div class="attribute_description">在一段时间内服务器与这个Proxy绑定的客户端通讯平均往返时间。这个属性只在Linux下生效。
 </div>
 
 <a name="timeSinceHeardFromClient"></a><p class="attribute_definition">
 <span class="attribute_definition">timeSinceHeardFromClient</span>
 </p>
 
-<div class="attribute_description">���һ���յ��ͻ������ݰ�ʱ��ĿǰΪֹ����ȥ��ʱ�䣨�룩��
+<div class="attribute_description">最后一次收到客户端数据包时到目前为止所过去的时间（秒）。
 </div>
 
 <hr>
-<p class="copyrightFooter">��Ȩ��KBEngine���С�</p>
+<p class="copyrightFooter">版权归KBEngine所有。</p>
 </body>
 </html>

@@ -1,17 +1,18 @@
 <html>
 <head>
-<title>KBEngine - KBEngine logger ÎÄµµ</title>
+<meta charset="UTF-8">
+<title>KBEngine - KBEngine logger æ–‡æ¡£</title>
 <link href="../../style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
 <tr><td align=left style="background:#708090"> <font size=15 color=#ffffff> KBEngine </font></td></tr>
 </table> <hr>
-<h1>KBEngineÄ£¿é</h1>
-<a href="KBEngine.html">KBEngine</a>Ä£¿éÌá¹©ÁËPython½Å±¾¿ØÖÆ¶ÔÌØ¶¨ÀàÐÍµÄÈÕÖ¾½øÐÐ·ÖÎöºÍ×ª´¢µÈÄÜÁ¦¡£
+<h1>KBEngineæ¨¡å—</h1>
+<a href="KBEngine.html">KBEngine</a>æ¨¡å—æä¾›äº†Pythonè„šæœ¬æŽ§åˆ¶å¯¹ç‰¹å®šç±»åž‹çš„æ—¥å¿—è¿›è¡Œåˆ†æžå’Œè½¬å‚¨ç­‰èƒ½åŠ›ã€‚
 
 
-<h2><a href="#" onClick="obj=document.getElementById( 'functions' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">³ÉÔ±º¯Êý</a></h2>
+<h2><a href="#" onClick="obj=document.getElementById( 'functions' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">æˆå‘˜å‡½æ•°</a></h2>
 <table id="functions" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr><td>
@@ -28,7 +29,7 @@
 
 </table>
 
-<h2><a href="#" onClick="obj=document.getElementById( 'callbacks' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">»Øµ÷º¯Êý</a></h2>
+<h2><a href="#" onClick="obj=document.getElementById( 'callbacks' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">å›žè°ƒå‡½æ•°</a></h2>
 <table id="callbacks" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr><td>
@@ -51,57 +52,57 @@
 
 
 <hr>
-<h2>³ÉÔ±º¯ÊýÎÄµµ</h2>
+<h2>æˆå‘˜å‡½æ•°æ–‡æ¡£</h2>
 
 <a name="addTimer"></a><p class="function_definition">
 <span class="function_definition">def addTimer( <i>initialOffset, repeatOffset=0, callbackObj=None</i> ):</span>
 </p>
 
 <div class="function_description">
-<b>¹¦ÄÜËµÃ÷£º</b><br><br>
-×¢²áÒ»¸ö¶¨Ê±Æ÷£¬¶¨Ê±Æ÷ÓÉ»Øµ÷º¯ÊýcallbackObj´¥·¢£¬»Øµ÷º¯Êý½«ÔÚ"initialOffset"Ãëºó±»Ö´ÐÐµÚ1´Î£¬¶øºó½«Ã¿¼ä¸ô"repeatOffset"ÃëÖ´ÐÐ1´Î¡£
+<b>åŠŸèƒ½è¯´æ˜Žï¼š</b><br><br>
+æ³¨å†Œä¸€ä¸ªå®šæ—¶å™¨ï¼Œå®šæ—¶å™¨ç”±å›žè°ƒå‡½æ•°callbackObjè§¦å‘ï¼Œå›žè°ƒå‡½æ•°å°†åœ¨"initialOffset"ç§’åŽè¢«æ‰§è¡Œç¬¬1æ¬¡ï¼Œè€ŒåŽå°†æ¯é—´éš”"repeatOffset"ç§’æ‰§è¡Œ1æ¬¡ã€‚
 <br><br>
-Àý×Ó:
+ä¾‹å­:
 
-<pre><pre># ÕâÀïÊÇÊ¹ÓÃaddTimerµÄÒ»¸öÀý×Ó
+<pre><pre># è¿™é‡Œæ˜¯ä½¿ç”¨addTimerçš„ä¸€ä¸ªä¾‹å­
         import <a href="../Modules/KBEngine.html">KBEngine</a>
 &nbsp;
-        # Ôö¼ÓÒ»¸ö¶¨Ê±Æ÷£¬5ÃëºóÖ´ÐÐµÚ1´Î£¬¶øºóÃ¿1ÃëÖ´ÐÐ1´Î£¬ÓÃ»§²ÎÊýÊÇ9
+        # å¢žåŠ ä¸€ä¸ªå®šæ—¶å™¨ï¼Œ5ç§’åŽæ‰§è¡Œç¬¬1æ¬¡ï¼Œè€ŒåŽæ¯1ç§’æ‰§è¡Œ1æ¬¡ï¼Œç”¨æˆ·å‚æ•°æ˜¯9
         KBEngine.addTimer( 5, 1, onTimer_Callbackfun )
 &nbsp;
-        # Ôö¼ÓÒ»¸ö¶¨Ê±Æ÷£¬1ÃëºóÖ´ÐÐ£¬ÓÃ»§²ÎÊýÈ±Ê¡ÊÇ0
+        # å¢žåŠ ä¸€ä¸ªå®šæ—¶å™¨ï¼Œ1ç§’åŽæ‰§è¡Œï¼Œç”¨æˆ·å‚æ•°ç¼ºçœæ˜¯0
         KBEngine.addTimer( 1, onTimer_Callbackfun )
 &nbsp;
     def onTimer_Callbackfun( id ):
         print "onTimer_Callbackfun called: id %i" % ( id )
-        # if ÕâÊÇ²»¶ÏÖØ¸´µÄ¶¨Ê±Æ÷£¬µ±²»ÔÙÐèÒª¸Ã¶¨Ê±Æ÷µÄÊ±ºò£¬µ÷ÓÃÏÂÃæº¯ÊýÒÆ³ý:
+        # if è¿™æ˜¯ä¸æ–­é‡å¤çš„å®šæ—¶å™¨ï¼Œå½“ä¸å†éœ€è¦è¯¥å®šæ—¶å™¨çš„æ—¶å€™ï¼Œè°ƒç”¨ä¸‹é¢å‡½æ•°ç§»é™¤:
         #     KBEngine.delTimer( id )</pre>
 </pre>
 </div>
 
 <p>
-<span class="function_parameter">²ÎÊý£º</span>
+<span class="function_parameter">å‚æ•°ï¼š</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>initialOffset</i></span></td><td><span class="function_parameter_description">
-float£¬Ö¸¶¨¶¨Ê±Æ÷´Ó×¢²áµ½µÚÒ»´Î»Øµ÷µÄÊ±¼ä¼ä¸ô£¨Ãë£©¡£
+floatï¼ŒæŒ‡å®šå®šæ—¶å™¨ä»Žæ³¨å†Œåˆ°ç¬¬ä¸€æ¬¡å›žè°ƒçš„æ—¶é—´é—´éš”ï¼ˆç§’ï¼‰ã€‚
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>repeatOffset</i></span></td><td><span class="function_parameter_description">
-float£¬Ö¸¶¨µÚÒ»´Î»Øµ÷Ö´ÐÐºóÃ¿´ÎÖ´ÐÐµÄÊ±¼ä¼ä¸ô£¨Ãë£©¡£±ØÐëÓÃº¯Êý<a href="#delTimer">delTimer</a>ÒÆ³ý¶¨Ê±Æ÷£¬·ñÔòËü»áÒ»Ö±ÖØ¸´ÏÂÈ¥¡£ÖµÐ¡ÓÚµÈÓÚ0½«±»ºöÂÔ¡£
+floatï¼ŒæŒ‡å®šç¬¬ä¸€æ¬¡å›žè°ƒæ‰§è¡ŒåŽæ¯æ¬¡æ‰§è¡Œçš„æ—¶é—´é—´éš”ï¼ˆç§’ï¼‰ã€‚å¿…é¡»ç”¨å‡½æ•°<a href="#delTimer">delTimer</a>ç§»é™¤å®šæ—¶å™¨ï¼Œå¦åˆ™å®ƒä¼šä¸€ç›´é‡å¤ä¸‹åŽ»ã€‚å€¼å°äºŽç­‰äºŽ0å°†è¢«å¿½ç•¥ã€‚
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>callbackObj</i></span></td><td><span class="function_parameter_description">
-function£¬Ö¸¶¨µÄ»Øµ÷º¯Êý¶ÔÏó¡£
+functionï¼ŒæŒ‡å®šçš„å›žè°ƒå‡½æ•°å¯¹è±¡ã€‚
 </span></td></tr>
 
 </table>
 </p>
 
 <p>
-<span class="function_return">·µ»Ø:</span>
+<span class="function_return">è¿”å›ž:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>integer£¬¸Ãº¯Êý·µ»ØtimerµÄÄÚ²¿id£¬Õâ¸öid¿ÉÓÃÓÚ<a href="#delTimer">delTimer</a>ÒÆ³ý¶¨Ê±Æ÷¡£
+<tr><td>integerï¼Œè¯¥å‡½æ•°è¿”å›žtimerçš„å†…éƒ¨idï¼Œè¿™ä¸ªidå¯ç”¨äºŽ<a href="#delTimer">delTimer</a>ç§»é™¤å®šæ—¶å™¨ã€‚
 </td></tr>
 </table>
 </p>
@@ -113,19 +114,19 @@ function£¬Ö¸¶¨µÄ»Øµ÷º¯Êý¶ÔÏó¡£
 </p>
 
 <div class="function_description">
-<b>¹¦ÄÜËµÃ÷£º</b><br><br>
-º¯ÊýdelTimerÓÃÓÚÒÆ³ýÒ»¸ö×¢²áµÄ¶¨Ê±Æ÷£¬ÒÆ³ýºóµÄ¶¨Ê±Æ÷²»ÔÙÖ´ÐÐ¡£Ö»Ö´ÐÐ1´ÎµÄ¶¨Ê±Æ÷ÔÚÖ´ÐÐ»Øµ÷ºó×Ô¶¯ÒÆ³ý£¬²»±ØÒªÊ¹ÓÃdelTimerÒÆ³ý¡£
-Èç¹ûdelTimerº¯ÊýÊ¹ÓÃÒ»¸öÎÞÐ§µÄid£¨ÀýÈçÒÑ¾­ÒÆ³ý£©£¬½«»á²úÉú´íÎó¡£
+<b>åŠŸèƒ½è¯´æ˜Žï¼š</b><br><br>
+å‡½æ•°delTimerç”¨äºŽç§»é™¤ä¸€ä¸ªæ³¨å†Œçš„å®šæ—¶å™¨ï¼Œç§»é™¤åŽçš„å®šæ—¶å™¨ä¸å†æ‰§è¡Œã€‚åªæ‰§è¡Œ1æ¬¡çš„å®šæ—¶å™¨åœ¨æ‰§è¡Œå›žè°ƒåŽè‡ªåŠ¨ç§»é™¤ï¼Œä¸å¿…è¦ä½¿ç”¨delTimerç§»é™¤ã€‚
+å¦‚æžœdelTimerå‡½æ•°ä½¿ç”¨ä¸€ä¸ªæ— æ•ˆçš„idï¼ˆä¾‹å¦‚å·²ç»ç§»é™¤ï¼‰ï¼Œå°†ä¼šäº§ç”Ÿé”™è¯¯ã€‚
 <br><br>
-µ½KBEngine.addTimer</a>²Î¿¼¶¨Ê±Æ÷µÄÒ»¸öÊ¹ÓÃÀý×Ó¡£
+åˆ°KBEngine.addTimer</a>å‚è€ƒå®šæ—¶å™¨çš„ä¸€ä¸ªä½¿ç”¨ä¾‹å­ã€‚
 </div>
 
 <p>
-<span class="function_parameter">²ÎÊý£º</span>
+<span class="function_parameter">å‚æ•°ï¼š</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>id</i></span></td><td><span class="function_parameter_description">
-integer£¬ËüÖ¸¶¨ÒªÒÆ³ýµÄ¶¨Ê±Æ÷id¡£
+integerï¼Œå®ƒæŒ‡å®šè¦ç§»é™¤çš„å®šæ—¶å™¨idã€‚
 </span></td></tr>
 
 </table>
@@ -138,44 +139,44 @@ integer£¬ËüÖ¸¶¨ÒªÒÆ³ýµÄ¶¨Ê±Æ÷id¡£
 </p>
 
 <div class="function_description">
-<b>¹¦ÄÜËµÃ÷£º</b><br><br>
-Õâ¸ö½Å±¾º¯ÊýÔÚÌá¹©¶ÔÍâHTTP/HTTPSÒì²½ÇëÇó¡£
+<b>åŠŸèƒ½è¯´æ˜Žï¼š</b><br><br>
+è¿™ä¸ªè„šæœ¬å‡½æ•°åœ¨æä¾›å¯¹å¤–HTTP/HTTPSå¼‚æ­¥è¯·æ±‚ã€‚
 </div>
 
 <p>
-<span class="function_parameter">²ÎÊý£º</span>
+<span class="function_parameter">å‚æ•°ï¼š</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>url</i></span></td><td><span class="function_parameter_description">
-ÓÐÐ§µÄHTTP/HTTPSÍøÖ·£¬×Ö·û´®ÀàÐÍ¡£
+æœ‰æ•ˆçš„HTTP/HTTPSç½‘å€ï¼Œå­—ç¬¦ä¸²ç±»åž‹ã€‚
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td>
 <td><p class="function_parameter_description">
-¿ÉÑ¡²ÎÊý£¬´øÓÐÇëÇóÖ´ÐÐ½á¹ûµÄ»Øµ÷¶ÔÏó£¨±ÈÈçËµÊÇÒ»¸öº¯Êý£©¡£Õâ¸ö»Øµ÷´øÓÐ5¸ö²ÎÊý£ºHTTPÇëÇó·µ»ØÂë£¨Èç£º200)£¬·µ»ØµÄÄÚÈÝ£¬·µ»ØµÄHTTPÐ­ÒéÍ·£¬ÊÇ·ñ³É¹¦£¬ÇëÇóµÄÍøÖ·¡£
+å¯é€‰å‚æ•°ï¼Œå¸¦æœ‰è¯·æ±‚æ‰§è¡Œç»“æžœçš„å›žè°ƒå¯¹è±¡ï¼ˆæ¯”å¦‚è¯´æ˜¯ä¸€ä¸ªå‡½æ•°ï¼‰ã€‚è¿™ä¸ªå›žè°ƒå¸¦æœ‰5ä¸ªå‚æ•°ï¼šHTTPè¯·æ±‚è¿”å›žç ï¼ˆå¦‚ï¼š200)ï¼Œè¿”å›žçš„å†…å®¹ï¼Œè¿”å›žçš„HTTPåè®®å¤´ï¼Œæ˜¯å¦æˆåŠŸï¼Œè¯·æ±‚çš„ç½‘å€ã€‚
 <br>
-ÉùÃ÷ÑùÀý£º<br>
+å£°æ˜Žæ ·ä¾‹ï¼š<br>
 def 
 onHttpCallback(httpcode, data, headers, success, url):<br>
 &nbsp;&nbsp;&nbsp;&nbsp;print(httpcode, data, headers, success, url)  <br>
 <br>
-ÈçÍ¬ÉÏÃæµÄÀý×ÓËùÊ¾:
-<br><p class="function_parameter_description"></p>httpcode:²ÎÊý¶ÔÓ¦µÄ¾ÍÊÇ&ldquo;HTTPÇëÇó·µ»ØÂë&rdquo;£¬Õâ¸ö½á¹û¼¯ºÏ²ÎÊýÊÇÒ»¸öÕûÐÎÖµ¡£
-<p class="function_parameter_description"></p>data:²ÎÊýÔòÊÇ&ldquo;·µ»ØµÄÄÚÈÝ&rdquo;£¬ËüÊÇÒ»¸ö×Ö·û´®¡£
+å¦‚åŒä¸Šé¢çš„ä¾‹å­æ‰€ç¤º:
+<br><p class="function_parameter_description"></p>httpcode:å‚æ•°å¯¹åº”çš„å°±æ˜¯&ldquo;HTTPè¯·æ±‚è¿”å›žç &rdquo;ï¼Œè¿™ä¸ªç»“æžœé›†åˆå‚æ•°æ˜¯ä¸€ä¸ªæ•´å½¢å€¼ã€‚
+<p class="function_parameter_description"></p>data:å‚æ•°åˆ™æ˜¯&ldquo;è¿”å›žçš„å†…å®¹&rdquo;ï¼Œå®ƒæ˜¯ä¸€ä¸ªå­—ç¬¦ä¸²ã€‚
 </p>
-<p class="function_parameter_description">headers:²ÎÊýÊÇ&ldquo;·þÎñÆ÷·µ»ØµÄHTTPÐ­ÒéÍ·&rdquo;£¬Èç£º{"Content-Type": "application/x-www-form-urlencoded"}£¬ËüÊÇÒ»¸ö×Öµä¡£
-<p class="function_parameter_description"></p>success:Ôò¶ÔÓ¦ÁË&ldquo;Ö´ÐÐÊÇ·ñ³É¹¦&rdquo;£¬µ±ÇëÇóÖ´ÐÐÓÐ´íÎóÊ±£¬ÎªFalse£¬¿ÉÒÔÍ¨¹ýhttpcode½øÒ»²½ÅÐ¶Ï´íÎóÐÅÏ¢¡£
+<p class="function_parameter_description">headers:å‚æ•°æ˜¯&ldquo;æœåŠ¡å™¨è¿”å›žçš„HTTPåè®®å¤´&rdquo;ï¼Œå¦‚ï¼š{"Content-Type": "application/x-www-form-urlencoded"}ï¼Œå®ƒæ˜¯ä¸€ä¸ªå­—å…¸ã€‚
+<p class="function_parameter_description"></p>success:åˆ™å¯¹åº”äº†&ldquo;æ‰§è¡Œæ˜¯å¦æˆåŠŸ&rdquo;ï¼Œå½“è¯·æ±‚æ‰§è¡Œæœ‰é”™è¯¯æ—¶ï¼Œä¸ºFalseï¼Œå¯ä»¥é€šè¿‡httpcodeè¿›ä¸€æ­¥åˆ¤æ–­é”™è¯¯ä¿¡æ¯ã€‚
 </p>
-<p class="function_parameter_description">url:ÊÇ&ldquo;ÇëÇóËùÓÃµÄÍøÖ·¡£
+<p class="function_parameter_description">url:æ˜¯&ldquo;è¯·æ±‚æ‰€ç”¨çš„ç½‘å€ã€‚
 </p>
 </td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>postData</i></span></td><td><span class="function_parameter_description">
-¿ÉÑ¡²ÎÊý£¬Ä¬ÈÏÊÇGET·½Ê½ÇëÇó·þÎñÆ÷£¬Èç¹ûÐèÒªPOST·½Ê½ÇëÌá¹©ÐèÒªPOSTµÄÄÚÈÝ£¬ÒýÇæ½«×Ô¶¯Ê¹ÓÃPOST·½Ê½ÇëÇó·þÎñÆ÷£¬ËüÊÇÒ»¸öbytes¡£
+å¯é€‰å‚æ•°ï¼Œé»˜è®¤æ˜¯GETæ–¹å¼è¯·æ±‚æœåŠ¡å™¨ï¼Œå¦‚æžœéœ€è¦POSTæ–¹å¼è¯·æä¾›éœ€è¦POSTçš„å†…å®¹ï¼Œå¼•æ“Žå°†è‡ªåŠ¨ä½¿ç”¨POSTæ–¹å¼è¯·æ±‚æœåŠ¡å™¨ï¼Œå®ƒæ˜¯ä¸€ä¸ªbytesã€‚
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>headers</i></span></td><td><span class="function_parameter_description">
-¿ÉÑ¡²ÎÊý£¬ÇëÇóÊ±Ê¹ÓÃµÄHTTPÍ·£¬Èç£º{"Content-Type": "application/x-www-form-urlencoded"}£¬ËüÊÇÒ»¸ö×Öµä¡£
+å¯é€‰å‚æ•°ï¼Œè¯·æ±‚æ—¶ä½¿ç”¨çš„HTTPå¤´ï¼Œå¦‚ï¼š{"Content-Type": "application/x-www-form-urlencoded"}ï¼Œå®ƒæ˜¯ä¸€ä¸ªå­—å…¸ã€‚
 </span></td></tr>
 
 </table>
@@ -184,16 +185,16 @@ onHttpCallback(httpcode, data, headers, success, url):<br>
 
 
 <hr>
-<h2>»Øµ÷º¯ÊýÎÄµµ</h2>
+<h2>å›žè°ƒå‡½æ•°æ–‡æ¡£</h2>
 
 <a name="onLoggerAppReady"></a><p class="function_definition">
 <span class="function_definition">def onLoggerAppReady( <i></i> ):</span>
 </p>
 
 <div class="function_description">
-<b>¹¦ÄÜËµÃ÷£º</b><br><br>
-µ±Ç°½ø³ÌÒÑ¾­×¼±¸ºÃµÄÊ±ºò»Øµ÷´Ëº¯Êý¡£
-<br>×¢Òâ£º¸Ã»Øµ÷½Ó¿Ú±ØÐëÊµÏÖÔÚÈë¿ÚÄ£¿é(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)ÖÐ¡£
+<b>åŠŸèƒ½è¯´æ˜Žï¼š</b><br><br>
+å½“å‰è¿›ç¨‹å·²ç»å‡†å¤‡å¥½çš„æ—¶å€™å›žè°ƒæ­¤å‡½æ•°ã€‚
+<br>æ³¨æ„ï¼šè¯¥å›žè°ƒæŽ¥å£å¿…é¡»å®žçŽ°åœ¨å…¥å£æ¨¡å—(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)ä¸­ã€‚
 </div>
 
 
@@ -203,9 +204,9 @@ onHttpCallback(httpcode, data, headers, success, url):<br>
 </p>
 
 <div class="function_description">
-<b>¹¦ÄÜËµÃ÷£º</b><br><br>
-½ø³Ì¹Ø±Õ»á»Øµ÷´Ëº¯Êý¡£
-<br>×¢Òâ£º¸Ã»Øµ÷½Ó¿Ú±ØÐëÊµÏÖÔÚÈë¿ÚÄ£¿é(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)ÖÐ¡£
+<b>åŠŸèƒ½è¯´æ˜Žï¼š</b><br><br>
+è¿›ç¨‹å…³é—­ä¼šå›žè°ƒæ­¤å‡½æ•°ã€‚
+<br>æ³¨æ„ï¼šè¯¥å›žè°ƒæŽ¥å£å¿…é¡»å®žçŽ°åœ¨å…¥å£æ¨¡å—(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)ä¸­ã€‚
 </div>
 
 
@@ -215,19 +216,19 @@ onHttpCallback(httpcode, data, headers, success, url):<br>
 </p>
 
 <div class="function_description">
-<b>¹¦ÄÜËµÃ÷£º</b><br><br>
-Èç¹ûÕâ¸öº¯ÊýÔÚ½Å±¾ÖÐÓÐÊµÏÖ£¬logger½ø³Ì»ñµÃÁËÒ»ÌõÐÂÈÕÖ¾£¬¸Ã»Øµ÷º¯Êý±»µ÷ÓÃ¡£<br><br>
-Êý¾Ý¿â½Ó¿ÚÔÚ<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->dbmgr->databaseInterfaces¶¨Òå¡£<br>
+<b>åŠŸèƒ½è¯´æ˜Žï¼š</b><br><br>
+å¦‚æžœè¿™ä¸ªå‡½æ•°åœ¨è„šæœ¬ä¸­æœ‰å®žçŽ°ï¼Œloggerè¿›ç¨‹èŽ·å¾—äº†ä¸€æ¡æ–°æ—¥å¿—ï¼Œè¯¥å›žè°ƒå‡½æ•°è¢«è°ƒç”¨ã€‚<br><br>
+æ•°æ®åº“æŽ¥å£åœ¨<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->dbmgr->databaseInterfaceså®šä¹‰ã€‚<br>
 
-<br>×¢Òâ£º¸Ã»Øµ÷½Ó¿Ú±ØÐëÊµÏÖÔÚÈë¿ÚÄ£¿é(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)ÖÐ¡£<br>
+<br>æ³¨æ„ï¼šè¯¥å›žè°ƒæŽ¥å£å¿…é¡»å®žçŽ°åœ¨å…¥å£æ¨¡å—(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)ä¸­ã€‚<br>
 </div>
 
 <p>
-<span class="function_parameter">²ÎÊý£º</span>
+<span class="function_parameter">å‚æ•°ï¼š</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>datas</i></span></td><td><span class="function_parameter_description">
-bytes£¬ÈÕÖ¾Êý¾Ý¡£
+bytesï¼Œæ—¥å¿—æ•°æ®ã€‚
 </span></td></tr>
 
 </table>
@@ -240,18 +241,18 @@ bytes£¬ÈÕÖ¾Êý¾Ý¡£
 </p>
 
 <div class="function_description">
-<b>¹¦ÄÜËµÃ÷£º</b><br><br>
-Èç¹ûÕâ¸öº¯ÊýÔÚ½Å±¾ÖÐÓÐÊµÏÖ£¬µ±½ø³Ì×¼±¸ÍË³öÊ±£¬¸Ã»Øµ÷º¯Êý±»µ÷ÓÃ¡£<br><br>
+<b>åŠŸèƒ½è¯´æ˜Žï¼š</b><br><br>
+å¦‚æžœè¿™ä¸ªå‡½æ•°åœ¨è„šæœ¬ä¸­æœ‰å®žçŽ°ï¼Œå½“è¿›ç¨‹å‡†å¤‡é€€å‡ºæ—¶ï¼Œè¯¥å›žè°ƒå‡½æ•°è¢«è°ƒç”¨ã€‚<br><br>
 
-¿ÉÒÔÍ¨¹ý¸Ã»Øµ÷¿ØÖÆ½ø³ÌÍË³öµÄÊ±»ú¡£<br>
-<br>×¢Òâ£º¸Ã»Øµ÷½Ó¿Ú±ØÐëÊµÏÖÔÚÈë¿ÚÄ£¿é(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)ÖÐ¡£
+å¯ä»¥é€šè¿‡è¯¥å›žè°ƒæŽ§åˆ¶è¿›ç¨‹é€€å‡ºçš„æ—¶æœºã€‚<br>
+<br>æ³¨æ„ï¼šè¯¥å›žè°ƒæŽ¥å£å¿…é¡»å®žçŽ°åœ¨å…¥å£æ¨¡å—(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)ä¸­ã€‚
 </div>
 
 <p>
-<span class="function_return">·µ»Ø£º</span>
+<span class="function_return">è¿”å›žï¼š</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-bool£¬Èç¹û·µ»ØTrue£¬ÔòÔÊÐí½øÈë½ø³ÌÍË³öÁ÷³Ì£¬·µ»ØÆäËüÖµÔò½ø³Ì»á¹ýÒ»¶ÎÊ±¼äºóÔÙ´ÎÑ¯ÎÊ¡£
+boolï¼Œå¦‚æžœè¿”å›žTrueï¼Œåˆ™å…è®¸è¿›å…¥è¿›ç¨‹é€€å‡ºæµç¨‹ï¼Œè¿”å›žå…¶å®ƒå€¼åˆ™è¿›ç¨‹ä¼šè¿‡ä¸€æ®µæ—¶é—´åŽå†æ¬¡è¯¢é—®ã€‚
 </td></tr>
 </table>
 </p>
@@ -260,6 +261,6 @@ bool£¬Èç¹û·µ»ØTrue£¬ÔòÔÊÐí½øÈë½ø³ÌÍË³öÁ÷³Ì£¬·µ»ØÆäËüÖµÔò½ø³Ì»á¹ýÒ»¶ÎÊ±¼äºóÔÙ´ÎÑ¯
 
 
 <hr>
-<p class="copyrightFooter">°æÈ¨¹éKBEngineËùÓÐ¡£</p>
+<p class="copyrightFooter">ç‰ˆæƒå½’KBEngineæ‰€æœ‰ã€‚</p>
 </body>
 </html>
