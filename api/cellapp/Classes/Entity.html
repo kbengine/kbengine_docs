@@ -60,7 +60,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#entitiesInView" class="function_list" >entitiesInView</a>( self ):</span>
+<span class="function_list">def <a href="#entitiesInView" class="function_list" >entitiesInView</a>( self, pending):</span>
 </td></tr>
 
 <tr><td>
@@ -629,12 +629,22 @@ integer，它指定要移除的定时器id。
 </div>
 
 <a name="entitiesInView"></a><p class="function_definition">
-<span class="function_definition">def entitiesInView( <i>self</i> ):</span>
+<span class="function_definition">def entitiesInView( <i>self, pending</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>功能说明：</b><br><br>
 获得这个实体的<a href=../../keywords.html#View>View</a>范围内的实体列表。
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr valign=top><td><span class="function_parameter_name"><i>pending</i></span></td><td><span class="function_parameter_description">
+bool，可选参数，默认值为False，只返回客户端可见的所有实体，否则返回服务端可见但未同步到客户端的所有实体。
+</span></td></tr>
+</table>
+</p>
 
 <a name="entitiesInRange"></a><p class="function_definition">
 <span class="function_definition">def entitiesInRange( <i>self, range, entityType=None, position=None</i> ):</span>

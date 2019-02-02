@@ -61,7 +61,7 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#entitiesInView" class="function_list" >entitiesInView</a>( self ):</span>
+<span class="function_list">def <a href="#entitiesInView" class="function_list" >entitiesInView</a>( self, pending):</span>
 </td></tr>
 
 <tr><td>
@@ -692,13 +692,24 @@ Destroys the <a href=../../keywords.html#Space>space</a> this entity is in.
 </div>
 
 <a name="entitiesInView"></a><p class="function_definition">
-<span class="function_definition">def entitiesInView( <i>self</i> ):</span>
+<span class="function_definition">def entitiesInView( <i>self, pending</i> ):</span>
 </p>
 
 <div class="function_description">
 <b>Function description:</b><br><br>
 Get a list of entities in the <a href=../../keywords.html#View>View</a> 
 scope of this entity.
+</div>
+
+<p>
+<span class="function_parameter">parameters:</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr valign=top><td><span class="function_parameter_name"><i>pending</i></span></td><td><span class="function_parameter_description">
+bool, optional parameter, the default is False, only all entities visible to the client are returned, 
+otherwise all entities visible to the server but not synchronized to the client are returned.
+</span></td></tr>
+</table>
+</p>
 
 <a name="entitiesInRange"></a><p class="function_definition">
 <span class="function_definition">def entitiesInRange( <i>self, range, entityType=None, position=None</i> ):</span>
