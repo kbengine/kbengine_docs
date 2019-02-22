@@ -194,6 +194,10 @@ as well as the creation of <a href="../Classes/Entity.html">entities</a>.
 <tr><td>
 <span class="function_list">def <a href="#onAllSpaceGeometryLoaded" class="function_list" >onAllSpaceGeometryLoaded</a>( spaceID, isBootstrap, mapping ):</span>
 </td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#onReadyForLogin" class="function_list" >onReadyForLogin</a>( isBootstrap ):</span>
+</td></tr>
 </table>
 
 <h2><a href="#" onClick="obj=document.getElementById( 'attributes' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">Attributes</a></h2>
@@ -1579,6 +1583,40 @@ The map value of grid collision data.
 </table>
 </p>
 
+</table>
+</p>
+
+<a name="onReadyForLogin"></a><p class="function_definition">
+<span class="function_definition">def onReadyForLogin( <i>isBootstrap</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>Function description:</b><br><br>
+When the engine is started and initialized, it will always call this function 
+to ask whether the script layer is ready. If the script layer is ready, 
+loginapp allows the client to log in.
+<br>Note: This callback function must be implemented in the portal module (<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile).
+</div>
+
+<p>
+<span class="function_parameter">parameters:</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>isBootstrap</i></span></td><td><span class="function_parameter_description">
+bool, True if this is the first <a href="../index.html">Cellapp</a> started.
+</span></td></tr>
+
+
+
+</table>
+</p>
+
+<p>
+<span class="function_return">returns:</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>If the return value is greater than or equal to 1.0, the script 
+layer is ready; otherwise, return a value from 0 to less than 1.0.
+</td></tr>
 </table>
 </p>
 
