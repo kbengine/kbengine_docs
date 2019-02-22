@@ -397,13 +397,11 @@
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="onTeleportFailure">
 		<param name="Name" value="Entity - KBEngine cell 文档">
-		<param name="Local" value="baseapp\Classes\Entity.html#onTeleportFailure">
 		<param name="Local" value="cellapp\Classes\Entity.html#onTeleportFailure">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="onTeleportSuccess">
 		<param name="Name" value="Entity - KBEngine cell 文档">
-		<param name="Local" value="baseapp\Classes\Entity.html#onTeleportSuccess">
 		<param name="Local" value="cellapp\Classes\Entity.html#onTeleportSuccess">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
@@ -517,8 +515,6 @@
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="teleport">
-		<param name="Name" value="Entity - KBEngine base 文档">
-		<param name="Local" value="baseapp\Classes\Entity.html#teleport">
 		<param name="Name" value="Entity - KBEngine cell 文档">
 		<param name="Local" value="cellapp\Classes\Entity.html#teleport">
 		</OBJECT>
@@ -1016,6 +1012,8 @@
 		<param name="Name" value="onReadyForLogin">
 		<param name="Name" value="KBEngine - KBEngine base 文档">
 		<param name="Local" value="baseapp\Modules\KBEngine.html#onReadyForLogin">
+		<param name="Name" value="KBEngine - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Modules\KBEngine.html#onReadyForLogin">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="onSpaceData">
