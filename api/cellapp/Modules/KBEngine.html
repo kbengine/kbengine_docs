@@ -191,6 +191,10 @@
 <tr><td>
 <span class="function_list">def <a href="#onAllSpaceGeometryLoaded" class="function_list" >onAllSpaceGeometryLoaded</a>( spaceID, isBootstrap, mapping ):</span>
 </td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#onReadyForLogin" class="function_list" >onReadyForLogin</a>( isBootstrap ):</span>
+</td></tr>
 </table>
 
 <h2><a href="#" onClick="obj=document.getElementById( 'attributes' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">属性</a></h2>
@@ -1502,6 +1506,30 @@ space数据由用户通过<a href=#setSpaceData>setSpaceData</a>设置。
 </table>
 </p>
 
+
+
+<a name="onReadyForLogin"></a><p class="function_definition">
+<span class="function_definition">def onReadyForLogin( <i>isBootstrap</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+当引擎启动并初始化完成后会一直调用此接口询问脚本层是否准备完毕，如果脚本层准备完毕则loginapp允许客户端登录。
+<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)中。
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>isBootstrap</i></span></td><td><span class="function_parameter_description">
+bool，是否为第一个启动的<a href="../index.html">Cellapp</a>。
+</span></td></tr>
+
+
+
+</table>
+</p>
 
 <hr>
 <h2>属性文档</h2>

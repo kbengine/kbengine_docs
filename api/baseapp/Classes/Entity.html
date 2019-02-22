@@ -40,10 +40,6 @@
 </td></tr>
 
 <tr><td>
-<span class="function_list">def <a href="#teleport" class="function_list" >teleport</a>( self, baseEntityMB ):</span>
-</td></tr>
-
-<tr><td>
 <span class="function_list">def <a href="#writeToDB" class="function_list" >writeToDB</a>( self, callback, shouldAutoLoad, dbInterfaceName ):</span>
 </td></tr>
 
@@ -78,14 +74,6 @@
 
 <tr><td>
 <span class="function_list">def <a href="#onTimer" class="function_list" >onTimer</a>( self, timerHandle, userData ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#onTeleportFailure" class="function_list" >onTeleportFailure</a>( self ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#onTeleportSuccess" class="function_list" >onTeleportSuccess</a>( self, nearbyEntity ):</span>
 </td></tr>
 
 <tr><td>
@@ -324,28 +312,6 @@ integer，它指定要移除的定时器id。
 <i>destroyCellEntity</i>请求销毁关联的cell实体。如果没有关联的cell实体该方法将会产生错误。
 </div>
 
-<a name="teleport"></a><p class="function_definition">
-<span class="function_definition">def teleport( <i>self, baseEntityMB</i> ):</span>
-</p>
-
-<div class="function_description">
-<b>功能说明：</b><br><br>
-<i>teleport</i>会瞬移这个实体的cell部分到参数指定的实体所在的空间。
-<br><br>
-在抵达新的空间后，Entity.onTeleportSuccess被调用。这可以用来在新的空间里移动该实体到合适的位置。
-</div>
-
-<p>
-<span class="function_parameter">参数：</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-
-<tr valign=top><td><span class="function_parameter_name"><i>baseEntityMB</i></span></td><td><span class="function_parameter_description">
-实体应该移到的指定实体所在的空间，baseEntityMB即指定实体的<a href=../../keywords.html#EntityCall>EntityCall</a>。当成功的时候，与此参数相关联的cell实体会被传入到Entity.onTeleportSuccess函数。
-</span></td></tr>
-
-</table>
-</p>
-
 <a name="writeToDB"></a><p class="function_definition">
 <span class="function_definition">def writeToDB( <i>self, callback, shouldAutoLoad, dbInterfaceName</i> ):</span>
 </p>
@@ -469,36 +435,6 @@ string，可选参数，指定由某个数据库接口来完成, 默认使用"de
 
 </table>
 </p>
-
-
-<a name="onTeleportFailure"></a><p class="function_definition">
-<span class="function_definition">def onTeleportFailure( <i>self</i> ):</span>
-</p>
-
-<div class="function_description">如果这个函数在脚本中有实现，当用户调用<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#teleport>teleport</a>失败时该回调被调用。
-</div>
-
-
-<a name="onTeleportSuccess"></a><p class="function_definition">
-<span class="function_definition">def onTeleportSuccess( <i>self, nearbyEntity</i> ):</span>
-</p>
-
-<div class="function_description">如果这个函数在脚本中有实现，当用户调用<a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#teleport>teleport</a>成功时该回调被调用。
-</div>
-
-<p>
-<span class="function_parameter">参数：</span>
-<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-
-<tr valign=top><td><span class="function_parameter_name"><i>nearbyEntity</i></span></td><td><span class="function_parameter_description">&nbsp;这个参数由用户调用
-    <a href=../../keywords.html#entity>Entity</a>.<a href=Entity.html#teleport>teleport</a>时给出。这是一个real实体。
-<br><br>
-
-</table>
-</p>
-
-
-
 
 <a name="onWriteToDB"></a><p class="function_definition">
 <span class="function_definition">def onWriteToDB( <i>self, cellData</i> ):</span>
