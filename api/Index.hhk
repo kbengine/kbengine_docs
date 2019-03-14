@@ -186,6 +186,11 @@
 		<param name="Local" value="client\Classes\Entity.html#onLeaveWorld">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="isPlayer">
+		<param name="Local" value="bots\Classes\Entity.html#isPlayer">
+		<param name="Local" value="client\Classes\Entity.html#isPlayer">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="getAppFlags">
 		<param name="Name" value="KBEngine - KBEngine base 文档">
 		<param name="Local" value="baseapp\Modules\KBEngine.html#getAppFlags">
