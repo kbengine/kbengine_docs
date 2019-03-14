@@ -23,6 +23,10 @@
 <span class="function_list">def <a href="#cancelController" class="function_list" >cancelController</a>( self, controllerID ):</span>
 </td></tr>
 
+<tr><td>
+<span class="function_list">def <a href="#isPlayer" class="function_list" >isPlayer</a>( self ):</span>
+</td></tr>
+
 </table>
 
 <h2><a href="#" onClick="obj=document.getElementById( 'callbacks' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">回调函数</a></h2>
@@ -178,6 +182,23 @@ controllerID是要取消的控制器的索引，它是一个整型。一个专�
 例如，一次只有一个移动/导航控制器可以被激活，这可以用entity.cancelController( "Movement" )取消。
 </span></td></tr>
 
+</table>
+</p>
+
+<a name="isPlayer"></a><p class="function_definition">
+<span class="function_definition">def isPlayer( <i>self</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+这个函数返回这个<a href=../../keywords.html#entity>Entity</a>是否为当前客户端所控制的Player。
+</div>
+
+<p>
+<span class="function_return">返回：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>bool， 如果是当前客户端所控制的Player返回True，否则返回False。
+</td></tr>
 </table>
 </p>
 
