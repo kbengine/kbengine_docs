@@ -25,6 +25,10 @@
 <span class="function_list">def <a href="#cancelController" class="function_list" >cancelController</a>( self, controllerID ):</span>
 </td></tr>
 
+<tr><td>
+<span class="function_list">def <a href="#isPlayer" class="function_list" >isPlayer</a>( self ):</span>
+</td></tr>
+
 </table>
 
 <h2><a href="#" onClick="obj=document.getElementById( 'callbacks' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">Callbacks</a></h2>
@@ -192,6 +196,24 @@ string can also be used. For example, only one movement/navigation controller
 can be activated at a time. This can be cancelled with entity.cancelController("Movement").
 </span></td></tr>
 
+</table>
+</p>
+
+<a name="isPlayer"></a><p class="function_definition">
+<span class="function_definition">def isPlayer( <i>self</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>Function description:</b><br><br>
+This function returns whether the <a href=../../keywords.html#entity>Entity</a>
+is the player controlled by the current client.
+</div>
+
+<p>
+<span class="function_return">returns:</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>bool, If the player controlled by the current client returns true, otherwise it returns false.
+</td></tr>
 </table>
 </p>
 
