@@ -1,0 +1,381 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>KBEngine - KBEngine dbmgr</title>
+<link href="../../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td align=left style="background:#708090"> <font size=15 color=#ffffff> KBEngine </font></td></tr>
+</table> <hr>
+<h1>KBEngine module</h1>
+This <a href="KBEngine.html">KBEngine</a> module provides Python scripts to 
+control the dbmgr process to handle entity login queries and data access.
+
+
+<h2><a href="#" onClick="obj=document.getElementById( 'functions' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">Member functions</a></h2>
+<table id="functions" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr><td>
+<span class="function_list">def <a href="#addTimer" class="function_list" >addTimer</a>( initialOffset, repeatOffset=0, callbackObj=None ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#delTimer" class="function_list" >delTimer</a>( id ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#executeRawDatabaseCommand" class="function_list" >executeRawDatabaseCommand</a>( command, callback, threadID, dbInterfaceName ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#urlopen" class="function_list" >urlopen</a>( url, callback, postData, headers ):</span>
+</td></tr>
+
+</table>
+
+<h2><a href="#" onClick="obj=document.getElementById( 'callbacks' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">Callbacks</a></h2>
+<table id="callbacks" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr><td>
+<span class="function_list">def <a href="#onDBMgrReady" class="function_list" >onDBMgrReady</a>( ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#onDBMgrShutDown" class="function_list" >onDBMgrShutDown</a>( ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#onReadyForShutDown" class="function_list" >onReadyForShutDown</a>( ):</span>
+</td></tr>
+
+<tr><td>
+<span class="function_list">def <a href="#onSelectAccountDBInterface" class="function_list" >onSelectAccountDBInterface</a>( accountName ):</span>
+</td></tr>
+
+</table>
+
+
+<hr>
+<h2>Member functions documentation</h2>
+
+<a name="addTimer"></a><p class="function_definition">
+<span class="function_definition">def addTimer( <i>initialOffset, repeatOffset=0, callbackObj=None</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>Function description:</b><br><br>
+Registers a timer. The timer triggers the callback function specified 
+by callbackObj. The callback will be executed the first time after 
+"initialOffset" seconds, and then executed once every "repeatOffset" 
+seconds.
+<br><br>
+Example:
+
+<pre><pre># Here is an example of using addTimer
+        import <a href="../Modules/KBEngine.html">KBEngine</a>
+&nbsp;
+        # Add a timer, perform the first time after 5 seconds, and execute once every 1 second. The user parameter is 9
+        KBEngine.addTimer( 5, 1, onTimer_Callbackfun )
+&nbsp;
+        # Add a timer and execute it after 1 second. The default user parameter is 0.
+        KBEngine.addTimer( 1, onTimer_Callbackfun )
+&nbsp;
+    def onTimer_Callbackfun( id ):
+        print "onTimer_Callbackfun called: id %i" % ( id )
+        # If this is a repeated timer, it is no longer needed, call the following function to remove: 
+        #     KBEngine.delTimer( id )</pre>
+</pre>
+</div>
+
+<p>
+<span class="function_parameter">parameters:</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>initialOffset</i></span></td><td><span class="function_parameter_description">
+float, specifies the time interval in seconds for the timer to register 
+the first callback.
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>repeatOffset</i></span></td><td><span class="function_parameter_description">
+float, specifies the time interval (in seconds) after each execution of 
+the first callback execution. You must remove the timer with the function 
+<a href="#delTimer">delTimer</a>, otherwise it will continue to repeat. 
+Values less than or equal to 0 will be ignored.
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>callbackObj</i></span></td><td><span class="function_parameter_description">
+function, the specified callback function object.
+</span></td></tr>
+
+</table>
+</p>
+
+<p>
+<span class="function_return">returns:</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>integer, this function returns the internal id of the timer. 
+This id can be used to remove the timer using <a href="#delTimer">delTimer</a>.
+</td></tr>
+</table>
+</p>
+
+
+
+<a name="delTimer"></a><p class="function_definition">
+<span class="function_definition">def delTimer( <i>id</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>Function description:</b><br><br>
+The delTimer function is used to remove a registered timer. The removed 
+timer is no longer executed. Single-shot timers are automatically removed 
+after the callback is executed, and it is not necessary to use delTimer 
+to remove it. If the delTimer function receives an invalid id (for 
+example, it was removed), it will generate an error.
+
+<br><br>
+A use case is in the KBEngine.<a href="#addTimer">addTimer</a> example.
+</div>
+
+<p>
+<span class="function_parameter">parameters:</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>id</i></span></td><td><span class="function_parameter_description">
+integer, specifies the timer id to remove.
+</span></td></tr>
+
+</table>
+</p>
+
+
+
+<a name="executeRawDatabaseCommand"></a><p class="function_definition">
+<span class="function_definition">def executeRawDatabaseCommand( <i>command, callback, threadID, dbInterfaceName</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>Function description:</b><br><br>
+This script function executes a database command on the database, which 
+is directly parsed by the relevant database.
+<br><br>
+Please note that using this function to modify entity data may not be 
+effective because if the entity has been checked out, the modified data 
+will still be archived by the entity and cause overwriting.<br>
+This function is strongly not recommended for reading or modifying entity data.
+</div>
+
+<p>
+<span class="function_parameter">parameters:</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>command</i></span></td><td><span class="function_parameter_description">
+This database command will be different for different database configuration 
+scenarios. For a MySQL database it is an SQL query.
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td>
+<td><p class="function_parameter_description">
+Optional parameter, callback object (for example, a function) called 
+back with the command execution result. <br>
+This callback has 4 parameters: result set, number of rows affected, 
+auto value, error message.<br>
+Example:<br>
+def sqlcallback(result, rows, insertid, error):
+&nbsp;&nbsp;&nbsp;&nbsp;print(result, rows, insertid, error)
+<br><br>
+
+As the above example shows, the result parameter corresponds to the 
+"result set", and the result set parameter is a row List. Each line is a 
+list of strings containing field values. If the command execution does not 
+return a result set (for example, a DELETE command), or the command 
+execution encounters an error, the result set is None.
+<br><br>
+
+The rows parameter is the "number of rows affected", which is an integer 
+indicating the number of rows affected by the command execution. This 
+parameter is only relevant for commands that do not return results 
+(such as DELETE).<br>
+This parameter is None if there is a result set return or if there is an 
+error in the command execution.
+<br><br>
+
+The insertid is a long value, similar to an entity's databaseID. When 
+successfully inserting data int a table with an auto long type field, it 
+returns the data at the time of insertion. <br>
+More information can be found in mysql's mysql_insert_id() method. In 
+addition, this parameter is only meaningful when the database type is 
+mysql.
+<br><br>
+
+Error corresponds to the "error message", when the command execution 
+encounters an error, this parameter is a string describing the error. 
+This parameter is None when the command execution has not occurred.
+</p></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>threadID</i></span></td><td><span class="function_parameter_description">
+int32, optional parameter, specifies a thread to process this command. 
+Users can use this parameter to control the execution order of certain 
+commands (dbmgr is multi-threaded). The default is not specified. If threadId 
+is the ID of an entity, it will be added to the entity's archive queue 
+and written by the thread one by one.
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>dbInterfaceName</i></span></td><td><span class="function_parameter_description">
+string, optional parameter, specifies a database interface. By default it 
+uses the "default" interface. Database interfaces are defined by kbengine_defaults.xml->dbmgr->databaseInterfaces.
+</span></td></tr>
+
+</table>
+</p>
+
+
+
+<a name="urlopen"></a><p class="function_definition">
+<span class="function_definition">def urlopen( <i>url, callback, postData, headers</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>Function description:</b><br><br>
+This script function is providing an external HTTP/HTTPS asynchronous request.
+</div>
+
+<p>
+<span class="function_parameter">parameters:</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>url</i></span></td><td><span class="function_parameter_description">
+A valid HTTP/HTTPS URL.
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td>
+<td><p class="function_parameter_description">
+Optional parameter with a callback object (for example, a function) that requests execution results. This callback takes five parameters: the HTTP request return code (eg: 200), 
+the returned content, the returned HTTP protocol header, whether it succeeded, and the requested URL.
+<br>
+Example:<br>
+def 
+onHttpCallback(httpcode, data, headers, success, url):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;print(httpcode, data, headers, success, url)  <br>
+<br>
+As the above example shows:
+<br><p class="function_parameter_description"></p>httpcode:The parameter corresponds to the &quot;HTTP request return code&quot;, is an integer.
+<p class="function_parameter_description"></p>data:The parameter is &ldquo; returned content & rdquo;, it is a string.
+</p>
+<p class="function_parameter_description">headers:The parameter is the HTTP protocol header returned by the server, such as:{"Content-Type": "application/x-www-form-urlencoded"}, is an dict.
+<p class="function_parameter_description">success:Whether the execution is successful or not, when the request execution has an error, it is False, and the error information can be further judged by httpcode.
+</p>
+<p class="function_parameter_description"></p>url:Is the URL used by the request.
+</p>
+</td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>postData</i></span></td><td><span class="function_parameter_description">
+Optional parameter, the default is GET mode request server. If you need POST mode, please provide the content that needs POST. The engine will automatically request the server using POST, is an bytes.
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>headers</i></span></td><td><span class="function_parameter_description">
+Optional parameter, HTTP header used when requesting, such as：{"Content-Type": "application/x-www-form-urlencoded"}, is an dict.
+</span></td></tr>
+
+</table>
+</p>
+
+        
+
+
+<hr>
+<h2>Callback functions documentation</h2>
+
+<a name="onDBMgrReady"></a><p class="function_definition">
+<span class="function_definition">def onDBMgrReady( <i></i> ):</span>
+</p>
+
+<div class="function_description">
+<b>Function description:</b><br><br>
+This function is called back when the current process is ready.
+<br>Note: This callback interface must be implemented in the portal module ( kbengine_defaults.xml ->entryScriptFile).
+</div>
+
+
+
+<a name="onDBMgrShutDown"></a><p class="function_definition">
+<span class="function_definition">def onDBMgrShutDown( <i></i> ):</span>
+</p>
+
+<div class="function_description">
+<b>Function description:</b><br><br>
+This function is called when the process shuts down.
+<br>Note: This callback interface must be implemented in the portal module ( kbengine_defaults.xml ->entryScriptFile).
+</div>
+
+
+
+<a name="onReadyForShutDown"></a><p class="function_definition">
+<span class="function_definition">def onReadyForShutDown( <i></i> ):</span>
+</p>
+
+<div class="function_description">
+<b>Function description:</b><br><br>
+If this function is implemented in a script, the callback function is called when the process is ready to exit.<br><br>
+
+You can use this callback to control when the process exits.<br>
+<br>Note: This callback interface must be implemented in the portal module ( kbengine_defaults.xml ->entryScriptFile).
+</div>
+
+<p>
+<span class="function_return">returns:</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+bool, if it returns True, it allows the process to exit. Returning other 
+values will cause the process to ask again after a period of time.
+</td></tr>
+</table>
+</p>
+
+
+
+<a name="onSelectAccountDBInterface"></a><p class="function_definition">
+<span class="function_definition">def onSelectAccountDBInterface( <i>accountName</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>Function description:</b><br><br>
+When implemented in a script, this callback returns the database interface 
+corresponding to an account. After the interface is selected, the dbmgr 
+operations related to this account are completed by the corresponding 
+database interface.
+<br><br>
+Database interfaces are defined in <a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->dbmgr->databaseInterfaces.<br>
+Use this function to determine which database the account should be stored 
+in based on accountName.<br>
+<br>Note: This callback interface must be implemented in the portal module ( kbengine_defaults.xml ->entryScriptFile).<br>
+</div>
+
+<p>
+<span class="function_parameter">parameters:</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>accountName</i></span></td><td><span class="function_parameter_description">
+string, the name of the account.
+</span></td></tr>
+
+</table>
+</p>
+
+<p>
+<span class="function_return">returns:</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+string, the database interface name (database interfaces are defined in <a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->dbmgr->databaseInterfaces).
+</td></tr>
+</table>
+</p>
+
+
+
+
+<hr>
+<p class="copyrightFooter">Copyright KBEngine</p>
+</body>
+</html>
