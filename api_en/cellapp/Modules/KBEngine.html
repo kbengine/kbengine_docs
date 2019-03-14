@@ -1,17 +1,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>KBEngine - KBEngine cell 文档</title>
+<title>KBEngine - KBEngine cell</title>
 <link href="../../style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <table width="100%" border="0" cellpadding="0" cellspacing="0">
 <tr><td align=left style="background:#708090"> <font size=15 color=#ffffff> KBEngine </font></td></tr>
 </table> <hr>
-<h1>KBEngine模块</h1>
-<a href="KBEngine.html">KBEngine</a>模块提供了Python脚本访问<a href="../Classes/Entity.html">实体</a>的部分，特别是它提供了定时器的注册与移除，
-以及<a href="../Classes/Entity.html">实体</a>的创建。
-<h2><a href="#" onClick="obj=document.getElementById( 'classes' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">类</a></h2>
+<h1>KBEngine module</h1>
+This <a href="KBEngine.html">KBEngine</a> module provides 
+the Python script access to the <a href="../Classes/Entity.html">entity</a>'s 
+cell part, in particular it provides the registration and removal of timers, 
+as well as the creation of <a href="../Classes/Entity.html">entities</a>.
+
+<h2><a href="#" onClick="obj=document.getElementById( 'classes' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">Classes</a></h2>
 <table id="classes" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr><td>
@@ -20,7 +23,7 @@
 
 </table>
 
-<h2><a href="#" onClick="obj=document.getElementById( 'functions' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">成员函数</a></h2>
+<h2><a href="#" onClick="obj=document.getElementById( 'functions' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">Member functions</a></h2>
 <table id="functions" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr><td>
@@ -157,7 +160,7 @@
 
 </table>
 
-<h2><a href="#" onClick="obj=document.getElementById( 'callbacks' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">回调函数</a></h2>
+<h2><a href="#" onClick="obj=document.getElementById( 'callbacks' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">Callback</a></h2>
 <table id="callbacks" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr><td>
@@ -197,7 +200,7 @@
 </td></tr>
 </table>
 
-<h2><a href="#" onClick="obj=document.getElementById( 'attributes' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">属性</a></h2>
+<h2><a href="#" onClick="obj=document.getElementById( 'attributes' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">Attributes</a></h2>
 <table id="attributes" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><a href="#LOG_TYPE_DBG" class="attribute_list" >LOG_TYPE_DBG</a></td><td>&nbsp; </td></tr>
@@ -214,7 +217,7 @@
 
 <tr valign=top><td><a href="#cellAppData" class="attribute_list" >cellAppData</a></td><td>&nbsp; </td></tr>
 
-<tr valign=top><td><a href="#component" class="attribute_list" >component</a></td><td>&nbsp; 只读 <a href="STRING.html">string</a></td></tr>
+<tr valign=top><td><a href="#component" class="attribute_list" >component</a></td><td>&nbsp; Read-only <a href="STRING.html">string</a></td></tr>
 
 <tr valign=top><td><a href="#entities" class="attribute_list" >entities</a></td><td>&nbsp; <a href="Entities.html">Entities</a>
 </td></tr>
@@ -224,52 +227,61 @@
 </table>
 
 <hr>
-<h2>成员函数文档</h2>
+<h2>Member functions documentation</h2>
 
 <a name="addSpaceGeometryMapping"></a><p class="function_definition">
 <span class="function_definition">def addSpaceGeometryMapping( <i>spaceID, mapper, path, shouldLoadOnServer, params</i> ):</span>
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-关联一个给定空间的几何映射，函数调用之后服务端和客户端都会加载相应的几何体数据。<br>
+<b>Function description:</b><br><br>
+Associate a geometric mapping of a given space. After the function is 
+called, the server and client will load the corresponding geometry data.<br>
 <br><br>
-在服务端上，从给定目录里加载所有的几何数据到指定的空间。这些数据可能被分成很多区块，不同区块是异步加载的，当所有的几何数据加载
-完成的时候下面的通知方法会被调用：
+On the server, all geometry data is loaded from the given directory into 
+the specified space. These data may be divided into many blocks. Different 
+blocks are loaded asynchronously. The following callback methods are 
+called when all the geometry data is loaded:
 <pre>	def onAllSpaceGeometryLoaded( self, spaceID, mappingName ):
 </pre>
 <br>
 
-服务端仅加载场景的几何数据提供给导航和碰撞功能使用，客户端除了几何数据外还会加载纹理等数据。
+The server only loads the geometric data of the scene for use by the 
+navigation and collision functions. In addition to the geometric data, 
+the client also loads data such as textures.
 <br>
-3D场景当前默认使用的是recastnavigation插件所导出的数据，2D场景当前默认使用的是MapEditor编辑器导出的数据。
+3D scenes currently use the data exported by the recastnavigation 
+plugin-in by default. 2D scenes currently use the data exported by 
+MapEditor by default.
 
 <br><br>
-有一种可能会导致onAllSpaceGeometryLoaded()不被调用，就是如果在某一个
-时刻多个CellApp同时调用这个方法来添加几何到相同的空间的时候CellAppMgr崩溃了。
+There is a possibility that onAllSpaceGeometryLoaded() will not be 
+invoked, that is, if multiple Cellapps call this method at the same time 
+to add geometry to the same space, cellappmgr crashes.
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>spaceID</i></span></td><td><span class="function_parameter_description">
-uint32，空间的ID，指定在哪个空间操作
+uint32, ID of the space, specifies in which space to operate
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>mapper</i></span></td><td><span class="function_parameter_description">
-目前填None
+Not yet implemented
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>path</i></span></td><td><span class="function_parameter_description">
-包含几何数据的目录路径
+Directory path containing geometry data
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>shouldLoadOnServer</i></span></td><td><span class="function_parameter_description">
-可选的boolean参数，指定是否在服务端上加载几何。默认为True
+Optional boolean parameter that specifies whether to load geometry on 
+the server. Default is True.
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>params</i></span></td><td><span class="function_parameter_description">
-可选的PyDict参数，指定不同layer所使用的navmesh，例如：<br>
+Optional PyDict parameter, specifies the navmesh used by different layers, for example:<br>
 KBEngine.addSpaceGeometryMapping(self.spaceID, None, resPath, True, {0 : "srv_xinshoucun_1.navmesh", 1 : "srv_xinshoucun.navmesh"})
 </span></td></tr>
 
@@ -281,10 +293,11 @@ KBEngine.addSpaceGeometryMapping(self.spaceID, None, resPath, True, {0 : "srv_xi
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-与调试监视系统交互，允许用户向监视系统注册一个监视变量。
+<b>Function description:</b><br><br>
+Interacts with the debug monitoring system to allow users to register 
+a monitoring variable with the monitoring system.
 <br><br>
-例：
+Example:
 <br>
 
 <pre>
@@ -298,24 +311,25 @@ KBEngine.addSpaceGeometryMapping(self.spaceID, None, resPath, True, {0 : "srv_xi
 >>> <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#addWatcher>addWatcher</a>( "players", "UINT32", countPlayers )
 </pre>
 <br><br>
-这个函数添加一个监视变量在"scripts/players"监视路径之下。函数countPlayers在观察者观察时被调用。
+This function adds a watch variable under the "scripts/players" watch path. 
+The function countPlayers is called when the watcher observes a change.
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>path</i></span></td><td><span class="function_parameter_description">
-创建监视的路径。
+The path to create a watcher.
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>dataType</i></span></td><td><span class="function_parameter_description">
-监视变量的值类型。参考: <a href=../../basetypes.html>基本类型</a>
+The value type of the monitored variable. Reference: <a href=../../basetypes.html>Basic data types</a>
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>getFunction</i></span></td><td><span class="function_parameter_description">
-这个函数当观察者检索该变量时调用。
-这个函数不带参数返回一个代表监视变量的值。
+This function is called when the observer retrieves the variable.
+This function returns a value representing a watch variable without arguments.
 </span></td></tr>
 
 </table>
@@ -328,8 +342,8 @@ KBEngine.addSpaceGeometryMapping(self.spaceID, None, resPath, True, {0 : "srv_xi
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-返回内部网络接口的地址。
+<b>Function description:</b><br><br>
+Returns the address of the internal network interface.
 </div>
 
 
@@ -338,14 +352,17 @@ KBEngine.addSpaceGeometryMapping(self.spaceID, None, resPath, True, {0 : "srv_xi
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-返回一个新的MemoryStream对象。<br>
+<b>Function description:</b><br><br>
+Return a new MemoryStream object.<br>
 <br>
-MemoryStream对象存储的是二进制信息，提供这个类型是为了让用户能够方便的序列化与反序列化Python基本类型同时能与KBEngine底层序列化规则相同。<br>
+The MemoryStream object stores binary information. This type is provided 
+to allow the user to easily serialize and deserialize the Python base types 
+following the same KBEngine underlying serialization rules.<br>
 <br><br>
-例如：你可以使用这个对象构造一个KBEngine能解析的网络数据包。
+For example, you can use this object to construct a network packet that 
+KBEngine can parse.
 <br><br>
-用法：
+Usage:
 <pre>
 >>> s = KBEngine.MemoryStream()
 >>> s
@@ -355,7 +372,8 @@ MemoryStream对象存储的是二进制信息，提供这个类型是为了让�
 >>> 1
 </pre>
 <br><br>
-目前MemoryStream能够支持的类型仅为基本数据类型。参考: <a href=../../basetypes.html>基本类型</a>
+The types that MemoryStream currently supports are only basic data types. 
+Reference: <a href=../../basetypes.html>Basic data types</a>
 </div>
 
 
@@ -364,13 +382,17 @@ MemoryStream对象存储的是二进制信息，提供这个类型是为了让�
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-createEntity在当前进程指定space中创建一个新的实体。<br>
-这个函数需要指定要创建的实体的类别，位置和方向，还可以选择性地设置实体的任意属性（属性在实体的.def文件里描述）。
+<b>Function description:</b><br><br>
+createEntity creates a new entity in the specified space of the current 
+process.
+<br>
+When calling this function you must specifiy the type, location, and direction 
+of the entity to be created. Optionally, any attribute of the entity can 
+be set with the params Python dictionary parameter. (the attributes are described in the entity's .def file).
 <br><br>
-例子：
+Example:
 
-<pre># 创建一个打开的门的实体与"thing"实体的位置一样
+<pre># Create an open Door entity in the same space as the "thing" entity
 direction = ( 0, 0, thing.yaw )
 properties = { "open":1 }
 <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#createEntity>createEntity</a>( "Door", thing.space, thing.position, direction,
@@ -379,38 +401,42 @@ properties = { "open":1 }
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>entityType</i></span></td><td><span class="function_parameter_description">
-string，要创建的实体名称，在<res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>文件里声明。
+string, the name of the entity to create, declared in the <res><a href=../../keywords.html#entities.xml>/scripts/entities.xml</a>
+file.
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>spaceID</i></span></td><td><span class="function_parameter_description">
-int32，要放置实体的空间的ID。
+int32, the ID of the space to place the entity
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>position</i></span></td><td><span class="function_parameter_description">
-由3个float组成的序列，指定新实体的出生点，在世界中的坐标。
+A sequence of 3 floats that specify the creation point of the new entity, 
+in world coordinates.
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>direction</i></span></td><td><span class="function_parameter_description">
-由3个float组成的序列，指定新实体的初始朝向(roll, pitch, yaw)，相对于世界坐标系。
+A sequence of 3 floats that specify the initial orientation (roll, pitch, yaw) 
+of the new entity in world coordinates.
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>params</i></span></td><td><span class="function_parameter_description">
-可选参数, 一个Python字典对象。
-如果一个指定的键是一个<a href="../Classes/Entity.html">Entity</a>属性，他的值会用来初始化这个<a href="../Classes/Entity.html">Entity</a>实体的属性。
+Optional parameters, a Python dictionary object. If a specified key is 
+an <a href="../Classes/Entity.html">Entity</a> attribute, its value will 
+be used to initialize the properties of the new <a href="../Classes/Entity.html">Entity</a>.
 </span></td></tr>
 
 </table>
 </p>
 
 <p>
-<span class="function_return">返回：</span>
+<span class="function_return">returns:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-新<a href="../../keywords.html#cn_entity">实体</a>。
+The new <a href="../../keywords.html#cn_entity">Entity</a>.
 </td></tr>
 </table>
 </p>
@@ -422,10 +448,11 @@ int32，要放置实体的空间的ID。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-输出当前KBEngine追踪的Python扩展对象计数器。<br>
-扩展对象包括：固定字典、固定数组、Entity、EntityCall...<br>
-在服务端正常关闭时如果计数器不为零，此时说明泄露已存在，日志将会输出错误信息。<br><br>
+<b>Function description:</b><br><br>
+Outputs the Python extension object counter that outputs KBEngine trace.<br>
+Extended objects include: fixed dictionary, fixed array, Entity, EntityCall...<br>
+If the counter is not zero when the server is shut down normally, it means 
+that the leak already exists and the log will output an error message.<br><br>
 ERROR cellapp [0x0000cd64] [2014-11-12 00:38:07,300] - PyGC::debugTracing(): FixedArray : leaked(128)<br>
 ERROR cellapp [0x0000cd64] [2014-11-12 00:38:07,300] - PyGC::debugTracing(): EntityCall : leaked(8)
 </div>
@@ -436,22 +463,23 @@ ERROR cellapp [0x0000cd64] [2014-11-12 00:38:07,300] - PyGC::debugTracing(): Ent
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-删除指定key的space数据（如果space分割成多个部分，将进行同步删除）。
+<b>Function description:</b><br><br>
+Deletes the space data of the specified key (if space is divided into 
+multiple parts, it will be deleted synchronously).
 <br>
-space数据由用户通过<a href=#setSpaceData>setSpaceData</a>设置。
+The space data is set by the user via <a href=#setSpaceData>setSpaceData</a>.
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>spaceID</i></span></td><td><span class="function_parameter_description">
-int32，空间的ID。
+int32, the ID of the space
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>key</i></span></td><td><span class="function_parameter_description">
-string，一个字符串关键字。
+string, a string keyword
 </span></td></tr>
 </table>
 </p>
@@ -463,16 +491,17 @@ string，一个字符串关键字。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-与调试监视系统交互，允许用户在脚本删除监视的变量。
+<b>Function description:</b><br><br>
+Interacts with the debug monitoring system, allowing users to delete 
+watcher variables in the script.
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>path</i></span></td><td><span class="function_parameter_description">
-要删除的变量的路径。
+The path of the variable to delete.
 </span></td></tr>
 
 </table>
@@ -485,20 +514,20 @@ string，一个字符串关键字。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-注销已经通过<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#registerReadFileDescriptor>registerReadFileDescriptor</a>注册的回调。
+<b>Function description:</b><br><br>
+Deregisters the callback registered with <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#registerReadFileDescriptor>registerReadFileDescriptor</a>.
 <br>
 <br>
-例子:<br>
+Example:<br>
 <a href=http://www.kbengine.org/assets/other/py/Poller.py>http://www.kbengine.org/assets/other/py/Poller.py</a>
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>fileDescriptor</i></span></td><td><span class="function_parameter_description">
-socket描述符/文件描述符。
+Socket descriptor/file descriptor
 </span></td></tr>
 
 </table>
@@ -509,20 +538,20 @@ socket描述符/文件描述符。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-注销已经通过<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#registerWriteFileDescriptor>registerWriteFileDescriptor</a>注册的回调。
+<b>Function description:</b><br><br>
+Deregisters the callback registered with <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#registerWriteFileDescriptor>registerWriteFileDescriptor</a>.
 <br>
 <br>
-例子:<br>
+Example:<br>
 <a href=http://www.kbengine.org/assets/other/py/Poller.py>http://www.kbengine.org/assets/other/py/Poller.py</a>
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>fileDescriptor</i></span></td><td><span class="function_parameter_description">
-socket描述符/文件描述符。
+Socket descriptor/file descriptor
 </span></td></tr>
 
 </table>
@@ -535,47 +564,70 @@ socket描述符/文件描述符。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-这个脚本函数在数据库上执行原始数据库命令，该命令将直接由相关数据库进行解析。
+<b>Function description:</b><br><br>
+This script function executes a database command on the database, 
+which will be directly parsed by the relevant database.
 <br><br>
-请注意使用该函数修改实体数据可能不生效，因为如果实体已经检出，被修改过的实体数据将仍会被实体存档而导致覆盖。<br>
-强烈不推荐这个函数用于读取或修改实体数据。
+Please note that using this function to modify the entity data may not 
+be effective because if the entity has been checked out, the modified 
+entity data will still be archived by the entity and cause overwriting.<br>
+
+This function is strongly not recommended for reading or modifying entity data.
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>command</i></span></td><td><span class="function_parameter_description">
-这个数据库命令将会因为不同数据库配置方案而不同。对于方案为MySQL数据库它是一个SQL查询语句。
+This database command will be different for different database configurations. 
+For MySQL databases it will be an SQL query statement.
 </span></td></tr>
 
-<tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><p class="function_parameter_description">可选参数，带有命令执行结果的回调对象（比如说是一个函数）。这个回调带有4个参数：结果集合，影响的行数，自増长值，错误信息。 <br>
-  声明样例：<br>
-  def 
-  sqlcallback(result, rows, insertid, error):<br>
+<tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><p class="function_parameter_description">
+  Optional parameter, callbacks object (for example, a function) with the 
+  command's execution result. This callback has 4 parameters: result set, 
+  number of rows affected, auto value, and error message.<br>
+  Example:<br>
+  def sqlcallback(result, rows, insertid, error):<br>
   &nbsp;&nbsp;&nbsp;&nbsp;print(result, rows, insertid, error) <br>
   <br>
-  如同上面的例子所示，result参数对应的就是&ldquo;结果集合&rdquo;，这个结果集合参数是一个行列表。
-  每一行是一个包含字段值的字符串列表。<br>
-  命令执行没有返回结果集合（比如说是DELETE命令），
-  或者
-  命令执行有错误时这个结果集合为None。 <br>
-  <br>
-  rows参数则是&ldquo;影响的行数&rdquo;，它是一个整数，表示命令执行受影响的行数。这个参数只和不返回结果结合的命令（如DELETE）相关。<br>
-  如果有结果集合返回或者命令执行有错误时这个参数为None。 </p>
-    <p class="function_parameter_description">insertid对应的是&ldquo;自増长值&rdquo;，类似于实体的databaseID，当成功的向一张带有自増长类型字段的表中插入数据时，它返回该数据在插入时自増长字段所被赋于的值。<br>
-      更多的信息可以参阅mysql的mysql_insert_id()方法。另外，此参数仅在数据库类型为mysql时有意义。<br>
-  <br>
-  error则对应了&ldquo;错误信息&rdquo;，当命令执行有错误时，这个参数是一个描述错误的字符串。命令执行没有发生错误时这个参数为None。 </p></td></tr>
+  
+As the above example shows, the result parameter corresponds to the 
+"result set", and the result set parameter is a row. List. Each line is 
+a list of strings containing field values.<br>
+The command execution does not return a result set (for example, a DELETE 
+command), or the result set is None if the command execution has an error. 
+<br><br>
+The rows parameter is the "number of rows affected", which is an integer 
+indicating the number of rows affected by the command execution. This 
+parameter is only relevant for commands that do not return results (such as DELETE). <br>
+This parameter is None if there is a result set return or if there is an error in the command execution.
+<br><br>
+The insertid corresponds to a "long value", similar to the entity's 
+databaseID. When successfully inserting data into a table with an auto 
+long type field, it returns the data at the time of insertion. Assigned 
+value. <br>
+More information can be found in mysql's mysql_insert_id() method.
+In addition, this parameter is only meaningful when the database type is 
+mysql. 
+<br><br>
+error corresponds to the "error message", when the command execution error, 
+this parameter is a string describing the error. This parameter is None 
+when the command execution has not occurred.
 
 <tr valign=top><td><span class="function_parameter_name"><i>threadID</i></span></td><td><span class="function_parameter_description">
-int32，可选参数，指定一个线程来处理本条命令。用户可以通过这个参数控制某一类命令的执行先后顺序（dbmgr是多线程处理的），默认是不指定，如果threadID是实体的ID，<br>
-那么将加入到该实体的存档队列中由线程逐条写入。
+int32, optional parameter, specifies a thread to process this command. 
+Users can use this parameter to control the execution order of certain 
+commands (dbmgr is multi-threaded). The default is not specified. If 
+threadID is the ID of the entity, it will be added to the entity's archive 
+queue and written by the thread one by one.<br>
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>dbInterfaceName</i></span></td><td><span class="function_parameter_description">
-string，可选参数，指定由某个数据库接口来完成, 默认使用"default"接口。数据库接口由kbengine_defaults.xml->dbmgr->databaseInterfaces中定义。
+string, optional parameter, specified by a database interface, defaults 
+to "default" interface. The database interface is defined by 
+kbengine_defaults.xml->dbmgr->databaseInterfaces.
 </span></td></tr>
 
 </table>
@@ -588,22 +640,26 @@ string，可选参数，指定由某个数据库接口来完成, 默认使用"de
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-该函数生成一个64位的唯一ID。<br>
-注意：这个函数依赖于Cellapps服务进程启动参数gus，请正确设置启动参数保持唯一性。<br>
-另外如果gus超过65535则该函数只能在当前进程上保持唯一性。
+<b>Function description:</b><br><br>
+This function generates a 64-bit unique ID.<br>
+Note: This function is dependent on the 'gus' startup argument of the 
+Cellapp service process. Please set the startup arguments to be unique.<br>
+In addition, if gus exceeds 65535, this function can only remain unique 
+on the current process.
 <br>
 <br>
-用途：<br>
-多个服务进程上产生唯一物品ID并且在合服时不会产生冲突。<br>
-多个服务进程上产生一个房间ID，不需要进行唯一性校验。<br>
+Usage<br>
+A unique item ID is generated on multiple service processes and there is 
+no conflict when combined.<br>
+A room ID is generated on multiple service processes and no uniqueness 
+verification is required.<br>
 </div>
 
 <p>
-<span class="function_return">返回：</span>
+<span class="function_return">returns:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-返回一个64位的integer。
+64-bit integer
 </td></tr>
 </table>
 </p>
@@ -613,27 +669,27 @@ string，可选参数，指定由某个数据库接口来完成, 默认使用"de
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-获取资源的绝对路径。
-<br>注意：资源必须在<a href=../../keywords.html#KBE_RES_PATH>KBE_RES_PATH</a>之下才可以访问到。 
+<b>Function description:</b><br><br>
+Get the absolute path of the resource.<br>
+Note: Resoures must be accessible under <a href=../../keywords.html#KBE_RES_PATH>KBE_RES_PATH</a>.
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>res</i></span></td><td><span class="function_parameter_description">
-string，如果存在返回资源的绝对路径，否则返回空。
+string, if there is an absolute path to return the resource, otherwise it returns null.
 </span></td></tr>
 
 </table>
 </p>
 
 <p>
-<span class="function_return">返回：</span>
+<span class="function_return">returns:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-string，资源的绝对路径。
+string, the absolute path to the resource.
 </td></tr>
 </table>
 </p>
@@ -645,31 +701,31 @@ string，资源的绝对路径。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-获取指定key的space数据。
+<b>Function description:</b><br><br>
+Get the space data of the specified key.
 <br>
-space数据由用户通过<a href=#setSpaceData>setSpaceData</a>设置。
+The space data is set by the user via <a href=#setSpaceData>setSpaceData</a>.
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>spaceID</i></span></td><td><span class="function_parameter_description">
-int32，空间的ID。
+int32, the ID of the space
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>key</i></span></td><td><span class="function_parameter_description">
-string，一个字符串关键字。
+string, a string keyword
 </span></td></tr>
 </table>
 </p>
 
 <p>
-<span class="function_return">返回：</span>
+<span class="function_return">returns:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-string，指定key的字符串数据。
+string, string data for the given key
 </td></tr>
 </table>
 </p>
@@ -680,26 +736,26 @@ string，指定key的字符串数据。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-返回一个指定空间的几何映射名称。
+<b>Function description:</b><br><br>
+Returns the geometry map name of a specified space.
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>spaceID</i></span></td><td><span class="function_parameter_description">
-要查询的空间的id。
+The ID of the space to be queried
 </span></td></tr>
 
 </table>
 </p>
 
 <p>
-<span class="function_return">返回：</span>
+<span class="function_return">returns:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-string，几何映射名称。
+string, the name of the geometry map.
 </td></tr>
 </table>
 </p>
@@ -712,11 +768,11 @@ string，几何映射名称。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-从KBEngine调试系统中获取一个监视变量的值。
+<b>Function description:</b><br><br>
+Gets the value of a watch variable from the KBEngine debug system.
 <br>
 <br>
-例子：在baseapp1的Python命令行输入:<br>
+Example: In the baseapp1 Python console, enter:<br>
 >>>KBEngine.getWatcher("/root/stats/runningTime")
 <br>
 12673648533
@@ -728,21 +784,22 @@ string，几何映射名称。
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>path</i></span></td><td><span class="function_parameter_description">
-string，该变量的绝对路径包括变量名(可以在GUIConsole的watcher页查看)。
+string, the absolute path of the variable including the variable name 
+(can be viewed on the GUIConsole watcher page).
 </span></td></tr>
 
 </table>
 </p>
 
 <p>
-<span class="function_return">返回：</span>
+<span class="function_return">returns:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-该变量的值。
+The value of the variable.
 </td></tr>
 </table>
 </p>
@@ -753,32 +810,34 @@ string，该变量的绝对路径包括变量名(可以在GUIConsole的watcher�
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-从KBEngine调试系统中获取一个监视目录下的元素列表(目录、变量名)。
+<b>Function description:</b><br><br>
+Get a list of elements (directories, variable names) under the watch 
+directory from the KBEngine debugging system.
 <br>
 <br>
-例子：在baseapp1的Python命令行输入:<br>
+Example: In baseapp1 Python console, enter:<br>
 >>>KBEngine.getWatcher("/root")
 <br>
 ('stats', 'objectPools', 'network', 'syspaths', 'ThreadPool', 'cprofiles', 'scripts', 'numProxices', 'componentID', 'componentType', 'uid', 'numClients', 'globalOrder', 'username', 'load', 'gametime', 'entitiesSize', 'groupOrder')
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>path</i></span></td><td><span class="function_parameter_description">
-string，该变量的绝对路径(可以在GUIConsole的watcher页查看)。
+string, the absolute path of the variable including the variable name 
+(can be viewed on the GUIConsole watcher page).
 </span></td></tr>
 
 </table>
 </p>
 
 <p>
-<span class="function_return">返回：</span>
+<span class="function_return">returns:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-监视目录下的元素列表(目录、变量名)。
+The list of elements (directory, variable name) under the Watch directory.
 </td></tr>
 </table>
 </p>
@@ -790,16 +849,16 @@ string，该变量的绝对路径(可以在GUIConsole的watcher页查看)。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-获取当前引擎APP的标记, 参考:<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#setAppFlags>setAppFlags</a>。
+<b>Function description:</b><br><br>
+Get the flags of the current engine APP, Reference:<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#setAppFlags>setAppFlags</a>��
 <br>
 </div>
 
 <p>
-<span class="function_return">返回：</span>
+<span class="function_return">returns:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-KBEngine.APP_FLAGS_*。
+KBEngine.APP_FLAGS_*
 </td></tr>
 </table>
 </p>
@@ -812,12 +871,12 @@ KBEngine.APP_FLAGS_*。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-使用这个接口可以判断一个相对路径的资源是否存在。<br>
-注意：资源必须在<a href=../../keywords.html#KBE_RES_PATH>KBE_RES_PATH</a>之下才可以访问到。
+<b>Function description:</b><br><br>
+Use this interface to determine if a relative path exists.<br>
+Note: Resources must be accessible under <a href=../../keywords.html#KBE_RES_PATH>KBE_RES_PATH</a>.
 <br>
 <br>
-例子:
+Example:
 <br>
 <br>
 >>>KBEngine.hasRes("<a href=../../keywords.html#entities.xml>scripts/entities.xml</a>")
@@ -826,20 +885,20 @@ True
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>res</i></span></td><td><span class="function_parameter_description">
-string，资源的相对路径。
+string, the relative path of the resource
 </span></td></tr>
 </table>
 </p>
 
 <p>
-<span class="function_return">返回：</span>
+<span class="function_return">returns:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-BOOL, 存在返回True，否则返回False。
+BOOL, if it exists return True, otherwise False.
 </td></tr>
 </table>
 </p>
@@ -850,15 +909,16 @@ BOOL, 存在返回True，否则返回False。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-返回服务端是否正在关闭中。在onBaseAppShuttingDown回调函数被调用后，这个函数返回True。
+<b>Function description:</b><br><br>
+Returns whether the server is shutting down. After the onBaseAppShuttingDown 
+callback function is called, this function returns True.
 </div>
 
 <p>
-<span class="function_return">返回：</span>
+<span class="function_return">returns:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-系统正在关闭返回True，否则返回False。
+BOOL, if the server is shutting down True, otherwise False.
 </td></tr>
 </table>
 </p>
@@ -870,50 +930,50 @@ BOOL, 存在返回True，否则返回False。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-获得一个资源目录下的资源列表。<br>
-注意：资源必须在<a href=../../keywords.html#KBE_RES_PATH>KBE_RES_PATH</a>之下才可以访问到。
+<b>Function description:</b><br><br>
+Get a list of resources in a resource directory<br>
+Note: Resources must be accesible under <a href=../../keywords.html#KBE_RES_PATH>KBE_RES_PATH</a>.
 <br>
 <br>
-例子:
+Example:
 <br>
 <br>
 >>>KBEngine.listPathRes("scripts/cell/interfaces")
 <br>
-('/home/kbe/kbengine/demo/res/scripts/cell/interfaces/AI.py', '/home/kbe/kbengine/demo/res/scripts/cell/interfaces/新建文本文档.txt')
+('/home/kbe/kbengine/demo/res/scripts/cell/interfaces/AI.py', '/home/kbe/kbengine/demo/res/scripts/cell/interfaces/New Text Document.txt')
 <br><br>
 >>>KBEngine.listPathRes("scripts/cell/interfaces", "txt")
 <br>
-('/home/kbe/kbengine/demo/res/scripts/cell/interfaces/新建文本文档.txt')
+('/home/kbe/kbengine/demo/res/scripts/cell/interfaces/New Text Document.txt')
 <br><br>
 >>>KBEngine.listPathRes("scripts/cell/interfaces", "txt|py")
 <br>
-('/home/kbe/kbengine/demo/res/scripts/cell/interfaces/AI.py', '/home/kbe/kbengine/demo/res/scripts/cell/interfaces/新建文本文档.txt')
+('/home/kbe/kbengine/demo/res/scripts/cell/interfaces/AI.py', '/home/kbe/kbengine/demo/res/scripts/cell/interfaces/New Text Document.txt')
 <br><br>
 >>>KBEngine.listPathRes("scripts/cell/interfaces", ("txt", "py"))
 <br>
-('/home/kbe/kbengine/demo/res/scripts/cell/interfaces/AI.py', '/home/kbe/kbengine/demo/res/scripts/cell/interfaces/新建文本文档.txt')
+('/home/kbe/kbengine/demo/res/scripts/cell/interfaces/AI.py', '/home/kbe/kbengine/demo/res/scripts/cell/interfaces/New Text Document.txt')
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>res</i></span></td><td><span class="function_parameter_description">
-string，资源的相对路径。
+string, the relative path of the resource.
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>extension</i></span></td><td><span class="function_parameter_description">
-string，可选参数，扩展名。
+string, optional parameter, file extension.
 </span></td></tr>
 </table>
 </p>
 
 <p>
-<span class="function_return">返回：</span>
+<span class="function_return">returns:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-Tuple, 资源列表。
+Tuple, resource list.
 </td></tr>
 </table>
 </p>
@@ -925,12 +985,12 @@ Tuple, 资源列表。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-使用相对路径的资源获得资源的绝对路径。<br>
-注意：资源必须在<a href=../../keywords.html#KBE_RES_PATH>KBE_RES_PATH</a>之下才可以访问到。
+<b>Function description:</b><br><br>
+Use the relative path of the resource to get its absolute path.<br>
+Note: Resources must be accessible under <a href=../../keywords.html#KBE_RES_PATH>KBE_RES_PATH</a>.
 <br>
 <br>
-例子:
+Example:
 <br>
 <br>
 >>>KBEngine.matchPath("scripts/entities.xml")<br>
@@ -938,20 +998,20 @@ Tuple, 资源列表。
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>res</i></span></td><td><span class="function_parameter_description">
-string，资源的相对路径(包括资源名称)。
+string, the relative path to the resource (including the resource name)
 </span></td></tr>
 </table>
 </p>
 
 <p>
-<span class="function_return">返回：</span>
+<span class="function_return">returns:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-string, 资源的绝对路径。
+string, the absolute path of the resource.
 </td></tr>
 </table>
 </p>
@@ -963,37 +1023,37 @@ string, 资源的绝对路径。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-使用这个接口可以使用相对路径来打开相关资源。
-注意：资源必须在<a href=../../keywords.html#KBE_RES_PATH>KBE_RES_PATH</a>之下才可以访问到。
+<b>Function description:</b><br><br>
+Use this interface to open resources using relative paths.
+Note: Resources must be accessible under <a href=../../keywords.html#KBE_RES_PATH>KBE_RES_PATH</a>.
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>res</i></span></td><td><span class="function_parameter_description">
-string，资源的相对路径。
+string, the relative path of the resource.
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>mode</i></span></td><td><span class="function_parameter_description">
-string，可选参数，默认值是'r'，文件操作模式：<br>
-r     以只读方式打开，<br>
-w     以写方式打开，<br>
-a     以追加模式打开 (从 EOF 开始, 必要时创建新文件)<br>
-r+     以读写模式打开<br>
-w+     以读写模式打开 (参见 w )<br>
-a+     以读写模式打开 (参见 a )<br>
-rb     以二进制读模式打开<br>
-wb     以二进制写模式打开 (参见 w )<br>
-ab     以二进制追加模式打开 (参见 a )<br>
-rb+    以二进制读写模式打开 (参见 r+ )<br>
-wb+    以二进制读写模式打开 (参见 w+ )<br>
-ab+    以二进制读写模式打开 (参见 a+ )<br>
+string, optional parameter, the default is 'r', file operation mode:<br>
+r Open in only read mode,<br>
+w Open in write mode, <br>
+a Open in append mode (Start from EOF, create new file if necessary) <br>
+r+ Open <br>
+w+ in read/write mode Open in read/write mode (see w) <br>
+a+ Open in read/write mode (See a) <br>
+rb Opens <br>
+wb in binary read mode Opens in binary write mode (see w) <br>
+ab Opens in binary append mode (see a) <br>
+rb+ Opens in binary read and write mode (see r+) <br>
+wb+ Opens in binary read and write mode (see w+ ) <br>
+ab+ Open in binary read/write mode (see a+)
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>encoding</i></span></td><td><span class="function_parameter_description">
-string，可选参数，用于解码或编码文件的编码的名称，默认编码与平台相关。
+string, optional parameter, the name of the encoding used to decode or encode the file, the default encoding is platform dependent.
 </span></td></tr>
 
 </table>
@@ -1004,15 +1064,15 @@ string，可选参数，用于解码或编码文件的编码的名称，默认�
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-这个接口返回当前服务端发行模式。
+<b>Function description:</b><br><br>
+This interface returns the current server release mode.
 </div>
 
 <p>
-<span class="function_return">返回：</span>
+<span class="function_return">returns:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-int8，0：debug，1：release，其它可自定义。
+int8, 0: debug, 1: release, others can be customized.
 </td></tr>
 </table>
 </p>
@@ -1024,12 +1084,14 @@ int8，0：debug，1：release，其它可自定义。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-在指定的space中指定的layer中由源坐标向目的坐标射出一道射线，返回碰撞到的坐标点。
+<b>Function description:</b><br><br>
+In the specified layer of the specified space, a ray is emitted from the 
+source coordinates to the destination coordinates, and the collided 
+coordinate point is returned.
 <br><br>
-注意：space必须使用<a href=#addSpaceGeometryMapping>addSpaceGeometryMapping</a>加载过几何数据。
+Note: Space must load geometry using <a href=#addSpaceGeometryMapping>addSpaceGeometryMapping</a>.
 <br><br>
-下面是一个例子:
+Below is an example:
 <br><br>
 
 <pre>	>>> KBEngine.raycast( spaceID, entity.layer, (0, 10, 0), (0,-10,0) )
@@ -1039,24 +1101,26 @@ int8，0：debug，1：release，其它可自定义。
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>spaceID</i></span></td><td><span class="function_parameter_description">
-int32, space的id。
+int32, space ID
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>layer</i></span></td><td><span class="function_parameter_description">
-int8，几何层。一个space可以同时加载多个navmesh数据，不同的navmesh在不同的layer中，不同的layer可被抽象成地面、水面等等。
+int8, geometric layer. A space can load multiple navmesh data at the 
+same time. Different navmesh can be in different layers. Different 
+layers can be abstracted into the ground, the water surface and so on.
 </span></td></tr>
 
 </table>
 </p>
 
 <p>
-<span class="function_return">返回：</span>
+<span class="function_return">returns:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>list， 碰撞到的坐标点列表。
+<tr><td>list, list of coordinate points collided
 </td></tr>
 </table>
 </p>
@@ -1068,24 +1132,25 @@ int8，几何层。一个space可以同时加载多个navmesh数据，不同的n
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-注册一个回调函数，这个回调函数当文件描述符可读时被调用。
+<b>Function description:</b><br><br>
+Registers a callback function that is called when the file descriptor is readable.
 <br>
 <br>
-例子:<br>
+Example:<br>
 <a href=http://www.kbengine.org/assets/other/py/Poller.py>http://www.kbengine.org/assets/other/py/Poller.py</a>
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>fileDescriptor</i></span></td><td><span class="function_parameter_description">
-socket描述符/文件描述符。
+Socket descriptor/file descriptor
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
-一个回调函数，socket描述符/文件描述符作为它的唯一参数。
+A callback function with the socket descriptor/file descriptor as its only 
+parameter.
 </span></td></tr>
 
 </table>
@@ -1097,24 +1162,24 @@ def registerWriteFileDescriptor( <i>fileDescriptor, callback</i> ):</span>
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-注册一个回调函数，这个回调函数当socket描述符/文件描述符可写时被调用。
+<b>Function description:</b><br><br>
+Registers a callback function that is called when the socket descriptor/file descriptor is writable. 
 <br>
 <br>
-例子:<br>
+Example:<br>
 <a href=http://www.kbengine.org/assets/other/py/Poller.py>http://www.kbengine.org/assets/other/py/Poller.py</a>
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>fileDescriptor</i></span></td><td><span class="function_parameter_description">
-socket描述符/文件描述符。
+Socket descriptor/file descriptor
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
-一个回调函数，socket描述符/文件描述符作为它的唯一参数。
+A callback function with the socket descriptor/file descriptor as its only parameter.
 </span></td></tr>
 
 </table>
@@ -1127,37 +1192,44 @@ socket描述符/文件描述符。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-重新加载与实体和自定义数据类型相关的Python模块。当前实体类会设置为新加载的类。
-这个方法应该只用于开发模式，对于产品模式不合适。下面几点应该注意：
+<b>Function description:</b><br><br>
+Reloads Python modules related to entity and custom data types. 
+The current entity class is set to the newly loaded class. 
+This method should only be used for development mode and not for 
+product mode. The following points should be noted: 
 <br><br>
-1）重载脚本仅仅能在<a href="../index.html">Cellapp</a>上执行， 用户应该确保所有的服务端组件加载完成。
+1) The overloaded script can only be executed on <a href="../index.html">Cellapp</a>.
+The user should ensure that all server components are loaded.
 <br><br>
-2）自定义类型在脚本重载后应该确保内存中已经实例化的对象也被更新，下面是一个例子:
+2) The custom type should ensure that the objects already instantiated 
+in memory are updated after the script is reloaded. Here is an example: 
 <br><br>
 
 <pre>for e in <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#entities>entities</a>.values():
    if type( e ) is Avatar.Avatar:
       e.customData.__class__ = CustomClass
 </pre>
-当这个方法完成时 <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#onInit>onInit</a>( True ) 被调用。
+When this method completes <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#onInit>onInit</a>( True ) 
+is called.
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>fullReload</i></span></td><td><span class="function_parameter_description">
-可选的boolean参数，指定是否同时重新加载实体定义。如果这个参数为False，则实体定义不会被重新加载。默认为True。
+Optional boolean parameter that specifies whether to reload entity 
+definitions at the same time. If this parameter is False, the entity 
+definition will not be reloaded. The default is True.
 </span></td></tr>
 
 </table>
 </p>
 
 <p>
-<span class="function_return">返回：</span>
+<span class="function_return">returns:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>重新加载成功返回True，否则返回False。
+<tr><td>True if the reload succeeds, False otherwise.
 </td></tr>
 </table>
 </p>
@@ -1169,8 +1241,8 @@ socket描述符/文件描述符。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-设置当前Python.print输出的信息类型(参考: KBEngine.LOG_TYPE_*)。
+<b>Function description:</b><br><br>
+Set the type of information output by the current Python.print (Reference: KBEngine.LOG_TYPE_*).
 </div>
 
 
@@ -1180,14 +1252,14 @@ socket描述符/文件描述符。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-设置当前引擎APP的标记。
+<b>Function description:</b><br><br>
+Set the flags of the current engine APP.
 <br>
 <br>
-KBEngine.APP_FLAGS_NONE // 默认的(未设置标记)<br>
-KBEngine.APP_FLAGS_NOT_PARTCIPATING_LOAD_BALANCING //不参与负载均衡<br>
+KBEngine.APP_FLAGS_NONE // Default (not set)<br>
+KBEngine.APP_FLAGS_NOT_PARTCIPATING_LOAD_BALANCING // Do not participate in load balancing<br>
 <br>
-例如：<br>
+Example:<br>
 KBEngine.setAppFlags(KBEngine.APP_FLAGS_NOT_PARTCIPATING_LOAD_BALANCING | KBEngine.APP_FLAGS_*)
 </div>
 
@@ -1198,26 +1270,26 @@ KBEngine.setAppFlags(KBEngine.APP_FLAGS_NOT_PARTCIPATING_LOAD_BALANCING | KBEngi
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-设置指定key的space数据。
+<b>Function description:</b><br><br>
+Sets the space data for the specified key.
 <br>
-space数据可以通过<a href=#getSpaceData>getSpaceData</a>获取。
+The space data can be obtained via <a href=#getSpaceData>getSpaceData</a>.
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>spaceID</i></span></td><td><span class="function_parameter_description">
-int32，空间的ID。
+int32, the ID of the space.
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>key</i></span></td><td><span class="function_parameter_description">
-string，一个字符串关键字。
+string, a string keyword
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>value</i></span></td><td><span class="function_parameter_description">
-string，字符串值。
+string, the string value.
 </span></td></tr>
 </table>
 
@@ -1230,18 +1302,21 @@ string，字符串值。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-这个方法返回当前游戏的时间（周期数）。
+<b>Function description:</b><br><br>
+This method returns the current game time (number of cycles).
 </div>
 
 <p>
-<span class="function_return">返回：</span>
+<span class="function_return">returns:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 <tr><td>
-uint32，当前游戏的时间，这里指周期数，周期受频率影响，频率由配置文件<a href=../../keywords.html#kbengine.xml>kbengine.xml</a>或者<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->gameUpdateHertz决定。
+uint32, the current time of the game. This refers to the number of cycles. 
+The period is affected by the frequency. The frequency is determined by 
+the configuration file <a href=../../keywords.html#kbengine.xml>kbengine.xml</a> or <a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>-> gameUpdateHertz.
 </td></tr>
 </table>
 </p>
+
 
 
 
@@ -1250,74 +1325,77 @@ uint32，当前游戏的时间，这里指周期数，周期受频率影响，�
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-这个脚本函数在提供对外HTTP/HTTPS异步请求。
+<b>Function description:</b><br><br>
+This script function is providing an external HTTP/HTTPS asynchronous request.
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>url</i></span></td><td><span class="function_parameter_description">
-有效的HTTP/HTTPS网址，字符串类型。
+A valid HTTP/HTTPS URL.
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td>
 <td><p class="function_parameter_description">
-可选参数，带有请求执行结果的回调对象（比如说是一个函数）。这个回调带有5个参数：HTTP请求返回码（如：200)，返回的内容，返回的HTTP协议头，是否成功，请求的网址。
+Optional parameter with a callback object (for example, a function) that requests execution results. This callback takes five parameters: the HTTP request return code (eg: 200), 
+the returned content, the returned HTTP protocol header, whether it succeeded, and the requested URL.
 <br>
-声明样例：<br>
+Example:<br>
 def 
 onHttpCallback(httpcode, data, headers, success, url):<br>
 &nbsp;&nbsp;&nbsp;&nbsp;print(httpcode, data, headers, success, url)  <br>
 <br>
-如同上面的例子所示:
-<br><p class="function_parameter_description"></p>httpcode:参数对应的就是&ldquo;HTTP请求返回码&rdquo;，这个结果集合参数是一个整形值。
-<p class="function_parameter_description"></p>data:参数则是&ldquo;返回的内容&rdquo;，它是一个字符串。
+As the above example shows:
+<br><p class="function_parameter_description"></p>httpcode:The parameter corresponds to the &quot;HTTP request return code&quot;, is an integer.
+<p class="function_parameter_description"></p>data:The parameter is &ldquo; returned content & rdquo;, it is a string.
 </p>
-<p class="function_parameter_description">headers:参数是&ldquo;服务器返回的HTTP协议头&rdquo;，如：{"Content-Type": "application/x-www-form-urlencoded"}，它是一个字典。
-<p class="function_parameter_description"></p>success:则对应了&ldquo;执行是否成功&rdquo;，当请求执行有错误时，为False，可以通过httpcode进一步判断错误信息。
+<p class="function_parameter_description">headers:The parameter is the HTTP protocol header returned by the server, such as:{"Content-Type": "application/x-www-form-urlencoded"}, is an dict.
+<p class="function_parameter_description">success:Whether the execution is successful or not, when the request execution has an error, it is False, and the error information can be further judged by httpcode.
 </p>
-<p class="function_parameter_description">url:是&ldquo;请求所用的网址。
+<p class="function_parameter_description"></p>url:Is the URL used by the request.
 </p>
 </td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>postData</i></span></td><td><span class="function_parameter_description">
-可选参数，默认是GET方式请求服务器，如果需要POST方式请提供需要POST的内容，引擎将自动使用POST方式请求服务器，它是一个bytes。
+Optional parameter, the default is GET mode request server. If you need POST mode, please provide the content that needs POST. The engine will automatically request the server using POST, is an bytes.
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>headers</i></span></td><td><span class="function_parameter_description">
-可选参数，请求时使用的HTTP头，如：{"Content-Type": "application/x-www-form-urlencoded"}，它是一个字典。
+Optional parameter, HTTP header used when requesting, such as：{"Content-Type": "application/x-www-form-urlencoded"}, is an dict.
 </span></td></tr>
 
 </table>
 </p>
 
+  
 
 
 <hr>
-<h2>回调函数文档</h2>
+<h2>Callback functions documentation</h2>
 
 <a name="onCellAppData"></a><p class="function_definition">
 <span class="function_definition">def onCellAppData( <i>key, value</i> ):</span>
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-KBEngine.cellAppData有改变时回调此函数。
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)中。
+<b>Function description:</b><br><br>
+This function is called back when KBEngine.cellAppData changes.
+<br>Note: This callback interface must be implemented in the portal 
+module ( <a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile ).
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>key</i></span></td><td><span class="function_parameter_description">
-被改变数据的键。
+The key of the changed data.
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>value</i></span></td><td><span class="function_parameter_description">
-被改变数据的值。
+The value of the changed data.
 </span></td></tr>
 
 </table>
@@ -1328,17 +1406,17 @@ KBEngine.cellAppData有改变时回调此函数。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-KBEngine.cellAppData有删除的时候回调此函数。
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)中。
+<b>Function description:</b><br><br>
+This function is called back when KBEngine.cellAppData is deleted.
+<br>Note: This callback interface must be implemented in the portal module (<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile).
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>key</i></span></td><td><span class="function_parameter_description">
-被删除数据的键。
+Deleted data key.
 </span></td></tr>
 
 </table>
@@ -1349,21 +1427,21 @@ KBEngine.cellAppData有删除的时候回调此函数。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-KBEngine.globalData有改变的时候回调此函数。
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)中。
+<b>Function description:</b><br><br>
+This function is called back when KBEngine.globalData changes.
+<br>Note: This callback interface must be implemented in the portal moodule (<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile).
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>key</i></span></td><td><span class="function_parameter_description">
-被改变数据的键。
+The key of the changed data.
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>value</i></span></td><td><span class="function_parameter_description">
-被改变数据的值。
+The value of the changed data.
 </span></td></tr>
 
 </table>
@@ -1374,17 +1452,17 @@ KBEngine.globalData有改变的时候回调此函数。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-KBEngine.globalData有删除的时候回调此函数。
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)中。
+<b>Function description:</b><br><br>
+This function is called back when KBEngine.globalData is deleted.
+<br>Note: This callback interface must be implemented in the portal module (<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile).
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>key</i></span></td><td><span class="function_parameter_description">
-被删除数据的键。
+Deleted data key.
 </span></td></tr>
 
 </table>
@@ -1395,17 +1473,18 @@ KBEngine.globalData有删除的时候回调此函数。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-当引擎启动后初始化完所有的脚本后这个接口被调用。
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)中。
+<b>Function description:</b><br><br>
+This interface is called after all scripts have been initialized since 
+the engine started.
+<br>Note: This callback interface must be implemented in the portal module (<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile).
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>isReload</i></span></td><td><span class="function_parameter_description">
-bool，是否是被重写加载脚本后触发的。
+Bool, whether it was triggered after reloading the loading the script.
 </span></td></tr>
 
 </table>
@@ -1416,25 +1495,25 @@ bool，是否是被重写加载脚本后触发的。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-当space数据有改变的时候被调用。<br>
-space数据由用户通过<a href=#setSpaceData>setSpaceData</a>设置。
+<b>Function description:</b><br><br>
+Called when there is a change in the space data.<br>
+The space data is set by the user via <a href=#setSpaceData>setSpaceData</a>.
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>spaceID</i></span></td><td><span class="function_parameter_description">
-空间的ID。
+The ID of the space.
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>key</i></span></td><td><span class="function_parameter_description">
-被改变数据的键。
+The key of the changed data.
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>value</i></span></td><td><span class="function_parameter_description">
-被改变数据的值。
+The value of the changed data.
 </span></td></tr>
 
 </table>
@@ -1449,21 +1528,21 @@ space数据由用户通过<a href=#setSpaceData>setSpaceData</a>设置。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-空间所需求的网格碰撞等数据加载完毕。<br>
-由用户通过<a href=#addSpaceGeometryMapping>addSpaceGeometryMapping</a>设置。
+<b>Function description:</b><br><br>
+The space required by the grid collision data is loaded.<br>
+Set by user through <a href=#addSpaceGeometryMapping>addSpaceGeometryMapping</a>.
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>spaceID</i></span></td><td><span class="function_parameter_description">
-空间的ID。
+The ID of the space.
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>mapping</i></span></td><td><span class="function_parameter_description">
-网格碰撞数据的映射值。
+The map value of the grid collision data.
 </span></td></tr>
 
 </table>
@@ -1479,25 +1558,26 @@ space数据由用户通过<a href=#setSpaceData>setSpaceData</a>设置。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-空间所需求的网格碰撞等数据全部加载完毕。<br>
-由用户通过<a href=#addSpaceGeometryMapping>addSpaceGeometryMapping</a>设置。
+<b>Function description:</b><br><br>
+The space required for grid collision and other data is completely loaded.<br>
+Set by user through <a href=#addSpaceGeometryMapping>addSpaceGeometryMapping</a>.
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>spaceID</i></span></td><td><span class="function_parameter_description">
-空间的ID。
+The ID of the space.
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>isBootstrap</i></span></td><td><span class="function_parameter_description">
-如果一个空间被分割由多个cell共同负载，那么isBootstrap描述的是是否为加载请求的发起cell。
+If a space is partitioned by multiple cells, isBootstrap describes 
+whether it is the originating cell of the loading request.
 </span></td></tr>
 
 <tr valign=top><td><span class="function_parameter_name"><i>mapping</i></span></td><td><span class="function_parameter_description">
-网格碰撞数据的映射值。
+The map value of grid collision data.
 </span></td></tr>
 
 </table>
@@ -1511,43 +1591,47 @@ space数据由用户通过<a href=#setSpaceData>setSpaceData</a>设置。
 </p>
 
 <div class="function_description">
-<b>功能说明：</b><br><br>
-当引擎启动并初始化完成后会一直调用此接口询问脚本层是否准备完毕，如果脚本层准备完毕则loginapp允许客户端登录。
-<br>注意：该回调接口必须实现在入口模块(<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile)中。
+<b>Function description:</b><br><br>
+When the engine is started and initialized, it will always call this function 
+to ask whether the script layer is ready. If the script layer is ready, 
+loginapp allows the client to log in.
+<br>Note: This callback function must be implemented in the portal module (<a href=../../keywords.html#kbengine_defaults.xml>kbengine_defaults.xml</a>->entryScriptFile).
 </div>
 
 <p>
-<span class="function_parameter">参数：</span>
+<span class="function_parameter">parameters:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
 <tr valign=top><td><span class="function_parameter_name"><i>isBootstrap</i></span></td><td><span class="function_parameter_description">
-bool，是否为第一个启动的<a href="../index.html">Cellapp</a>。
+bool, True if this is the first <a href="../index.html">Cellapp</a> started.
 </span></td></tr>
+
+
 
 </table>
 </p>
 
 <p>
-<span class="function_return">返回：</span>
+<span class="function_return">returns:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td>返回值大于等于1.0则脚本层准备完成，否则返回准备的进度值0.0~1.0。
+<tr><td>If the return value is greater than or equal to 1.0, the script 
+layer is ready; otherwise, return a value from 0 to less than 1.0.
 </td></tr>
 </table>
 </p>
 
 
-
 <hr>
-<h2>属性文档</h2>
+<h2>Attribute documentation</h2>
 
 <a name="LOG_TYPE_DBG"></a><p class="attribute_definition">
 <span class="attribute_definition">LOG_TYPE_DBG</span>
 </p>
 
 <div class="attribute_description">
-<b>说明：</b><br><br>
-日志输出类型为调试类型。<br>
-由<a href=#scriptLogType>scriptLogType</a>设置。
+<b>Description:</b><br><br>
+The log output type is debug.<br>
+Set by <a href=#scriptLogType>scriptLogType</a>.
 </div>
 
 <a name="LOG_TYPE_ERR"></a><p class="attribute_definition">
@@ -1555,9 +1639,9 @@ bool，是否为第一个启动的<a href="../index.html">Cellapp</a>。
 </p>
 
 <div class="attribute_description">
-<b>说明：</b><br><br>
-日志输出类型为错误类型。<br>
-由<a href=#scriptLogType>scriptLogType</a>设置。
+<b>Description:</b><br><br>
+The log output type is error.<br>
+Set by <a href=#scriptLogType>scriptLogType</a>.
 </div>
 
 <a name="LOG_TYPE_INFO"></a><p class="attribute_definition">
@@ -1565,9 +1649,9 @@ bool，是否为第一个启动的<a href="../index.html">Cellapp</a>。
 </p>
 
 <div class="attribute_description">
-<b>说明：</b><br><br>
-日志输出类型为常规信息类型。<br>
-由<a href=#scriptLogType>scriptLogType</a>设置。
+<b>Description:</b><br><br>
+The log output type is general information.<br>
+Set by <a href=#scriptLogType>scriptLogType</a>.
 </div>
 
 <a name="LOG_TYPE_NORMAL"></a><p class="attribute_definition">
@@ -1575,9 +1659,9 @@ bool，是否为第一个启动的<a href="../index.html">Cellapp</a>。
 </p>
 
 <div class="attribute_description">
-<b>说明：</b><br><br>
-日志输出类型为常规类型。<br>
-由<a href=#scriptLogType>scriptLogType</a>设置。
+<b>Description:</b><br><br>
+The log output type is normal.<br>
+Set by <a href=#scriptLogType>scriptLogType</a>.
 </div>
 
 <a name="LOG_TYPE_WAR"></a><p class="attribute_definition">
@@ -1585,9 +1669,9 @@ bool，是否为第一个启动的<a href="../index.html">Cellapp</a>。
 </p>
 
 <div class="attribute_description">
-<b>说明：</b><br><br>
-日志输出类型为警告类型。<br>
-由<a href=#scriptLogType>scriptLogType</a>设置。
+<b>Description:</b><br><br>
+The log output type is warning.<br>
+Set by <a href=#scriptLogType>scriptLogType</a>.
 </div>
 
 <a name="NEXT_ONLY"></a><p class="attribute_definition">
@@ -1595,8 +1679,8 @@ bool，是否为第一个启动的<a href="../index.html">Cellapp</a>。
 </p>
 
 <div class="attribute_description">
-<b>说明：</b><br><br>
-这个常量目前在Cellapp未被使用。
+<b>Description:</b><br><br>
+This constant is currently unused in Cellap.
 </div>
 
 <a name="cellAppData"></a><p class="attribute_definition">
@@ -1604,34 +1688,38 @@ bool，是否为第一个启动的<a href="../index.html">Cellapp</a>。
 </p>
 
 <div class="attribute_description">
-<b>说明：</b><br><br>
-这个属性包含一个类字典的对象，这个对象会在所有的CellApps之间自动同步。
-当字典的一个值被修改，这个修改会广播到所有的CellApps。
+<b>Description:</b><br><br>
+This property contains a dictionary-like object that is automatically 
+synchronized across all CellApps. When a value in the dictionary is 
+modified, this change is broadcast to all Cellapps.
 
 <br><br>
-例子：
+Example:
 
 <pre><a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#cellAppData>cellAppData</a>[ "hello" ] = "there"
 </pre>
 <br><br>
-其余CellApp可以访问下面的：
+The rest of Cellap can access the following:
 
 <pre>print <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#cellAppData>cellAppData</a>[ "hello" ]
 </pre>
 <br><br>
-键和值可以是任意类型，但这些类型必须在所有目标组件上能够被封装和被拆封。
+Keys and values can be of any type, but these types must be encapsulated 
+and unpacked on all target components.
 <br><br>
-当一个值被改变或被删除，一个回调函数会在所有组件被调用。
-参看：<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#onCellAppData>onCellAppData</a>和<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#onDelCellAppData>onDelCellAppData</a>。
+When a value is changed or deleted, a callback function is called on all 
+components. See: <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#onCellAppData>onCellAppData</a> and <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#onDelCellAppData>onDelCellAppData</a>.
 <br><br>
-注意：只有顶层的值才会被广播，如果你有一个值（比如一个列表），它改变了内部的值（比如只是改变一个数），这个信息不会被广播。
+Note: Only the top-level value will be broadcast. If you have a value 
+(such as a list) that changes the internal value (such as just changing 
+a number), this information will not be broadcast.
 <br><br>
-不要进行下面的操作：
+Do not do the following:
 
 <pre><a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#cellAppData>cellAppData</a>[ "list" ] = [1, 2, 3]
 <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#cellAppData>cellAppData</a>[ "list" ][1] = 7
 </pre>
-这样，本地访问是[1, 7, 3]，远程访问是[1, 2, 3]。
+This will cause the local access to read [1, 7, 3] and the remote [1, 2, 3]
 </div>
 
 <a name="component"></a><p class="attribute_definition">
@@ -1639,8 +1727,8 @@ bool，是否为第一个启动的<a href="../index.html">Cellapp</a>。
 </p>
 
 <div class="attribute_description">
-<b>说明：</b><br><br>
-这是正运行在当前Python环境的组件。（至今为止）可能值有'cell', 'base', 'client', 'database', 'bot' 和 'editor'。
+<b>Description:</b><br><br>
+This is the component that is running in the current Python environment. (So far) Possible values are 'cell', 'base', 'client', 'database', 'bot' and 'editor'.
 </div>
 
 <a name="entities"></a><p class="attribute_definition">
@@ -1648,10 +1736,12 @@ bool，是否为第一个启动的<a href="../index.html">Cellapp</a>。
 </p>
 
 <div class="attribute_description">
-<b>说明：</b><br><br>
-entities是一个字典对象，包含当前进程上所有的实体，包括<a href=../../keywords.html#ghost>ghost</a>实体。<br>
+<b>Description:</b><br><br>
+entities is a dictinary object that contains all entities in the current 
+process, including <a href=../../keywords.html#ghost>ghost</a> entities.<br>
 <br>
-调试泄露的实体（调用过destroy却没有释放内存的实体，通常是由于被引用导致无法释放）：<br>
+Debugging leaked entities: (instances that call destroy without releasing 
+memory, usually as a result of the reference not being released)<br>
 <pre>
 >>> KBEngine.entities.garbages.items()
 [(1025, Avatar object at 0x7f92431ceae8.)]
@@ -1662,14 +1752,14 @@ entities是一个字典对象，包含当前进程上所有的实体，包括<a 
 [{'spacesIsOk': True, 'bootstrapIdx': 1}, <class 'Avatar.Avatar'>]
 </pre>
 <br>
-调试泄露的KBEngine封装的Python对象：<br>
+Debugging a leaked KBEngine-encapsulated Python object:<br>
 <a href=#debugTracing>KBEngine.debugTracing</a>
 </div>
 
 <p>
-<span class="attribute_type">类型：</span>
+<span class="attribute_type">Types:</span>
 <table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
-<tr><td><a href="Entities.html">Entities</a>
+<tr><td><a href="../Classes/Entity.html">Entities</a>
 </td></tr>
 </table>
 </p>
@@ -1679,36 +1769,41 @@ entities是一个字典对象，包含当前进程上所有的实体，包括<a 
 </p>
 
 <div class="attribute_description">
-<b>说明：</b><br><br>
-这个属性包含一个类字典的对象，这个对象会在所有的BaseApps和CellApps之间自动复制。
-当字典的一个值被修改，这个修改会广播到所有的BaseApps和CellApps。CellAppMgr解决竞争条件，保证信息复制的权威性。
+<b>Description:</b><br><br>
+This attribute contains a dictionary-like object that is automatically 
+copied between all BaseApps and CellApps. When a value in a dictionary is 
+modified, this change is broadcast to all BaseApps and CellApps. 
+CellAppMgr solves completion conditions and ensures the authority of 
+information replication.
 <br><br>
-例子：
+Example:
 
 <pre><a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#globalData>globalData</a>[ "hello" ] = "there"
 </pre>
 <br><br>
-其余<a href="../index.html">Cellapp</a>或者<a href="../index.html"><a href="../../baseapp/index.html">Baseapp</a></a>可以访问下面的：
+The rest of <a href="../index.html">Cellapp</a> or <a href="../index.html"><a href="../../baseapp/index.html">Baseapp</a></a>
+can access the following:
 
 <pre>print <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#globalData>globalData</a>[ "hello" ]
 </pre>
 <br><br>
-键和值可以是任意类型，但这些类型必须在所有目标组件上能够被封装和被拆封。
+Keys and values can be of any type, but these types must be encapsulated and unpacked on all target components. 
 <br><br>
-当一个值被改变或被删除，一个回调函数会在所有组件被调用。
-参看：<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#onGlobalData>onGlobalData</a>和<a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#onGlobalDataDel>onGlobalDataDel</a>。
+
+When a value is changed or deleted, a callback function is called on all components.
+See: <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#onGlobalData>onGlobalData</a> and <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#onGlobalDataDel>onGlobalDataDel</a>.
 <br><br>
-注意：只有顶层的值才会被广播，如果你有一个易变的值（比如一个列表），它改变了内部的值（比如只是改变一个数），这个信息不会被广播。
+Note: Only the top-level value will be broadcast. If you have a volatile value (such as a list) that changes the internal value (such as just changing a number), this information will not be broadcast.
 <br><br>
-不要进行下面的操作：
+Do not do the following:
 
 <pre><a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#globalData>globalData</a>[ "list" ] = [1, 2, 3]
 <a href="KBEngine.html">KBEngine</a>.<a href=KBEngine.html#globalData>globalData</a>[ "list" ][1] = 7
 </pre>
-这样，本地访问是[1, 7, 3]，远程访问是[1, 2, 3]。
+This will cause the local access to read [1, 7, 3] and the remote [1, 2, 3]
 </div>
 
 <hr>
-<p class="copyrightFooter">版权归KBEngine所有。</p>
+<p class="copyrightFooter">Copyright KBEngine</p>
 </body>
 </html>

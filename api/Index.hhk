@@ -84,24 +84,36 @@
 		<param name="Local" value="baseapp\Classes\Proxy.html#timeSinceHeardFromClient">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="urlopen">
+		<param name="Local" value="interfaces\Modules\KBEngine.html#urlopen">
+		<param name="Name" value="KBEngine - KBEngine base 文档">
+		<param name="Local" value="baseapp\Modules\KBEngine.html#urlopen">
+		<param name="Name" value="KBEngine - KBEngine cell 文档">
+		<param name="Local" value="cellapp\Modules\KBEngine.html#urlopen">
+		<param name="Local" value="bots\Modules\KBEngine.html#urlopen">
+		<param name="Local" value="dbmgr\Modules\KBEngine.html#urlopen">
+		<param name="Local" value="logger\Modules\KBEngine.html#urlopen">
+		<param name="Local" value="loginapp\Modules\KBEngine.html#urlopen">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="databaseInterfaceName">
 		<param name="Name" value="Entity - KBEngine base 文档">
 		<param name="Local" value="baseapp\Classes\Entity.html#databaseInterfaceName">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="createBaseRemotelyFromDB">
+		<param name="Name" value="createEntityRemotelyFromDB">
 		<param name="Name" value="KBEngine - KBEngine base 文档">
-		<param name="Local" value="baseapp\Modules\KBEngine.html#createBaseRemotelyFromDBID">
+		<param name="Local" value="baseapp\Modules\KBEngine.html#createEntityRemotelyFromDBID">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="createBaseRemotelyFromDBID">
+		<param name="Name" value="createEntityRemotelyFromDBID">
 		<param name="Name" value="KBEngine - KBEngine base 文档">
-		<param name="Local" value="baseapp\Modules\KBEngine.html#createBaseRemotelyFromDBID">
+		<param name="Local" value="baseapp\Modules\KBEngine.html#createEntityRemotelyFromDBID">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="createBaseRemotely">
+		<param name="Name" value="createEntityRemotely">
 		<param name="Name" value="KBEngine - KBEngine base 文档">
-		<param name="Local" value="baseapp\Modules\KBEngine.html#createBaseRemotely">
+		<param name="Local" value="baseapp\Modules\KBEngine.html#createEntityRemotely">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="controlledBy">
@@ -227,14 +239,14 @@
 		<param name="Local" value="basetypes.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="createBaseLocally">
+		<param name="Name" value="createEntityLocally">
 		<param name="Name" value="KBEngine - KBEngine base 文档">
-		<param name="Local" value="baseapp\Modules\KBEngine.html#createBaseLocally">
+		<param name="Local" value="baseapp\Modules\KBEngine.html#createEntityLocally">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="createBaseAnywhereFromDBID">
+		<param name="Name" value="createEntityAnywhereFromDBID">
 		<param name="Name" value="KBEngine - KBEngine base 文档">
-		<param name="Local" value="baseapp\Modules\KBEngine.html#createBaseAnywhereFromDBID">
+		<param name="Local" value="baseapp\Modules\KBEngine.html#createEntityAnywhereFromDBID">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="createEntity">
@@ -837,6 +849,8 @@
 		<param name="Local" value="cellapp\Modules\KBEngine.html#executeRawDatabaseCommand">
 		<param name="Name" value="KBEngine - KBEngine base 文档">
 		<param name="Local" value="baseapp\Modules\KBEngine.html#executeRawDatabaseCommand">
+		<param name="Local" value="interfaces\Modules\KBEngine.html#executeRawDatabaseCommand">
+		<param name="Local" value="dbmgr\Modules\KBEngine.html#executeRawDatabaseCommand">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="getResFullPath">
@@ -939,9 +953,9 @@
 		<param name="Local" value="cellapp\Modules\KBEngine.html#time">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="lookUpBaseByDBID">
+		<param name="Name" value="lookUpEntityByDBID">
 		<param name="Name" value="KBEngine - KBEngine base 文档">
-		<param name="Local" value="baseapp\Modules\KBEngine.html#lookUpBaseByDBID">
+		<param name="Local" value="baseapp\Modules\KBEngine.html#lookUpEntityByDBID">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="quantumPassedPercent">
@@ -1117,9 +1131,9 @@
 		<param name="Local" value="bots\Modules\KBEngine.html#genUUID64">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="deleteBaseByDBID">
+		<param name="Name" value="deleteEntityByDBID">
 		<param name="Name" value="KBEngine - KBEngine base 文档">
-		<param name="Local" value="baseapp\Modules\KBEngine.html#deleteBaseByDBID">
+		<param name="Local" value="baseapp\Modules\KBEngine.html#deleteEntityByDBID">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="deregisterWriteFileDescriptor">
@@ -1143,19 +1157,19 @@
 		<param name="Local" value="cellapp\Modules\KBEngine.html#registerReadFileDescriptor">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="createBaseFromDBID">
+		<param name="Name" value="createEntityFromDBID">
 		<param name="Name" value="KBEngine - KBEngine base 文档">
-		<param name="Local" value="baseapp\Modules\KBEngine.html#createBaseFromDBID">
+		<param name="Local" value="baseapp\Modules\KBEngine.html#createEntityFromDBID">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="createBaseAnywhere">
+		<param name="Name" value="createEntityAnywhere">
 		<param name="Name" value="KBEngine - KBEngine base 文档">
-		<param name="Local" value="baseapp\Modules\KBEngine.html#createBaseAnywhere">
+		<param name="Local" value="baseapp\Modules\KBEngine.html#createEntityAnywhere">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="createBase">
+		<param name="Name" value="createEntity">
 		<param name="Name" value="KBEngine - KBEngine base 文档">
-		<param name="Local" value="baseapp\Modules\KBEngine.html#createBase">
+		<param name="Local" value="baseapp\Modules\KBEngine.html#createEntity">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="charge">
