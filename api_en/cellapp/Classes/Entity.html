@@ -112,6 +112,10 @@
 <span class="function_list">def <a href="#writeToDB" class="function_list" >writeToDB</a>( self, shouldAutoLoad, dbInterfaceName ):</span>
 </td></tr>
 
+<tr><td>
+<span class="function_list">def <a href="#getWitnesses" class="function_list" >getWitnesses</a>( self ):</span>
+</td></tr>
+
 </table>
 
 <h2><a href="#" onClick="obj=document.getElementById( 'callbacks' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">Callbacks</a></h2>
@@ -1291,6 +1295,28 @@ kbengine_defaults.xml->dbmgr->databaseInterfaces.
 
 </table>
 </p>
+
+
+
+<a name="getWitnesses"></a><p class="function_definition">
+<span class="function_definition">def getWitnesses( <i>self</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>Function description:</b><br><br>
+This function returns all other entities(Players) that observe this <a href=../../keywords.html#entity>Entity</a>. <br>
+<br>
+</div>
+
+<p>
+<span class="function_return">returns:</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>
+tuple, an array of one or more <a href=../../keywords.html#entity>Entity</a>.
+</td></tr>
+</table>
+</p>
+
 
 
 
