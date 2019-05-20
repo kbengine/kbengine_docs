@@ -122,7 +122,7 @@ def writeTipsPy(processName, moduleName, datas):
 def parseDocs(f):
 	print("====>parseDocs(): " + f + "...")
 
-	fd = open(f, "r")
+	fd = open(f, "r", encoding="UTF-8")
 	lines = fd.readlines()
 	fd.close()
 
