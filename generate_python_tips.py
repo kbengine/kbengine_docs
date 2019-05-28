@@ -107,7 +107,7 @@ def parseAttributes(data, substate):
 	return substate
 
 def writeTipsPy(processName, moduleName, datas):
-	dirstr = "tips\\" + processName + "\\"
+	dirstr = "tips/" + processName + "/"
 
 	try:
 		os.makedirs(dirstr)
@@ -117,12 +117,13 @@ def writeTipsPy(processName, moduleName, datas):
 	f = open(dirstr + moduleName + ".py", "a+", encoding="UTF-8")
 	f.write(datas)
 	f.close()
-	print("save to: %s\\%s.py" % (os.getcwd(), dirstr + moduleName))
+	print("save to: %s/%s.py" % (os.getcwd(), dirstr + moduleName))
 
 def parseDocs(f):
 	print("====>parseDocs(): " + f + "...")
 
-	fd = open(f, "r", encoding="UTF-8")
+	temp = f.replace("\\","/")
+	fd = open(temp, "r", encoding="UTF-8")
 	lines = fd.readlines()
 	fd.close()
 
@@ -147,7 +148,7 @@ def parseDocs(f):
 	moduleDocs = ""
 	pythonstr = ""
 	isModuleAPI = "Modules" in f
-	processName = f.split("\\")[1]
+	processName = temp.split("/")[1]
 	moduleName = os.path.basename(f).split(".")[0]
 
 	if not isModuleAPI:
