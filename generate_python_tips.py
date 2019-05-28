@@ -148,7 +148,7 @@ def parseDocs(f):
 	moduleDocs = ""
 	pythonstr = ""
 	isModuleAPI = "Modules" in f
-	processName = f.split("\\")[1]
+	processName = temp.split("/")[1]
 	moduleName = os.path.basename(f).split(".")[0]
 
 	if not isModuleAPI:
