@@ -31,26 +31,6 @@ the bottom of C++. It cannot be created in the script layer directly.</p>
 <h2><a href="#" onClick="obj=document.getElementById( 'callbacks' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">Callbacks</a></h2>
 <table id="callbacks" cellpadding=0 cellspacing=3 style="margin-left: 20px;">
 
-<tr><td>
-<span class="function_list">def <a href="#onDestroy" class="function_list" >onDestroy</a>( self ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#onEnterWorld" class="function_list" >onEnterWorld</a>( self ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#onLeaveWorld" class="function_list" >onLeaveWorld</a>( self ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#onEnterSpace" class="function_list" >onEnterSpace</a>( self ):</span>
-</td></tr>
-
-<tr><td>
-<span class="function_list">def <a href="#onLeaveSpace" class="function_list" >onLeaveSpace</a>( self ):</span>
-</td></tr>
-
 </table>
 
 <h2><a href="#" onClick="obj=document.getElementById( 'attributes' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">Attributes</a></h2>
@@ -126,60 +106,6 @@ Gets the entity that the current client controls.<br>
 <hr>
 <h2>Callback functions documentation</h2>
 
-
-<a name="onDestroy"></a><p class="function_definition">
-<span class="function_definition">def onDestroy( <i>self</i> ):</span>
-</p>
-
-<div class="function_description">Called when the entity is destroyed.
-</div>
-
-
-<a name="onEnterWorld"></a><p class="function_definition">
-<span class="function_definition">def onEnterWorld( <i>self</i> ):</span>
-</p>
-
-<div class="function_description">If the entity is not a client-controlled 
-entity, it indicates that the entity has entered the View scope of the 
-entity controlled by the client on the server side. At this time, the client 
-can see the entity.<br>
-If this entity is a client-controlled entity, it indicates that the entity 
-has created a cell on the server and entered space.
-</div>
-
-
-
-<a name="onLeaveWorld"></a><p class="function_definition">
-<span class="function_definition">def onLeaveWorld( <i>self</i> ):</span>
-</p>
-
-<div class="function_description">If the entity is not a client-controlled 
-entity, it indicates that the entity has entered the View scope of the 
-entity controlled by the client on the server side. At this time, the 
-client can see this entity. <br>
-If the entity is a client-controlled entity, it indicates that the 
-entity has created a cell on the server and entered space.
-</div>
-
-
-
-<a name="onEnterSpace"></a><p class="function_definition">
-<span class="function_definition">def onEnterSpace( <i>self</i> ):</span>
-</p>
-
-<div class="function_description">The client-controlled entity enters a 
-new space.
-</div>
-
-
-
-<a name="onLeaveSpace"></a><p class="function_definition">
-<span class="function_definition">def onLeaveSpace( <i>self</i> ):</span>
-</p>
-
-<div class="function_description">The client-controlled entity leaves the 
-current space.
-</div>
 
 
 
