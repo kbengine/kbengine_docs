@@ -30,6 +30,43 @@
 		<param name="Local" value="baseapp/Modules/KBEngine.html#onAutoLoadEntityCreate">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="getComponent">
+		<param name="Name" value="Entity - KBEngine base">
+		<param name="Local" value="baseapp\Classes\Entity.html#getComponent">
+		<param name="Name" value="Entity - KBEngine cell">
+		<param name="Local" value="cellapp\Classes\Entity.html#getComponent">
+		<param name="Local" value="bots\Classes\Entity.html#getComponent">
+		<param name="Local" value="client\Classes\Entity.html#getComponent">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="fireEvent">
+		<param name="Name" value="Entity - KBEngine base">
+		<param name="Local" value="baseapp\Classes\Entity.html#fireEvent">
+		<param name="Name" value="Entity - KBEngine cell">
+		<param name="Local" value="cellapp\Classes\Entity.html#fireEvent">
+		<param name="Name" value="Entity - KBEngine base">
+		<param name="Local" value="client\Classes\Entity.html#fireEvent">
+		<param name="Local" value="bots\Classes\Entity.html#fireEvent">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="registerEvent">
+		<param name="Name" value="Entity - KBEngine base">
+		<param name="Local" value="baseapp\Classes\Entity.html#registerEvent">
+		<param name="Name" value="Entity - KBEngine cell">
+		<param name="Local" value="cellapp\Classes\Entity.html#registerEvent">
+		<param name="Local" value="bots\Classes\Entity.html#registerEvent">
+		<param name="Local" value="client\Classes\Entity.html#registerEvent">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="deregisterEvent">
+		<param name="Name" value="Entity - KBEngine base">
+		<param name="Local" value="baseapp\Classes\Entity.html#deregisterEvent">
+		<param name="Name" value="Entity - KBEngine cell">
+		<param name="Local" value="cellapp\Classes\Entity.html#deregisterEvent">
+		<param name="Local" value="client\Classes\Entity.html#deregisterEvent">
+		<param name="Local" value="bots\Classes\Entity.html#deregisterEvent">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="clientEntity">
 		<param name="Name" value="Entity - KBEngine cell documents">
 		<param name="Local" value="cellapp/Classes/Entity.html#clientEntity">
@@ -65,10 +102,10 @@
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="urlopen">
-		<param name="Local" value="interfaces\Modules\KBEngine.html#urlopen">
 		<param name="Name" value="KBEngine - KBEngine cell">
-		<param name="Local" value="cellapp\Modules\KBEngine.html##urlopen">
+		<param name="Local" value="interfaces\Modules\KBEngine.html#urlopen">
 		<param name="Name" value="KBEngine - KBEngine base">
+		<param name="Local" value="cellapp\Modules\KBEngine.html##urlopen">
 		<param name="Local" value="baseapp\Modules\KBEngine.html##urlopen">
 		<param name="Local" value="loginapp\Modules\KBEngine.html##urlopen">
 		<param name="Local" value="logger\Modules\KBEngine.html##urlopen">

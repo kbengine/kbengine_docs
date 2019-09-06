@@ -27,6 +27,22 @@
 <span class="function_list">def <a href="#isPlayer" class="function_list" >isPlayer</a>( self ):</span>
 </td></tr>
 
+<tr><td>
+    <span class="function_list">def <a href="#getComponent" class="function_list" >getComponent</a>( self, componentName, all ):</span>
+</td></tr>
+
+<tr><td>
+    <span class="function_list">def <a href="#fireEvent" class="function_list" >fireEvent</a>( self, eventName, *args ):</span>
+</td></tr>
+
+<tr><td>
+    <span class="function_list">def <a href="#registerEvent" class="function_list" >registerEvent</a>( self, eventName, callback ):</span>
+</td></tr>
+
+<tr><td>
+    <span class="function_list">def <a href="#deregisterEvent" class="function_list" >deregisterEvent</a>( self, eventName, callback ):</span>
+</td></tr>
+
 </table>
 
 <h2><a href="#" onClick="obj=document.getElementById( 'callbacks' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">回调函数</a></h2>
@@ -202,6 +218,101 @@ controllerID是要取消的控制器的索引，它是一个整型。一个专�
 </table>
 </p>
 
+
+<a name="getComponent"></a><p class="function_definition">
+<span class="function_definition">def getComponent( <i>self, componentName, all</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+该函数用于获取实体所绑定的某一类组件实例。
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>componentName</i></span></td><td><span class="function_parameter_description">
+string，组件类型名称，组件的模块名称。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>all</i></span></td><td><span class="function_parameter_description">
+bool，如果为True，返回所有同类组件实例，否则只返回第一个或空列表。
+</span></td></tr>
+</table>
+</p>
+
+
+<a name="fireEvent"></a><p class="function_definition">
+<span class="function_definition">def fireEvent( <i>self, eventName, *args</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+该函数用于触发实体事件。
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>eventName</i></span></td><td><span class="function_parameter_description">
+string，要触发的事件名称。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>args</i></span></td><td><span class="function_parameter_description">
+要附带的事件数据，可变参数。
+</span></td></tr>
+</table>
+</p>
+
+
+<a name="registerEvent"></a><p class="function_definition">
+<span class="function_definition">def registerEvent( <i>self, eventName, callback</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+该函数用于注册实体事件。
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>eventName</i></span></td><td><span class="function_parameter_description">
+string，要注册监听的事件名称。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
+当事件触发时，用于响应该事件的回调方法。
+</span></td></tr>
+</table>
+</p>
+
+
+<a name="deregisterEvent"></a><p class="function_definition">
+<span class="function_definition">def deregisterEvent( <i>self, eventName, callback</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>功能说明：</b><br><br>
+该函数用于注销监听实体事件。
+</div>
+
+<p>
+<span class="function_parameter">参数：</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>eventName</i></span></td><td><span class="function_parameter_description">
+string，要注销监听的事件名称。
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
+要注销监听的回调方法。
+</span></td></tr>
+</table>
+</p>
 
 
 <hr>

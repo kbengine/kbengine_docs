@@ -32,6 +32,22 @@ module. <a href="#detailed_description">More...</a></p><p></p>
 <span class="function_list">def <a href="#isPlayer" class="function_list" >isPlayer</a>( self ):</span>
 </td></tr>
 
+<tr><td>
+    <span class="function_list">def <a href="#getComponent" class="function_list" >getComponent</a>( self, componentName, all ):</span>
+</td></tr>
+
+<tr><td>
+    <span class="function_list">def <a href="#fireEvent" class="function_list" >fireEvent</a>( self, eventName, *args ):</span>
+</td></tr>
+
+<tr><td>
+    <span class="function_list">def <a href="#registerEvent" class="function_list" >registerEvent</a>( self, eventName, callback ):</span>
+</td></tr>
+
+<tr><td>
+    <span class="function_list">def <a href="#deregisterEvent" class="function_list" >deregisterEvent</a>( self, eventName, callback ):</span>
+</td></tr>
+
 </table>
 
 <h2><a href="#" onClick="obj=document.getElementById( 'callbacks' );vis = (obj.style.display == 'none') ? 'block' : 'none'; obj.style.display = vis; return false;" class="h2">Callbacks</a></h2>
@@ -210,6 +226,120 @@ is the player controlled by the current client.
 </table>
 </p>
 
+
+<a name="isPlayer"></a><p class="function_definition">
+<span class="function_definition">def isPlayer( <i>self</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>Function description:</b><br><br>
+This function returns whether the <a href=../../keywords.html#entity>Entity</a>
+is the player controlled by the current client.
+</div>
+
+<p>
+<span class="function_return">returns:</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+<tr><td>bool, If the player controlled by the current client returns true, otherwise it returns false.
+</td></tr>
+</table>
+</p>
+
+
+<a name="getComponent"></a><p class="function_definition">
+<span class="function_definition">def getComponent( <i>self, componentName, all</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>Function description:</b><br><br>
+Gets a component instance of the specified type attached to the entity.
+</div>
+
+<p>
+<span class="function_parameter">parameters:</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>componentName</i></span></td><td><span class="function_parameter_description">
+string, The component type name.
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>all</i></span></td><td><span class="function_parameter_description">
+bool, if True, Returns all instances of the same type of component, otherwise only returns the first or empty list.
+</span></td></tr>
+</table>
+</p>
+
+
+<a name="fireEvent"></a><p class="function_definition">
+<span class="function_definition">def fireEvent( <i>self, eventName, *args</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>Function description:</b><br><br>
+Trigger entity events.
+</div>
+
+<p>
+<span class="function_parameter">parameters:</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>eventName</i></span></td><td><span class="function_parameter_description">
+string, the name of the event to trigger.
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>args</i></span></td><td><span class="function_parameter_description">
+The event datas to be attached, variable parameters.
+</span></td></tr>
+</table>
+</p>
+
+
+<a name="registerEvent"></a><p class="function_definition">
+<span class="function_definition">def registerEvent( <i>self, eventName, callback</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>Function description:</b><br><br>
+Register entity events.
+</div>
+
+<p>
+<span class="function_parameter">parameters:</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>eventName</i></span></td><td><span class="function_parameter_description">
+string, the name of the event to be registered for listening.
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
+The callback method used to respond to the event when the event fires.
+</span></td></tr>
+</table>
+</p>
+
+
+<a name="deregisterEvent"></a><p class="function_definition">
+<span class="function_definition">def deregisterEvent( <i>self, eventName, callback</i> ):</span>
+</p>
+
+<div class="function_description">
+<b>Function description:</b><br><br>
+Deregister entity events.
+</div>
+
+<p>
+<span class="function_parameter">parameters:</span>
+<table border=0 cellpadding=0 cellspacing=3 style="margin-left: 20px;">
+
+<tr valign=top><td><span class="function_parameter_name"><i>eventName</i></span></td><td><span class="function_parameter_description">
+string, the name of the event to be deregister.
+</span></td></tr>
+
+<tr valign=top><td><span class="function_parameter_name"><i>callback</i></span></td><td><span class="function_parameter_description">
+The callback method to deregister of the listener.
+</span></td></tr>
+</table>
+</p>
 
 
 <hr>
